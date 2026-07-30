@@ -5,6 +5,7 @@ import {
   CtaBand,
   FaqList,
   JsonLd,
+  navigationPageHeroImage,
   PageHero,
   PageShell,
   SectionHeading,
@@ -507,6 +508,7 @@ function ServicesPage() {
         eyebrow="BRISBANE ROOF & GUTTER SERVICES"
         title="Choose the page that matches the problem"
         description="Start with the symptom, urgency or roof material you can identify. Each service page explains the assessment, likely timing and next step for that problem."
+        image={navigationPageHeroImage}
       />
       <section className="section">
         <div className="shell">
@@ -633,6 +635,7 @@ function RoofTypesPage() {
         eyebrow="ROOF TYPES BRISBANE"
         title="Tile and metal roofs need different repair thinking"
         description="The visible symptom may look similar indoors, but the exterior details, materials and safe repair scope can be very different."
+        image={navigationPageHeroImage}
       />
       <section className="section">
         <div className="shell roof-type-grid">
@@ -729,12 +732,7 @@ function ServiceAreasPage() {
         eyebrow="ROOF REPAIRS BRISBANE SERVICE AREAS"
         title="Petrie Terrace and Greater Brisbane roof repairs"
         description="Petrie Terrace is a confirmed local service-area focus. Mel One also accepts roof repair enquiries across Greater Brisbane, with attendance confirmed by job requirements."
-        image={{
-          src: "/images/brisbane-roof-repair-service-areas-hero.webp",
-          alt: "Representative Brisbane roof inspection across local tile and metal roofing",
-          width: 1672,
-          height: 941,
-        }}
+        image={navigationPageHeroImage}
       />
       <section className="section">
         <div className="shell">
@@ -835,6 +833,7 @@ function ProjectsPage() {
         eyebrow="REAL ROOF & GUTTER PROJECT PHOTOGRAPHY"
         title="See the condition, work stage and documented result"
         description="Original Greater Brisbane customer-project images are grouped by the work they actually show. Each caption identifies whether the image records the condition before work, work in progress or a completed result."
+        image={navigationPageHeroImage}
       />
 
       <section
@@ -1064,6 +1063,7 @@ function AboutPage() {
         eyebrow="ABOUT MEL ONE MAINTENANCE"
         title="A real business behind the Brisbane roof repair service"
         description="Mel One Maintenance is the public service brand of Mel One Property Maintenance Pty Ltd, accepting roof repair enquiries across Greater Brisbane."
+        image={navigationPageHeroImage}
       />
       <section className="section">
         <div className="shell about-layout">

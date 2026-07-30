@@ -137,6 +137,13 @@ export function SiteFooter() {
   );
 }
 
+export const navigationPageHeroImage = {
+  src: "/images/brisbane-roof-repairs-navigation-hero.webp",
+  alt: "Brisbane roof repair technician inspecting a tiled roof",
+  width: 1672,
+  height: 941,
+} as const;
+
 export function PageHero({
   eyebrow,
   title,

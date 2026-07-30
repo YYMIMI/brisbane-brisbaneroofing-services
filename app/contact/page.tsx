@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  navigationPageHeroImage,
   PageHero,
   PageShell,
   SectionHeading,
@@ -26,6 +27,7 @@ export default function ContactPage() {
         eyebrow="REQUEST A ROOF INSPECTION"
         title="Prepare the information a roof repair enquiry needs"
         description={`Call ${business.phone} or email ${business.email}. You can also prepare a clear roof repair summary below before contacting Mel One.`}
+        image={navigationPageHeroImage}
       />
       <section className="section">
         <div className="shell contact-layout">
