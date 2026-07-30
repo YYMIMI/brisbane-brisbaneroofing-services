@@ -729,6 +729,12 @@ function ServiceAreasPage() {
         eyebrow="ROOF REPAIRS BRISBANE SERVICE AREAS"
         title="Petrie Terrace and Greater Brisbane roof repairs"
         description="Petrie Terrace is a confirmed local service-area focus. Mel One also accepts roof repair enquiries across Greater Brisbane, with attendance confirmed by job requirements."
+        image={{
+          src: "/images/brisbane-roof-repair-service-areas-hero.webp",
+          alt: "Representative Brisbane roof inspection across local tile and metal roofing",
+          width: 1672,
+          height: 941,
+        }}
       />
       <section className="section">
         <div className="shell">

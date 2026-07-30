@@ -143,15 +143,38 @@ export function PageHero({
   description,
   urgent = false,
   requestLabel = "Request inspection",
+  image,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   urgent?: boolean;
   requestLabel?: string;
+  image?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
 }) {
   return (
-    <section className={`page-hero ${urgent ? "page-hero-urgent" : ""}`}>
+    <section
+      className={`page-hero ${urgent ? "page-hero-urgent" : ""} ${
+        image ? "page-hero-with-image" : ""
+      }`}
+    >
+      {image ? (
+        <div className="page-hero-media">
+          <img
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+      ) : null}
       <div className="shell page-hero-inner">
         <div>
           <p className="eyebrow">{eyebrow}</p>
