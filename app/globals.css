@@ -850,6 +850,26 @@ h3 {
   color: var(--slate);
 }
 
+.suburb-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 7px 10px;
+}
+
+.suburb-list li {
+  color: var(--slate);
+  font-size: 0.9rem;
+}
+
+.suburb-list li:not(:last-child)::after {
+  margin-left: 10px;
+  color: #9ba8b2;
+  content: "•";
+}
+
 .process-grid {
   display: grid;
   margin: 0;
@@ -1288,6 +1308,18 @@ h3 {
   font-weight: 750;
 }
 
+.responsive-table td a {
+  color: #7f6500;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.responsive-table td a:hover {
+  color: var(--navy);
+}
+
 .responsive-table tr:last-child td {
   border-bottom: 0;
 }
@@ -1366,6 +1398,10 @@ h3 {
 
 .area-card-grid p {
   color: var(--body);
+}
+
+.area-card-grid .suburb-list {
+  margin-bottom: 22px;
 }
 
 .area-card-grid a {

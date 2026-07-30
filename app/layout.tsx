@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
-import { business } from "./site-data";
+import { business, serviceRegions } from "./site-data";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,15 +26,6 @@ export const metadata: Metadata = {
   applicationName: "Mel One Roof Repairs Brisbane",
   category: "Roof repair services",
   manifest: "/site.webmanifest",
-  keywords: [
-    "roof repairs Brisbane",
-    "roof leak repair Brisbane",
-    "gutter cleaning Brisbane",
-    "blocked gutters Brisbane",
-    "emergency roof repairs Brisbane",
-    "tile roof repairs Brisbane",
-    "metal roof repairs Brisbane",
-  ],
   robots: {
     index: true,
     follow: true,
@@ -68,10 +59,10 @@ export const metadata: Metadata = {
       "Real roof and gutter project evidence for Greater Brisbane homes.",
     images: [
       {
-        url: business.logo,
-        width: 512,
-        height: 512,
-        alt: "Mel One Maintenance roof repair logo",
+        url: "/images/brisbane-roof-repair-hero.webp",
+        width: 1536,
+        height: 960,
+        alt: "Completed Brisbane tile roof restoration project",
       },
     ],
   },
@@ -80,7 +71,7 @@ export const metadata: Metadata = {
     title: "Mel One Roof Repairs Brisbane",
     description:
       "Real roof and gutter project evidence for Greater Brisbane homes.",
-    images: [business.logo],
+    images: ["/images/brisbane-roof-repair-hero.webp"],
   },
 };
 
@@ -97,12 +88,13 @@ export default function RootLayout({
 }>) {
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "#mel-one-property-maintenance",
+    "@type": ["Organization", "HomeAndConstructionBusiness"],
+    "@id": `${business.siteUrl}/#organization`,
     name: business.brandName,
     legalName: business.legalName,
-    logo: business.logo,
-    image: business.logo,
+    url: business.siteUrl,
+    logo: `${business.siteUrl}${business.logo}`,
+    image: `${business.siteUrl}${business.logo}`,
     telephone: business.phone,
     email: business.email,
     taxID: business.abn,
@@ -136,6 +128,10 @@ export default function RootLayout({
         "@type": "AdministrativeArea",
         name: business.serviceArea,
       },
+      ...serviceRegions.map((region) => ({
+        "@type": "AdministrativeArea",
+        name: region.name,
+      })),
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -151,13 +147,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU">
       <head>
-        <link
-          rel="preload"
-          href="/images/brisbane-roof-repair-hero.webp"
-          as="image"
-          type="image/webp"
-          fetchPriority="high"
-        />
+        <meta name="codex-preview" content="development" />
       </head>
       <body className={`${inter.variable} ${oswald.variable}`}>
         <script

@@ -41,6 +41,8 @@ export const business = {
   logo: "/brand/mel-one-roof-logo-512.png",
 };
 
+export const lastContentUpdate = "2026-07-30";
+
 export const brandName = business.siteName;
 
 export type ProjectCase = {
@@ -161,7 +163,7 @@ export const projectCases: ProjectCase[] = [
     eyebrow: "REAL GUTTER CLEANING PROJECT",
     title: "Blocked gutter clearing beside tile and metal roof sections",
     summary:
-      "Original site photos document dense leaf and organic buildup, moss, standing water and gutter clearing in progress around tile-roof edges and an adjoining metal-roof section. The record does not present an unsupported completed result.",
+      "Original site photos document dense leaf and organic buildup, moss, standing water and gutter clearing in progress around tile-roof edges and an adjoining metal-roof section. It is presented as in-progress work because no final result photo was supplied.",
     status: "Cleaning documented in progress",
     roofType: "Tile roof, metal roof junctions and perimeter gutters",
     location: "Greater Brisbane — customer suburb not published",
@@ -217,51 +219,51 @@ export const projectCases: ProjectCase[] = [
 
 export const services: ServicePage[] = [
   {
-    slug: "roof-repairs-brisbane",
-    path: "/services/roof-repairs-brisbane",
-    navLabel: "Roof repairs",
-    title: "Roof repairs for Brisbane homes",
-    metaTitle: "Roof Repairs Brisbane | Tile, Metal & Leak Help | Mel One",
+    slug: "roof-restoration-brisbane",
+    path: "/services/roof-restoration-brisbane",
+    navLabel: "Roof restoration",
+    title: "Tile roof restoration in Brisbane",
+    metaTitle: "Roof Restoration Brisbane | Real Tile Roof Project | Mel One",
     metaDescription:
-      "Need roof repairs in Brisbane? See common tile and metal roof problems, real project evidence, likely timeframes and quote factors.",
-    eyebrow: "ROOF REPAIRS BRISBANE",
+      "Considering roof restoration in Brisbane? View a real concrete tile roof project, restoration stages, likely timing and quote factors.",
+    eyebrow: "ROOF RESTORATION BRISBANE",
     description:
-      "A practical starting point for leaking, damaged or ageing tile and metal roofs across Brisbane.",
+      "Concrete tile roof restoration planning supported by original before-and-after project photography.",
     intro:
-      "Roof problems rarely arrive with a clear label. A stain may be caused by flashing, a cracked tile, a failed fixing or water travelling from somewhere higher on the roof. The first job is to identify the source before discussing the repair.",
+      "Roof restoration is broader than replacing one damaged tile. The roof condition, ridge details, preparation needs, penetrations, existing solar equipment and suitable weather window all affect whether restoration is appropriate and how the work is staged.",
     symptoms: [
-      "Water stains, damp patches or dripping after rain",
-      "Cracked, slipped or missing roof tiles",
-      "Loose ridge capping, flashing or roof penetrations",
-      "Rust, failed fasteners or lifted metal roof sheets",
+      "A faded or weathered concrete tile finish",
+      "Several roof planes showing similar age and surface wear",
+      "Ridge, valley or tile repairs needed before coating",
+      "A homeowner comparing local repairs with a broader restoration",
     ],
     assessment: [
-      "Where and when the problem appears",
-      "Roof material, pitch and safe access",
-      "Visible damage around flashings, valleys and penetrations",
-      "Whether the issue needs urgent weatherproofing or a planned repair",
+      "Concrete or terracotta tile construction and overall condition",
+      "Repairs and preparation required before restoration work",
+      "Ridges, valleys, vents, flues and roof penetrations",
+      "Solar arrays, safe access and suitable drying conditions",
     ],
     nextSteps: [
-      "Share the roof type, suburb and visible symptoms",
-      "Add photos from ground level or inside the ceiling if safe",
-      "Arrange an inspection where the cause cannot be confirmed remotely",
-      "Review the proposed scope before work is scheduled",
+      "Share the Brisbane suburb and safe overview photos",
+      "Identify the tile type and any known leak or repair history",
+      "Arrange an inspection of the roof surface and repair needs",
+      "Review the preparation, repair and finish stages as one defined scope",
     ],
     faqs: [
       {
-        question: "Can a roof leak be repaired without replacing the whole roof?",
+        question: "Is roof restoration the same as a local roof repair?",
         answer:
-          "Often, yes. The right scope depends on the leak source and the condition of the surrounding roof. An inspection should separate a local repair from a broader roof condition issue.",
+          "No. A local repair addresses a defined defect. Restoration is a broader, multi-stage scope that may include preparation, repairs and a new finish across larger roof areas.",
       },
       {
-        question: "Do you work on both tile and metal roofs?",
+        question: "Can a tile roof be restored around existing solar panels?",
         answer:
-          "The site covers repair enquiries for tile and metal roof systems. The exact work scope and the contractor licence class must be confirmed for each job before booking.",
+          "The supplied Mel One project shows completed restoration work around existing solar arrays. Access and any electrical or solar work must still be separated and assigned to the appropriately licensed trade where required.",
       },
       {
-        question: "What information helps with an initial roof repair enquiry?",
+        question: "How long does a tile roof restoration take?",
         answer:
-          "Your suburb, roof material, when the issue started, whether water is currently entering, and clear photos from a safe location are the most useful starting points.",
+          "It is normally a multi-day, weather-dependent project. Roof size, preparation, repairs, drying, solar equipment and the selected finish determine the confirmed programme.",
       },
     ],
   },
@@ -349,7 +351,7 @@ export const services: ServicePage[] = [
       {
         question: "How often should gutters be cleaned in Brisbane?",
         answer:
-          "There is no useful single schedule for every home. Nearby trees, roof shape, gutter profile, exposure and how quickly organic material returns all affect the interval. Regular visual checks are more reliable than an unsupported fixed frequency.",
+          "There is no useful single schedule for every home. Nearby trees, roof shape, gutter profile, exposure and how quickly organic material returns all affect the interval. Regular visual checks are more reliable than assuming the same interval for every property.",
       },
       {
         question: "Are downpipes included with gutter cleaning?",
@@ -627,57 +629,57 @@ export type ServiceContext = {
 };
 
 export const serviceContextBySlug: Record<string, ServiceContext> = {
-  "roof-repairs-brisbane": {
+  "roof-restoration-brisbane": {
     brisbaneContext:
-      "Greater Brisbane roof enquiries often start after intense rain, wind-driven weather or long periods of sun exposure reveal a weak detail. On mixed and extended roofs, the visible stain may sit away from the failed tile, valley, flashing, fastener or penetration. Mel One therefore starts with the roof material, the weather pattern and the water path before defining the work.",
+      "Brisbane tile roofs can show widespread surface wear after long exposure to sun, rain and seasonal storms. A restoration decision should consider the whole roof condition, required repairs, preparation, drying time and the details around ridges, valleys, vents, flues and existing solar arrays.",
     localProblems: [
-      "Concrete or terracotta tiles cracked, slipped or disturbed after weather events",
-      "Ridge capping, valleys and flashing that need to be assessed together rather than patched in isolation",
-      "Leaks around flues, vents, solar arrays and other roof penetrations",
-      "Metal fastener, sheet-lap or local corrosion concerns on Brisbane homes",
+      "Faded or weathered concrete tile surfaces across several connected roof planes",
+      "Broken tiles, ridge or valley details that need repair before surface work",
+      "Preparation and coating access around flues, vents and existing solar arrays",
+      "Drying and application windows affected by Brisbane weather",
     ],
     timeline: [
       {
-        stage: "Photo and symptom review",
+        stage: "Roof overview",
         timing: "Before attendance",
         detail:
-          "The suburb, roof type, leak timing and safe photos are used to choose the right inspection pathway.",
+          "The suburb, roof size, tile type, known leaks and safe overview photos help prepare the inspection.",
       },
       {
-        stage: "On-roof assessment",
+        stage: "Condition and repair assessment",
         timing: "One scheduled visit",
         detail:
-          "Access, weather and roof condition determine whether the likely cause can be confirmed safely on the first visit.",
+          "Tiles, ridges, valleys, penetrations, access and surrounding roof condition are checked before the restoration scope is defined.",
       },
       {
-        stage: "Localised repair",
-        timing: "Often several hours to one working day",
+        stage: "Preparation and repairs",
+        timing: "One or more working days",
         detail:
-          "This guide applies only when the defect is contained and compatible materials are available.",
+          "The actual roof determines the cleaning, preparation, repair and drying stages required before the finish is applied.",
       },
       {
-        stage: "Broader restoration or multi-area work",
-        timing: "Usually a multi-day scope",
+        stage: "Finish and completion check",
+        timing: "Part of a multi-day scope",
         detail:
-          "Preparation, drying, access equipment and suitable weather windows can extend the programme.",
+          "Suitable weather, drying time, roof complexity and work around solar equipment control the final programme.",
       },
     ],
     quoteFactors: [
-      "Tile, metal or mixed roof construction",
-      "Roof height, pitch, access and required safety controls",
-      "Whether damage is localised or repeated across several roof sections",
-      "Solar panels, flues, vents, valleys and other penetrations",
-      "Material matching, disposal and any temporary weatherproofing",
+      "Concrete or terracotta tile type and total roof area",
+      "Preparation, cleaning and repair work required before finishing",
+      "Roof height, pitch, access and safety setup",
+      "Ridge length, valleys, vents, flues and intersecting roof planes",
+      "Existing solar panels and specialist coordination where required",
     ],
     capability: {
-      title: "A repair scope built from the actual roof detail",
+      title: "A completed restoration documented from before to after",
       summary:
-        "Mel One Property Maintenance Pty Ltd coordinates Greater Brisbane roof repair enquiries through Mel One Maintenance. The current project record demonstrates concrete tile restoration around existing solar panels and an opened tile/flue detail during leak investigation.",
+        "The Mel One project library records the original weathered concrete tile surface and the completed dark-grey finish across connected roof planes around existing solar arrays, vents, ridges and valleys.",
       evidence: [
-        "Concrete tile roof restoration with original before-and-after photographs",
-        "Work documented around solar arrays, vents, ridges and intersecting roof planes",
-        "Tile removal and flashing investigation around a flue penetration",
-        "Specialist electrical or solar scope is separated and referred to the appropriately licensed trade where required",
+        "Two original before photographs and four completed roof photographs",
+        "Completed dark-grey finish across connected concrete tile roof planes",
+        "Work documented beside existing solar panels, vents, ridges and valleys",
+        "Only the visible project stages and supplied details are described",
       ],
     },
   },
@@ -713,7 +715,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         stage: "Verification",
         timing: "After repair or the next suitable rain event",
         detail:
-          "Recurring or wind-direction leaks may require observation or follow-up rather than an unsupported instant guarantee.",
+          "Recurring or wind-direction leaks may require observation or follow-up after the repair.",
       },
     ],
     quoteFactors: [
@@ -785,7 +787,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         "Original before photographs of dense leaf and organic buildup",
         "In-progress photographs with ladder, hose and accessible gutter runs",
         "Work shown beside tile-roof edges and an adjoining metal-roof section",
-        "Cleaning kept separate from unsupported downpipe, gutter-repair or completed-result claims",
+        "Cleaning work kept separate from downpipe or gutter repairs not shown in the supplied record",
       ],
     },
   },
@@ -996,7 +998,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Scope the metal detail before assigning the work",
       summary:
-        "Mel One assesses metal-roof enquiries by roof profile, failed component, access and specialist requirements. The current photo library does not present a metal-roof project as evidence, so no unsupported metal installation claim is made.",
+        "Mel One assesses metal-roof enquiries by roof profile, failed component, access and specialist requirements. The current photo library does not include a metal-roof case, so this page explains assessment and scoping without using an unrelated project image.",
       evidence: [
         "Fastener, sheet-lap, flashing and corrosion assessment pathway",
         "Repair-versus-sheet-replacement decision based on surrounding condition",
@@ -1055,7 +1057,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         "Original before-and-after photography for a concrete tile restoration",
         "In-progress documentation around a flue penetration",
         "Inspection scope matched to leaks, storm concerns or repair planning",
-        "Specialist trade requirements identified rather than folded into an unsupported general claim",
+        "Specialist trade requirements identified separately from the roof inspection scope",
       ],
     },
   },
@@ -1063,19 +1065,70 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
 
 export const serviceRegions = [
   {
-    name: "Petrie Terrace",
+    name: "Inner Brisbane",
     suburbs: [
-      "Inner Brisbane service-area focus",
-      "Attendance confirmed by job requirements",
+      "Petrie Terrace",
+      "Brisbane City",
+      "Spring Hill",
+      "Paddington",
+      "Red Hill",
+      "Milton",
+      "Auchenflower",
+      "West End",
+      "South Brisbane",
+      "New Farm",
     ],
   },
   {
-    name: "Greater Brisbane",
+    name: "Brisbane Northside",
     suburbs: [
-      "Northside enquiries",
-      "Southside enquiries",
-      "Western suburbs enquiries",
-      "Eastern and bayside enquiries",
+      "Ashgrove",
+      "Alderley",
+      "Everton Park",
+      "Stafford",
+      "Kedron",
+      "Chermside",
+      "Nundah",
+      "Windsor",
+      "Clayfield",
+    ],
+  },
+  {
+    name: "Brisbane Southside",
+    suburbs: [
+      "Coorparoo",
+      "Carindale",
+      "Holland Park",
+      "Mount Gravatt",
+      "Moorooka",
+      "Tarragindi",
+      "Sunnybank",
+      "Eight Mile Plains",
+    ],
+  },
+  {
+    name: "Brisbane West",
+    suburbs: [
+      "Toowong",
+      "Indooroopilly",
+      "Kenmore",
+      "Chapel Hill",
+      "The Gap",
+      "Jindalee",
+      "Oxley",
+      "Fig Tree Pocket",
+    ],
+  },
+  {
+    name: "Brisbane East & Bayside",
+    suburbs: [
+      "Bulimba",
+      "Morningside",
+      "Cannon Hill",
+      "Tingalpa",
+      "Wakerley",
+      "Wynnum",
+      "Manly",
     ],
   },
 ];

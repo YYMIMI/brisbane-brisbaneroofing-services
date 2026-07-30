@@ -87,6 +87,12 @@ export default function ContactPage() {
               {business.address.locality} {business.address.region}{" "}
               {business.address.postcode}.
             </p>
+            <p>
+              Nearby inner-Brisbane enquiries include Brisbane City, Spring
+              Hill, Paddington, Red Hill, Milton and Auchenflower. Wider
+              coverage is listed on the{" "}
+              <Link href="/service-areas">Brisbane service areas page</Link>.
+            </p>
             <p className="local-map-links">
               Review{" "}
               <Link href="/services/roof-leak-repairs-brisbane">

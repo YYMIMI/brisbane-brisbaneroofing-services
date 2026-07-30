@@ -77,8 +77,8 @@ export function SiteFooter() {
             </span>
           </Link>
           <p>
-            Roof repair enquiries across Greater Brisbane, supported by real
-            project photography and service-specific assessment pathways.
+            Roof repair, restoration and gutter cleaning enquiries across
+            Greater Brisbane, supported by original project photography.
           </p>
           <address className="footer-business">
             <strong>{business.legalName}</strong>
@@ -95,7 +95,7 @@ export function SiteFooter() {
         <div>
           <h2>Repair services</h2>
           <ul>
-            {services.slice(0, 5).map((service) => (
+            {services.map((service) => (
               <li key={service.path}>
                 <Link href={service.path}>{service.navLabel}</Link>
               </li>

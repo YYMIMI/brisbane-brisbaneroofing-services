@@ -1,4 +1,4 @@
-import { business, services } from "../site-data";
+import { business, lastContentUpdate, services } from "../site-data";
 
 function escapeXml(value: string) {
   return value
@@ -26,6 +26,7 @@ export async function GET() {
       (path) => `
   <url>
     <loc>${escapeXml(`${business.siteUrl}${path}`)}</loc>
+    <lastmod>${lastContentUpdate}</lastmod>
     <changefreq>${path === "/" ? "weekly" : "monthly"}</changefreq>
     <priority>${path === "/" ? "1.0" : path === "/services" ? "0.9" : "0.8"}</priority>
   </url>`,

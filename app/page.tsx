@@ -35,7 +35,7 @@ const homeFaqs = [
   {
     question: "Do you cover Brisbane Northside and Southside?",
     answer:
-      "Mel One Maintenance accepts enquiries across Greater Brisbane, including Northside, Southside, western and eastern/bayside areas. Attendance is confirmed by suburb after checking the service type, access, weather and crew availability.",
+      "Mel One Maintenance accepts enquiries across Greater Brisbane, including suburbs such as Ashgrove, Chermside, Coorparoo, Carindale, Indooroopilly, Wynnum and Manly. Attendance is confirmed after checking the service type, access, weather and crew availability.",
   },
   {
     question: "Can I request urgent roof leak help?",
@@ -90,8 +90,9 @@ export default function Home() {
     inLanguage: "en-AU",
     description:
       "A focused Brisbane roof repair and gutter cleaning website for leaks, blocked gutters, tile and metal roof problems, inspections and storm damage.",
+    url: business.siteUrl,
     publisher: {
-      "@id": "#mel-one-property-maintenance",
+      "@id": `${business.siteUrl}/#organization`,
     },
   };
 
@@ -106,7 +107,7 @@ export default function Home() {
     },
     provider: {
       "@type": "Organization",
-      "@id": "#mel-one-property-maintenance",
+      "@id": `${business.siteUrl}/#organization`,
       name: business.brandName,
       legalName: business.legalName,
     },
@@ -146,7 +147,7 @@ export default function Home() {
         <div className="shell home-hero-inner">
           <div className="home-hero-copy">
             <p className="eyebrow">ROOF REPAIRS • GREATER BRISBANE</p>
-            <h1>Roof repairs that start with the real problem.</h1>
+            <h1>Roof repairs in Brisbane that start with the real problem.</h1>
             <p className="hero-lead">
               Help for roof leaks, cracked tiles, metal roof damage and
               storm-related problems—with original project photography,
@@ -179,6 +180,7 @@ export default function Home() {
               alt={featuredProject.coverAlt}
               width="1080"
               height="811"
+              fetchPriority="high"
             />
             <figcaption>
               <span>ORIGINAL MEL ONE PROJECT</span>
@@ -197,6 +199,10 @@ export default function Home() {
             <span aria-hidden="true">•</span>
             <Link href="/services/gutter-cleaning-brisbane">
               Gutter cleaning
+            </Link>
+            <span aria-hidden="true">•</span>
+            <Link href="/services/roof-restoration-brisbane">
+              Roof restoration
             </Link>
             <span aria-hidden="true">•</span>
             <Link href="/services/tile-roof-repairs-brisbane">Tile roofs</Link>
@@ -242,7 +248,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="START WITH THE SYMPTOM"
             title="What is happening with your roof?"
-            copy="These pages match the way Brisbane homeowners search: by the visible problem, urgency, roof material and the decision they need to make."
+            copy="Choose the closest visible problem, or start with a roof inspection when the cause is not clear."
           />
           <div className="issue-grid">
             {issueCards.map((item) => (
@@ -294,12 +300,75 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section section-pale">
+        <div className="shell service-planning-layout">
+          <div>
+            <SectionHeading
+              eyebrow="PLANNING A BRISBANE ROOF REPAIR"
+              title="Indicative timing follows the actual roof condition"
+              copy="A contained repair may take several hours or one working day. Multi-area repairs or restoration work usually require more time, suitable weather and confirmed material availability."
+            />
+            <ol className="timeline-list">
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>Photo and symptom review</h3>
+                  <strong>Before attendance</strong>
+                  <p>
+                    The suburb, roof type, leak timing and safe photos help
+                    prepare the right inspection pathway.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>On-roof assessment</h3>
+                  <strong>One scheduled visit where safe</strong>
+                  <p>
+                    Weather, access and the surrounding roof condition
+                    determine whether the likely cause can be confirmed.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>Defined repair or restoration scope</h3>
+                  <strong>Confirmed after assessment</strong>
+                  <p>
+                    Local repairs, temporary protection and broader restoration
+                    are priced and scheduled as separate scopes.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <aside className="quote-factors-card">
+            <p className="eyebrow eyebrow-dark">WHAT AFFECTS THE QUOTE</p>
+            <h2>Why two Brisbane roof repairs can cost differently</h2>
+            <ul className="check-list">
+              <li>Tile, metal or mixed roof construction</li>
+              <li>Roof height, pitch, access and required safety controls</li>
+              <li>Local damage versus defects across several roof sections</li>
+              <li>Valleys, flashing, flues, vents and solar arrays</li>
+              <li>Material matching and temporary weather protection</li>
+            </ul>
+            <p className="quote-note">
+              Mel One confirms the repair scope before giving a
+              project-specific price. Photos help prepare the visit but do not
+              replace safe access when the cause is hidden.
+            </p>
+          </aside>
+        </div>
+      </section>
+
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="SERVICE INTENT"
-            title="One useful page for each roof repair decision"
-            copy="Each service page adds its own Brisbane problems, work stages, indicative timing, quote factors, FAQs and team capability instead of repeating the same template copy."
+            eyebrow="BRISBANE ROOF SERVICES"
+            title="A clear next step for each roof problem"
+            copy="Review the service that matches the leak, roof material, storm damage, blocked gutter or restoration decision you are dealing with."
           />
           <div className="service-list">
             {services.map((service, index) => (
@@ -378,7 +447,11 @@ export default function Home() {
             {serviceRegions.map((region) => (
               <article key={region.name}>
                 <h3>{region.name}</h3>
-                <p>{region.suburbs.join(" • ")}</p>
+                <ul className="suburb-list">
+                  {region.suburbs.map((suburb) => (
+                    <li key={suburb}>{suburb}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>

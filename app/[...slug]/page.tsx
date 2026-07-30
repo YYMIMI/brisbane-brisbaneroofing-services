@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import {
   CtaBand,
   FaqList,
@@ -61,7 +61,7 @@ export async function generateMetadata({
     "/services": {
       title: "Brisbane Roof Repair Services",
       description:
-        "Choose the Brisbane service page that matches your problem: roof leaks, blocked gutters, tile or metal roof damage, storm damage, urgent repairs or inspections.",
+        "Choose the Brisbane service that matches your problem: roof restoration, leaks, blocked gutters, tile or metal damage, storm damage, urgent help or inspections.",
     },
     "/roof-types": {
       title: "Tile & Metal Roof Repairs Brisbane",
@@ -109,19 +109,62 @@ function ServiceDetailPage({
   const isUrgent = service.slug === "emergency-roof-repairs-brisbane";
   const isGutterCleaning = service.slug === "gutter-cleaning-brisbane";
   const serviceContext = serviceContextBySlug[service.slug];
-  const related = services
-    .filter((item) => item.path !== service.path)
-    .slice(isUrgent ? 0 : 1, isUrgent ? 3 : 4);
-  const matchingProjects =
-    service.slug === "roof-repairs-brisbane"
-      ? projectCases
-      : service.slug === "tile-roof-repairs-brisbane"
-        ? [projectCases[0], projectCases[1]]
-        : service.slug === "roof-leak-repairs-brisbane"
-          ? [projectCases[1], projectCases[2]]
-          : service.slug === "gutter-cleaning-brisbane"
-            ? [projectCases[2]]
-            : [];
+  const relatedServiceSlugs: Record<string, string[]> = {
+    "roof-restoration-brisbane": [
+      "tile-roof-repairs-brisbane",
+      "roof-inspections-brisbane",
+      "roof-leak-repairs-brisbane",
+    ],
+    "roof-leak-repairs-brisbane": [
+      "emergency-roof-repairs-brisbane",
+      "roof-inspections-brisbane",
+      "tile-roof-repairs-brisbane",
+    ],
+    "gutter-cleaning-brisbane": [
+      "roof-leak-repairs-brisbane",
+      "storm-damage-roof-repairs-brisbane",
+      "roof-inspections-brisbane",
+    ],
+    "emergency-roof-repairs-brisbane": [
+      "roof-leak-repairs-brisbane",
+      "storm-damage-roof-repairs-brisbane",
+      "roof-inspections-brisbane",
+    ],
+    "storm-damage-roof-repairs-brisbane": [
+      "emergency-roof-repairs-brisbane",
+      "tile-roof-repairs-brisbane",
+      "metal-roof-repairs-brisbane",
+    ],
+    "tile-roof-repairs-brisbane": [
+      "roof-restoration-brisbane",
+      "roof-leak-repairs-brisbane",
+      "roof-inspections-brisbane",
+    ],
+    "metal-roof-repairs-brisbane": [
+      "roof-leak-repairs-brisbane",
+      "storm-damage-roof-repairs-brisbane",
+      "roof-inspections-brisbane",
+    ],
+    "roof-inspections-brisbane": [
+      "roof-leak-repairs-brisbane",
+      "tile-roof-repairs-brisbane",
+      "metal-roof-repairs-brisbane",
+    ],
+  };
+  const related = (relatedServiceSlugs[service.slug] ?? [])
+    .map((slug) => services.find((item) => item.slug === slug))
+    .filter((item): item is (typeof services)[number] => Boolean(item));
+  const projectMatches: Record<string, number[]> = {
+    "roof-restoration-brisbane": [0],
+    "tile-roof-repairs-brisbane": [0, 1],
+    "roof-leak-repairs-brisbane": [1],
+    "gutter-cleaning-brisbane": [2],
+    "roof-inspections-brisbane": [0, 1, 2],
+  };
+  const matchingProjects = (projectMatches[service.slug] ?? []).map(
+    (index) => projectCases[index],
+  );
+  const organizationId = `${business.siteUrl}/#organization`;
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -135,10 +178,14 @@ function ServiceDetailPage({
     },
     provider: {
       "@type": "Organization",
-      "@id": "#mel-one-property-maintenance",
+      "@id": organizationId,
       name: business.brandName,
       legalName: business.legalName,
     },
+    url: `${business.siteUrl}${service.path}`,
+    image: `${business.siteUrl}${
+      matchingProjects[0]?.coverImage ?? business.logo
+    }`,
   };
 
   const faqSchema = {
@@ -153,11 +200,36 @@ function ServiceDetailPage({
       },
     })),
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: business.siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Roof services",
+        item: `${business.siteUrl}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: `${business.siteUrl}${service.path}`,
+      },
+    ],
+  };
 
   return (
     <PageShell>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         eyebrow={service.eyebrow}
         title={service.title}
@@ -181,7 +253,8 @@ function ServiceDetailPage({
             <h2>How this service connects to local roof problems</h2>
             <p>{serviceContext.brisbaneContext}</p>
             <p className="service-area-inline-link">
-              Serving Petrie Terrace and Greater Brisbane.{" "}
+              Serving Petrie Terrace, Brisbane City and surrounding Greater
+              Brisbane suburbs.{" "}
               <Link href="/service-areas#petrie-terrace">
                 View the confirmed service-area details →
               </Link>
@@ -433,14 +506,14 @@ function ServicesPage() {
       <PageHero
         eyebrow="BRISBANE ROOF & GUTTER SERVICES"
         title="Choose the page that matches the problem"
-        description="Each page has one primary user intent: broad repair, active leak, blocked gutters, emergency help, storm damage, a roof material or an inspection decision."
+        description="Start with the symptom, urgency or roof material you can identify. Each service page explains the assessment, likely timing and next step for that problem."
       />
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="SERVICE MATRIX"
-            title="Closely related services, clearly separated"
-            copy="This structure lets a homeowner move from a broad search to the page that best reflects the symptom and urgency without repeating the same content across multiple URLs."
+            eyebrow="ROOF & GUTTER SERVICES"
+            title="Find the service that fits what you can see"
+            copy="You do not need to diagnose the repair yourself. Choose the closest problem, then use the inspection pathway when the cause is still unclear."
           />
           <div className="service-card-grid">
             {services.map((service, index) => (
@@ -458,52 +531,89 @@ function ServicesPage() {
       <section className="section section-pale">
         <div className="shell">
           <SectionHeading
-            eyebrow="PAGE-TO-INTENT MAP"
-            title="What each page is designed to answer"
+            eyebrow="CHOOSE YOUR NEXT STEP"
+            title="Which service matches your roof problem?"
           />
           <div className="responsive-table">
             <table>
               <thead>
                 <tr>
-                  <th>Primary search intent</th>
-                  <th>Best page</th>
-                  <th>User decision</th>
+                  <th>What you can see</th>
+                  <th>Recommended service</th>
+                  <th>What it helps determine</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Roof repairs Brisbane</td>
-                  <td>General roof repairs</td>
-                  <td>Who can assess and repair this?</td>
+                  <td>Faded or weathered tile roof</td>
+                  <td>
+                    <Link href="/services/roof-restoration-brisbane">
+                      Roof restoration
+                    </Link>
+                  </td>
+                  <td>Whether local repairs or a broader restoration is appropriate</td>
                 </tr>
                 <tr>
-                  <td>Roof leak repair Brisbane</td>
-                  <td>Roof leak repairs</td>
+                  <td>Water stain or active roof leak</td>
+                  <td>
+                    <Link href="/services/roof-leak-repairs-brisbane">
+                      Roof leak repairs
+                    </Link>
+                  </td>
                   <td>Where is the water entering?</td>
                 </tr>
                 <tr>
-                  <td>Gutter cleaning Brisbane</td>
-                  <td>Gutter cleaning</td>
+                  <td>Leaves, standing water or overflowing gutters</td>
+                  <td>
+                    <Link href="/services/gutter-cleaning-brisbane">
+                      Gutter cleaning
+                    </Link>
+                  </td>
                   <td>Is debris blocking the gutter or roof drainage?</td>
                 </tr>
                 <tr>
-                  <td>Emergency roof repair Brisbane</td>
-                  <td>Emergency roof help</td>
+                  <td>Water entering now or loose roofing</td>
+                  <td>
+                    <Link href="/services/emergency-roof-repairs-brisbane">
+                      Emergency roof help
+                    </Link>
+                  </td>
                   <td>What should I do right now?</td>
                 </tr>
                 <tr>
-                  <td>Tile roof repairs Brisbane</td>
-                  <td>Tile roof repairs</td>
+                  <td>New damage after hail, wind or intense rain</td>
+                  <td>
+                    <Link href="/services/storm-damage-roof-repairs-brisbane">
+                      Storm damage roof repairs
+                    </Link>
+                  </td>
+                  <td>What changed, and what needs temporary or permanent work?</td>
+                </tr>
+                <tr>
+                  <td>Cracked tiles or loose ridge capping</td>
+                  <td>
+                    <Link href="/services/tile-roof-repairs-brisbane">
+                      Tile roof repairs
+                    </Link>
+                  </td>
                   <td>Is it a tile, ridge or flashing issue?</td>
                 </tr>
                 <tr>
-                  <td>Metal roof repairs Brisbane</td>
-                  <td>Metal roof repairs</td>
+                  <td>Loose fasteners, sheet damage or rust</td>
+                  <td>
+                    <Link href="/services/metal-roof-repairs-brisbane">
+                      Metal roof repairs
+                    </Link>
+                  </td>
                   <td>Is it a fastener, sheet or corrosion issue?</td>
                 </tr>
                 <tr>
-                  <td>Roof inspection Brisbane</td>
-                  <td>Roof inspections</td>
+                  <td>The cause or repair priority is unclear</td>
+                  <td>
+                    <Link href="/services/roof-inspections-brisbane">
+                      Roof inspections
+                    </Link>
+                  </td>
                   <td>What needs repair and what can wait?</td>
                 </tr>
               </tbody>
@@ -599,9 +709,15 @@ function ServiceAreasPage() {
           "@type": "AdministrativeArea",
           name: business.serviceArea,
         },
+        ...serviceRegions.flatMap((region) =>
+          region.suburbs.map((suburb) => ({
+            "@type": "Place",
+            name: `${suburb}, Queensland`,
+          })),
+        ),
       ],
       provider: {
-        "@id": "#mel-one-property-maintenance",
+        "@id": `${business.siteUrl}/#organization`,
       },
     },
   };
@@ -617,20 +733,28 @@ function ServiceAreasPage() {
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="CONFIRMED SERVICE AREA"
-            title="A real local focus, with wider Brisbane coverage"
-            copy="Petrie Terrace is now published as a confirmed service-area focus. Other Greater Brisbane suburbs remain subject to service type, access, weather and team availability."
+            eyebrow="BRISBANE SERVICE COVERAGE"
+            title="Suburbs grouped by the areas we service"
+            copy="Petrie Terrace is the local focus shown on the map. The suburb list below helps Brisbane homeowners confirm whether an enquiry sits within the wider service area."
           />
           <div className="area-card-grid">
             {serviceRegions.map((region, index) => (
               <article
-                id={region.name === business.serviceAreaFocus ? "petrie-terrace" : undefined}
+                id={
+                  region.suburbs.includes(business.serviceAreaFocus)
+                    ? "petrie-terrace"
+                    : undefined
+                }
                 key={region.name}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h2>{region.name} roof repair enquiries</h2>
-                <p>{region.suburbs.join(" • ")}</p>
-                {region.name === business.serviceAreaFocus ? (
+                <ul className="suburb-list">
+                  {region.suburbs.map((suburb) => (
+                    <li key={suburb}>{suburb}</li>
+                  ))}
+                </ul>
+                {region.suburbs.includes(business.serviceAreaFocus) ? (
                   <Link href="/contact#petrie-terrace-map">
                     View Petrie Terrace map →
                   </Link>
@@ -656,16 +780,16 @@ function ServiceAreasPage() {
       <section className="section section-navy">
         <div className="shell split-section">
           <div>
-            <p className="eyebrow">WHY THE SUBURB LIST IS CONTROLLED</p>
-            <h2>Real coverage matters more than a long keyword list.</h2>
+            <p className="eyebrow">CONFIRM YOUR SUBURB</p>
+            <h2>Attendance depends on the job and safe access.</h2>
           </div>
           <div className="urgent-copy">
             <p>
-              Mel One publishes Petrie Terrace as a real service-area focus and
-              Greater Brisbane as the wider coverage area. Additional suburb
-              pages will only be added when actual attendance, a locally
-              relevant case or genuinely different local guidance supports
-              them.
+              Mel One accepts roof and gutter enquiries across the listed
+              Brisbane suburbs. Availability is confirmed after checking the
+              service type, property access, current weather and team capacity.
+              If your suburb is nearby but not listed, contact the team before
+              booking.
             </p>
           </div>
         </div>
@@ -690,8 +814,11 @@ function ProjectsPage() {
       "@type": "CreativeWork",
       name: project.title,
       description: project.summary,
-      image: project.images.map((image) => image.src),
+      image: project.images.map(
+        (image) => `${business.siteUrl}${image.src}`,
+      ),
       about: project.roofType,
+      url: `${business.siteUrl}/projects#${project.slug}`,
     })),
   };
 
@@ -701,7 +828,7 @@ function ProjectsPage() {
       <PageHero
         eyebrow="REAL ROOF & GUTTER PROJECT PHOTOGRAPHY"
         title="See the condition, work stage and documented result"
-        description="Original Greater Brisbane customer-project images are grouped by the work they actually show. Customer suburb, material brand and unsupported repair outcomes are not published."
+        description="Original Greater Brisbane customer-project images are grouped by the work they actually show. Each caption identifies whether the image records the condition before work, work in progress or a completed result."
       />
 
       <section
@@ -768,9 +895,9 @@ function ProjectsPage() {
 
           <Link
             className="text-link"
-            href="/services/tile-roof-repairs-brisbane"
+            href="/services/roof-restoration-brisbane"
           >
-            Explore tile roof repair decisions
+            Explore Brisbane roof restoration
             <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -1057,6 +1184,11 @@ function PrivacyPage() {
 export default async function CatchAllPage({ params }: PageProps) {
   const { slug } = await params;
   const path = `/${slug.join("/")}`;
+
+  if (path === "/services/roof-repairs-brisbane") {
+    permanentRedirect("/");
+  }
+
   const service = getServiceByPath(path);
 
   if (service) {
