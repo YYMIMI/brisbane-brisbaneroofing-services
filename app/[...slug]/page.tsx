@@ -1146,11 +1146,14 @@ function PrivacyPage() {
       />
       <section className="section">
         <div className="shell policy-copy">
-          <h2>Current website form behaviour</h2>
+          <h2>Website enquiry form</h2>
           <p>
-            The contact page lets a visitor prepare and copy a roof repair
-            summary on their own device. The website does not send or store the
-            entered name, suburb, contact details, photos or message.
+            When you submit the contact form, the name, suburb, contact details
+            and service information you choose to provide are sent to Mel One
+            Maintenance so the team can respond, confirm service availability,
+            assess the requested work and prepare a quote or next step. The
+            website does not request or transmit IP addresses or browser
+            user-agent details as part of the enquiry email.
           </p>
           <h2>Direct contact</h2>
           <p>
@@ -1171,8 +1174,9 @@ function PrivacyPage() {
           <h2>Analytics and cookies</h2>
           <p>
             No business analytics, advertising or call-tracking identifier is
-            currently configured on this site. This notice should be revised
-            before those tools or a server-side enquiry form are activated.
+            currently configured on this site. The enquiry form uses a
+            server-side email provider only to deliver the submitted request to
+            Mel One Maintenance.
           </p>
           <p className="policy-updated">Updated: 30 July 2026</p>
         </div>
