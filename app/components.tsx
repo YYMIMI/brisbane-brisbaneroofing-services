@@ -1,0 +1,264 @@
+import Link from "next/link";
+import { brandName, business, mainNav, services } from "./site-data";
+
+export function SiteHeader() {
+  return (
+    <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <div className="shell nav-shell">
+        <Link className="wordmark" href="/" aria-label={`${brandName} home`}>
+          <span className="wordmark-mark wordmark-logo" aria-hidden="true">
+            <img
+              src={business.logo}
+              alt=""
+              width="48"
+              height="48"
+            />
+          </span>
+          <span className="wordmark-copy">
+            <strong>{business.brandName}</strong>
+            <small>Roof Repairs Brisbane</small>
+          </span>
+        </Link>
+
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {mainNav.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link className="button button-yellow header-cta" href="/contact">
+          Request inspection
+        </Link>
+
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation">
+            <span />
+            <span />
+            <span />
+          </summary>
+          <nav aria-label="Mobile navigation">
+            {mainNav.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+            <Link className="button button-yellow" href="/contact">
+              Request inspection
+            </Link>
+          </nav>
+        </details>
+      </div>
+    </header>
+  );
+}
+
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="shell footer-grid">
+        <div className="footer-brand">
+          <Link className="wordmark" href="/">
+            <span className="wordmark-mark wordmark-logo" aria-hidden="true">
+              <img
+                src={business.logo}
+                alt=""
+                width="48"
+                height="48"
+              />
+            </span>
+            <span className="wordmark-copy">
+              <strong>{business.brandName}</strong>
+              <small>Roof Repairs Brisbane</small>
+            </span>
+          </Link>
+          <p>
+            Roof repair enquiries across Greater Brisbane, supported by real
+            project photography and service-specific assessment pathways.
+          </p>
+          <address className="footer-business">
+            <strong>{business.legalName}</strong>
+            <span>ABN {business.abn} · ACN {business.acn}</span>
+            <span>
+              {business.address.street}, {business.address.locality}{" "}
+              {business.address.region} {business.address.postcode}
+            </span>
+            <a href={`tel:${business.phoneHref}`}>{business.phone}</a>
+            <a href={`mailto:${business.email}`}>{business.email}</a>
+          </address>
+        </div>
+
+        <div>
+          <h2>Repair services</h2>
+          <ul>
+            {services.slice(0, 5).map((service) => (
+              <li key={service.path}>
+                <Link href={service.path}>{service.navLabel}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2>Plan your next step</h2>
+          <ul>
+            <li>
+              <Link href="/service-areas">Brisbane service areas</Link>
+            </li>
+            <li>
+              <Link href="/service-areas#petrie-terrace">
+                Petrie Terrace roof repairs
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects">Project case library</Link>
+            </li>
+            <li>
+              <Link href="/about">Service approach</Link>
+            </li>
+            <li>
+              <Link href="/contact">Prepare a repair request</Link>
+            </li>
+            <li>
+              <Link href="/privacy">Privacy</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="shell footer-bottom">
+        <span>© 2026 {business.legalName}</span>
+        <span>{business.serviceArea}, Queensland</span>
+      </div>
+    </footer>
+  );
+}
+
+export function PageHero({
+  eyebrow,
+  title,
+  description,
+  urgent = false,
+  requestLabel = "Request inspection",
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  urgent?: boolean;
+  requestLabel?: string;
+}) {
+  return (
+    <section className={`page-hero ${urgent ? "page-hero-urgent" : ""}`}>
+      <div className="shell page-hero-inner">
+        <div>
+          <p className="eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+          <p className="page-hero-copy">{description}</p>
+          <div className="hero-actions">
+            <a
+              className={`button ${urgent ? "button-yellow" : "button-light"}`}
+              href={`tel:${business.phoneHref}`}
+            >
+              Call {business.phone}
+            </a>
+            <Link className="button button-outline-light" href="/contact">
+              {requestLabel}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function SectionHeading({
+  eyebrow,
+  title,
+  copy,
+}: {
+  eyebrow: string;
+  title: string;
+  copy?: string;
+}) {
+  return (
+    <div className="section-heading">
+      <p className="eyebrow eyebrow-dark">{eyebrow}</p>
+      <h2>{title}</h2>
+      {copy ? <p>{copy}</p> : null}
+    </div>
+  );
+}
+
+export function CtaBand({
+  eyebrow = "REQUEST A ROOF INSPECTION",
+  title = "Start with the roof problem you can see",
+  copy = "Share your suburb, roof type, what changed and any photos you can take safely. Mel One will confirm service availability, inspection needs and the appropriate trade scope.",
+}: {
+  eyebrow?: string;
+  title?: string;
+  copy?: string;
+}) {
+  return (
+    <section className="cta-band">
+      <div className="shell cta-band-inner">
+        <div>
+          <p className="eyebrow">{eyebrow}</p>
+          <h2>{title}</h2>
+          <p>{copy}</p>
+        </div>
+        <Link className="button button-yellow" href="/contact">
+          Prepare your request
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+export function FaqList({
+  items,
+}: {
+  items: { question: string; answer: string }[];
+}) {
+  return (
+    <div className="faq-list">
+      {items.map((item) => (
+        <details key={item.question}>
+          <summary>
+            <span>{item.question}</span>
+            <span aria-hidden="true">+</span>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+export function JsonLd({ data }: { data: Record<string, unknown> }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function PageShell({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <SiteHeader />
+      <main id="main-content">{children}</main>
+      <SiteFooter />
+      <nav className="mobile-conversion-bar" aria-label="Quick contact">
+        <a href={`tel:${business.phoneHref}`}>
+          <span>Call now</span>
+          <strong>{business.phone}</strong>
+        </a>
+        <Link href="/contact">Request inspection</Link>
+      </nav>
+    </>
+  );
+}
