@@ -17,7 +17,7 @@ export type ServicePage = {
 export const business = {
   brandName: "Mel One Maintenance",
   siteName: "Mel One Roof Repairs Brisbane",
-  siteUrl: "https://melonebrisbaneroofing.com.au",
+  siteUrl: "https://www.melonebrisbaneroofing.com.au",
   legalName: "Mel One Property Maintenance Pty Ltd",
   abn: "39 666 325 408",
   acn: "666 325 408",
