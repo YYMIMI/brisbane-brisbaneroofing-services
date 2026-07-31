@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Mel One Roof Repairs Brisbane",
     title: "Mel One Roof Repairs Brisbane",
     description:
-      "Real roof and gutter project evidence for Greater Brisbane homes.",
+      "Real roof and gutter project photos for Greater Brisbane homes.",
     images: [
       {
         url: "/images/brisbane-roof-repair-hero.webp",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mel One Roof Repairs Brisbane",
     description:
-      "Real roof and gutter project evidence for Greater Brisbane homes.",
+      "Real roof and gutter project photos for Greater Brisbane homes.",
     images: ["/images/brisbane-roof-repair-hero.webp"],
   },
 };

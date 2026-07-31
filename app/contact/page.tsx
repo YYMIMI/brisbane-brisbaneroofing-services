@@ -104,7 +104,7 @@ export default function ContactPage() {
               <Link href="/services/tile-roof-repairs-brisbane">
                 tile roof repairs
               </Link>{" "}
-              or <Link href="/projects">real project evidence</Link>.
+              or <Link href="/projects">real project photos</Link>.
             </p>
             <a
               className="button button-navy"

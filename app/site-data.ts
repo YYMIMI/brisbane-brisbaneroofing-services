@@ -728,7 +728,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Leak investigation that exposes the detail when needed",
       summary:
-        "The supplied project evidence shows the Mel One team lifting concrete tiles around a flue penetration to inspect the existing flashing and surrounding assembly before defining the permanent repair.",
+        "The supplied project photos show the Mel One team lifting concrete tiles around a flue penetration to inspect the existing flashing and surrounding assembly before defining the permanent repair.",
       evidence: [
         "Original in-progress photograph of an opened flue penetration detail",
         "Assessment of the flashing, surrounding tiles and likely water path",
@@ -892,7 +892,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
       summary:
         "The Mel One process records visible conditions and keeps urgent protection distinct from the permanent scope. This avoids presenting a quick patch as the full storm repair.",
       evidence: [
-        "Original project photography retained as condition and work-stage evidence",
+        "Original project photography showing the condition and work stage",
         "Assessment pathways for tile, ridge, flashing, metal and penetration damage",
         "Clear scope separation for solar or electrical equipment",
         "Permanent work confirmed only after safe inspection",
@@ -901,7 +901,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
   },
   "tile-roof-repairs-brisbane": {
     brisbaneContext:
-      "Concrete and terracotta tile roofs across Greater Brisbane can present with cracked or displaced tiles, ageing ridge details, valley issues and leaks around penetrations. The current Mel One project library adds real evidence: a concrete tile restoration around solar arrays and an opened flue detail during leak investigation.",
+      "Concrete and terracotta tile roofs across Greater Brisbane can present with cracked or displaced tiles, ageing ridge details, valley issues and leaks around penetrations. The current Mel One project library includes real examples: a concrete tile restoration around solar arrays and an opened flue detail during leak investigation.",
     localProblems: [
       "Faded or weathered concrete tile surfaces requiring a broader restoration decision",
       "Cracked, chipped, slipped or missing individual tiles",
@@ -942,7 +942,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
       "Local repair versus broader cleaning, preparation and coating scope",
     ],
     capability: {
-      title: "Real concrete tile restoration and repair evidence",
+      title: "Concrete tile restoration and repair examples",
       summary:
         "The Mel One project library documents the team working across a connected concrete tile roof around solar arrays, vents, ridges and valleys, plus an in-progress inspection around a flue penetration.",
       evidence: [

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 import { business } from "../site-data";
 
 type RequestState = {
@@ -11,8 +11,6 @@ type RequestState = {
   issue: string;
   contact: string;
 };
-
-type SubmissionStatus = "idle" | "sending" | "sent" | "error";
 
 const initialState: RequestState = {
   name: "",
@@ -25,58 +23,48 @@ const initialState: RequestState = {
 
 export default function RequestBuilder() {
   const [form, setForm] = useState<RequestState>(initialState);
-  const [status, setStatus] = useState<SubmissionStatus>("idle");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [startedAt] = useState(() => Date.now());
+  const [prepared, setPrepared] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const summary = useMemo(
+    () =>
+      [
+        "Brisbane roof or gutter service request",
+        `Name: ${form.name || "Not provided"}`,
+        `Suburb: ${form.suburb || "Not provided"}`,
+        `Roof type: ${form.roofType || "Not sure"}`,
+        `Urgency: ${form.urgency || "Not provided"}`,
+        `What is happening: ${form.issue || "Not provided"}`,
+        `Preferred contact: ${form.contact || "Not provided"}`,
+      ].join("\n"),
+    [form],
+  );
+  const emailHref = useMemo(
+    () =>
+      `mailto:${business.email}?subject=${encodeURIComponent(
+        "Greater Brisbane roof or gutter enquiry",
+      )}&body=${encodeURIComponent(summary)}`,
+    [summary],
+  );
 
   function updateField(field: keyof RequestState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
-    if (status !== "sending") {
-      setStatus("idle");
-      setErrorMessage("");
-    }
+    setPrepared(false);
+    setCopied(false);
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formElement = event.currentTarget;
-    const browserForm = new FormData(formElement);
-    const website = String(browserForm.get("website") ?? "");
+    setPrepared(true);
+    setCopied(false);
+  }
 
-    setStatus("sending");
-    setErrorMessage("");
-
+  async function copySummary() {
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          website,
-          startedAt,
-        }),
-      });
-      const result = (await response.json().catch(() => null)) as
-        | { error?: string }
-        | null;
-
-      if (!response.ok) {
-        throw new Error(
-          result?.error ||
-            "We could not send your request right now. Please call Mel One instead.",
-        );
-      }
-
-      setForm(initialState);
-      formElement.reset();
-      setStatus("sent");
-    } catch (error) {
-      setStatus("error");
-      setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : "We could not send your request right now. Please call Mel One instead.",
-      );
+      await navigator.clipboard.writeText(summary);
+      setCopied(true);
+    } catch {
+      setCopied(false);
     }
   }
 
@@ -149,65 +137,42 @@ export default function RequestBuilder() {
         </label>
 
         <label>
-          <span>Preferred phone or email *</span>
+          <span>Preferred phone or email</span>
           <input
-            required
             value={form.contact}
             onChange={(event) => updateField("contact", event.target.value)}
-            placeholder="Your phone number or email"
+            placeholder="Stored only in the summary on your device"
           />
         </label>
 
-        <label
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "-10000px",
-            width: "1px",
-            height: "1px",
-            overflow: "hidden",
-          }}
-        >
-          <span>Website</span>
-          <input name="website" tabIndex={-1} autoComplete="off" />
-        </label>
-
         <div className="form-note">
-          Your enquiry is sent securely to Mel One Maintenance and is used only
-          to respond to your service request.
+          This website does not automatically send or store these details. It
+          prepares a summary you can copy or open in your email app.
         </div>
 
-        <button
-          className="button button-yellow"
-          type="submit"
-          disabled={status === "sending"}
-        >
-          {status === "sending" ? "Sending request…" : "Send service request"}
+        <button className="button button-yellow" type="submit">
+          Review request details
         </button>
       </form>
 
-      {status === "sent" ? (
+      {prepared ? (
         <section className="prepared-summary" aria-live="polite">
-          <p className="eyebrow eyebrow-dark">REQUEST SENT</p>
-          <h2>Your request has been sent to Mel One</h2>
-          <p>
-            The team can now review your Brisbane roof or gutter enquiry and
-            contact you using the details provided.
-          </p>
-          <a className="text-link" href={"tel:" + business.phoneHref}>
-            Call {business.phone} if the situation is urgent
+          <p className="eyebrow eyebrow-dark">YOUR PREPARED REQUEST</p>
+          <h2>Ready to contact Mel One</h2>
+          <pre>{summary}</pre>
+          <a className="button button-yellow" href={emailHref}>
+            Open email to send
           </a>
-        </section>
-      ) : null}
-
-      {status === "error" ? (
-        <section className="prepared-summary" aria-live="assertive">
-          <p className="eyebrow eyebrow-dark">DELIVERY PROBLEM</p>
-          <h2>Your request was not sent</h2>
-          <p>{errorMessage}</p>
-          <a className="text-link" href={"tel:" + business.phoneHref}>
+          <button className="button button-navy" onClick={copySummary} type="button">
+            {copied ? "Copied" : "Copy request instead"}
+          </button>
+          <a className="text-link" href={`tel:${business.phoneHref}`}>
             Call {business.phone}
           </a>
+          <p>
+            Photos are not attached automatically. Add safe ground-level or
+            interior photos manually in your email app.
+          </p>
         </section>
       ) : null}
     </div>

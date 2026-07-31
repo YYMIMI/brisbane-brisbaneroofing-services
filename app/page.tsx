@@ -187,7 +187,7 @@ export default function Home() {
               <strong>Concrete tile roof restoration</strong>
               <small>Completed project • Greater Brisbane</small>
               <Link href={`/projects#${featuredProject.slug}`}>
-                View project evidence
+                View project photos
                 <span aria-hidden="true">→</span>
               </Link>
             </figcaption>
@@ -421,7 +421,7 @@ export default function Home() {
                 <dd>{featuredProject.roofType}</dd>
               </div>
               <div>
-                <dt>Evidence</dt>
+                <dt>Project photos</dt>
                 <dd>Original before and after photos</dd>
               </div>
               <div>

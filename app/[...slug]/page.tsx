@@ -447,7 +447,7 @@ function ServiceDetailPage({
                     <p className="eyebrow eyebrow-dark">{project.eyebrow}</p>
                     <h3>{project.title}</h3>
                     <p>{project.summary}</p>
-                    <strong>View project evidence →</strong>
+                    <strong>View project details →</strong>
                   </div>
                 </Link>
               ))}
@@ -468,7 +468,10 @@ function ServiceDetailPage({
 
       <section className="section related-section">
         <div className="shell">
-          <SectionHeading eyebrow="RELATED SERVICES" title="Compare the next closest intent" />
+          <SectionHeading
+            eyebrow="RELATED SERVICES"
+            title="Other roof services that may help"
+          />
           <div className="related-grid">
             {related.map((item) => (
               <Link href={item.path} key={item.path}>
@@ -863,7 +866,7 @@ function ProjectsPage() {
               <dd>{restoration.location}</dd>
             </div>
             <div>
-              <dt>Evidence</dt>
+              <dt>Project photos</dt>
               <dd>Two before and four after photos</dd>
             </div>
           </dl>
@@ -995,7 +998,7 @@ function ProjectsPage() {
               <dd>{gutterCleaning.location}</dd>
             </div>
             <div>
-              <dt>Evidence</dt>
+              <dt>Project photos</dt>
               <dd>Two before and three in-progress photos</dd>
             </div>
           </dl>
@@ -1152,14 +1155,11 @@ function PrivacyPage() {
       />
       <section className="section">
         <div className="shell policy-copy">
-          <h2>Website enquiry form</h2>
+          <h2>Current website form behaviour</h2>
           <p>
-            When you submit the contact form, the name, suburb, contact details
-            and service information you choose to provide are sent to Mel One
-            Maintenance so the team can respond, confirm service availability,
-            assess the requested work and prepare a quote or next step. The
-            website does not request or transmit IP addresses or browser
-            user-agent details as part of the enquiry email.
+            The contact page lets a visitor prepare and copy a roof repair
+            summary on their own device. The website does not send or store the
+            entered name, suburb, contact details, photos or message.
           </p>
           <h2>Direct contact</h2>
           <p>
@@ -1180,9 +1180,8 @@ function PrivacyPage() {
           <h2>Analytics and cookies</h2>
           <p>
             No business analytics, advertising or call-tracking identifier is
-            currently configured on this site. The enquiry form uses a
-            server-side email provider only to deliver the submitted request to
-            Mel One Maintenance.
+            currently configured on this site. This notice should be revised
+            before those tools or a server-side enquiry form are activated.
           </p>
           <p className="policy-updated">Updated: 30 July 2026</p>
         </div>
