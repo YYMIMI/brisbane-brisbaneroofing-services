@@ -73,7 +73,7 @@ export default function RequestBuilder() {
 
       setForm(initialState);
       formElement.reset();
-      setStatus("success");
+      window.location.assign("/thank-you");
       setMessage(
         result.message ||
           "Thanks — your roofing enquiry has been sent. The team will contact you about the next step.",
