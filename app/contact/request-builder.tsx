@@ -187,7 +187,10 @@ export default function RequestBuilder() {
           </select>
         </label>
 
-        <label className="website-field" aria-hidden="true">
+        <label
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}
+        >
           Website
           <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
