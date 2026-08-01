@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 import { business } from "../site-data";
 
 type RequestState = {
@@ -10,7 +10,10 @@ type RequestState = {
   urgency: string;
   issue: string;
   contact: string;
+  howFound: string;
 };
+
+type SubmissionState = "idle" | "submitting" | "success" | "error";
 
 const initialState: RequestState = {
   name: "",
@@ -19,63 +22,82 @@ const initialState: RequestState = {
   urgency: "",
   issue: "",
   contact: "",
+  howFound: "",
 };
 
 export default function RequestBuilder() {
   const [form, setForm] = useState<RequestState>(initialState);
-  const [prepared, setPrepared] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const summary = useMemo(
-    () =>
-      [
-        "Brisbane roof or gutter service request",
-        `Name: ${form.name || "Not provided"}`,
-        `Suburb: ${form.suburb || "Not provided"}`,
-        `Roof type: ${form.roofType || "Not sure"}`,
-        `Urgency: ${form.urgency || "Not provided"}`,
-        `What is happening: ${form.issue || "Not provided"}`,
-        `Preferred contact: ${form.contact || "Not provided"}`,
-      ].join("\n"),
-    [form],
-  );
-  const emailHref = useMemo(
-    () =>
-      `mailto:${business.email}?subject=${encodeURIComponent(
-        "Greater Brisbane roof or gutter enquiry",
-      )}&body=${encodeURIComponent(summary)}`,
-    [summary],
-  );
+  const [status, setStatus] = useState<SubmissionState>("idle");
+  const [message, setMessage] = useState("");
 
   function updateField(field: keyof RequestState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
-    setPrepared(false);
-    setCopied(false);
+    if (status === "error") {
+      setStatus("idle");
+      setMessage("");
+    }
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setPrepared(true);
-    setCopied(false);
-  }
+    if (status === "submitting") return;
 
-  async function copySummary() {
+    const formElement = event.currentTarget;
+    const data = new FormData(formElement);
+    setStatus("submitting");
+    setMessage("");
+
     try {
-      await navigator.clipboard.writeText(summary);
-      setCopied(true);
-    } catch {
-      setCopied(false);
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          website: String(data.get("website") ?? ""),
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as
+        | { ok?: boolean; message?: string }
+        | null;
+
+      if (!response.ok || result?.ok !== true) {
+        throw new Error(
+          result?.message ||
+            `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
+        );
+      }
+
+      setForm(initialState);
+      formElement.reset();
+      setStatus("success");
+      setMessage(
+        result.message ||
+          "Thanks — your roofing enquiry has been sent. The team will contact you about the next step.",
+      );
+    } catch (error) {
+      setStatus("error");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
+      );
     }
   }
 
   return (
     <div className="request-builder">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-busy={status === "submitting"}>
         <div className="field-grid">
           <label>
-            <span>Name</span>
+            <span>Name *</span>
             <input
+              required
               autoComplete="name"
+              maxLength={100}
               value={form.name}
               onChange={(event) => updateField("name", event.target.value)}
               placeholder="Your name"
@@ -85,6 +107,8 @@ export default function RequestBuilder() {
             <span>Brisbane suburb *</span>
             <input
               required
+              autoComplete="address-level2"
+              maxLength={100}
               value={form.suburb}
               onChange={(event) => updateField("suburb", event.target.value)}
               placeholder="e.g. Carindale"
@@ -130,6 +154,8 @@ export default function RequestBuilder() {
           <textarea
             required
             rows={6}
+            minLength={10}
+            maxLength={2500}
             value={form.issue}
             onChange={(event) => updateField("issue", event.target.value)}
             placeholder="Where can you see the problem? When did it start? Does wind or heavy rain change it?"
@@ -137,44 +163,64 @@ export default function RequestBuilder() {
         </label>
 
         <label>
-          <span>Preferred phone or email</span>
+          <span>Preferred phone or email *</span>
           <input
+            required
+            maxLength={200}
             value={form.contact}
             onChange={(event) => updateField("contact", event.target.value)}
-            placeholder="Stored only in the summary on your device"
+            placeholder="How should the team contact you?"
           />
         </label>
 
+        <label>
+          <span>How did you hear about us? (optional)</span>
+          <select
+            value={form.howFound}
+            onChange={(event) => updateField("howFound", event.target.value)}
+          >
+            <option value="">Select an option</option>
+            <option>Google Search</option>
+            <option>Facebook</option>
+            <option>Friend or family referral</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label className="website-field" aria-hidden="true">
+          Website
+          <input name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+
         <div className="form-note">
-          This website does not automatically send or store these details. It
-          prepares a summary you can copy or open in your email app.
+          Your enquiry is sent securely to the Mel One team. Do not include sensitive information.
         </div>
 
-        <button className="button button-yellow" type="submit">
-          Review request details
+        <button
+          className="button button-yellow"
+          type="submit"
+          disabled={status === "submitting"}
+        >
+          {status === "submitting" ? "Sending…" : "Send roofing enquiry"}
         </button>
-      </form>
 
-      {prepared ? (
-        <section className="prepared-summary" aria-live="polite">
-          <p className="eyebrow eyebrow-dark">YOUR PREPARED REQUEST</p>
-          <h2>Ready to contact Mel One</h2>
-          <pre>{summary}</pre>
-          <a className="button button-yellow" href={emailHref}>
-            Open email to send
-          </a>
-          <button className="button button-navy" onClick={copySummary} type="button">
-            {copied ? "Copied" : "Copy request instead"}
-          </button>
-          <a className="text-link" href={`tel:${business.phoneHref}`}>
-            Call {business.phone}
-          </a>
-          <p>
-            Photos are not attached automatically. Add safe ground-level or
-            interior photos manually in your email app.
+        {message ? (
+          <p
+            className="form-note"
+            role={status === "error" ? "alert" : "status"}
+            aria-live="polite"
+          >
+            {message}
           </p>
-        </section>
-      ) : null}
+        ) : null}
+
+        {status === "error" ? (
+          <p className="form-note">
+            Or call <a href={`tel:${business.phoneHref}`}>{business.phone}</a> or email{" "}
+            <a href={`mailto:${business.email}`}>{business.email}</a>.
+          </p>
+        ) : null}
+      </form>
     </div>
   );
 }
