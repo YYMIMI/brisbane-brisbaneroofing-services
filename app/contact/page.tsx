@@ -26,7 +26,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="REQUEST A ROOF INSPECTION"
         title="Prepare the information a roof repair enquiry needs"
-        description={`Call ${business.phone} or email ${business.email}. You can also prepare a clear roof repair summary below before contacting Mel One.`}
+        description={`Call ${business.phone}, email ${business.email}, or send the secure online form below directly to the Mel One team.`}
         image={navigationPageHeroImages.contact}
       />
       <section className="section">
@@ -35,7 +35,7 @@ export default function ContactPage() {
             <SectionHeading
               eyebrow="REPAIR REQUEST"
               title="Tell us what you can see"
-              copy="Do not climb onto the roof for photos or measurements. Ground-level exterior photos and internal signs are enough for the first conversation."
+              copy="Send the details below directly to the team. Do not climb onto the roof for photos or measurements; ground-level exterior photos and internal signs are enough for the first conversation."
             />
             <div className="contact-points">
               <article>
