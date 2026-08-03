@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
 import { business, serviceRegions } from "./site-data";
 import "./globals.css";
+import GoogleAnalytics from "./google-analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -150,6 +151,7 @@ export default function RootLayout({
         <meta name="codex-preview" content="development" />
       </head>
       <body className={`${inter.variable} ${oswald.variable}`}>
+        <GoogleAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
