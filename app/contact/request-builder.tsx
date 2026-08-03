@@ -61,7 +61,7 @@ export default function RequestBuilder() {
         }),
       });
       const result = (await response.json().catch(() => null)) as
-        | { ok?: boolean; message?: string }
+        | { delivered?: boolean; ok?: boolean; message?: string }
         | null;
 
       if (!response.ok || result?.ok !== true) {
@@ -69,6 +69,14 @@ export default function RequestBuilder() {
           result?.message ||
             `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
         );
+      }
+
+      if (result.delivered === true) {
+        window.gtag?.("event", "generate_lead", {
+          form_id: "roofing_enquiry",
+          page_path: window.location.pathname,
+          transport_type: "beacon",
+        });
       }
 
       setForm(initialState);
