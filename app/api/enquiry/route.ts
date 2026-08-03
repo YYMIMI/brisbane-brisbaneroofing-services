@@ -126,7 +126,14 @@ export async function POST(request: Request) {
   }
 
   if (clean(record.website, 200)) {
-    return json({ ok: true, message: "Thanks — your enquiry has been sent." }, 201);
+    return json(
+      {
+        ok: true,
+        delivered: false,
+        message: "Thanks — your enquiry has been sent.",
+      },
+      201,
+    );
   }
 
   const name = clean(record.name, 100);
@@ -218,6 +225,7 @@ export async function POST(request: Request) {
   return json(
     {
       ok: true,
+      delivered: true,
       message:
         "Thanks — your roofing enquiry has been sent. The team will review it and contact you about the next step.",
     },
