@@ -94,6 +94,8 @@ export default function RootLayout({
     name: business.brandName,
     legalName: business.legalName,
     url: business.siteUrl,
+    sameAs: [business.googleMapsUrl],
+    hasMap: business.googleMapsUrl,
     logo: `${business.siteUrl}${business.logo}`,
     image: `${business.siteUrl}${business.logo}`,
     telephone: business.phone,
