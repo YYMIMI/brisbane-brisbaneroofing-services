@@ -28,9 +28,9 @@ export const business = {
   serviceArea: "Greater Brisbane",
   serviceAreaFocus: "Petrie Terrace",
   googleMapsUrl:
-    "https://www.google.com/maps/place/Petrie+Terrace+%E6%98%86%E5%A3%AB%E5%85%B0%E5%B7%9E+4000/@-27.4628252,153.0035574,2001m/data=!3m2!1e3!4b1!4m6!3m5!1s0x6b9150aa67b52337:0xc606f9efbfed4fca!8m2!3d-27.4650118!4d153.0132267!16zL20vMGNjZ3c0?entry=ttu&g_ep=EgoyMDI2MDcyNy4wIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/place/Mel+One+Renovations/@-27.4677227,153.0289747,17z/data=!4m6!3m5!1s0x6b915b94f91493e3:0xb7c3ba1146243943!8m2!3d-27.4677227!4d153.0289747!16s%2Fg%2F11zh9gk28p?hl=en",
   googleMapsEmbedUrl:
-    "https://www.google.com/maps?q=-27.4650118%2C153.0132267&z=14&output=embed",
+    "https://www.google.com/maps?q=Mel+One+Renovations,+40+Creek+St,+Brisbane+City+QLD+4000&output=embed",
   address: {
     street: "40 Creek St",
     locality: "Brisbane City",
