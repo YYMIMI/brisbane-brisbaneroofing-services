@@ -15,6 +15,7 @@ export type ServicePage = {
 };
 
 export const business = {
+  entityName: "Mel One Renovations",
   brandName: "Mel One Maintenance",
   siteName: "Mel One Roof Repairs Brisbane",
   siteUrl: "https://www.melonebrisbaneroofing.com.au",
