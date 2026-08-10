@@ -19,12 +19,23 @@ export default function GoogleAnalytics() {
     function handleDocumentClick(event: MouseEvent) {
       const target =
         event.target instanceof Element
-          ? event.target.closest<HTMLAnchorElement>('a[href^="tel:"]')
+          ? event.target.closest<HTMLAnchorElement>(
+              'a[href^="tel:"], a[href^="mailto:"]',
+            )
           : null;
 
       if (!target) return;
 
       const linkUrl = target.getAttribute("href") || "";
+
+      if (linkUrl.startsWith("mailto:")) {
+        window.gtag?.("event", "email_click", {
+          link_url: linkUrl,
+          page_path: window.location.pathname,
+          transport_type: "beacon",
+        });
+        return;
+      }
 
       window.gtag?.("event", "click_to_call", {
         link_url: linkUrl,
