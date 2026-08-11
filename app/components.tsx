@@ -12,7 +12,7 @@ export function SiteHeader() {
           <span className="wordmark-mark wordmark-logo" aria-hidden="true">
             <img
               src={business.logo}
-              alt=""
+              alt="Mel One Maintenance roof repair logo"
               width="48"
               height="48"
             />
@@ -66,7 +66,7 @@ export function SiteFooter() {
             <span className="wordmark-mark wordmark-logo" aria-hidden="true">
               <img
                 src={business.logo}
-                alt=""
+                alt="Mel One Maintenance roof repair logo"
                 width="48"
                 height="48"
               />
