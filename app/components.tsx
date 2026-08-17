@@ -257,7 +257,7 @@ export function SectionHeading({
 export function CtaBand({
   eyebrow = "REQUEST A ROOF INSPECTION",
   title = "Start with the roof problem you can see",
-  copy = "Share your suburb, roof type, what changed and any photos you can take safely. Mel One will confirm service availability, inspection needs and the appropriate trade scope.",
+  copy = "Share your suburb, roof type, what changed and any photos you can take safely. Mel One will reply within 24 hours, then confirm service availability, inspection needs and the appropriate trade scope.",
 }: {
   eyebrow?: string;
   title?: string;
