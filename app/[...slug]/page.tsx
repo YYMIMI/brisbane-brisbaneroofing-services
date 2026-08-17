@@ -1099,7 +1099,7 @@ function AboutPage() {
               </article>
             </div>
           </div>
-          <aside className="business-identity-card">
+          <aside id="company-details" className="business-identity-card">
             <img
               className="about-logo"
               src={business.logo}
@@ -1123,6 +1123,22 @@ function AboutPage() {
                 <dd>{business.acn}</dd>
               </div>
               <div>
+                <dt>Company registered</dt>
+                <dd>ASIC · 8 March 2023</dd>
+              </div>
+              <div>
+                <dt>Insurer</dt>
+                <dd>Chubb Insurance Australia Limited</dd>
+              </div>
+              <div>
+                <dt>Public &amp; Products Liability</dt>
+                <dd>AUD 20 million</dd>
+              </div>
+              <div>
+                <dt>Policy period</dt>
+                <dd>13 April 2026 – 13 April 2027, subject to policy terms</dd>
+              </div>
+              <div>
                 <dt>Office</dt>
                 <dd>
                   {business.address.street}, {business.address.locality}{" "}
@@ -1134,6 +1150,10 @@ function AboutPage() {
                 <dd>{business.serviceArea}</dd>
               </div>
             </dl>
+            <p lang="zh-Hans">
+              客户核验：本网站由 Mel One Property Maintenance Pty Ltd
+              运营；以上为已核验的公司注册与当前责任保险资料。牌照信息只会在持有人及工作类别与具体项目相符时提供。
+            </p>
             <a className="button button-navy" href={`tel:${business.phoneHref}`}>
               Call {business.phone}
             </a>
