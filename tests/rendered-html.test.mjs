@@ -106,5 +106,6 @@ test("renders distinct primary roofing owner pages", async () => {
     );
     assert.match(html, /href=["']\/contact["']/i);
     assert.match(html, /href=["']tel:\+61451819688["']/i);
+    assert.match(html, /reply within 24 hours/i);
   }
 });
