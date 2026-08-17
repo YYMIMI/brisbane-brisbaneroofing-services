@@ -23,7 +23,7 @@ export default function ThankYouPage() {
       <section className="section">
         <div className="shell" style={{ maxWidth: 860 }}>
           <h2>Thanks for contacting {business.brandName}.</h2>
-          <p>Your enquiry has been submitted successfully. Our team will review the information and use the details you provided to discuss the appropriate next step.</p>
+          <p>Your enquiry has been submitted successfully. Our team will review the information and reply within 24 hours using the details you provided.</p>
           <p>Thank you for considering our Brisbane roof repair services.</p>
           <Link href="/" className="button button-yellow">Return to home</Link>
         </div>

@@ -84,7 +84,7 @@ export default function RequestBuilder() {
       window.location.assign("/thank-you");
       setMessage(
         result.message ||
-          "Thanks — your roofing enquiry has been sent. The team will contact you about the next step.",
+          "Thanks — your roofing enquiry has been sent. The team will reply within 24 hours.",
       );
     } catch (error) {
       setStatus("error");
@@ -204,7 +204,7 @@ export default function RequestBuilder() {
         </label>
 
         <div className="form-note">
-          Your enquiry is sent securely to the Mel One team. Do not include sensitive information.
+          Your enquiry is sent securely to the Mel One team. We reply within 24 hours. Do not include sensitive information.
         </div>
 
         <button

@@ -27,3 +27,4 @@ This register keeps one primary commercial owner for each Brisbane roofing inten
 3. Keep entity and insurance facts on About; service evidence stays on the relevant commercial owner.
 4. Record Google-selected URLs separately from this governance assignment.
 5. Do not publish rankings, attribution or response-time promises without current evidence.
+6. Current customer response standard: reply within 24 hours, confirmed by the business owner on 17 August 2026.
