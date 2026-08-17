@@ -30,7 +30,7 @@ export default function GoogleAnalytics() {
 
       if (linkUrl.startsWith("mailto:")) {
         window.gtag?.("event", "email_click", {
-          link_url: linkUrl,
+          link_type: "email",
           page_path: window.location.pathname,
           transport_type: "beacon",
         });
@@ -38,8 +38,7 @@ export default function GoogleAnalytics() {
       }
 
       window.gtag?.("event", "click_to_call", {
-        link_url: linkUrl,
-        phone_number: linkUrl.replace(/^tel:/, ""),
+        link_type: "phone",
         page_path: window.location.pathname,
         transport_type: "beacon",
       });

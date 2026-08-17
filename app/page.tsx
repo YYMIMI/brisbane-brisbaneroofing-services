@@ -73,6 +73,13 @@ const issueCards = [
   },
   {
     number: "04",
+    title: "Whole tile roof looks weathered",
+    copy: "Use the restoration pathway when preparation, repairs and a new finish may be needed across broader tile-roof areas.",
+    href: "/services/roof-restoration-brisbane",
+    link: "Explore tile roof restoration",
+  },
+  {
+    number: "05",
     title: "Damage after a storm",
     copy: "Protect people first, document visible changes safely and separate urgent weatherproofing from permanent work.",
     href: "/services/storm-damage-roof-repairs-brisbane",

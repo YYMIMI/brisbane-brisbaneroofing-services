@@ -1175,35 +1175,45 @@ function PrivacyPage() {
       />
       <section className="section">
         <div className="shell policy-copy">
-          <h2>Current website form behaviour</h2>
+          <h2>Information submitted through the website</h2>
           <p>
-            The contact page lets a visitor prepare and copy a roof repair
-            summary on their own device. The website does not send or store the
-            entered name, suburb, contact details, photos or message.
+            The contact form can send your name, suburb, email address, phone
+            number, roof type, preferred timing, enquiry details and optional
+            self-reported referral source to Mel One Maintenance. This
+            information is used to review the request, confirm service
+            availability, discuss inspection needs and prepare a quote or next
+            step.
           </p>
-          <h2>Direct contact</h2>
+          <h2>Direct contact and service providers</h2>
           <p>
-            If you phone or email Mel One Maintenance, the information you
-            choose to provide is used to respond to the enquiry, confirm service
-            availability, assess the requested work and prepare a quote or next
-            step. Contact {business.contactName} at{" "}
-            <a href={`mailto:${business.email}`}>{business.email}</a> or{" "}
-            <a href={`tel:${business.phoneHref}`}>{business.phone}</a> for an
-            access or correction request.
-          </p>
-          <h2>Business identity</h2>
-          <p>
-            {business.legalName}, ABN {business.abn}, ACN {business.acn}. Office:{" "}
-            {business.address.street}, {business.address.locality}{" "}
-            {business.address.region} {business.address.postcode}.
+            Information sent through the form is delivered to the business
+            email account using the website&apos;s hosting and email-delivery
+            providers. A copy may remain in the recipient mailbox and provider
+            processing records as required to deliver and respond to the
+            enquiry. The site does not publish submitted enquiry details.
           </p>
           <h2>Analytics and cookies</h2>
           <p>
-            No business analytics, advertising or call-tracking identifier is
-            currently configured on this site. This notice should be revised
-            before those tools or a server-side enquiry form are activated.
+            Google Analytics is configured to measure page use and
+            non-identifying conversion events, including phone-link clicks,
+            email-link clicks and successfully delivered enquiries. Phone
+            numbers and email addresses are not sent as analytics event
+            parameters. Google Analytics may use cookies or similar
+            technologies according to the visitor&apos;s browser and Google
+            settings.
           </p>
-          <p className="policy-updated">Updated: 30 July 2026</p>
+          <h2>Business identity and contact</h2>
+          <p>
+            {business.legalName}, ABN {business.abn}, ACN {business.acn}. Office:{" "}
+            {business.address.street}, {business.address.locality}{" "}
+            {business.address.region} {business.address.postcode}. Contact{" "}
+            {business.contactName} at{" "}
+            <a href={`mailto:${business.email}`}>{business.email}</a> or{" "}
+            <a href={`tel:${business.phoneHref}`}>{business.phone}</a> to ask
+            about access or correction of enquiry information held by the
+            business.
+          </p>
+          <p className="policy-updated">Updated: 17 August 2026</p>
         </div>
       </section>
     </PageShell>

@@ -42,7 +42,7 @@ export const business = {
   logo: "/brand/mel-one-roof-logo-512.png",
 };
 
-export const lastContentUpdate = "2026-07-30";
+export const lastContentUpdate = "2026-08-17";
 
 export const brandName = business.siteName;
 
@@ -226,12 +226,12 @@ export const services: ServicePage[] = [
     title: "Tile roof restoration in Brisbane",
     metaTitle: "Roof Restoration Brisbane | Real Tile Roof Project | Mel One",
     metaDescription:
-      "Considering roof restoration in Brisbane? View a real concrete tile roof project, restoration stages, likely timing and quote factors.",
+      "Planning tile roof restoration in Brisbane? Compare a broad restoration with local repair, view a real project and prepare an inspection request.",
     eyebrow: "ROOF RESTORATION BRISBANE",
     description:
-      "Concrete tile roof restoration planning supported by original before-and-after project photography.",
+      "Broad concrete tile roof restoration planning, supported by original before-and-after project photography.",
     intro:
-      "Roof restoration is broader than replacing one damaged tile. The roof condition, ridge details, preparation needs, penetrations, existing solar equipment and suitable weather window all affect whether restoration is appropriate and how the work is staged.",
+      "Choose roof restoration when the decision concerns preparation, repairs and a new finish across larger tile-roof areas. The roof condition, ridge details, penetrations, solar equipment and weather window all affect the scope. For one broken tile, a local ridge-capping defect or an isolated leak, start with the tile-repair or roof-leak service instead.",
     symptoms: [
       "A faded or weathered concrete tile finish",
       "Several roof planes showing similar age and surface wear",
@@ -272,15 +272,15 @@ export const services: ServicePage[] = [
     slug: "roof-leak-repairs-brisbane",
     path: "/services/roof-leak-repairs-brisbane",
     navLabel: "Roof leak repairs",
-    title: "Find the source of a leaking roof",
+    title: "Roof leak repairs in Brisbane",
     metaTitle: "Roof Leak Repairs Brisbane | Leak Diagnosis | Mel One",
     metaDescription:
-      "Roof leak in Brisbane? See how tile and metal roof leaks are assessed, what affects the quote and likely next steps, supported by original project photos.",
+      "Roof leak or flashing problem in Brisbane? See how tile and metal roof water entry is assessed, what affects the quote and how to request an inspection.",
     eyebrow: "ROOF LEAK REPAIRS BRISBANE",
     description:
-      "Roof leak diagnosis and repair planning for Brisbane tile and metal roofs, including leaks that appear only in heavy or wind-driven rain.",
+      "Leak diagnosis and repair planning for Brisbane tile and metal roofs, including valleys, flashing, penetrations and wind-driven rain.",
     intro:
-      "The point where water appears indoors is not always directly below the roof defect. Water can track along battens, rafters or insulation, so sealing the first visible gap may not solve the real cause.",
+      "Choose this service when the main problem is water entering the property or a suspected valley, flashing or penetration defect. The indoor drip point may not sit directly below the roof defect because water can track along battens, rafters or insulation. If there is no active or recurring leak and the issue is only one damaged tile, start with the tile-repair service instead.",
     symptoms: [
       "Ceiling stains that grow after heavy rain",
       "Drips near lights, vents, skylights or wall junctions",
@@ -474,9 +474,9 @@ export const services: ServicePage[] = [
       "Cracked tiles, loose ridge capping or a tile-roof leak in Brisbane? View real project photos, assessment steps, likely timeframes and quote factors.",
     eyebrow: "TILE ROOF REPAIRS BRISBANE",
     description:
-      "Problem-led assessment for cracked tiles, slipped tiles, ridge capping, valleys, flashing and tile-roof leaks.",
+      "Local tile-roof repair assessment for cracked or slipped tiles, ridge capping and damage around nearby roof details.",
     intro:
-      "A tiled roof can leak because of a visibly broken tile, but the problem may also sit around valleys, flashing, penetrations or ridge capping. Repairs should match the roof condition rather than relying on a generic patch.",
+      "Choose tile roof repairs for individual damaged or missing tiles, local ridge-capping defects and nearby roof details. A leak may still involve valleys, flashing or penetrations, so the surrounding area and water path must be checked. If the work concerns preparation and a new finish across broad roof areas, start with the roof-restoration service instead.",
     symptoms: [
       "Cracked, chipped, slipped or missing tiles",
       "Loose or deteriorated ridge capping",
@@ -517,15 +517,15 @@ export const services: ServicePage[] = [
     slug: "metal-roof-repairs-brisbane",
     path: "/services/metal-roof-repairs-brisbane",
     navLabel: "Metal roof repairs",
-    title: "Metal roof leak and damage repairs",
+    title: "Metal roof repairs in Brisbane",
     metaTitle: "Metal Roof Repairs Brisbane | Leaks & Rust | Mel One",
     metaDescription:
-      "Metal roof leak, loose fasteners or localised rust in Brisbane? See assessment points, likely timing and quote factors before requesting an inspection.",
+      "Metal roof leak, loose fasteners or localised rust in Brisbane? Review the repair scope, quote factors and next steps before requesting an inspection.",
     eyebrow: "METAL ROOF REPAIRS BRISBANE",
     description:
-      "Assessment for leaking metal roofs, loose sheets, failed fasteners, flashing defects and localised corrosion.",
+      "Metal roof repair assessment for leaks, loose sheets, failed fasteners, flashing defects and localised corrosion.",
     intro:
-      "Metal roof leaks can begin around fasteners, sheet laps, flashing, penetrations or areas of corrosion. Because water can travel beneath a sheet, the internal drip point may not identify the exterior source.",
+      "Choose metal roof repairs when the roof material is metal and the concern involves sheets, fasteners, laps, flashing, penetrations or localised corrosion. Water can travel beneath a sheet, so the indoor drip point may not identify the exterior source. Broader replacement or specialist trade work is separated from a local repair scope after inspection.",
     symptoms: [
       "Rust staining or localised corrosion",
       "Loose, backed-out or failed fasteners",
