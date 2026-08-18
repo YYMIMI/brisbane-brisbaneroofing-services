@@ -1138,6 +1138,7 @@ export const mainNav = [
   { label: "Services", href: "/services" },
   { label: "Roof Types", href: "/roof-types" },
   { label: "Service Areas", href: "/service-areas" },
+  { label: "中文", href: "/zh/brisbane-roof-restoration" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -1146,3 +1147,4 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
+
