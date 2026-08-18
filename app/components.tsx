@@ -100,6 +100,7 @@ export function SiteFooter() {
                 <Link href={service.path}>{service.navLabel}</Link>
               </li>
             ))}
+            <li><Link href="/zh/brisbane-roof-restoration" lang="zh-Hans-AU">布里斯班屋顶翻新中文服务</Link></li>
           </ul>
         </div>
 
@@ -324,3 +325,4 @@ export function PageShell({ children }: { children: React.ReactNode }) {
     </>
   );
 }
+
