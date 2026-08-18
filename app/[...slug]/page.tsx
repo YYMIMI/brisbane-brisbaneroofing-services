@@ -1150,9 +1150,15 @@ function AboutPage() {
                 <dd>{business.serviceArea}</dd>
               </div>
             </dl>
+            <p>
+              Roof material, access and the proposed repair determine whether a
+              regulated licence class is required. Any required class and
+              responsible contracting party are confirmed before the quote is
+              accepted or work begins.
+            </p>
             <p lang="zh-Hans">
               客户核验：本网站由 Mel One Property Maintenance Pty Ltd
-              运营；以上为已核验的公司注册与当前责任保险资料。牌照信息只会在持有人及工作类别与具体项目相符时提供。
+              运营；以上为已核验的公司注册与当前责任保险资料。屋顶材料、施工位置和实际维修范围会决定是否涉及受监管类别；如有需要，会在客户接受报价或开工前确认所需类别与责任承包方。
             </p>
             <a className="button button-navy" href={`tel:${business.phoneHref}`}>
               Call {business.phone}
