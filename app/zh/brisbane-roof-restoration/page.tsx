@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand, FaqList, JsonLd, PageHero, PageShell, SectionHeading } from "../../components";
-import { business, projectCases } from "../../site-data";
+import { business, projectCases, services } from "../../site-data";
 
 const path = "/zh/brisbane-roof-restoration";
 const englishPath = "/services/roof-restoration-brisbane";
@@ -51,6 +51,17 @@ export default function ChineseRoofRestorationPage() {
           "书面确认维修、清洁、准备、涂层、材料和不包含的项目。",
           "根据天气窗口安排工作，完成后核对已确认的范围。",
         ].map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol></div></section>
+
+        <section className="section section-pale">
+          <div className="shell">
+            <SectionHeading eyebrow="主类与细分服务" title="屋顶翻新留在本页，不同故障进入对应服务页" copy="Roof restoration 的近义表达由本页统一承接；渗漏、天沟、紧急情况、风暴损坏、瓦屋顶、金属屋顶和检查属于不同商业意图，直接进入现有细分 Owner。" />
+            <div className="service-card-grid">
+              {services.filter((service) => service.slug !== "roof-restoration-brisbane").map((service) => (
+                <Link className="service-card" href={service.path} key={service.slug}><span>细分屋顶服务</span><h2>{service.navLabel}</h2><p>{service.description}</p><strong>查看英文详细服务 →</strong></Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="section section-project-feature"><div className="shell"><SectionHeading eyebrow="真实项目照片" title="参考已完成的布里斯班瓦屋顶项目" copy="照片用于展示真实工作和项目阶段，不代表每个屋顶都需要相同方法。" /><div className="service-project-grid"><Link href={`/projects#${project.slug}`} className="service-project-card"><div className="service-project-image"><img src={project.coverImage} alt={project.coverAlt} width="1080" height="811" loading="lazy" /><span>{project.status}</span></div><div><p className="eyebrow eyebrow-dark">{project.eyebrow}</p><h3>{project.title}</h3><p>{project.summary}</p><strong>查看项目详情 →</strong></div></Link></div></div></section>
 
