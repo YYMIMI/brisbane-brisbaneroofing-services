@@ -517,7 +517,7 @@ function ServicesPage() {
       <PageHero
         eyebrow="BRISBANE ROOF & GUTTER SERVICES"
         title="Roof repair services for leaks, damage and maintenance"
-        description="Start with the symptom, urgency or roof material you can identify. Each service page explains the assessment, likely timing and next step for that problem."
+        description="Start with the symptom, urgency or roof material you can identify. Each service explains the assessment, likely timing and next step for that problem."
         image={navigationPageHeroImages.services}
       />
       <section className="section">
@@ -533,7 +533,7 @@ function ServicesPage() {
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
-                <strong>Open service page →</strong>
+                <strong>View service details →</strong>
               </Link>
             ))}
           </div>
@@ -664,7 +664,7 @@ function RoofTypesPage() {
               <li>Storm or debris impact</li>
             </ul>
             <Link className="button button-navy" href="/services/tile-roof-repairs-brisbane">
-              Tile roof repair page
+              View tile roof repair service
             </Link>
           </article>
           <article>
@@ -682,7 +682,7 @@ function RoofTypesPage() {
               <li>Lifted or damaged roofing after wind</li>
             </ul>
             <Link className="button button-navy" href="/services/metal-roof-repairs-brisbane">
-              Metal roof repair page
+              View metal roof repair service
             </Link>
           </article>
         </div>
@@ -690,7 +690,7 @@ function RoofTypesPage() {
       <section className="section section-pale">
         <div className="shell narrow-intro">
           <SectionHeading
-            eyebrow="NOT SURE WHICH PAGE?"
+            eyebrow="NOT SURE WHICH SERVICE?"
             title="Describe the roof rather than guessing the repair"
             copy="If you do not know the roof material or leak source, send a clear ground-level photo and explain when the issue appears. An inspection request is a better starting point than choosing a repair method yourself."
           />
@@ -1085,8 +1085,8 @@ function AboutPage() {
             <p className="lead-copy">
               Mel One separates the homeowner&apos;s symptom from the likely
               cause, then checks the roof material, access, surrounding
-              condition and any specialist trade requirements. The project
-              library uses original before, in-progress and after photographs.
+              condition and any specialist trade requirements. Original
+              before, in-progress and after photographs document the work.
             </p>
             <div className="business-principles">
               <article>
