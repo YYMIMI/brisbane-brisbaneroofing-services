@@ -284,7 +284,7 @@ function ServiceDetailPage({
           <div>
             <SectionHeading
               eyebrow="COMMON SIGNS"
-              title="When this page matches your problem"
+              title="Does this sound like your roof problem?"
             />
             <ul className="check-list">
               {service.symptoms.map((symptom) => (
@@ -516,7 +516,7 @@ function ServicesPage() {
     <PageShell>
       <PageHero
         eyebrow="BRISBANE ROOF & GUTTER SERVICES"
-        title="Choose the page that matches the problem"
+        title="Roof repair services for leaks, damage and maintenance"
         description="Start with the symptom, urgency or roof material you can identify. Each service page explains the assessment, likely timing and next step for that problem."
         image={navigationPageHeroImages.services}
       />
@@ -1264,4 +1264,3 @@ export default async function CatchAllPage({ params }: PageProps) {
       notFound();
   }
 }
-

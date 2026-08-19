@@ -116,7 +116,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/projects">Project case library</Link>
+              <Link href="/projects">Roof project records</Link>
             </li>
             <li>
               <Link href="/about">Service approach</Link>
@@ -325,4 +325,3 @@ export function PageShell({ children }: { children: React.ReactNode }) {
     </>
   );
 }
-

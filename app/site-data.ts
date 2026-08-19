@@ -602,7 +602,7 @@ export const services: ServicePage[] = [
       {
         question: "Will I receive photos?",
         answer:
-          "The current project library demonstrates before, in-progress and after photography. Confirm the exact inspection photo or written-report deliverable when booking because it depends on the requested scope.",
+          "Mel One uses before, in-progress and after photography in its project records. Confirm the exact inspection photo or written-report deliverable when booking because it depends on the requested scope.",
       },
       {
         question: "Can an inspection be done in bad weather?",
@@ -675,7 +675,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "A completed restoration documented from before to after",
       summary:
-        "The Mel One project library records the original weathered concrete tile surface and the completed dark-grey finish across connected roof planes around existing solar arrays, vents, ridges and valleys.",
+        "The supplied Mel One project photos record the original weathered concrete tile surface and the completed dark-grey finish across connected roof planes around existing solar arrays, vents, ridges and valleys.",
       evidence: [
         "Two original before photographs and four completed roof photographs",
         "Completed dark-grey finish across connected concrete tile roof planes",
@@ -902,7 +902,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
   },
   "tile-roof-repairs-brisbane": {
     brisbaneContext:
-      "Concrete and terracotta tile roofs across Greater Brisbane can present with cracked or displaced tiles, ageing ridge details, valley issues and leaks around penetrations. The current Mel One project library includes real examples: a concrete tile restoration around solar arrays and an opened flue detail during leak investigation.",
+      "Concrete and terracotta tile roofs across Greater Brisbane can present with cracked or displaced tiles, ageing ridge details, valley issues and leaks around penetrations. Supplied Mel One project photos include a concrete tile restoration around solar arrays and an opened flue detail during leak investigation.",
     localProblems: [
       "Faded or weathered concrete tile surfaces requiring a broader restoration decision",
       "Cracked, chipped, slipped or missing individual tiles",
@@ -945,7 +945,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Concrete tile restoration and repair examples",
       summary:
-        "The Mel One project library documents the team working across a connected concrete tile roof around solar arrays, vents, ridges and valleys, plus an in-progress inspection around a flue penetration.",
+        "Supplied Mel One project photos document the team working across a connected concrete tile roof around solar arrays, vents, ridges and valleys, plus an in-progress inspection around a flue penetration.",
       evidence: [
         "Two original before photographs and four completed roof photographs",
         "Dark-grey finished surface across connected concrete tile roof planes",
@@ -999,7 +999,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Scope the metal detail before assigning the work",
       summary:
-        "Mel One assesses metal-roof enquiries by roof profile, failed component, access and specialist requirements. The current photo library does not include a metal-roof case, so this page explains assessment and scoping without using an unrelated project image.",
+        "Mel One assesses metal-roof enquiries by roof profile, failed component, access and specialist requirements. Metal-roof work is scoped from the actual roof condition; unrelated project photos are not presented as proof of completed metal-roof work.",
       evidence: [
         "Fastener, sheet-lap, flashing and corrosion assessment pathway",
         "Repair-versus-sheet-replacement decision based on surrounding condition",
@@ -1053,7 +1053,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Problem-led inspection with original project documentation",
       summary:
-        "Mel One uses the homeowner's symptom and roof type to focus the inspection. The existing case library demonstrates before, in-progress and after photography rather than stock images presented as completed work.",
+        "Mel One uses the homeowner's symptom and roof type to focus the inspection. Original project records show before, in-progress and after photography rather than stock images presented as completed work.",
       evidence: [
         "Original before-and-after photography for a concrete tile restoration",
         "In-progress documentation around a flue penetration",
@@ -1147,4 +1147,3 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
-

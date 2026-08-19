@@ -54,10 +54,10 @@ export default function ChineseRoofRestorationPage() {
 
         <section className="section section-pale">
           <div className="shell">
-            <SectionHeading eyebrow="主类与细分服务" title="屋顶翻新留在本页，不同故障进入对应服务页" copy="Roof restoration 的近义表达由本页统一承接；渗漏、天沟、紧急情况、风暴损坏、瓦屋顶、金属屋顶和检查属于不同商业意图，直接进入现有细分 Owner。" />
+            <SectionHeading eyebrow="按屋顶问题选择服务" title="翻新、漏水和风暴损坏需要不同处理" copy="屋顶整体老化或涂层问题可从 Roof restoration 开始；渗漏、天沟、紧急情况、风暴损坏、瓦屋顶、金属屋顶和检查可直接查看对应服务。" />
             <div className="service-card-grid">
               {services.filter((service) => service.slug !== "roof-restoration-brisbane").map((service) => (
-                <Link className="service-card" href={service.path} key={service.slug}><span>细分屋顶服务</span><h2>{service.navLabel}</h2><p>{service.description}</p><strong>查看英文详细服务 →</strong></Link>
+                <Link className="service-card" href={service.path} key={service.slug}><span>屋顶服务</span><h2>{service.navLabel}</h2><p>{service.description}</p><strong>查看英文详细服务 →</strong></Link>
               ))}
             </div>
           </div>
@@ -67,10 +67,9 @@ export default function ChineseRoofRestorationPage() {
 
         <section className="section section-navy"><div className="shell capability-layout"><div><p className="eyebrow">公司与服务边界</p><h2>Mel One Property Maintenance Pty Ltd</h2><p>网站公开公司名称、ABN、ACN、布里斯班联系渠道和真实项目照片。具体屋顶材料、工作范围、适用资格、承包责任和保险要求会在报价前确认。</p></div><ul className="capability-list"><li>Greater Brisbane 咨询，重点包括 Petrie Terrace</li><li>联系电话 {business.phone}</li><li>一般咨询尽快回复，现场与天气安排另行确认</li><li><Link href="/about">查看公司与保险说明 →</Link></li></ul></div></section>
 
-        <section className="section section-faq"><div className="shell faq-layout"><SectionHeading eyebrow="常见问题" title="预约检查前需要知道的事" /><FaqList items={faqs} /><p><Link href={englishPath}>查看英文 Roof Restoration Owner Page →</Link></p></div></section>
+        <section className="section section-faq"><div className="shell faq-layout"><SectionHeading eyebrow="常见问题" title="预约检查前需要知道的事" /><FaqList items={faqs} /><p><Link href={englishPath}>查看英文屋顶修复服务 →</Link></p></div></section>
         <CtaBand eyebrow="中文屋顶咨询" title="先发送屋顶状况，不要自行爬上去检查" copy={`提供 suburb、物业层数、屋顶材料和安全照片，或致电 ${business.phone}。我们会确认是否适合受理、检查方式和当前安排。`} />
       </article>
     </PageShell>
   );
 }
-
