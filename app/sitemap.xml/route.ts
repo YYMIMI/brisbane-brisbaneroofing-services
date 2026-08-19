@@ -20,6 +20,7 @@ export async function GET() {
     "/about",
     "/contact",
     "/privacy",
+    "/zh/brisbane-roof-restoration",
   ];
   const urls = paths
     .map(
@@ -44,3 +45,4 @@ export async function GET() {
     },
   });
 }
+

@@ -52,9 +52,16 @@ export async function generateMetadata({
     return {
       title: { absolute: service.metaTitle },
       description: service.metaDescription,
-      alternates: {
-        canonical: path,
-      },
+      alternates: service.slug === "roof-restoration-brisbane"
+        ? {
+            canonical: path,
+            languages: {
+              "en-AU": "/services/roof-restoration-brisbane",
+              "zh-Hans-AU": "/zh/brisbane-roof-restoration",
+              "x-default": "/services/roof-restoration-brisbane",
+            },
+          }
+        : { canonical: path },
     };
   }
 
@@ -1257,3 +1264,4 @@ export default async function CatchAllPage({ params }: PageProps) {
       notFound();
   }
 }
+
