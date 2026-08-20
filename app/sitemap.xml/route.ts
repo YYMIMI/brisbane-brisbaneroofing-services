@@ -20,6 +20,7 @@ export async function GET() {
     "/about",
     "/contact",
     "/privacy",
+    "/zh/brisbane-roof-repairs",
     "/zh/brisbane-roof-restoration",
   ];
   const urls = paths
@@ -27,7 +28,7 @@ export async function GET() {
       (path) => `
   <url>
     <loc>${escapeXml(`${business.siteUrl}${path}`)}</loc>
-    <lastmod>${lastContentUpdate}</lastmod>
+    <lastmod>${path === "/zh/brisbane-roof-repairs" ? "2026-08-20" : lastContentUpdate}</lastmod>
     <changefreq>${path === "/" ? "weekly" : "monthly"}</changefreq>
     <priority>${path === "/" ? "1.0" : path === "/services" ? "0.9" : "0.8"}</priority>
   </url>`,
