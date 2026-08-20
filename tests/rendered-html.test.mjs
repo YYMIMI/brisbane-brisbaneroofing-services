@@ -109,3 +109,72 @@ test("renders distinct primary roofing owner pages", async () => {
     assert.match(html, /reply within 24 hours/i);
   }
 });
+
+
+test("renders reciprocal English and Chinese roof repair Owners without changing restoration", async () => {
+  const worker = await loadWorker("bilingual-repair-owner");
+
+  const homeResponse = await worker.fetch(
+    new Request("http://localhost/", {
+      headers: { accept: "text/html" },
+    }),
+    workerEnv(),
+    executionContext,
+  );
+  assert.equal(homeResponse.status, 200);
+  const homeHtml = await homeResponse.text();
+  assert.match(
+    homeHtml,
+    /<link(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["']zh-Hans-AU["'])(?=[^>]*\bhref=["']https:\/\/www\.melonebrisbaneroofing\.com\.au\/zh\/brisbane-roof-repairs["'])[^>]*>/i,
+  );
+  assert.match(homeHtml, /href=["']\/zh\/brisbane-roof-repairs["']/i);
+
+  const chineseResponse = await worker.fetch(
+    new Request("http://localhost/zh/brisbane-roof-repairs", {
+      headers: { accept: "text/html" },
+    }),
+    workerEnv(),
+    executionContext,
+  );
+  assert.equal(chineseResponse.status, 200);
+  const chineseHtml = await chineseResponse.text();
+  const chineseH1s = [
+    ...chineseHtml.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi),
+  ];
+  assert.equal(chineseH1s.length, 1);
+  assert.equal(htmlText(chineseH1s[0][1]), "布里斯班屋顶维修中文服务");
+  assert.match(
+    chineseHtml,
+    /<title[^>]*>布里斯班屋顶维修中文服务 \| 漏水、瓦片与金属屋顶<\/title>/i,
+  );
+  assert.match(
+    chineseHtml,
+    /<link(?=[^>]*\brel=["']canonical["'])(?=[^>]*\bhref=["']https:\/\/www\.melonebrisbaneroofing\.com\.au\/zh\/brisbane-roof-repairs["'])[^>]*>/i,
+  );
+  assert.match(
+    chineseHtml,
+    /<link(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["']en-AU["'])(?=[^>]*\bhref=["']https:\/\/www\.melonebrisbaneroofing\.com\.au\/["'])[^>]*>/i,
+  );
+  assert.match(chineseHtml, /href=["']\/services\/roof-leak-repairs-brisbane["']/i);
+  assert.match(chineseHtml, /href=["']\/services\/tile-roof-repairs-brisbane["']/i);
+  assert.match(chineseHtml, /href=["']\/services\/metal-roof-repairs-brisbane["']/i);
+  assert.match(chineseHtml, /href=["']\/services\/roof-restoration-brisbane["']/i);
+
+  const restorationResponse = await worker.fetch(
+    new Request("http://localhost/zh/brisbane-roof-restoration", {
+      headers: { accept: "text/html" },
+    }),
+    workerEnv(),
+    executionContext,
+  );
+  assert.equal(restorationResponse.status, 200);
+  const restorationHtml = await restorationResponse.text();
+  assert.match(
+    restorationHtml,
+    /<title[^>]*>布里斯班屋顶翻新中文服务 \| 瓦屋顶检查与修复<\/title>/i,
+  );
+  assert.match(
+    restorationHtml,
+    /<link(?=[^>]*\bhreflang=["']en-AU["'])(?=[^>]*\bhref=["']https:\/\/www\.melonebrisbaneroofing\.com\.au\/services\/roof-restoration-brisbane["'])[^>]*>/i,
+  );
+});
