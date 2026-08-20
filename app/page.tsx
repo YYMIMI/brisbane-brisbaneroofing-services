@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "en-AU": "/",
+      "zh-Hans-AU": "/zh/brisbane-roof-repairs",
+      "x-default": "/",
+    },
   },
   description:
     "Roof repairs and gutter cleaning across Greater Brisbane for leaks, blocked gutters, damaged tiles, metal roofing and storm damage. View real project photos.",
@@ -213,6 +218,10 @@ export default function Home() {
             <span aria-hidden="true">•</span>
             <Link href="/services/storm-damage-roof-repairs-brisbane">
               Storm damage
+            </Link>
+            <span aria-hidden="true">•</span>
+            <Link href="/zh/brisbane-roof-repairs" lang="zh-Hans-AU">
+              中文屋顶维修
             </Link>
           </div>
         </div>
