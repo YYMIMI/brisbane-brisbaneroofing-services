@@ -406,7 +406,7 @@ export default function ChineseRoofRepairsPage() {
         <CtaBand
           eyebrow="中文屋顶维修咨询"
           title="先发送屋顶问题，不要自行爬上去检查"
-          copy={"提供 suburb、物业层数、屋顶材料和安全照片，或致电 " + business.phone + "。Mel One 会确认是否适合受理、检查方式和当前安排。"}
+          copy={"Mel One 提供对应 Greater Brisbane 服务区域内的上门屋顶维修。电话和在线表单初步咨询免费，周六、周日也可致电。请提供 suburb、物业层数、屋顶材料、紧急程度和安全照片；团队会确认是否上门、可安排时间、工作范围及下一步报价。"}
         />
       </article>
     </PageShell>
