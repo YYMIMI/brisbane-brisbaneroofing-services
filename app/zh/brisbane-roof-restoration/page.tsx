@@ -17,6 +17,7 @@ const faqs = [
   { question: "屋顶褪色就一定要完整翻新吗？", answer: "不一定。外观褪色、局部裂瓦、脊瓦问题和持续渗漏代表不同范围。先检查瓦片、固定、脊线、谷槽、穿透点和排水，再判断局部维修或整体翻新。" },
   { question: "可以只凭照片报价吗？", answer: "照片适合初步判断屋顶类型、可见问题和通道，但无法确认隐藏渗水路径、瓦片下方状况或所有高处细节。最终范围通常需要安全检查后确认。" },
   { question: "翻新需要几天？", answer: "时间受屋顶面积、维修量、清洁和干燥、材料、太阳能板或烟道周边细节以及布里斯班天气影响。确认范围后才会给出项目安排。" },
+  { question: "为什么选择 Mel One 咨询屋顶整体修复或翻新？", answer: "Mel One Maintenance 结合多年现场维修与物业维护经验、真实布里斯班项目照片和问题导向的检查方式，先区分局部维修与整体翻新，再确认适合实际屋顶的范围。" },
   { question: "屋顶工作由持牌人员完成吗？", answer: "不同屋顶材料和工作范围可能适用不同许可、资质或承包要求。我们会在报价和安排前确认具体范围、所需类别以及负责该项工作的合适人员。" },
 ];
 
@@ -41,6 +42,13 @@ export default function ChineseRoofRestorationPage() {
         <PageHero eyebrow="布里斯班瓦屋顶翻新 · 中文咨询" title="先判断局部维修，还是需要整体翻新。" description="屋顶褪色并不自动等于完整翻新。我们根据瓦片、脊线、谷槽、渗漏痕迹、穿透点、排水和安全通道确认实际范围，再说明下一步。" requestLabel="发送屋顶咨询" />
 
         <section className="section"><div className="shell narrow-intro"><p className="lead-copy">请提供 suburb、物业层数、屋顶材料、问题出现时间，以及从地面安全拍摄的全景和细节照片。不要为了拍照爬上潮湿、陡峭或受损屋顶，也不要靠近太阳能板、电线或不稳定天花。</p></div></section>
+
+        <section className="section"><div className="shell"><SectionHeading eyebrow="为什么联系 Mel One" title="布里斯班屋顶整体修复与翻新，要有经验也要有证据" copy="Mel One 结合多年现场维修与物业维护经验、原始项目前后照片和清楚的检查流程，帮助业主判断是局部修复，还是需要更完整的屋顶翻新。" /><div className="service-card-grid">{[
+          ["多年现场经验", "从瓦片、脊线、谷槽、泛水、穿透点和排水等实际细节判断，不只看屋顶表面颜色。"],
+          ["工匠式范围判断", "先区分局部维修、较大范围修复和完整翻新，避免把每个问题都直接推向同一种工程。"],
+          ["真实布里斯班项目", "网站展示 Mel One 原始瓦屋顶翻新前后照片，并清楚标注项目阶段和屋顶类型。"],
+          ["直接电话与表单", `可致电 ${business.phone} 或发送屋顶咨询表单；团队会根据屋况、通道、天气和当前安排确认下一步。`],
+        ].map(([title, copy]) => <article className="service-card" key={title}><span>Mel One 屋顶服务优势</span><h2>{title}</h2><p>{copy}</p></article>)}</div><div className="inline-actions"><a className="button button-yellow" href={"tel:" + business.phoneHref}>致电 {business.phone}</a><Link className="button button-dark" href="/contact">填写屋顶咨询表</Link></div></div></section>
 
         <section className="section section-pale"><div className="shell two-column-content"><div><SectionHeading eyebrow="检查重点" title="不是只看表面颜色" /><ul className="check-list">{inspectionPoints.map((item) => <li key={item}>{item}</li>)}</ul></div><div className="assessment-card"><p className="eyebrow eyebrow-dark">如何决定范围</p><h2>局部修复和整体翻新解决的问题不同</h2><p>少量破瓦、局部脊线或单一穿透点问题，可能适合针对性维修。若表面、脊瓦、多个细节和防护层普遍老化，则需要评估更完整的清洁、维修、准备和涂层范围。</p><Link className="button button-yellow" href="/contact">发送照片与区域</Link></div></div></section>
 
