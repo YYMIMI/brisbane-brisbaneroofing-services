@@ -82,24 +82,24 @@ const repairOptions = [
 
 const advantages = [
   {
-    title: "Mel One 品牌与正规公司资料",
-    copy: "由 Mel One Property Maintenance Pty Ltd 提供服务。网站公开公司名称、ABN、ACN、Greater Brisbane 服务范围和直接联系方式。",
+    title: "联系方便，有事能找到人",
+    copy: "Mel One Property Maintenance Pty Ltd 接受 Greater Brisbane 屋顶维修咨询。电话和表单都可以直接联系，不需要在不同页面之间来回寻找。",
   },
   {
-    title: "多年现场维修与物业维护经验",
-    copy: "团队把多年实际问题处理经验用于屋顶漏水、裂瓦、金属屋面、风暴损坏和排水问题，不按一个通用方案套用所有屋顶。",
+    title: "多年现场维修经验",
+    copy: "团队处理过屋顶漏水、裂瓦、金属屋面、风暴损坏和排水问题，会根据实际屋况安排合适的检查和维修方向。",
   },
   {
-    title: "工匠式问题判断",
-    copy: "先看症状、屋顶材料、泛水、谷槽、固定件和穿透点，再区分局部维修、临时保护、整体修复或屋顶翻新。",
+    title: "不只看水痕位置",
+    copy: "漏水点不一定就在水痕正上方。我们会结合屋顶材料、泛水、谷槽、固定件和穿透点寻找原因，再说明适合怎么处理。",
   },
   {
-    title: "真实项目而不是空泛口号",
-    copy: "网站展示 Mel One 原始项目照片，包括完成的瓦屋顶翻新和烟道周边维修检查过程，并清楚标注项目阶段。",
+    title: "真实项目可以查看",
+    copy: "网站展示 Mel One 自己拍摄的项目照片，包括完成的瓦屋顶翻新和烟道周边维修检查过程，并标明照片对应的施工阶段。",
   },
   {
-    title: "电话、表单和紧急问题入口",
-    copy: "客户可以直接致电或发送屋顶维修表单。正在进水或风暴损坏可优先说明，团队会根据天气、安全、通道和当前安排确认响应。",
+    title: "漏水时先理清下一步",
+    copy: "如果正在进水或刚发生风暴损坏，可以先打电话说明情况。团队会根据天气、安全、通道和当前安排告诉您接下来可以怎么做。",
   },
 ];
 
@@ -107,7 +107,7 @@ const faqs = [
   {
     question: "屋顶维修和屋顶翻新有什么不同？",
     answer:
-      "屋顶维修针对漏水、裂瓦、泛水、固定件、局部锈蚀或风暴损坏等明确问题。屋顶翻新通常涉及较大范围的清洁、准备、维修和表面处理。需要根据实际屋顶状况决定，不能只凭搜索词判断。",
+      "屋顶维修针对漏水、裂瓦、泛水、固定件、局部锈蚀或风暴损坏等明确问题。屋顶翻新通常涉及较大范围的清洁、准备、维修和表面处理。需要根据实际屋顶状况决定，不能只凭表面现象判断。",
   },
   {
     question: "布里斯班屋顶漏水可以只凭照片报价吗？",
@@ -125,9 +125,9 @@ const faqs = [
       "不代表。可以发送紧急情况和安全照片，Mel One 会确认当前受理能力、天气、通道和可安排时间。在确认前不作固定 24/7 或到达时间承诺。",
   },
   {
-    question: "为什么选择 Mel One 咨询布里斯班屋顶维修？",
+    question: "联系 Mel One 后，会怎样判断屋顶问题？",
     answer:
-      "Mel One Maintenance 有多年现场维修与物业维护经验，公开公司与联系资料，并用原始项目照片说明真实工作。团队会先根据漏水症状、屋顶材料和现场条件判断问题，再区分局部维修、紧急保护或整体翻新。",
+      "团队会先了解漏水症状、屋顶材料、问题出现时间和现场条件，再判断适合局部维修、临时保护还是进一步检查。网站也展示真实项目照片，方便您了解以往工作的实际情况。",
   },
   {
     question: "屋顶工作由合适资质的人员完成吗？",
@@ -206,7 +206,7 @@ export default function ChineseRoofRepairsPage() {
               请提供布里斯班 suburb、物业层数、屋顶材料、问题何时出现，以及从地面或室内安全拍摄的照片。不要为了拍照爬上潮湿、陡峭或受损屋顶，也不要靠近电线、太阳能设备或下垂天花。
             </p>
             <p>
-              <Link href={englishPath}>查看英文 Roof Repairs Brisbane 首页 →</Link>
+              <Link href={englishPath}>查看英文屋顶维修网站 →</Link>
             </p>
           </div>
         </section>
@@ -214,14 +214,13 @@ export default function ChineseRoofRepairsPage() {
         <section className="section">
           <div className="shell">
             <SectionHeading
-              eyebrow="为什么联系 Mel One"
-              title="多年现场经验、真实项目和清楚的维修路径"
-              copy="客户不只需要看到“屋顶维修”几个字，也需要知道是谁负责、怎样判断问题、有哪些真实证据，以及怎样马上联系。"
+              eyebrow="屋顶维修怎么开始"
+              title="先找出漏水或损坏原因，再决定怎么修"
+              copy="把问题出现的时间、屋顶材料和您看到的情况告诉我们。能用局部维修解决的，不会一开始就建议更大的工程。"
             />
             <div className="service-card-grid">
               {advantages.map((item) => (
                 <article className="service-card" key={item.title}>
-                  <span>Mel One 屋顶服务优势</span>
                   <h2>{item.title}</h2>
                   <p>{item.copy}</p>
                 </article>
@@ -251,7 +250,7 @@ export default function ChineseRoofRepairsPage() {
                   <span>屋顶维修服务</span>
                   <h2>{item.title}</h2>
                   <p>{item.copy}</p>
-                  <strong>查看英文详细服务 →</strong>
+                  <strong>查看服务详情 →</strong>
                 </Link>
               ))}
             </div>
