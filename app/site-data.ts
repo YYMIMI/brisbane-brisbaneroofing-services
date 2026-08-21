@@ -229,9 +229,9 @@ export const services: ServicePage[] = [
       "Planning tile roof restoration in Brisbane? Compare a broad restoration with local repair, view a real project and prepare an inspection request.",
     eyebrow: "ROOF RESTORATION BRISBANE",
     description:
-      "Broad concrete tile roof restoration planning, supported by original before-and-after project photography.",
+      "Help deciding whether a weathered Brisbane tile roof needs targeted repairs or a broader restoration, supported by original before-and-after project photos.",
     intro:
-      "Choose roof restoration when the decision concerns preparation, repairs and a new finish across larger tile-roof areas. The roof condition, ridge details, penetrations, solar equipment and weather window all affect the scope. For one broken tile, a local ridge-capping defect or an isolated leak, start with the tile-repair or roof-leak service instead.",
+      "Not every ageing tile roof needs a full restoration. One broken tile, an isolated leak or a local ridge-capping defect may be better handled as a targeted repair. A broader restoration makes more sense when wear extends across larger roof areas and the scope includes preparation, repairs and a new finish. The roof condition, access, solar equipment and Brisbane weather still shape the final plan.",
     symptoms: [
       "A faded or weathered concrete tile finish",
       "Several roof planes showing similar age and surface wear",
@@ -632,7 +632,7 @@ export type ServiceContext = {
 export const serviceContextBySlug: Record<string, ServiceContext> = {
   "roof-restoration-brisbane": {
     brisbaneContext:
-      "Brisbane tile roofs can show widespread surface wear after long exposure to sun, rain and seasonal storms. A restoration decision should consider the whole roof condition, required repairs, preparation, drying time and the details around ridges, valleys, vents, flues and existing solar arrays.",
+      "Sun, rain and seasonal storms can leave Brisbane tile roofs faded or weathered, but appearance alone does not decide the scope. The useful question is whether the problem is local or spread across the roof. Tiles, ridges, valleys, vents, flues, solar arrays, preparation and drying time all help answer that.",
     localProblems: [
       "Faded or weathered concrete tile surfaces across several connected roof planes",
       "Broken tiles, ridge or valley details that need repair before surface work",
@@ -673,9 +673,9 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
       "Existing solar panels and specialist coordination where required",
     ],
     capability: {
-      title: "A completed restoration documented from before to after",
+      title: "See what changed from before to after",
       summary:
-        "The supplied Mel One project photos record the original weathered concrete tile surface and the completed dark-grey finish across connected roof planes around existing solar arrays, vents, ridges and valleys.",
+        "Original Mel One project photos show the weathered concrete tile surface before work and the completed dark-grey finish across connected roof planes beside existing solar arrays, vents, ridges and valleys.",
       evidence: [
         "Two original before photographs and four completed roof photographs",
         "Completed dark-grey finish across connected concrete tile roof planes",
