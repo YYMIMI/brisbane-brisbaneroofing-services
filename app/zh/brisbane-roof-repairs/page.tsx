@@ -15,10 +15,10 @@ const englishPath = "/";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "布里斯班屋顶维修中文服务 | 漏水、瓦片与金属屋顶",
+    absolute: "布里斯班屋顶维修中文服务 | 漏水、瓦片与金属屋顶 | Mel One",
   },
   description:
-    "布里斯班屋顶维修中文咨询：屋顶漏水、裂瓦或缺瓦、金属屋顶渗漏与锈蚀、风暴损坏和紧急屋顶问题。先说明症状和屋顶材料，再确认检查与维修范围。",
+    "Mel One 布里斯班屋顶维修中文服务：以多年现场维修与物业维护经验处理屋顶漏水、裂瓦、金属屋顶和风暴损坏咨询，可直接致电或发送表单。",
   alternates: {
     canonical: path,
     languages: {
@@ -80,6 +80,29 @@ const repairOptions = [
   },
 ];
 
+const advantages = [
+  {
+    title: "Mel One 品牌与正规公司资料",
+    copy: "由 Mel One Property Maintenance Pty Ltd 提供服务。网站公开公司名称、ABN、ACN、Greater Brisbane 服务范围和直接联系方式。",
+  },
+  {
+    title: "多年现场维修与物业维护经验",
+    copy: "团队把多年实际问题处理经验用于屋顶漏水、裂瓦、金属屋面、风暴损坏和排水问题，不按一个通用方案套用所有屋顶。",
+  },
+  {
+    title: "工匠式问题判断",
+    copy: "先看症状、屋顶材料、泛水、谷槽、固定件和穿透点，再区分局部维修、临时保护、整体修复或屋顶翻新。",
+  },
+  {
+    title: "真实项目而不是空泛口号",
+    copy: "网站展示 Mel One 原始项目照片，包括完成的瓦屋顶翻新和烟道周边维修检查过程，并清楚标注项目阶段。",
+  },
+  {
+    title: "电话、表单和紧急问题入口",
+    copy: "客户可以直接致电或发送屋顶维修表单。正在进水或风暴损坏可优先说明，团队会根据天气、安全、通道和当前安排确认响应。",
+  },
+];
+
 const faqs = [
   {
     question: "屋顶维修和屋顶翻新有什么不同？",
@@ -100,6 +123,11 @@ const faqs = [
     question: "正在漏水是否代表提供 24 小时服务？",
     answer:
       "不代表。可以发送紧急情况和安全照片，Mel One 会确认当前受理能力、天气、通道和可安排时间。在确认前不作固定 24/7 或到达时间承诺。",
+  },
+  {
+    question: "为什么选择 Mel One 咨询布里斯班屋顶维修？",
+    answer:
+      "Mel One Maintenance 有多年现场维修与物业维护经验，公开公司与联系资料，并用原始项目照片说明真实工作。团队会先根据漏水症状、屋顶材料和现场条件判断问题，再区分局部维修、紧急保护或整体翻新。",
   },
   {
     question: "屋顶工作由合适资质的人员完成吗？",
@@ -180,6 +208,33 @@ export default function ChineseRoofRepairsPage() {
             <p>
               <Link href={englishPath}>查看英文 Roof Repairs Brisbane 首页 →</Link>
             </p>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="shell">
+            <SectionHeading
+              eyebrow="为什么联系 Mel One"
+              title="多年现场经验、真实项目和清楚的维修路径"
+              copy="客户不只需要看到“屋顶维修”几个字，也需要知道是谁负责、怎样判断问题、有哪些真实证据，以及怎样马上联系。"
+            />
+            <div className="service-card-grid">
+              {advantages.map((item) => (
+                <article className="service-card" key={item.title}>
+                  <span>Mel One 屋顶服务优势</span>
+                  <h2>{item.title}</h2>
+                  <p>{item.copy}</p>
+                </article>
+              ))}
+            </div>
+            <div className="inline-actions">
+              <a className="button button-yellow" href={"tel:" + business.phoneHref}>
+                致电 {business.phone}
+              </a>
+              <Link className="button button-dark" href="/contact">
+                填写屋顶维修表单
+              </Link>
+            </div>
           </div>
         </section>
 
