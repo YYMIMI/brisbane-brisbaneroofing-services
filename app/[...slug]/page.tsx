@@ -89,7 +89,7 @@ export async function generateMetadata({
     "/about": {
       title: "About Mel One Roof Repairs Brisbane",
       description:
-        "Mel One Maintenance is the service brand of Mel One Property Maintenance Pty Ltd, accepting roof repair enquiries across Greater Brisbane.",
+        "About Mel One Maintenance and how roof repair, restoration and gutter enquiries are handled across Greater Brisbane.",
     },
     "/privacy": {
       title: "Privacy | Mel One Maintenance",
@@ -1071,28 +1071,28 @@ function AboutPage() {
     <PageShell>
       <PageHero
         eyebrow="ABOUT MEL ONE MAINTENANCE"
-        title="A real business behind the Brisbane roof repair service"
-        description="Mel One Maintenance is the public service brand of Mel One Property Maintenance Pty Ltd, accepting roof repair enquiries across Greater Brisbane."
+        title="About Mel One Maintenance"
+        description="We take roof repair, restoration and gutter enquiries across Greater Brisbane, starting with the problem you can see and the practical next step."
         image={navigationPageHeroImages.about}
       />
       <section className="section">
         <div className="shell about-layout">
           <div>
             <SectionHeading
-              eyebrow="SERVICE APPROACH"
-              title="Assess the roof detail, define the scope, document the work"
+              eyebrow="HOW WE WORK"
+              title="Start with the roof problem, then define the work"
             />
             <p className="lead-copy">
-              Mel One separates the homeowner&apos;s symptom from the likely
-              cause, then checks the roof material, access, surrounding
-              condition and any specialist trade requirements. Original
-              before, in-progress and after photographs document the work.
+              Share when the problem appears, the roof type if known and safe
+              photos. We use those details to decide whether the next step is
+              advice, an inspection or a clearly defined repair scope. Original
+              project photos show how previous work progressed.
             </p>
             <div className="business-principles">
               <article>
                 <span>01</span>
-                <h3>Problem-led inspection</h3>
-                <p>Leak timing, roof type and weather pattern guide the assessment.</p>
+                <h3>Start with the symptom</h3>
+                <p>Tell us when the problem appears, the roof type and what changed.</p>
               </article>
               <article>
                 <span>02</span>
@@ -1101,7 +1101,7 @@ function AboutPage() {
               </article>
               <article>
                 <span>03</span>
-                <h3>Trade boundaries</h3>
+                <h3>Keep specialist work separate</h3>
                 <p>Solar, electrical and other specialist work is identified separately.</p>
               </article>
             </div>
@@ -1114,11 +1114,11 @@ function AboutPage() {
               width="512"
               height="512"
             />
-            <p className="eyebrow eyebrow-dark">VERIFIED BUSINESS IDENTITY</p>
+            <p className="eyebrow eyebrow-dark">COMPANY &amp; INSURANCE DETAILS</p>
             <h2>{business.legalName}</h2>
             <dl className="identity-list">
               <div>
-                <dt>Public brand</dt>
+                <dt>Service name</dt>
                 <dd>{business.brandName}</dd>
               </div>
               <div>
@@ -1162,10 +1162,6 @@ function AboutPage() {
               regulated licence class is required. Any required class and
               responsible contracting party are confirmed before the quote is
               accepted or work begins.
-            </p>
-            <p lang="zh-Hans">
-              客户核验：本网站由 Mel One Property Maintenance Pty Ltd
-              运营；以上为已核验的公司注册与当前责任保险资料。屋顶材料、施工位置和实际维修范围会决定是否涉及受监管类别；如有需要，会在客户接受报价或开工前确认所需类别与责任承包方。
             </p>
             <a className="button button-navy" href={`tel:${business.phoneHref}`}>
               Call {business.phone}

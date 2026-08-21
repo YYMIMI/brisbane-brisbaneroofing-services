@@ -259,7 +259,7 @@ export function SectionHeading({
 export function CtaBand({
   eyebrow = "REQUEST A ROOF INSPECTION",
   title = "Start with the roof problem you can see",
-  copy = "Mel One provides on-site roof services across the relevant Greater Brisbane service area. Initial phone and online form enquiries are free, and the phone is answered seven days a week, including Saturday and Sunday. Share your suburb, roof type, urgency and safe photos so the team can confirm attendance, available timing, the work scope and the next quote step.",
+  copy = "Mel One provides on-site roof services across the relevant Greater Brisbane service area. Initial phone and online form enquiries are free, and the phone is answered seven days a week, including Saturday and Sunday, and the team responds promptly. Share your suburb, roof type, urgency and safe photos so the team can confirm attendance, available timing, the work scope and the next quote step.",
 }: {
   eyebrow?: string;
   title?: string;
