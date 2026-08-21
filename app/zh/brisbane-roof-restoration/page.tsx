@@ -76,7 +76,7 @@ export default function ChineseRoofRestorationPage() {
         <section className="section section-navy"><div className="shell capability-layout"><div><p className="eyebrow">公司与服务边界</p><h2>Mel One Property Maintenance Pty Ltd</h2><p>网站公开公司名称、ABN、ACN、布里斯班联系渠道和真实项目照片。具体屋顶材料、工作范围、适用资格、承包责任和保险要求会在报价前确认。</p></div><ul className="capability-list"><li>Greater Brisbane 咨询，重点包括 Petrie Terrace</li><li>联系电话 {business.phone}</li><li>一般咨询尽快回复，现场与天气安排另行确认</li><li><Link href="/about">查看公司与保险说明 →</Link></li></ul></div></section>
 
         <section className="section section-faq"><div className="shell faq-layout"><SectionHeading eyebrow="常见问题" title="预约检查前需要知道的事" /><FaqList items={faqs} /><p><Link href={englishPath}>查看英文屋顶修复服务 →</Link></p></div></section>
-        <CtaBand eyebrow="中文屋顶咨询" title="先发送屋顶状况，不要自行爬上去检查" copy={`提供 suburb、物业层数、屋顶材料和安全照片，或致电 ${business.phone}。我们会确认是否适合受理、检查方式和当前安排。`} />
+        <CtaBand eyebrow="中文屋顶咨询" title="先发送屋顶状况，不要自行爬上去检查" copy="Mel One 提供对应 Greater Brisbane 服务区域内的上门屋顶检查与翻新服务。电话和在线表单初步咨询免费，周六、周日也可致电。请提供 suburb、物业层数、屋顶材料和安全照片；团队会确认是否上门、可安排时间、翻新范围及下一步报价。" />
       </article>
     </PageShell>
   );
