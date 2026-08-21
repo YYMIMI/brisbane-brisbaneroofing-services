@@ -7,8 +7,8 @@ const path = "/zh/brisbane-roof-restoration";
 const englishPath = "/services/roof-restoration-brisbane";
 
 export const metadata: Metadata = {
-  title: { absolute: "布里斯班屋顶翻新中文服务 | 瓦屋顶检查与修复" },
-  description: "布里斯班瓦屋顶翻新中文咨询：褪色风化、脊瓦和谷槽、裂瓦、渗漏痕迹、烟道与太阳能板周边。先检查整体状况，再确认局部维修或完整翻新。",
+  title: { absolute: "布里斯班屋顶翻新中文服务 | Mel One" },
+  description: "Mel One 布里斯班瓦屋顶翻新中文咨询：先检查瓦片、脊瓦、谷槽、渗漏痕迹及屋顶整体状况，再确认局部维修或完整翻新。",
   alternates: { canonical: path, languages: { "en-AU": englishPath, "zh-Hans-AU": path, "x-default": englishPath } },
   openGraph: { type: "website", locale: "zh_CN", alternateLocale: ["en_AU"], title: "布里斯班屋顶翻新中文服务", description: "根据真实屋顶状况、通道和天气安排翻新范围。" },
 };
