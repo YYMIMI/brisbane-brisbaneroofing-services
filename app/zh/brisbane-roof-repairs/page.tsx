@@ -101,6 +101,10 @@ const advantages = [
     title: "漏水时先理清下一步",
     copy: "如果正在进水或刚发生风暴损坏，可以先打电话说明情况。团队会根据天气、安全、通道和当前安排告诉您接下来可以怎么做。",
   },
+  {
+    title: "符合条件的施工有工艺质保",
+    copy: "符合条件的屋顶维修施工提供10年工艺质保，具体覆盖范围和条款会在书面报价及质保说明中确认。",
+  },
 ];
 
 const faqs = [
@@ -413,3 +417,4 @@ export default function ChineseRoofRepairsPage() {
     </PageShell>
   );
 }
+
