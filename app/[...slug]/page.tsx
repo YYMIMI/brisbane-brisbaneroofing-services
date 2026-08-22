@@ -1,3 +1,4 @@
+import { WhyMelOne } from "../why-mel-one";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -520,6 +521,7 @@ function ServicesPage() {
         description="Start with the symptom, urgency or roof material you can identify. Each service explains the assessment, likely timing and next step for that problem."
         image={navigationPageHeroImages.services}
       />
+      <WhyMelOne />
       <section className="section">
         <div className="shell">
           <SectionHeading
