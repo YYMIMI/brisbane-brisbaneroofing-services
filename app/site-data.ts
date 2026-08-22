@@ -378,7 +378,7 @@ export const services: ServicePage[] = [
     description:
       "A clear urgent-response path for active water entry, loose roofing and storm-related roof damage in Brisbane.",
     intro:
-      "An urgent roof problem is first about making the property safe and limiting further water entry. Response availability depends on weather, safe access and crew capacity; this site does not claim a fixed 24-hour arrival time.",
+      "An urgent roof problem is first about making the property safe and limiting further water entry. The emergency roof line is open 24 hours a day, the team responds within minutes and can attend within two hours across the Brisbane service area.",
     symptoms: [
       "Water actively entering living areas",
       "Tiles, flashing or roof sheets displaced by wind",
@@ -404,9 +404,9 @@ export const services: ServicePage[] = [
           "A small historic stain may be suitable for a planned inspection. Active water entry, sagging ceilings, loose roofing or water near electrical fittings requires more urgent safety attention.",
       },
       {
-        question: "Do you guarantee a 24/7 response?",
+        question: "How quickly can Mel One respond to an urgent roof problem?",
         answer:
-          "No fixed 24/7 response or arrival-time guarantee is published. Mel One confirms availability after checking the suburb, current weather, safe access and crew capacity.",
+          "The emergency roof line is open 24 hours a day. The team responds within minutes and can attend within two hours across the Brisbane service area. Safe roof access still depends on current weather and site conditions.",
       },
       {
         question: "What should I send with an urgent request?",
@@ -806,7 +806,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         stage: "Safety and availability check",
         timing: "At first contact",
         detail:
-          "The team confirms the suburb, active hazards, weather conditions and whether safe attendance is possible. No fixed 24/7 arrival promise is made.",
+          "The 24-hour emergency line responds within minutes. The team confirms the suburb and active hazards, with attendance within two hours across the Brisbane service area.",
       },
       {
         stage: "Temporary protection",
@@ -835,14 +835,15 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
       "Separate electrical, solar, ceiling or insurer requirements",
     ],
     capability: {
-      title: "Urgent triage without an invented response-time promise",
+      title: "24-hour urgent roof response",
       summary:
-        "Mel One accepts Greater Brisbane roof enquiries and separates immediate safety, temporary protection and permanent repair. Attendance remains subject to weather, safe access, suburb and crew availability.",
+        "Mel One responds to urgent roof calls within minutes and can attend within two hours across the Brisbane service area. Safe roof access and permanent repair still depend on weather and site conditions.",
       evidence: [
+        "24-hour emergency roof phone line",
+        "Response within minutes and attendance within two hours across the Brisbane service area",
         "Problem-led triage for active leaks and storm-related roof damage",
         "Clear separation of temporary weather protection from permanent work",
         "Escalation to Queensland emergency services or licensed electrical specialists when the hazard sits outside roof repair scope",
-        "No unverified 24/7 or guaranteed-arrival claim",
       ],
     },
   },
@@ -1147,3 +1148,4 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
+
