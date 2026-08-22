@@ -120,9 +120,9 @@ const faqs = [
       "网站分别提供瓦片屋顶和金属屋顶的问题路径。请说明屋顶材料；如果不确定，可以从地面安全拍摄屋面全景，不要为了确认材料自行爬上屋顶。",
   },
   {
-    question: "正在漏水是否代表提供 24 小时服务？",
+    question: "紧急屋顶问题多久可以响应？",
     answer:
-      "不代表。可以发送紧急情况和安全照片，Mel One 会确认当前受理能力、天气、通道和可安排时间。在确认前不作固定 24/7 或到达时间承诺。",
+      "紧急屋顶电话 24 小时开放，团队通常数分钟内回复，布里斯班服务区域内两小时内可到场。屋顶是否能够安全进入仍取决于当时天气和现场条件。",
   },
   {
     question: "联系 Mel One 后，会怎样判断屋顶问题？",
@@ -266,6 +266,7 @@ export default function ChineseRoofRepairsPage() {
             <div className="urgent-copy">
               <p>
                 不要进入积水区域，不要站在下垂天花下方，也不要接触受潮电器或电线。请从安全位置记录水痕、滴水时间和外部可见变化，再说明是否仍在进水。
+                紧急屋顶电话 24 小时开放，团队通常数分钟内回复，布里斯班服务区域内两小时内可到场。
               </p>
               <div className="inline-actions">
                 <Link
@@ -412,3 +413,4 @@ export default function ChineseRoofRepairsPage() {
     </PageShell>
   );
 }
+
