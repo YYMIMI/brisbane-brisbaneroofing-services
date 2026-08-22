@@ -45,7 +45,7 @@ const homeFaqs = [
   {
     question: "Can I request urgent roof leak help?",
     answer:
-      "Yes. Use the urgent-request pathway for active water entry or recent storm damage. No fixed 24/7 availability or arrival-time claim is made until operating hours are verified.",
+      "Yes. The emergency roof line is open 24 hours a day. The team responds within minutes and can attend within two hours across the Brisbane service area.",
   },
   {
     question: "What should I include with my roof repair request?",
@@ -285,8 +285,8 @@ export default function Home() {
             <p>
               Stay off wet or damaged roofing. Keep people away from sagging
               ceilings, loose materials and affected electrical equipment.
-              Follow official Queensland safety advice when severe weather is
-              active.
+              Call the 24-hour emergency line for a response within minutes and
+              attendance within two hours across the Brisbane service area.
             </p>
             <div className="inline-actions">
               <Link
@@ -528,3 +528,4 @@ export default function Home() {
     </PageShell>
   );
 }
+
