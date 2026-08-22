@@ -247,6 +247,7 @@ export default function Home() {
           <div>
             <small>Service area</small>
             <strong>{business.serviceArea}</strong>
+            <span>Eligible work · 10-year workmanship warranty</span>
             <a href={`tel:${business.phoneHref}`}>{business.phone}</a>
           </div>
         </div>
@@ -528,3 +529,4 @@ export default function Home() {
     </PageShell>
   );
 }
+
