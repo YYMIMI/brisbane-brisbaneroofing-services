@@ -14,6 +14,7 @@ import {
   business,
   getServiceByPath,
   projectCases,
+  supplementaryProjectCases,
   serviceContextBySlug,
   serviceRegions,
   services,
@@ -1057,6 +1058,52 @@ function ProjectsPage() {
           </div>
         </div>
       </section>
+
+      {supplementaryProjectCases.map((project, index) => (
+        <section
+          className={`section project-case-section${index % 2 === 0 ? "" : " section-pale"}`}
+          id={project.slug}
+          key={project.slug}
+        >
+          <div className="shell">
+            <div className="project-case-heading">
+              <div>
+                <p className="eyebrow eyebrow-dark">{project.eyebrow}</p>
+                <h2>{project.title}</h2>
+              </div>
+              <p className="lead-copy">{project.summary}</p>
+            </div>
+            <dl className="project-facts project-facts-wide">
+              <div><dt>Status</dt><dd>{project.status}</dd></div>
+              <div><dt>Roof type</dt><dd>{project.roofType}</dd></div>
+              <div><dt>Location</dt><dd>{project.location}</dd></div>
+              <div><dt>Project photos</dt><dd>{project.images.length}</dd></div>
+            </dl>
+            <div className="project-gallery">
+              {project.images.map((image) => (
+                <figure className="project-photo" key={image.src}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width ?? 1200}
+                    height={image.height ?? 900}
+                    loading="lazy"
+                  />
+                  <span className="project-stage">{image.stage}</span>
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <div className="project-scope">
+              <p className="eyebrow eyebrow-dark">VISIBLE CONDITION</p>
+              <h3>What the original project photos show</h3>
+              <ul className="check-list">
+                {project.work.map((item) => (<li key={item}>{item}</li>))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ))}
 
       <CtaBand
         title="Need help with a similar roof or gutter problem?"

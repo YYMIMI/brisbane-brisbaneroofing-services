@@ -61,6 +61,8 @@ export type ProjectCase = {
     alt: string;
     caption: string;
     stage: "Before" | "After" | "In progress";
+    width?: number;
+    height?: number;
   }[];
   work: string[];
 };
@@ -214,6 +216,152 @@ export const projectCases: ProjectCase[] = [
       "Removed accumulated leaves, soil-like organic matter and moss from accessible sections",
       "Used water during clearing and flow observation",
       "Worked along tile-roof edges and adjoining metal-roof junctions",
+    ],
+  },
+];
+
+export const supplementaryProjectCases: ProjectCase[] = [
+  {
+    slug: "tiled-roof-valley-debris-inspection",
+    eyebrow: "REAL PRE-REPAIR INSPECTION",
+    title: "Leaf buildup in tiled roof valleys and drainage channels",
+    summary:
+      "Two original inspection photos show dry leaf debris accumulated along tiled roof valleys and drainage channels before clearing or repair. No completed outcome photo was supplied.",
+    status: "Inspection condition documented",
+    roofType: "Tiled roof valleys and drainage channels",
+    location: "Greater Brisbane — customer suburb not published",
+    coverImage: "/images/projects/tiled-roof-valley-debris-inspection-01.webp",
+    coverAlt: "Dry leaf debris accumulated along a tiled roof valley before cleaning",
+    images: [
+      {
+        src: "/images/projects/tiled-roof-valley-debris-inspection-01.webp",
+        alt: "Dry leaf debris accumulated along a tiled roof valley before cleaning",
+        caption:
+          "Before: leaves and organic debris are visible along the tiled valley drainage path.",
+        stage: "Before",
+        width: 657,
+        height: 895,
+      },
+      {
+        src: "/images/projects/tiled-roof-valley-debris-inspection-02.webp",
+        alt: "Leaf debris collected in a narrow drainage channel between tiled roof sections",
+        caption:
+          "Before: accumulated leaves are visible in the narrow channel between the adjoining tiled roof planes.",
+        stage: "Before",
+        width: 692,
+        height: 490,
+      },
+    ],
+    work: [
+      "Recorded visible leaf buildup along the tiled roof drainage path",
+      "Checked the visible valley and adjoining channels from the supplied inspection views",
+      "Kept cleaning, flashing and repair decisions separate until the roof condition can be assessed",
+      "Presented the photos as a pre-repair record without claiming a completed result",
+    ],
+  },
+  {
+    slug: "corrugated-metal-roof-junction-damage",
+    eyebrow: "REAL PRE-REPAIR INSPECTION",
+    title: "Damaged corrugated metal roof sheets at a roof junction",
+    summary:
+      "An original inspection photo documents distorted and lifted corrugated sheet edges with local surface corrosion at a roof junction. No completed outcome photo was supplied.",
+    status: "Visible defect documented",
+    roofType: "Corrugated metal roof",
+    location: "Greater Brisbane — customer suburb not published",
+    coverImage: "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
+    coverAlt: "Damaged corrugated metal roof sheet edges at a junction before repair",
+    images: [
+      {
+        src: "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
+        alt: "Damaged corrugated metal roof sheet edges at a junction before repair",
+        caption:
+          "Before: distorted sheet edges and an open junction are visible beside locally corroded roof sections.",
+        stage: "Before",
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    work: [
+      "Recorded the distorted sheet edges and open junction visible in the supplied photo",
+      "Noted local surface corrosion around adjoining metal roof sections",
+      "Kept the final repair method subject to safe access and on-roof assessment",
+      "Presented the visible defect without claiming work or materials not shown",
+    ],
+  },
+  {
+    slug: "metal-roof-gutter-clearing-before-after",
+    eyebrow: "REAL BEFORE & AFTER EVIDENCE",
+    title: "Leaf-filled metal roof gutter before and after clearing",
+    summary:
+      "An original before-and-after pair shows a gutter run beside a corrugated metal roof filled with dry leaves, followed by the same type of roof-edge channel with the visible debris removed.",
+    status: "Before-and-after condition documented",
+    roofType: "Corrugated metal roof and gutter",
+    location: "Greater Brisbane — customer suburb not published",
+    coverImage: "/images/projects/metal-roof-gutter-clearing-after.webp",
+    coverAlt: "Metal roof gutter after visible leaf debris was cleared",
+    images: [
+      {
+        src: "/images/projects/metal-roof-gutter-clearing-before.webp",
+        alt: "Dry leaves filling a gutter beside corrugated metal roof sheets before clearing",
+        caption:
+          "Before: dry leaves and organic debris fill the visible gutter run beside the metal roof edge.",
+        stage: "Before",
+        width: 400,
+        height: 514,
+      },
+      {
+        src: "/images/projects/metal-roof-gutter-clearing-after.webp",
+        alt: "Cleared gutter run visible beside corrugated metal roof sheets",
+        caption:
+          "After: the same type of gutter run is visible without the earlier leaf buildup.",
+        stage: "After",
+        width: 402,
+        height: 522,
+      },
+    ],
+    work: [
+      "Recorded the leaf-filled gutter condition shown in the supplied before photo",
+      "Cleared the visible dry leaves and organic debris from the accessible gutter run",
+      "Documented the cleared channel in the supplied after photo",
+      "Kept downpipe condition, water flow and any further repair needs subject to site assessment",
+    ],
+  },
+  {
+    slug: "tiled-roof-valley-repair-before-after",
+    eyebrow: "REAL BEFORE & AFTER EVIDENCE",
+    title: "Tiled roof valley repair before-and-after record",
+    summary:
+      "An original before-and-after pair documents an irregular, cracked repair surface along a tiled roof valley before work and a continuous dark repair strip visible along the valley afterward.",
+    status: "Before-and-after condition documented",
+    roofType: "Tiled roof valley",
+    location: "Greater Brisbane — customer suburb not published",
+    coverImage: "/images/projects/tiled-roof-valley-repair-after.webp",
+    coverAlt: "Continuous dark repair strip visible along a tiled roof valley afterward",
+    images: [
+      {
+        src: "/images/projects/tiled-roof-valley-repair-before.webp",
+        alt: "Irregular cracked repair surface visible along a tiled roof valley before work",
+        caption:
+          "Before: cracked and uneven grey patching is visible along the tiled valley line.",
+        stage: "Before",
+        width: 380,
+        height: 498,
+      },
+      {
+        src: "/images/projects/tiled-roof-valley-repair-after.webp",
+        alt: "Continuous dark repair strip visible along the tiled roof valley afterward",
+        caption:
+          "After: a continuous dark strip follows the visible valley line between the tiled roof planes.",
+        stage: "After",
+        width: 352,
+        height: 506,
+      },
+    ],
+    work: [
+      "Recorded the cracked and irregular valley surface visible in the supplied before photo",
+      "Documented the continuous dark repair strip shown in the supplied after photo",
+      "Kept the exact product, preparation method and concealed roof condition unstated",
+      "Presented the pair without adding an unverified suburb, date or warranty claim",
     ],
   },
 ];
