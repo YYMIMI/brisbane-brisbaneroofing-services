@@ -243,6 +243,7 @@ function ServiceDetailPage({
         eyebrow={service.eyebrow}
         title={service.title}
         description={service.description}
+        image={service.heroImage}
         urgent={isUrgent}
         requestLabel={
           isGutterCleaning ? "Request gutter cleaning" : "Request inspection"
@@ -1079,7 +1080,19 @@ function ProjectsPage() {
               <div><dt>Location</dt><dd>{project.location}</dd></div>
               <div><dt>Project photos</dt><dd>{project.images.length}</dd></div>
             </dl>
-            <div className="project-gallery">
+            <div
+              className={[
+                "project-gallery",
+                project.images.length === 1 ? "project-gallery-single" : "",
+                project.images.every(
+                  (image) => (image.width ?? 0) < (image.height ?? 0),
+                )
+                  ? "project-gallery-portrait"
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
               {project.images.map((image) => (
                 <figure className="project-photo" key={image.src}>
                   <img

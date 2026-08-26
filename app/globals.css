@@ -1793,6 +1793,29 @@ h3 {
   gap: 28px 16px;
 }
 
+.project-gallery-single {
+  grid-template-columns: minmax(0, 760px);
+}
+
+.project-gallery-single.project-gallery-portrait {
+  grid-template-columns: minmax(0, 520px);
+}
+
+.project-photo {
+  position: relative;
+}
+
+.project-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.project-gallery-portrait .project-photo img {
+  aspect-ratio: 3 / 4;
+}
+
 .project-gallery-portrait .project-image-wrap img {
   aspect-ratio: 3 / 4;
 }
@@ -2548,12 +2571,12 @@ h3 {
   }
 
   .home-hero-inner {
-    padding-block: 48px 96px;
-    gap: 46px;
+    padding-block: 62px 112px;
+    gap: 54px;
   }
 
   .home-hero h1 {
-    font-size: clamp(2.8rem, 11.6vw, 3.25rem);
+    font-size: clamp(3.2rem, 14vw, 4.25rem);
   }
 
   .hero-lead,
@@ -2568,10 +2591,6 @@ h3 {
 
   .hero-actions .button {
     width: 100%;
-  }
-
-  .home-hero .hero-actions > a:first-child {
-    display: none;
   }
 
   .hero-proof-list {
@@ -2797,8 +2816,6 @@ h3 {
   .mobile-conversion-bar a:first-child {
     background: var(--yellow);
     color: var(--navy);
-    grid-auto-flow: column;
-    gap: 6px;
   }
 
   .mobile-conversion-bar a:first-child span {

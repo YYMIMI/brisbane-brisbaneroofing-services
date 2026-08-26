@@ -7,6 +7,12 @@ export type ServicePage = {
   metaDescription: string;
   eyebrow: string;
   description: string;
+  heroImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   intro: string;
   symptoms: string[];
   assessment: string[];
@@ -60,7 +66,7 @@ export type ProjectCase = {
     src: string;
     alt: string;
     caption: string;
-    stage: "Before" | "After" | "In progress";
+    stage: "Before" | "After" | "In progress" | "Inspection";
     width?: number;
     height?: number;
   }[];
@@ -222,44 +228,6 @@ export const projectCases: ProjectCase[] = [
 
 export const supplementaryProjectCases: ProjectCase[] = [
   {
-    slug: "tiled-roof-valley-debris-inspection",
-    eyebrow: "REAL PRE-REPAIR INSPECTION",
-    title: "Leaf buildup in tiled roof valleys and drainage channels",
-    summary:
-      "Two original inspection photos show dry leaf debris accumulated along tiled roof valleys and drainage channels before clearing or repair. No completed outcome photo was supplied.",
-    status: "Inspection condition documented",
-    roofType: "Tiled roof valleys and drainage channels",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage: "/images/projects/tiled-roof-valley-debris-inspection-01.webp",
-    coverAlt: "Dry leaf debris accumulated along a tiled roof valley before cleaning",
-    images: [
-      {
-        src: "/images/projects/tiled-roof-valley-debris-inspection-01.webp",
-        alt: "Dry leaf debris accumulated along a tiled roof valley before cleaning",
-        caption:
-          "Before: leaves and organic debris are visible along the tiled valley drainage path.",
-        stage: "Before",
-        width: 657,
-        height: 895,
-      },
-      {
-        src: "/images/projects/tiled-roof-valley-debris-inspection-02.webp",
-        alt: "Leaf debris collected in a narrow drainage channel between tiled roof sections",
-        caption:
-          "Before: accumulated leaves are visible in the narrow channel between the adjoining tiled roof planes.",
-        stage: "Before",
-        width: 692,
-        height: 490,
-      },
-    ],
-    work: [
-      "Recorded visible leaf buildup along the tiled roof drainage path",
-      "Checked the visible valley and adjoining channels from the supplied inspection views",
-      "Kept cleaning, flashing and repair decisions separate until the roof condition can be assessed",
-      "Presented the photos as a pre-repair record without claiming a completed result",
-    ],
-  },
-  {
     slug: "corrugated-metal-roof-junction-damage",
     eyebrow: "REAL PRE-REPAIR INSPECTION",
     title: "Damaged corrugated metal roof sheets at a roof junction",
@@ -289,79 +257,117 @@ export const supplementaryProjectCases: ProjectCase[] = [
     ],
   },
   {
-    slug: "metal-roof-gutter-clearing-before-after",
-    eyebrow: "REAL BEFORE & AFTER EVIDENCE",
-    title: "Leaf-filled metal roof gutter before and after clearing",
+    slug: "commercial-metal-roof-perimeter-inspection",
+    eyebrow: "REAL ROOF INSPECTION",
+    title: "Commercial metal roof perimeter and sheet condition",
     summary:
-      "An original before-and-after pair shows a gutter run beside a corrugated metal roof filled with dry leaves, followed by the same type of roof-edge channel with the visible debris removed.",
-    status: "Before-and-after condition documented",
-    roofType: "Corrugated metal roof and gutter",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage: "/images/projects/metal-roof-gutter-clearing-after.webp",
-    coverAlt: "Metal roof gutter after visible leaf debris was cleared",
+      "Three original high-resolution inspection photos show a ribbed metal roof, its perimeter edge and adjoining capping from separate views. They are presented as a condition record, not as proof of a completed repair.",
+    status: "Inspection views documented",
+    roofType: "Ribbed metal roof and perimeter edge",
+    location: "Customer location not published",
+    coverImage: "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
+    coverAlt: "Wide inspection view across a ribbed metal roof and perimeter edge",
     images: [
       {
-        src: "/images/projects/metal-roof-gutter-clearing-before.webp",
-        alt: "Dry leaves filling a gutter beside corrugated metal roof sheets before clearing",
+        src: "/images/projects/commercial-metal-roof-perimeter-inspection-01.webp",
+        alt: "Close inspection view of a metal roof perimeter capping and adjoining ribbed sheets",
         caption:
-          "Before: dry leaves and organic debris fill the visible gutter run beside the metal roof edge.",
-        stage: "Before",
-        width: 400,
-        height: 514,
+          "Inspection: the perimeter capping, adjoining upstand and ribbed roof sheets are visible from the first direction.",
+        stage: "Inspection",
+        width: 1200,
+        height: 1600,
       },
       {
-        src: "/images/projects/metal-roof-gutter-clearing-after.webp",
-        alt: "Cleared gutter run visible beside corrugated metal roof sheets",
+        src: "/images/projects/commercial-metal-roof-perimeter-inspection-02.webp",
+        alt: "Second inspection view along metal roof perimeter capping and sheet edge",
         caption:
-          "After: the same type of gutter run is visible without the earlier leaf buildup.",
-        stage: "After",
-        width: 402,
-        height: 522,
+          "Inspection: a second view records the long perimeter edge and the junction beside the roof sheets.",
+        stage: "Inspection",
+        width: 1200,
+        height: 1600,
+      },
+      {
+        src: "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
+        alt: "Wide inspection view across ribbed metal roof sheets and the perimeter edge",
+        caption:
+          "Inspection: the wider view shows the connected roof-sheet field, visible fasteners and perimeter line.",
+        stage: "Inspection",
+        width: 1200,
+        height: 1600,
       },
     ],
     work: [
-      "Recorded the leaf-filled gutter condition shown in the supplied before photo",
-      "Cleared the visible dry leaves and organic debris from the accessible gutter run",
-      "Documented the cleared channel in the supplied after photo",
-      "Kept downpipe condition, water flow and any further repair needs subject to site assessment",
+      "Recorded the roof-sheet field and perimeter edge from three distinct viewpoints",
+      "Kept the visible roof condition separate from any unverified leak source",
+      "Did not state a repair product, process, completion date or customer address",
+      "Kept any repair scope subject to safe access and a site assessment",
     ],
   },
   {
-    slug: "tiled-roof-valley-repair-before-after",
-    eyebrow: "REAL BEFORE & AFTER EVIDENCE",
-    title: "Tiled roof valley repair before-and-after record",
+    slug: "metal-roof-fastener-and-underside-inspection",
+    eyebrow: "REAL ROOF INSPECTION",
+    title: "Metal roof fastener and underside condition record",
     summary:
-      "An original before-and-after pair documents an irregular, cracked repair surface along a tiled roof valley before work and a continuous dark repair strip visible along the valley afterward.",
-    status: "Before-and-after condition documented",
-    roofType: "Tiled roof valley",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage: "/images/projects/tiled-roof-valley-repair-after.webp",
-    coverAlt: "Continuous dark repair strip visible along a tiled roof valley afterward",
+      "Two original high-resolution inspection photos record a roof-sheet fixing and seam from above, plus a separate underside view with localised dark staining. The photos are not used to claim that the two visible conditions share a cause.",
+    status: "Inspection details documented",
+    roofType: "Metal roof sheet and underside",
+    location: "Customer location not published",
+    coverImage: "/images/projects/metal-roof-fastener-condition-01.webp",
+    coverAlt: "Inspection close-up of a metal roof sheet fastener and adjoining seam",
     images: [
       {
-        src: "/images/projects/tiled-roof-valley-repair-before.webp",
-        alt: "Irregular cracked repair surface visible along a tiled roof valley before work",
+        src: "/images/projects/metal-roof-fastener-condition-01.webp",
+        alt: "Close inspection view of a metal roof sheet fastener, seam and light surface spotting",
         caption:
-          "Before: cracked and uneven grey patching is visible along the tiled valley line.",
-        stage: "Before",
-        width: 380,
-        height: 498,
+          "Inspection: the roof-sheet fixing, adjoining seam and light surface spotting are visible in close view.",
+        stage: "Inspection",
+        width: 1200,
+        height: 1600,
       },
       {
-        src: "/images/projects/tiled-roof-valley-repair-after.webp",
-        alt: "Continuous dark repair strip visible along the tiled roof valley afterward",
+        src: "/images/projects/metal-roof-underside-condition-02.webp",
+        alt: "Underside inspection view with a localised dark stain below a metal roof structure",
         caption:
-          "After: a continuous dark strip follows the visible valley line between the tiled roof planes.",
-        stage: "After",
-        width: 352,
-        height: 506,
+          "Inspection: a localised dark stain is visible on the underside surface; its cause is not established by the photo alone.",
+        stage: "Inspection",
+        width: 1200,
+        height: 1600,
       },
     ],
     work: [
-      "Recorded the cracked and irregular valley surface visible in the supplied before photo",
-      "Documented the continuous dark repair strip shown in the supplied after photo",
-      "Kept the exact product, preparation method and concealed roof condition unstated",
-      "Presented the pair without adding an unverified suburb, date or warranty claim",
+      "Documented the visible fixing, sheet seam and light surface spotting",
+      "Recorded the separate underside stain without assigning an unverified source",
+      "Did not claim a completed repair or connect the two views causally",
+      "Kept leak tracing and the repair scope subject to an on-site assessment",
+    ],
+  },
+  {
+    slug: "tiled-roof-organic-debris-inspection",
+    eyebrow: "REAL PRE-CLEANING INSPECTION",
+    title: "Organic debris across tiled roof surfaces and channels",
+    summary:
+      "One original high-resolution inspection photo shows heavy dry organic debris spread across tiled roof planes and visible channel lines before cleaning. No completed cleaning photo was supplied.",
+    status: "Pre-cleaning condition documented",
+    roofType: "Tiled roof surfaces and channels",
+    location: "Customer location not published",
+    coverImage: "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
+    coverAlt: "Heavy dry organic debris spread across tiled roof surfaces before cleaning",
+    images: [
+      {
+        src: "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
+        alt: "Dry needles and organic debris covering tiled roof surfaces and channel lines",
+        caption:
+          "Before: dense dry needles and organic debris are visible across the roof planes and adjoining channel lines.",
+        stage: "Before",
+        width: 1200,
+        height: 1600,
+      },
+    ],
+    work: [
+      "Recorded the heavy dry organic buildup visible across the tiled roof surface",
+      "Kept the drainage effect and any concealed condition unstated without a site check",
+      "Did not claim that cleaning or repair had already been completed",
+      "Kept safe access, cleaning method and any follow-up work subject to assessment",
     ],
   },
 ];
@@ -378,6 +384,12 @@ export const services: ServicePage[] = [
     eyebrow: "ROOF RESTORATION BRISBANE",
     description:
       "Help deciding whether a weathered Brisbane tile roof needs targeted repairs or a broader restoration, supported by original before-and-after project photos.",
+    heroImage: {
+      src: "/images/service-banners/roof-restoration-brisbane.webp",
+      alt: "Illustrative service banner showing a tile roof restoration team",
+      width: 1717,
+      height: 916,
+    },
     intro:
       "Not every ageing tile roof needs a full restoration. One broken tile, an isolated leak or a local ridge-capping defect may be better handled as a targeted repair. A broader restoration makes more sense when wear extends across larger roof areas and the scope includes preparation, repairs and a new finish. The roof condition, access, solar equipment and Brisbane weather still shape the final plan.",
     symptoms: [
@@ -623,6 +635,12 @@ export const services: ServicePage[] = [
     eyebrow: "TILE ROOF REPAIRS BRISBANE",
     description:
       "Local tile-roof repair assessment for cracked or slipped tiles, ridge capping and damage around nearby roof details.",
+    heroImage: {
+      src: "/images/service-banners/tile-roof-repairs-brisbane.webp",
+      alt: "Illustrative service banner showing inspection work on a tiled roof",
+      width: 1672,
+      height: 941,
+    },
     intro:
       "Choose tile roof repairs for individual damaged or missing tiles, local ridge-capping defects and nearby roof details. A leak may still involve valleys, flashing or penetrations, so the surrounding area and water path must be checked. If the work concerns preparation and a new finish across broad roof areas, start with the roof-restoration service instead.",
     symptoms: [
@@ -672,6 +690,12 @@ export const services: ServicePage[] = [
     eyebrow: "METAL ROOF REPAIRS BRISBANE",
     description:
       "Metal roof repair assessment for leaks, loose sheets, failed fasteners, flashing defects and localised corrosion.",
+    heroImage: {
+      src: "/images/service-banners/metal-roof-repairs-brisbane.webp",
+      alt: "Illustrative service banner showing metal roof repair work",
+      width: 1672,
+      height: 941,
+    },
     intro:
       "Choose metal roof repairs when the roof material is metal and the concern involves sheets, fasteners, laps, flashing, penetrations or localised corrosion. Water can travel beneath a sheet, so the indoor drip point may not identify the exterior source. Broader replacement or specialist trade work is separated from a local repair scope after inspection.",
     symptoms: [
