@@ -825,7 +825,7 @@ function ProjectsPage() {
     "@type": "CollectionPage",
     name: "Real Greater Brisbane roof repair, restoration and gutter projects",
     description:
-      "Original project photography showing completed tile roof restoration, an in-progress flue penetration repair and gutter cleaning in progress.",
+      "Greater Brisbane project records showing completed tile roof restoration, flue penetration repair and gutter cleaning, with completion illustrations clearly identified where final site photos were not captured.",
     hasPart: projectCases.map((project) => ({
       "@type": "CreativeWork",
       name: project.title,
@@ -842,9 +842,9 @@ function ProjectsPage() {
     <PageShell>
       <JsonLd data={projectSchema} />
       <PageHero
-        eyebrow="REAL ROOF & GUTTER PROJECT PHOTOGRAPHY"
-        title="See the condition, work stage and documented result"
-        description="Original Greater Brisbane customer-project images are grouped by the work they actually show. Each caption identifies whether the image records the condition before work, work in progress or a completed result."
+        eyebrow="MEL ONE COMPLETED PROJECTS"
+        title="See the starting condition and completed work"
+        description="Greater Brisbane customer-project records are grouped by the work they show. Original site photos remain identified by stage, and completion illustrations are labelled separately where no final site photo was captured."
         image={navigationPageHeroImages.projects}
       />
 
@@ -925,19 +925,23 @@ function ProjectsPage() {
         id={flueRepair.slug}
       >
         <div className="shell project-progress-layout">
-          <figure className="project-progress-image">
-            <div className="project-image-wrap">
-              <img
-                src={flueRepair.images[0].src}
-                alt={flueRepair.images[0].alt}
-                width="1080"
-                height="1440"
-                loading="lazy"
-              />
-              <span>{flueRepair.images[0].stage}</span>
-            </div>
-            <figcaption>{flueRepair.images[0].caption}</figcaption>
-          </figure>
+          <div>
+            {flueRepair.images.map((image) => (
+              <figure className="project-progress-image" key={image.src}>
+                <div className="project-image-wrap">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width ?? 1080}
+                    height={image.height ?? 1440}
+                    loading="lazy"
+                  />
+                  <span>{image.stage}</span>
+                </div>
+                <figcaption>{image.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
           <div>
             <p className="eyebrow eyebrow-dark">{flueRepair.eyebrow}</p>
             <h2>{flueRepair.title}</h2>
@@ -954,6 +958,10 @@ function ProjectsPage() {
               <div>
                 <dt>Location</dt>
                 <dd>{flueRepair.location}</dd>
+              </div>
+              <div>
+                <dt>Project photos</dt>
+                <dd>One progress photo and one completion illustration</dd>
               </div>
             </dl>
             <ul className="check-list project-progress-list">
@@ -1008,7 +1016,7 @@ function ProjectsPage() {
             </div>
             <div>
               <dt>Project photos</dt>
-              <dd>Two before and three in-progress photos</dd>
+              <dd>Two before, three in-progress and two completion illustrations</dd>
             </div>
           </dl>
 

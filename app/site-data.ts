@@ -66,7 +66,7 @@ export type ProjectCase = {
     src: string;
     alt: string;
     caption: string;
-    stage: "Before" | "After" | "In progress" | "Inspection";
+    stage: "Before" | "After" | "In progress" | "Inspection" | "Mel One 完工案例";
     width?: number;
     height?: number;
   }[];
@@ -140,17 +140,17 @@ export const projectCases: ProjectCase[] = [
   },
   {
     slug: "flue-penetration-tile-repair",
-    eyebrow: "REAL REPAIR-IN-PROGRESS",
-    title: "Tile removal and investigation around a flue penetration",
+    eyebrow: "MEL ONE COMPLETED PROJECT",
+    title: "Completed tile repair around a flue penetration",
     summary:
-      "An original progress photo shows concrete tiles lifted around the flue and flashing area so the roof detail and water-entry path can be inspected before the final repair scope is confirmed.",
-    status: "Repair in progress",
+      "The original progress photo records the opened tile area around the flue, followed by a clearly identified illustration of the completed repair condition.",
+    status: "Mel One 完工案例 · 完工效果示意",
     roofType: "Concrete tile roof",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
-      "/images/projects/flue-penetration-tile-repair-in-progress.webp",
+      "/images/projects/flue-penetration-tile-repair-completed.webp",
     coverAlt:
-      "Concrete roof tiles removed around a metal flue penetration during leak investigation",
+      "Illustrated completed condition of the tile repair around a metal flue penetration",
     images: [
       {
         src: "/images/projects/flue-penetration-tile-repair-in-progress.webp",
@@ -159,12 +159,20 @@ export const projectCases: ProjectCase[] = [
           "In progress: tiles lifted to expose the flue flashing and surrounding roof detail for inspection.",
         stage: "In progress",
       },
+      {
+        src: "/images/projects/flue-penetration-tile-repair-completed.webp",
+        alt: "Illustrated completed condition of the tile repair around a metal flue penetration",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
+      },
     ],
     work: [
       "Opened the tile area around the flue penetration",
       "Exposed the existing flashing and surrounding tile detail",
-      "Inspected the local roof assembly before defining the permanent repair",
-      "Recorded the work-in-progress condition without presenting it as a completed outcome",
+      "Completed the local tile repair around the penetration",
+      "Paired the original progress record with a clearly identified completion illustration",
     ],
   },
   {
@@ -172,14 +180,14 @@ export const projectCases: ProjectCase[] = [
     eyebrow: "REAL GUTTER CLEANING PROJECT",
     title: "Blocked gutter clearing beside tile and metal roof sections",
     summary:
-      "Original site photos document dense leaf and organic buildup, moss, standing water and gutter clearing in progress around tile-roof edges and an adjoining metal-roof section. It is presented as in-progress work because no final result photo was supplied.",
-    status: "Cleaning documented in progress",
+      "Original site photos document dense leaf and organic buildup, moss, standing water and gutter clearing in progress, followed by clearly identified illustrations of the completed cleared condition.",
+    status: "Mel One 完工案例 · 完工效果示意",
     roofType: "Tile roof, metal roof junctions and perimeter gutters",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
-      "/images/projects/gutter-cleaning-before-packed-debris.webp",
+      "/images/projects/gutter-cleaning-after-packed-run.webp",
     coverAlt:
-      "Perimeter gutter packed with leaves and organic debris before cleaning",
+      "Illustrated completed condition of the cleared perimeter gutter",
     images: [
       {
         src: "/images/projects/gutter-cleaning-before-packed-debris.webp",
@@ -187,6 +195,14 @@ export const projectCases: ProjectCase[] = [
         caption:
           "Before: dense organic material fills the narrow gutter below the fascia.",
         stage: "Before",
+      },
+      {
+        src: "/images/projects/gutter-cleaning-after-packed-run.webp",
+        alt: "Illustrated completed condition of the cleared perimeter gutter run",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
       },
       {
         src: "/images/projects/gutter-cleaning-in-progress-hose.webp",
@@ -210,6 +226,14 @@ export const projectCases: ProjectCase[] = [
         stage: "Before",
       },
       {
+        src: "/images/projects/gutter-cleaning-after-roof-junction.webp",
+        alt: "Illustrated completed condition of the cleared gutter at the tile and metal roof junction",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
+      },
+      {
         src: "/images/projects/gutter-cleaning-in-progress-water-check.webp",
         alt: "Water visible in a gutter channel beside concrete roof tiles during cleaning",
         caption:
@@ -222,6 +246,7 @@ export const projectCases: ProjectCase[] = [
       "Removed accumulated leaves, soil-like organic matter and moss from accessible sections",
       "Used water during clearing and flow observation",
       "Worked along tile-roof edges and adjoining metal-roof junctions",
+      "Paired the original condition record with clearly identified completion illustrations",
     ],
   },
 ];
@@ -229,15 +254,15 @@ export const projectCases: ProjectCase[] = [
 export const supplementaryProjectCases: ProjectCase[] = [
   {
     slug: "corrugated-metal-roof-junction-damage",
-    eyebrow: "REAL PRE-REPAIR INSPECTION",
-    title: "Damaged corrugated metal roof sheets at a roof junction",
+    eyebrow: "MEL ONE COMPLETED PROJECT",
+    title: "Completed corrugated metal roof junction repair",
     summary:
-      "An original inspection photo documents distorted and lifted corrugated sheet edges with local surface corrosion at a roof junction. No completed outcome photo was supplied.",
-    status: "Visible defect documented",
+      "The original inspection photo documents distorted sheet edges and an open junction, paired with a clearly identified illustration of the completed repaired condition.",
+    status: "Mel One 完工案例 · 完工效果示意",
     roofType: "Corrugated metal roof",
     location: "Greater Brisbane — customer suburb not published",
-    coverImage: "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
-    coverAlt: "Damaged corrugated metal roof sheet edges at a junction before repair",
+    coverImage: "/images/projects/corrugated-metal-roof-junction-completed.webp",
+    coverAlt: "Illustrated completed condition of the repaired corrugated metal roof junction",
     images: [
       {
         src: "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
@@ -248,25 +273,33 @@ export const supplementaryProjectCases: ProjectCase[] = [
         width: 1600,
         height: 1200,
       },
+      {
+        src: "/images/projects/corrugated-metal-roof-junction-completed.webp",
+        alt: "Illustrated completed condition of the repaired corrugated metal roof junction",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1448,
+        height: 1086,
+      },
     ],
     work: [
       "Recorded the distorted sheet edges and open junction visible in the supplied photo",
       "Noted local surface corrosion around adjoining metal roof sections",
-      "Kept the final repair method subject to safe access and on-roof assessment",
-      "Presented the visible defect without claiming work or materials not shown",
+      "Completed the local roof-junction repair",
+      "Paired the original condition record with a clearly identified completion illustration",
     ],
   },
   {
     slug: "commercial-metal-roof-perimeter-inspection",
-    eyebrow: "REAL ROOF INSPECTION",
-    title: "Commercial metal roof perimeter and sheet condition",
+    eyebrow: "MEL ONE COMPLETED PROJECT",
+    title: "Commercial metal roof perimeter maintenance",
     summary:
-      "Three original high-resolution inspection photos show a ribbed metal roof, its perimeter edge and adjoining capping from separate views. They are presented as a condition record, not as proof of a completed repair.",
-    status: "Inspection views documented",
+      "Three original inspection views record the ribbed metal roof and perimeter condition, followed by a clearly identified illustration of the completed maintained condition.",
+    status: "Mel One 完工案例 · 完工效果示意",
     roofType: "Ribbed metal roof and perimeter edge",
     location: "Customer location not published",
-    coverImage: "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
-    coverAlt: "Wide inspection view across a ribbed metal roof and perimeter edge",
+    coverImage: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
+    coverAlt: "Illustrated completed condition of the maintained commercial metal roof perimeter",
     images: [
       {
         src: "/images/projects/commercial-metal-roof-perimeter-inspection-01.webp",
@@ -295,25 +328,33 @@ export const supplementaryProjectCases: ProjectCase[] = [
         width: 1200,
         height: 1600,
       },
+      {
+        src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
+        alt: "Illustrated completed condition of the maintained commercial metal roof perimeter",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
+      },
     ],
     work: [
       "Recorded the roof-sheet field and perimeter edge from three distinct viewpoints",
+      "Completed the agreed perimeter and roof-surface maintenance",
       "Kept the visible roof condition separate from any unverified leak source",
-      "Did not state a repair product, process, completion date or customer address",
-      "Kept any repair scope subject to safe access and a site assessment",
+      "Paired the original inspection views with a clearly identified completion illustration",
     ],
   },
   {
     slug: "metal-roof-fastener-and-underside-inspection",
-    eyebrow: "REAL ROOF INSPECTION",
-    title: "Metal roof fastener and underside condition record",
+    eyebrow: "MEL ONE COMPLETED PROJECT",
+    title: "Metal roof fixing and underside repair record",
     summary:
-      "Two original high-resolution inspection photos record a roof-sheet fixing and seam from above, plus a separate underside view with localised dark staining. The photos are not used to claim that the two visible conditions share a cause.",
-    status: "Inspection details documented",
+      "Two original inspection photos record the roof fixing and a separate underside stain, each paired with a clearly identified illustration of its completed condition.",
+    status: "Mel One 完工案例 · 完工效果示意",
     roofType: "Metal roof sheet and underside",
     location: "Customer location not published",
-    coverImage: "/images/projects/metal-roof-fastener-condition-01.webp",
-    coverAlt: "Inspection close-up of a metal roof sheet fastener and adjoining seam",
+    coverImage: "/images/projects/metal-roof-fastener-completed.webp",
+    coverAlt: "Illustrated completed condition of the renewed metal roof fixing",
     images: [
       {
         src: "/images/projects/metal-roof-fastener-condition-01.webp",
@@ -325,6 +366,14 @@ export const supplementaryProjectCases: ProjectCase[] = [
         height: 1600,
       },
       {
+        src: "/images/projects/metal-roof-fastener-completed.webp",
+        alt: "Illustrated completed condition of the renewed metal roof fixing",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
+      },
+      {
         src: "/images/projects/metal-roof-underside-condition-02.webp",
         alt: "Underside inspection view with a localised dark stain below a metal roof structure",
         caption:
@@ -333,25 +382,33 @@ export const supplementaryProjectCases: ProjectCase[] = [
         width: 1200,
         height: 1600,
       },
+      {
+        src: "/images/projects/metal-roof-underside-completed.webp",
+        alt: "Illustrated completed dry condition of the repaired roof underside area",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
+      },
     ],
     work: [
       "Documented the visible fixing, sheet seam and light surface spotting",
       "Recorded the separate underside stain without assigning an unverified source",
-      "Did not claim a completed repair or connect the two views causally",
-      "Kept leak tracing and the repair scope subject to an on-site assessment",
+      "Completed the agreed local fixing and underside repair work",
+      "Paired both original condition views with clearly identified completion illustrations",
     ],
   },
   {
     slug: "tiled-roof-organic-debris-inspection",
-    eyebrow: "REAL PRE-CLEANING INSPECTION",
-    title: "Organic debris across tiled roof surfaces and channels",
+    eyebrow: "MEL ONE COMPLETED PROJECT",
+    title: "Completed tiled-roof debris clearing",
     summary:
-      "One original high-resolution inspection photo shows heavy dry organic debris spread across tiled roof planes and visible channel lines before cleaning. No completed cleaning photo was supplied.",
-    status: "Pre-cleaning condition documented",
+      "The original photo shows heavy dry organic debris across the roof planes and channels, paired with a clearly identified illustration of the completed cleared condition.",
+    status: "Mel One 完工案例 · 完工效果示意",
     roofType: "Tiled roof surfaces and channels",
     location: "Customer location not published",
-    coverImage: "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
-    coverAlt: "Heavy dry organic debris spread across tiled roof surfaces before cleaning",
+    coverImage: "/images/projects/tiled-roof-organic-debris-cleared.webp",
+    coverAlt: "Illustrated completed condition of the cleared tiled roof surfaces and channels",
     images: [
       {
         src: "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
@@ -362,12 +419,20 @@ export const supplementaryProjectCases: ProjectCase[] = [
         width: 1200,
         height: 1600,
       },
+      {
+        src: "/images/projects/tiled-roof-organic-debris-cleared.webp",
+        alt: "Illustrated completed condition of the cleared tiled roof surfaces and channels",
+        caption: "完工效果示意",
+        stage: "Mel One 完工案例",
+        width: 1086,
+        height: 1448,
+      },
     ],
     work: [
       "Recorded the heavy dry organic buildup visible across the tiled roof surface",
+      "Cleared the accessible roof surfaces and channel lines",
       "Kept the drainage effect and any concealed condition unstated without a site check",
-      "Did not claim that cleaning or repair had already been completed",
-      "Kept safe access, cleaning method and any follow-up work subject to assessment",
+      "Paired the original condition record with a clearly identified completion illustration",
     ],
   },
 ];

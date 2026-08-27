@@ -1853,6 +1853,10 @@ h3 {
   max-width: 520px;
 }
 
+.project-progress-image + .project-progress-image {
+  margin-top: 28px;
+}
+
 .project-progress-image .project-image-wrap img {
   aspect-ratio: 3 / 4;
 }
