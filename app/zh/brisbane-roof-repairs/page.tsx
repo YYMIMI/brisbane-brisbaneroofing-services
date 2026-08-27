@@ -1,3 +1,4 @@
+import { WhyMelOne } from "../../why-mel-one";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -214,6 +215,8 @@ export default function ChineseRoofRepairsPage() {
             </p>
           </div>
         </section>
+
+        <WhyMelOne locale="zh" />
 
         <section className="section">
           <div className="shell">

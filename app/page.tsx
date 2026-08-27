@@ -1,3 +1,4 @@
+import { WhyMelOne } from "./why-mel-one";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -252,6 +253,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <WhyMelOne />
 
       <section className="section section-light" id="services">
         <div className="shell">

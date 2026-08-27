@@ -2851,3 +2851,51 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Why Mel One trust cards */
+.why-mel-one {
+  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  background: #eef6f8;
+}
+.why-mel-one .why-mel-one__heading {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+.why-mel-one .why-mel-one__heading p {
+  max-width: 660px;
+}
+.why-mel-one__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.why-mel-one__card {
+  min-width: 0;
+  padding: 1.6rem;
+  border: 1px solid rgba(13, 43, 58, 0.11);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(13, 43, 58, 0.08);
+}
+.why-mel-one__number {
+  display: block;
+  margin-bottom: 1.1rem;
+  color: var(--yellow, #f2bd2b);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.why-mel-one__card h3 {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+}
+.why-mel-one__card p {
+  margin: 0.65rem 0 0;
+}
+@media (max-width: 900px) {
+  .why-mel-one__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .why-mel-one__grid { grid-template-columns: 1fr; }
+  .why-mel-one__card { padding: 1.35rem; }
+}
