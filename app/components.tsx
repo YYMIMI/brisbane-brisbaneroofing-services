@@ -128,6 +128,9 @@ export function SiteFooter() {
             <li>
               <Link href="/privacy">Privacy</Link>
             </li>
+            <li>
+              <Link href="/thank-you">What happens after an enquiry</Link>
+            </li>
           </ul>
         </div>
       </div>
