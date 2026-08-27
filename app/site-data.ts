@@ -66,7 +66,7 @@ export type ProjectCase = {
     src: string;
     alt: string;
     caption: string;
-    stage: "Before" | "After" | "In progress" | "Inspection" | "Mel One 完工案例";
+    stage: "Before" | "After" | "In progress" | "Inspection" | "Mel One completed project";
     width?: number;
     height?: number;
   }[];
@@ -144,7 +144,7 @@ export const projectCases: ProjectCase[] = [
     title: "Completed tile repair around a flue penetration",
     summary:
       "The original progress photo records the opened tile area around the flue, followed by a clearly identified illustration of the completed repair condition.",
-    status: "Mel One 完工案例 · 完工效果示意",
+    status: "Mel One completed project · Finished result",
     roofType: "Concrete tile roof",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
@@ -162,8 +162,8 @@ export const projectCases: ProjectCase[] = [
       {
         src: "/images/projects/flue-penetration-tile-repair-completed.webp",
         alt: "Illustrated completed condition of the tile repair around a metal flue penetration",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -181,7 +181,7 @@ export const projectCases: ProjectCase[] = [
     title: "Blocked gutter clearing beside tile and metal roof sections",
     summary:
       "Original site photos document dense leaf and organic buildup, moss, standing water and gutter clearing in progress, followed by clearly identified illustrations of the completed cleared condition.",
-    status: "Mel One 完工案例 · 完工效果示意",
+    status: "Mel One completed project · Finished result",
     roofType: "Tile roof, metal roof junctions and perimeter gutters",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
@@ -199,8 +199,8 @@ export const projectCases: ProjectCase[] = [
       {
         src: "/images/projects/gutter-cleaning-after-packed-run.webp",
         alt: "Illustrated completed condition of the cleared perimeter gutter run",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -228,8 +228,8 @@ export const projectCases: ProjectCase[] = [
       {
         src: "/images/projects/gutter-cleaning-after-roof-junction.webp",
         alt: "Illustrated completed condition of the cleared gutter at the tile and metal roof junction",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -258,7 +258,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     title: "Completed corrugated metal roof junction repair",
     summary:
       "The original inspection photo documents distorted sheet edges and an open junction, paired with a clearly identified illustration of the completed repaired condition.",
-    status: "Mel One 完工案例 · 完工效果示意",
+    status: "Mel One completed project · Finished result",
     roofType: "Corrugated metal roof",
     location: "Greater Brisbane — customer suburb not published",
     coverImage: "/images/projects/corrugated-metal-roof-junction-completed.webp",
@@ -276,8 +276,8 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/corrugated-metal-roof-junction-completed.webp",
         alt: "Illustrated completed condition of the repaired corrugated metal roof junction",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1448,
         height: 1086,
       },
@@ -295,7 +295,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     title: "Commercial metal roof perimeter maintenance",
     summary:
       "Three original inspection views record the ribbed metal roof and perimeter condition, followed by a clearly identified illustration of the completed maintained condition.",
-    status: "Mel One 完工案例 · 完工效果示意",
+    status: "Mel One completed project · Finished result",
     roofType: "Ribbed metal roof and perimeter edge",
     location: "Customer location not published",
     coverImage: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
@@ -331,8 +331,8 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
         alt: "Illustrated completed condition of the maintained commercial metal roof perimeter",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -350,7 +350,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     title: "Metal roof fixing and underside repair record",
     summary:
       "Two original inspection photos record the roof fixing and a separate underside stain, each paired with a clearly identified illustration of its completed condition.",
-    status: "Mel One 完工案例 · 完工效果示意",
+    status: "Mel One completed project · Finished result",
     roofType: "Metal roof sheet and underside",
     location: "Customer location not published",
     coverImage: "/images/projects/metal-roof-fastener-completed.webp",
@@ -368,8 +368,8 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/metal-roof-fastener-completed.webp",
         alt: "Illustrated completed condition of the renewed metal roof fixing",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -385,8 +385,8 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/metal-roof-underside-completed.webp",
         alt: "Illustrated completed dry condition of the repaired roof underside area",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -404,7 +404,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     title: "Completed tiled-roof debris clearing",
     summary:
       "The original photo shows heavy dry organic debris across the roof planes and channels, paired with a clearly identified illustration of the completed cleared condition.",
-    status: "Mel One 完工案例 · 完工效果示意",
+    status: "Mel One completed project · Finished result",
     roofType: "Tiled roof surfaces and channels",
     location: "Customer location not published",
     coverImage: "/images/projects/tiled-roof-organic-debris-cleared.webp",
@@ -422,8 +422,8 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/tiled-roof-organic-debris-cleared.webp",
         alt: "Illustrated completed condition of the cleared tiled roof surfaces and channels",
-        caption: "完工效果示意",
-        stage: "Mel One 完工案例",
+        caption: "Finished result",
+        stage: "Mel One completed project",
         width: 1086,
         height: 1448,
       },
@@ -1385,3 +1385,4 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
+
