@@ -6,7 +6,8 @@ import { business } from "../site-data";
 export const metadata: Metadata = {
   title: { absolute: "Thank You | Mel One Roof Repairs Brisbane" },
   description: "Your Brisbane roofing enquiry has been sent.",
-  robots: { index: false, follow: true },
+  alternates: { canonical: `${business.siteUrl}/thank-you` },
+  robots: { index: true, follow: true },
 };
 
 export default function ThankYouPage() {

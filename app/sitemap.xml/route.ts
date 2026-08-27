@@ -20,6 +20,7 @@ export async function GET() {
     "/about",
     "/contact",
     "/privacy",
+    "/thank-you",
     "/zh/brisbane-roof-repairs",
     "/zh/brisbane-roof-restoration",
   ];
