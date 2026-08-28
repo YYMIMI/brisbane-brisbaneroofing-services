@@ -1237,6 +1237,31 @@ function AboutPage() {
           </aside>
         </div>
       </section>
+      <section className="section section-pale" aria-labelledby="customer-priorities-heading">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="BEFORE THE SCOPE IS AGREED"
+            title="What Brisbane property owners usually want confirmed"
+          />
+          <div className="business-principles">
+            <article>
+              <span>01</span>
+              <h3>Is it local or widespread?</h3>
+              <p>One displaced tile or loose flashing needs a different response from repeated leaks across several areas.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Can the roof be reached safely?</h3>
+              <p>Pitch, height, solar equipment, fragile surfaces and ground access affect inspection and repair planning.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Who handles specialist scope?</h3>
+              <p>Electrical, solar, structural and regulated roof-plumbing work is identified separately before work proceeds.</p>
+            </article>
+          </div>
+        </div>
+      </section>
       <CtaBand />
     </PageShell>
   );
