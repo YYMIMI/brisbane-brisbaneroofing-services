@@ -136,7 +136,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <span>© 2026 {business.legalName}</span>
-        <span>{business.serviceArea}, Queensland</span>
+        <span>On-site roof repairs across {business.serviceArea} · Call {business.contactName} on {business.phone}</span>
       </div>
     </footer>
   );
