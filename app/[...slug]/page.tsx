@@ -826,7 +826,7 @@ function ProjectsPage() {
     name: "Real Greater Brisbane roof repair, restoration and gutter projects",
     description:
       "Greater Brisbane project records showing completed tile roof restoration, flue penetration repair and gutter cleaning, with completion illustrations clearly identified where final site photos were not captured.",
-    hasPart: projectCases.map((project) => ({
+    hasPart: [...projectCases, ...supplementaryProjectCases].map((project) => ({
       "@type": "CreativeWork",
       name: project.title,
       description: project.summary,

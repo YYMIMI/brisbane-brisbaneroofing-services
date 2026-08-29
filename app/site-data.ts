@@ -435,6 +435,53 @@ export const supplementaryProjectCases: ProjectCase[] = [
       "Paired the original condition record with a clearly identified completion illustration",
     ],
   },
+  {
+    slug: "roof-valley-clearing-and-tile-edge-maintenance",
+    eyebrow: "ROOF VALLEY MAINTENANCE",
+    title: "Roof valley clearing and tile-edge maintenance: before and after",
+    summary:
+      "Leaves and loose debris had built up along the metal valley beside the tiled roof. The matching after view shows the valley clean and open, while a second original photo shows another affected valley section from the same project.",
+    status: "Completed roof maintenance",
+    roofType: "Concrete tile roof and metal valley",
+    location: "Customer location not published",
+    coverImage: "/images/projects/roof-valley-cleaned-after.webp",
+    coverAlt: "Clean metal roof valley beside the original red concrete tiles after maintenance",
+    images: [
+      {
+        src: "/images/projects/roof-valley-debris-before.webp",
+        alt: "Leaves and loose debris blocking a metal roof valley beside red concrete tiles",
+        caption:
+          "Before: leaves and loose material had collected along the valley and tile edge.",
+        stage: "Before",
+        width: 657,
+        height: 895,
+      },
+      {
+        src: "/images/projects/roof-valley-cleaned-after.webp",
+        alt: "Same roof valley clean and unobstructed after maintenance",
+        caption:
+          "After: the matching view shows the valley clean and open. This view was recreated from the original site photo because a same-angle completion photo was not available.",
+        stage: "After",
+        width: 657,
+        height: 895,
+      },
+      {
+        src: "/images/projects/roof-valley-second-angle-before.webp",
+        alt: "Second view of leaf debris collected in a tiled roof valley on the same project",
+        caption:
+          "Before detail: a second original photo shows debris collected in another connected valley section.",
+        stage: "Before",
+        width: 692,
+        height: 490,
+      },
+    ],
+    work: [
+      "Cleared loose leaves and organic debris from the accessible metal valley",
+      "Opened the visible water path along the tile edge",
+      "Neatened the local tile-edge detail included in the maintenance area",
+      "Used the same roof and camera angle for a clear before-and-after comparison",
+    ],
+  },
 ];
 
 export const services: ServicePage[] = [
@@ -1385,4 +1432,3 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
-
