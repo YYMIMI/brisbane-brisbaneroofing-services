@@ -440,7 +440,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "ROOF VALLEY MAINTENANCE",
     title: "Roof valley clearing and tile-edge maintenance: before and after",
     summary:
-      "Leaves and loose debris had built up along the metal valley beside the tiled roof. The matching after view shows the valley clean and open, while a second original photo shows another affected valley section from the same project.",
+      "Leaves and loose debris had built up along the metal valley beside the tiled roof. The matching after view shows the same valley clean and open.",
     status: "Completed roof maintenance",
     roofType: "Concrete tile roof and metal valley",
     location: "Customer location not published",
@@ -464,15 +464,6 @@ export const supplementaryProjectCases: ProjectCase[] = [
         stage: "After",
         width: 657,
         height: 895,
-      },
-      {
-        src: "/images/projects/roof-valley-second-angle-before.webp",
-        alt: "Second view of leaf debris collected in a tiled roof valley on the same project",
-        caption:
-          "Before detail: a second original photo shows debris collected in another connected valley section.",
-        stage: "Before",
-        width: 692,
-        height: 490,
       },
     ],
     work: [
