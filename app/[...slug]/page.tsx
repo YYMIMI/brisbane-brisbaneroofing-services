@@ -848,7 +848,7 @@ function ProjectsPage() {
   };
 
   return (
-    <PageShell>
+    <PageShell projectLinkLabel="Roof projects">
       <JsonLd data={projectSchema} />
       <PageHero
         eyebrow="MEL ONE COMPLETED PROJECTS"

@@ -57,7 +57,11 @@ export function SiteHeader() {
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({
+  projectLinkLabel = "Roof project records",
+}: {
+  projectLinkLabel?: string;
+} = {}) {
   return (
     <footer className="site-footer">
       <div className="shell footer-grid">
@@ -117,7 +121,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/projects">Roof projects</Link>
+              <Link href="/projects">{projectLinkLabel}</Link>
             </li>
             <li>
               <Link href="/about">Service approach</Link>
@@ -313,12 +317,18 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
   );
 }
 
-export function PageShell({ children }: { children: React.ReactNode }) {
+export function PageShell({
+  children,
+  projectLinkLabel,
+}: {
+  children: React.ReactNode;
+  projectLinkLabel?: string;
+}) {
   return (
     <>
       <SiteHeader />
       <main id="main-content">{children}</main>
-      <SiteFooter />
+      <SiteFooter projectLinkLabel={projectLinkLabel} />
       <nav className="mobile-conversion-bar" aria-label="Quick contact">
         <a href={`tel:${business.phoneHref}`}>
           <span>Call now</span>
