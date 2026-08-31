@@ -1820,6 +1820,50 @@ h3 {
   aspect-ratio: 3 / 4;
 }
 
+.project-gallery-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 18px;
+}
+
+.gutter-story-block {
+  margin-top: 64px;
+}
+
+.gutter-story-main {
+  margin-top: 0;
+}
+
+.gutter-story-process {
+  padding: 50px;
+  background: var(--off-white);
+}
+
+.gutter-story-heading {
+  display: grid;
+  align-items: end;
+  margin-bottom: 30px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 44px;
+}
+
+.gutter-story-heading h3,
+.gutter-story-heading p {
+  margin-bottom: 0;
+}
+
+.gutter-story-heading > p {
+  color: var(--slate);
+}
+
+.gutter-photo-note {
+  margin: 34px 0 0;
+  padding: 18px 22px;
+  border-left: 4px solid var(--yellow);
+  background: var(--off-white);
+  color: var(--slate);
+  font-size: 0.84rem;
+}
+
 .project-scope {
   display: grid;
   align-items: start;
@@ -2495,7 +2539,8 @@ h3 {
   .featured-project,
   .project-case-heading,
   .project-progress-layout,
-  .project-scope {
+  .project-scope,
+  .gutter-story-heading {
     grid-template-columns: 1fr;
     gap: 44px;
   }
@@ -2680,6 +2725,14 @@ h3 {
 
   .project-scope {
     padding: 30px 26px;
+  }
+
+  .gutter-story-block {
+    margin-top: 48px;
+  }
+
+  .gutter-story-process {
+    padding: 34px 26px;
   }
 
   .issue-card {

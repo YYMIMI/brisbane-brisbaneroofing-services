@@ -819,6 +819,15 @@ function ProjectsPage() {
   const restoration = projectCases[0];
   const flueRepair = projectCases[1];
   const gutterCleaning = projectCases[2];
+  const gutterPrimaryPair = gutterCleaning.images.filter(
+    (image) => image.group === "primary",
+  );
+  const gutterProcessPhotos = gutterCleaning.images.filter(
+    (image) => image.group === "process",
+  );
+  const gutterAdditionalPair = gutterCleaning.images.filter(
+    (image) => image.group === "additional",
+  );
 
   const projectSchema = {
     "@context": "https://schema.org",
@@ -1015,28 +1024,106 @@ function ProjectsPage() {
               <dd>{gutterCleaning.location}</dd>
             </div>
             <div>
-              <dt>Project photos</dt>
-              <dd>One before and one after photo</dd>
+              <dt>Work shown</dt>
+              <dd>Before, cleaning, flow check and finished condition</dd>
             </div>
           </dl>
 
-          <div className="project-gallery project-gallery-portrait">
-            {gutterCleaning.images.map((image) => (
-              <figure key={image.src}>
-                <div className="project-image-wrap">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width="1080"
-                    height="1440"
-                    loading="lazy"
-                  />
-                  <span>{image.stage}</span>
-                </div>
-                <figcaption>{image.caption}</figcaption>
-              </figure>
-            ))}
+          <div className="gutter-story-block gutter-story-main">
+            <div className="gutter-story-heading">
+              <div>
+                <p className="eyebrow eyebrow-dark">MAIN COMPARISON</p>
+                <h3>Blocked gutter and cleared result</h3>
+              </div>
+              <p>
+                The same gutter below the fascia is shown before and after
+                clearing, so the result is easy to compare.
+              </p>
+            </div>
+            <div className="project-gallery project-gallery-pair project-gallery-portrait">
+              {gutterPrimaryPair.map((image) => (
+                <figure key={image.src}>
+                  <div className="project-image-wrap">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width ?? 1086}
+                      height={image.height ?? 1448}
+                      loading="lazy"
+                    />
+                    <span>{image.stage}</span>
+                  </div>
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
+
+          <div className="gutter-story-block gutter-story-process">
+            <div className="gutter-story-heading">
+              <div>
+                <p className="eyebrow eyebrow-dark">HOW THE GUTTER WAS CLEARED</p>
+                <h3>Cleaning and flow check</h3>
+              </div>
+              <p>
+                These site photos show the gutter being cleared and flushed
+                before the finished condition was recorded.
+              </p>
+            </div>
+            <div className="project-gallery project-gallery-pair project-gallery-portrait">
+              {gutterProcessPhotos.map((image) => (
+                <figure key={image.src}>
+                  <div className="project-image-wrap">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width ?? 1086}
+                      height={image.height ?? 1448}
+                      loading="lazy"
+                    />
+                    <span>{image.stage}</span>
+                  </div>
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <div className="gutter-story-block">
+            <div className="gutter-story-heading">
+              <div>
+                <p className="eyebrow eyebrow-dark">SAME JOB · SECOND AREA</p>
+                <h3>Connected tiled and metal roof section</h3>
+              </div>
+              <p>
+                A second comparison shows the connected gutter beside the
+                tiled and metal roof sections on the same property.
+              </p>
+            </div>
+            <div className="project-gallery project-gallery-pair project-gallery-portrait">
+              {gutterAdditionalPair.map((image) => (
+                <figure key={image.src}>
+                  <div className="project-image-wrap">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width ?? 1086}
+                      height={image.height ?? 1448}
+                      loading="lazy"
+                    />
+                    <span>{image.stage}</span>
+                  </div>
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <p className="gutter-photo-note">
+            Photo note: matching after views were recreated from the original
+            site photos because same-angle completion photos were not available.
+            Vehicle number plates have been obscured for privacy.
+          </p>
 
           <div className="project-scope">
             <div>

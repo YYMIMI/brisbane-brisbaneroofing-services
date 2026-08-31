@@ -66,7 +66,15 @@ export type ProjectCase = {
     src: string;
     alt: string;
     caption: string;
-    stage: "Before" | "After" | "In progress" | "Inspection" | "Mel One completed project";
+    stage:
+      | "Before"
+      | "After"
+      | "In progress"
+      | "During cleaning"
+      | "Flow check"
+      | "Inspection"
+      | "Mel One completed project";
+    group?: "primary" | "process" | "additional";
     width?: number;
     height?: number;
   }[];
@@ -180,9 +188,9 @@ export const projectCases: ProjectCase[] = [
     eyebrow: "GUTTER CLEANING · BEFORE & AFTER",
     title: "Blocked gutter clearing: before and after",
     summary:
-      "A gutter packed with leaves and organic debris is shown before clearing and after the same run was cleaned. The matching after view was recreated from the original site photo because a same-angle completion photo was not available.",
+      "A blocked gutter is shown before clearing, during cleaning and after the connected roof-edge sections were left open for water flow.",
     status: "Completed gutter cleaning",
-    roofType: "Perimeter gutter beside a low roof section",
+    roofType: "Perimeter gutter beside tiled and metal roof sections",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
       "/images/projects/gutter-cleaning-after-packed-run.webp",
@@ -195,21 +203,63 @@ export const projectCases: ProjectCase[] = [
         caption:
           "Before: dense organic material fills the narrow gutter below the fascia.",
         stage: "Before",
+        group: "primary",
       },
       {
         src: "/images/projects/gutter-cleaning-after-packed-run.webp",
         alt: "Same perimeter gutter clear of leaves and organic debris after cleaning",
         caption: "After: the same gutter run is clear and open.",
         stage: "After",
+        group: "primary",
+        width: 1086,
+        height: 1448,
+      },
+      {
+        src: "/images/projects/gutter-cleaning-in-progress-hose.webp",
+        alt: "Gutter cleaning underway with a hose and access ladder beside the low roof section",
+        caption:
+          "During cleaning: loose material was removed and the gutter channel was flushed.",
+        stage: "During cleaning",
+        group: "process",
+        width: 1086,
+        height: 1448,
+      },
+      {
+        src: "/images/projects/gutter-cleaning-in-progress-water-check.webp",
+        alt: "Water moving through a cleared gutter beside a concrete tile roof during the flow check",
+        caption:
+          "Flow check: water was used to confirm movement through the open gutter channel.",
+        stage: "Flow check",
+        group: "process",
+        width: 1086,
+        height: 1448,
+      },
+      {
+        src: "/images/projects/gutter-cleaning-before-roof-junction-privacy.webp",
+        alt: "Debris collected in the gutter between tiled and metal roof sections before cleaning",
+        caption:
+          "Before: organic build-up had collected along the connected roof-edge gutter.",
+        stage: "Before",
+        group: "additional",
+        width: 1086,
+        height: 1448,
+      },
+      {
+        src: "/images/projects/gutter-cleaning-after-roof-junction-privacy.webp",
+        alt: "Same gutter between tiled and metal roof sections clear after cleaning",
+        caption:
+          "After: the same connected roof-edge gutter is clear along the visible run.",
+        stage: "After",
+        group: "additional",
         width: 1086,
         height: 1448,
       },
     ],
     work: [
-      "Removed the accumulated leaves and organic material from the accessible gutter run",
-      "Cleared the visible channel beside the roof edge",
-      "Left the gutter open for normal water flow",
-      "Used the same view for a clear before-and-after comparison",
+      "Removed accumulated leaves, moss and compacted organic material from the accessible gutter runs",
+      "Cleared the narrow channel below the fascia and the connected tiled-to-metal roof junction",
+      "Flushed the cleaned sections and checked water movement through the open channel",
+      "Left the visible gutter runs clear for normal drainage",
     ],
   },
 ];
