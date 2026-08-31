@@ -1067,7 +1067,8 @@ function ProjectsPage() {
               </div>
               <p>
                 These site photos show the gutter being cleared and flushed
-                before the finished condition was recorded.
+                before the connected roof-edge sections were left clear and
+                open for water flow.
               </p>
             </div>
             <div className="project-gallery project-gallery-pair project-gallery-portrait">
@@ -1440,3 +1441,4 @@ export default async function CatchAllPage({ params }: PageProps) {
       notFound();
   }
 }
+
