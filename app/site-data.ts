@@ -177,17 +177,17 @@ export const projectCases: ProjectCase[] = [
   },
   {
     slug: "blocked-gutter-cleaning",
-    eyebrow: "REAL GUTTER CLEANING PROJECT",
-    title: "Blocked gutter clearing beside tile and metal roof sections",
+    eyebrow: "GUTTER CLEANING · BEFORE & AFTER",
+    title: "Blocked gutter clearing: before and after",
     summary:
-      "Original site photos document dense leaf and organic buildup, moss, standing water and gutter clearing in progress, followed by clearly identified illustrations of the completed cleared condition.",
-    status: "Mel One completed project · Finished result",
-    roofType: "Tile roof, metal roof junctions and perimeter gutters",
+      "A gutter packed with leaves and organic debris is shown before clearing and after the same run was cleaned. The matching after view was recreated from the original site photo because a same-angle completion photo was not available.",
+    status: "Completed gutter cleaning",
+    roofType: "Perimeter gutter beside a low roof section",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
       "/images/projects/gutter-cleaning-after-packed-run.webp",
     coverAlt:
-      "Illustrated completed condition of the cleared perimeter gutter",
+      "Cleared perimeter gutter beside the same low roof section after cleaning",
     images: [
       {
         src: "/images/projects/gutter-cleaning-before-packed-debris.webp",
@@ -198,55 +198,18 @@ export const projectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/gutter-cleaning-after-packed-run.webp",
-        alt: "Illustrated completed condition of the cleared perimeter gutter run",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Same perimeter gutter clear of leaves and organic debris after cleaning",
+        caption: "After: the same gutter run is clear and open.",
+        stage: "After",
         width: 1086,
         height: 1448,
-      },
-      {
-        src: "/images/projects/gutter-cleaning-in-progress-hose.webp",
-        alt: "Gutter cleaning in progress with a hose and ladder beside the roof edge",
-        caption:
-          "In progress: the gutter run is being cleared with access and water equipment in place.",
-        stage: "In progress",
-      },
-      {
-        src: "/images/projects/gutter-cleaning-in-progress-long-run.webp",
-        alt: "Long gutter run beside an older tile roof during clearing work",
-        caption:
-          "In progress: water and remaining material are visible along the long tile-roof gutter run.",
-        stage: "In progress",
-      },
-      {
-        src: "/images/projects/gutter-cleaning-before-roof-junction.webp",
-        alt: "Heavy organic buildup in a gutter between tile and adjoining metal roof sections",
-        caption:
-          "Before: accumulated organic material is visible at the tile-roof and metal-roof junction.",
-        stage: "Before",
-      },
-      {
-        src: "/images/projects/gutter-cleaning-after-roof-junction.webp",
-        alt: "Illustrated completed condition of the cleared gutter at the tile and metal roof junction",
-        caption: "Finished result",
-        stage: "Mel One completed project",
-        width: 1086,
-        height: 1448,
-      },
-      {
-        src: "/images/projects/gutter-cleaning-in-progress-water-check.webp",
-        alt: "Water visible in a gutter channel beside concrete roof tiles during cleaning",
-        caption:
-          "In progress: the gutter channel is visible with water present after larger debris was moved.",
-        stage: "In progress",
       },
     ],
     work: [
-      "Recorded blocked gutter runs and roof-edge conditions before removal",
-      "Removed accumulated leaves, soil-like organic matter and moss from accessible sections",
-      "Used water during clearing and flow observation",
-      "Worked along tile-roof edges and adjoining metal-roof junctions",
-      "Paired the original condition record with clearly identified completion illustrations",
+      "Removed the accumulated leaves and organic material from the accessible gutter run",
+      "Cleared the visible channel beside the roof edge",
+      "Left the gutter open for normal water flow",
+      "Used the same view for a clear before-and-after comparison",
     ],
   },
 ];

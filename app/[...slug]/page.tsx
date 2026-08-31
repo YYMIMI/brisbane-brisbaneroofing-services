@@ -1016,7 +1016,7 @@ function ProjectsPage() {
             </div>
             <div>
               <dt>Project photos</dt>
-              <dd>Two before, three in-progress and two completion illustrations</dd>
+              <dd>One before and one after photo</dd>
             </div>
           </dl>
 
@@ -1040,8 +1040,8 @@ function ProjectsPage() {
 
           <div className="project-scope">
             <div>
-              <p className="eyebrow eyebrow-dark">DOCUMENTED CLEANING SCOPE</p>
-              <h3>What the original project photos show</h3>
+              <p className="eyebrow eyebrow-dark">COMPLETED GUTTER CLEANING</p>
+              <h3>What was completed</h3>
             </div>
             <ul className="check-list">
               {gutterCleaning.work.map((item) => (
