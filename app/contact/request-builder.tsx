@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { business } from "../site-data";
 
 type RequestState = {
@@ -14,6 +14,26 @@ type RequestState = {
 };
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
+
+type LeadEventName =
+  | "lead_form_start"
+  | "lead_submit_attempt"
+  | "lead_validation_error"
+  | "lead_api_error"
+  | "generate_lead";
+
+function trackLeadEvent(
+  eventName: LeadEventName,
+  parameters: Record<string, string | number | boolean> = {},
+) {
+  window.gtag?.("event", eventName, {
+    form_id: "roofing_enquiry",
+    page_path: window.location.pathname,
+    hostname: window.location.hostname,
+    transport_type: "beacon",
+    ...parameters,
+  });
+}
 
 const initialState: RequestState = {
   name: "",
@@ -29,8 +49,13 @@ export default function RequestBuilder() {
   const [form, setForm] = useState<RequestState>(initialState);
   const [status, setStatus] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
+  const formStarted = useRef(false);
 
   function updateField(field: keyof RequestState, value: string) {
+    if (!formStarted.current) {
+      formStarted.current = true;
+      trackLeadEvent("lead_form_start");
+    }
     setForm((current) => ({ ...current, [field]: value }));
     if (status === "error") {
       setStatus("idle");
@@ -44,8 +69,10 @@ export default function RequestBuilder() {
 
     const formElement = event.currentTarget;
     const data = new FormData(formElement);
+    trackLeadEvent("lead_submit_attempt");
     setStatus("submitting");
     setMessage("");
+    let failureTracked = false;
 
     try {
       const response = await fetch("/api/enquiry", {
@@ -65,6 +92,13 @@ export default function RequestBuilder() {
         | null;
 
       if (!response.ok || result?.ok !== true) {
+        trackLeadEvent(
+          response.status === 400 || response.status === 422
+            ? "lead_validation_error"
+            : "lead_api_error",
+          { http_status: response.status },
+        );
+        failureTracked = true;
         throw new Error(
           result?.message ||
             `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
@@ -72,11 +106,7 @@ export default function RequestBuilder() {
       }
 
       if (result.delivered === true) {
-        window.gtag?.("event", "generate_lead", {
-          form_id: "roofing_enquiry",
-          page_path: window.location.pathname,
-          transport_type: "beacon",
-        });
+        trackLeadEvent("generate_lead");
       }
 
       setForm(initialState);
@@ -87,6 +117,9 @@ export default function RequestBuilder() {
           "Thanks — your roofing enquiry has been sent. The team will reply within 24 hours.",
       );
     } catch (error) {
+      if (!failureTracked) {
+        trackLeadEvent("lead_api_error", { error_type: "network_or_client" });
+      }
       setStatus("error");
       setMessage(
         error instanceof Error
