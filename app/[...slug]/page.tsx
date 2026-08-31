@@ -834,7 +834,7 @@ function ProjectsPage() {
     "@type": "CollectionPage",
     name: "Real Greater Brisbane roof repair, restoration and gutter projects",
     description:
-      "Greater Brisbane project records showing completed tile roof restoration, flue penetration repair and gutter cleaning, with completion illustrations clearly identified where final site photos were not captured.",
+      "Greater Brisbane projects showing completed tile roof restoration, flue penetration repair and gutter cleaning, with recreated matching after views identified where same-angle completion photos were not available.",
     hasPart: [...projectCases, ...supplementaryProjectCases].map((project) => ({
       "@type": "CreativeWork",
       name: project.title,
@@ -853,7 +853,7 @@ function ProjectsPage() {
       <PageHero
         eyebrow="MEL ONE COMPLETED PROJECTS"
         title="See the starting condition and completed work"
-        description="Greater Brisbane customer-project records are grouped by the work they show. Original site photos remain identified by stage, and completion illustrations are labelled separately where no final site photo was captured."
+        description="Greater Brisbane projects show the starting condition, work in progress and finished result. Where a same-angle completion photo was unavailable, the matching after view was recreated from the original site photo and is identified in the caption."
         image={navigationPageHeroImages.projects}
       />
 
@@ -910,7 +910,7 @@ function ProjectsPage() {
           <div className="project-scope">
             <div>
               <p className="eyebrow eyebrow-dark">VISIBLE PROJECT SCOPE</p>
-              <h3>What this project record shows</h3>
+              <h3>What this project shows</h3>
             </div>
             <ul className="check-list">
               {restoration.work.map((item) => (
@@ -970,7 +970,7 @@ function ProjectsPage() {
               </div>
               <div>
                 <dt>Project photos</dt>
-                <dd>One progress photo and one completion illustration</dd>
+                <dd>One work-in-progress photo and one matching after view</dd>
               </div>
             </dl>
             <ul className="check-list project-progress-list">

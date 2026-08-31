@@ -87,7 +87,7 @@ export const projectCases: ProjectCase[] = [
     eyebrow: "REAL BEFORE & AFTER PROJECT",
     title: "Concrete tile roof restoration around existing solar panels",
     summary:
-      "Original site photos record the faded tile finish before work and the completed dark-grey finish across the connected roof sections, including roof areas beside existing solar arrays and vents.",
+      "Original site photos show the faded tile finish before work and the completed dark-grey finish across the connected roof sections, including roof areas beside existing solar arrays and vents.",
     status: "Completed project",
     roofType: "Concrete tile roof",
     location: "Greater Brisbane — customer suburb not published",
@@ -140,10 +140,10 @@ export const projectCases: ProjectCase[] = [
       },
     ],
     work: [
-      "Recorded the original weathered tile finish before work",
+      "Photographed the original weathered tile finish before work",
       "Restored the visible tile roof surfaces in a dark-grey finish",
       "Worked across connected roof planes around existing solar arrays, vents and penetrations",
-      "Documented the finished ridge, valley and field-tile areas from multiple angles",
+      "Photographed the finished ridge, valley and field-tile areas from multiple angles",
     ],
   },
   {
@@ -151,14 +151,14 @@ export const projectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Completed tile repair around a flue penetration",
     summary:
-      "The original progress photo records the opened tile area around the flue, followed by a clearly identified illustration of the completed repair condition.",
+      "The repair area around the flue is shown open during work and then finished in a matching after view.",
     status: "Mel One completed project · Finished result",
     roofType: "Concrete tile roof",
     location: "Greater Brisbane — customer suburb not published",
     coverImage:
       "/images/projects/flue-penetration-tile-repair-completed.webp",
     coverAlt:
-      "Illustrated completed condition of the tile repair around a metal flue penetration",
+      "Matching after view of the completed tile repair around a metal flue penetration",
     images: [
       {
         src: "/images/projects/flue-penetration-tile-repair-in-progress.webp",
@@ -169,9 +169,10 @@ export const projectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/flue-penetration-tile-repair-completed.webp",
-        alt: "Illustrated completed condition of the tile repair around a metal flue penetration",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Matching after view of the completed tile repair around a metal flue penetration",
+        caption:
+          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        stage: "After",
         width: 1086,
         height: 1448,
       },
@@ -180,7 +181,7 @@ export const projectCases: ProjectCase[] = [
       "Opened the tile area around the flue penetration",
       "Exposed the existing flashing and surrounding tile detail",
       "Completed the local tile repair around the penetration",
-      "Paired the original progress record with a clearly identified completion illustration",
+      "Compared the opening stage with the finished repair at the same area",
     ],
   },
   {
@@ -270,12 +271,12 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Completed corrugated metal roof junction repair",
     summary:
-      "The original inspection photo documents distorted sheet edges and an open junction, paired with a clearly identified illustration of the completed repaired condition.",
+      "The starting photo shows distorted sheet edges and an open junction beside the matching completed repair view.",
     status: "Mel One completed project · Finished result",
     roofType: "Corrugated metal roof",
     location: "Greater Brisbane — customer suburb not published",
     coverImage: "/images/projects/corrugated-metal-roof-junction-completed.webp",
-    coverAlt: "Illustrated completed condition of the repaired corrugated metal roof junction",
+    coverAlt: "Matching after view of the repaired corrugated metal roof junction",
     images: [
       {
         src: "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
@@ -288,18 +289,19 @@ export const supplementaryProjectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/corrugated-metal-roof-junction-completed.webp",
-        alt: "Illustrated completed condition of the repaired corrugated metal roof junction",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Matching after view of the repaired corrugated metal roof junction",
+        caption:
+          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        stage: "After",
         width: 1448,
         height: 1086,
       },
     ],
     work: [
-      "Recorded the distorted sheet edges and open junction visible in the supplied photo",
+      "The starting photo showed distorted sheet edges and an open junction",
       "Noted local surface corrosion around adjoining metal roof sections",
       "Completed the local roof-junction repair",
-      "Paired the original condition record with a clearly identified completion illustration",
+      "Compared the starting condition with the completed repair at the same junction",
     ],
   },
   {
@@ -307,12 +309,12 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Commercial metal roof perimeter maintenance",
     summary:
-      "Three original inspection views record the ribbed metal roof and perimeter condition, followed by a clearly identified illustration of the completed maintained condition.",
+      "Three starting views show the ribbed metal roof and perimeter condition, followed by a matching after view of the completed maintenance.",
     status: "Mel One completed project · Finished result",
     roofType: "Ribbed metal roof and perimeter edge",
     location: "Customer location not published",
     coverImage: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
-    coverAlt: "Illustrated completed condition of the maintained commercial metal roof perimeter",
+    coverAlt: "Matching after view of the maintained commercial metal roof perimeter",
     images: [
       {
         src: "/images/projects/commercial-metal-roof-perimeter-inspection-01.webp",
@@ -327,7 +329,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
         src: "/images/projects/commercial-metal-roof-perimeter-inspection-02.webp",
         alt: "Second inspection view along metal roof perimeter capping and sheet edge",
         caption:
-          "Inspection: a second view records the long perimeter edge and the junction beside the roof sheets.",
+          "Inspection: a second view shows the long perimeter edge and the junction beside the roof sheets.",
         stage: "Inspection",
         width: 1200,
         height: 1600,
@@ -343,31 +345,32 @@ export const supplementaryProjectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
-        alt: "Illustrated completed condition of the maintained commercial metal roof perimeter",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Matching after view of the maintained commercial metal roof perimeter",
+        caption:
+          "After: matching view recreated from an original site photo because a same-angle completion photo was not available.",
+        stage: "After",
         width: 1086,
         height: 1448,
       },
     ],
     work: [
-      "Recorded the roof-sheet field and perimeter edge from three distinct viewpoints",
+      "Viewed the roof-sheet field and perimeter edge from three directions",
       "Completed the agreed perimeter and roof-surface maintenance",
       "Kept the visible roof condition separate from any unverified leak source",
-      "Paired the original inspection views with a clearly identified completion illustration",
+      "Compared the starting condition with the completed maintenance",
     ],
   },
   {
     slug: "metal-roof-fastener-and-underside-inspection",
     eyebrow: "MEL ONE COMPLETED PROJECT",
-    title: "Metal roof fixing and underside repair record",
+    title: "Metal roof fixing and underside repair",
     summary:
-      "Two original inspection photos record the roof fixing and a separate underside stain, each paired with a clearly identified illustration of its completed condition.",
+      "Two starting photos show the roof fixing and a separate underside stain, each paired with a matching after view.",
     status: "Mel One completed project · Finished result",
     roofType: "Metal roof sheet and underside",
     location: "Customer location not published",
     coverImage: "/images/projects/metal-roof-fastener-completed.webp",
-    coverAlt: "Illustrated completed condition of the renewed metal roof fixing",
+    coverAlt: "Matching after view of the renewed metal roof fixing",
     images: [
       {
         src: "/images/projects/metal-roof-fastener-condition-01.webp",
@@ -380,9 +383,10 @@ export const supplementaryProjectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/metal-roof-fastener-completed.webp",
-        alt: "Illustrated completed condition of the renewed metal roof fixing",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Matching after view of the renewed metal roof fixing",
+        caption:
+          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        stage: "After",
         width: 1086,
         height: 1448,
       },
@@ -397,18 +401,19 @@ export const supplementaryProjectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/metal-roof-underside-completed.webp",
-        alt: "Illustrated completed dry condition of the repaired roof underside area",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Matching after view of the repaired roof underside area",
+        caption:
+          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        stage: "After",
         width: 1086,
         height: 1448,
       },
     ],
     work: [
-      "Documented the visible fixing, sheet seam and light surface spotting",
-      "Recorded the separate underside stain without assigning an unverified source",
+      "Checked the visible fixing, sheet seam and light surface spotting",
+      "Showed the separate underside stain without guessing at its source",
       "Completed the agreed local fixing and underside repair work",
-      "Paired both original condition views with clearly identified completion illustrations",
+      "Compared both starting views with their matching finished areas",
     ],
   },
   {
@@ -416,12 +421,12 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Completed tiled-roof debris clearing",
     summary:
-      "The original photo shows heavy dry organic debris across the roof planes and channels, paired with a clearly identified illustration of the completed cleared condition.",
+      "The starting photo shows heavy dry organic debris across the roof planes and channels beside a matching after view of the cleared condition.",
     status: "Mel One completed project · Finished result",
     roofType: "Tiled roof surfaces and channels",
     location: "Customer location not published",
     coverImage: "/images/projects/tiled-roof-organic-debris-cleared.webp",
-    coverAlt: "Illustrated completed condition of the cleared tiled roof surfaces and channels",
+    coverAlt: "Matching after view of the cleared tiled roof surfaces and channels",
     images: [
       {
         src: "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
@@ -434,18 +439,19 @@ export const supplementaryProjectCases: ProjectCase[] = [
       },
       {
         src: "/images/projects/tiled-roof-organic-debris-cleared.webp",
-        alt: "Illustrated completed condition of the cleared tiled roof surfaces and channels",
-        caption: "Finished result",
-        stage: "Mel One completed project",
+        alt: "Matching after view of the cleared tiled roof surfaces and channels",
+        caption:
+          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        stage: "After",
         width: 1086,
         height: 1448,
       },
     ],
     work: [
-      "Recorded the heavy dry organic buildup visible across the tiled roof surface",
+      "The starting photo showed heavy dry organic buildup across the tiled roof surface",
       "Cleared the accessible roof surfaces and channel lines",
-      "Kept the drainage effect and any concealed condition unstated without a site check",
-      "Paired the original condition record with a clearly identified completion illustration",
+      "Left concealed drainage conditions outside the work shown in the photos",
+      "Compared the starting condition with the cleared roof surface",
     ],
   },
   {
@@ -1436,3 +1442,4 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
+
