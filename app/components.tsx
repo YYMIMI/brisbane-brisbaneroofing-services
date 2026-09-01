@@ -82,7 +82,7 @@ export function SiteFooter({
           </Link>
           <p>
             Roof repair, restoration and gutter cleaning enquiries across
-            Greater Brisbane, supported by original project photography.
+            Greater Brisbane, supported by real project case studies.
           </p>
           <address className="footer-business">
             <strong>{business.legalName}</strong>

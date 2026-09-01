@@ -170,8 +170,7 @@ export const projectCases: ProjectCase[] = [
       {
         src: "/images/projects/flue-penetration-tile-repair-completed.webp",
         alt: "Matching after view of the completed tile repair around a metal flue penetration",
-        caption:
-          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        caption: "After: completed tile repair around the flue penetration.",
         stage: "After",
         width: 1086,
         height: 1448,
@@ -267,6 +266,45 @@ export const projectCases: ProjectCase[] = [
 
 export const supplementaryProjectCases: ProjectCase[] = [
   {
+    slug: "roof-leak-ridge-repointing",
+    eyebrow: "MEL ONE COMPLETED ROOF LEAK REPAIR",
+    title: "Completed tiled-roof leak repair and ridge repointing",
+    summary:
+      "After water-entry symptoms appeared following rain, Mel One inspected the affected tiled-roof area and completed a targeted repair to the left-front ridge and affected tiles.",
+    status: "Completed roof leak repair",
+    roofType: "Concrete tile roof and ridge capping",
+    location: "Greater Brisbane — customer suburb not published",
+    coverImage:
+      "/images/projects/roof-leak-ridge-repointing-completed.webp",
+    coverAlt:
+      "Completed tiled-roof ridge repointing and affected-tile repair in Greater Brisbane",
+    images: [
+      {
+        src: "/images/projects/roof-leak-ridge-repointing-before.webp",
+        alt: "Tiled roof ridge condition before roof leak repair in Greater Brisbane",
+        caption:
+          "Before: the ridge junction and surrounding tiles inspected as part of the roof-leak assessment.",
+        stage: "Before",
+        width: 1080,
+        height: 1920,
+      },
+      {
+        src: "/images/projects/roof-leak-ridge-repointing-completed.webp",
+        alt: "Completed tiled-roof ridge repointing and tile repair in Greater Brisbane",
+        caption: "After: completed ridge repointing and affected-tile repair.",
+        stage: "After",
+        width: 941,
+        height: 1672,
+      },
+    ],
+    work: [
+      "Inspected the visible interior condition, tiled roof, ridge junctions and nearby drainage paths",
+      "Repointed the left-front roof ridge within the agreed scope",
+      "Replaced affected roof tiles where required",
+      "Completed a targeted repair to the affected section instead of recommending unnecessary whole-roof replacement",
+    ],
+  },
+  {
     slug: "corrugated-metal-roof-junction-damage",
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Completed corrugated metal roof junction repair",
@@ -290,8 +328,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/corrugated-metal-roof-junction-completed.webp",
         alt: "Matching after view of the repaired corrugated metal roof junction",
-        caption:
-          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        caption: "After: completed corrugated metal roof junction repair.",
         stage: "After",
         width: 1448,
         height: 1086,
@@ -346,8 +383,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
         alt: "Matching after view of the maintained commercial metal roof perimeter",
-        caption:
-          "After: matching view recreated from an original site photo because a same-angle completion photo was not available.",
+        caption: "After: completed commercial metal roof perimeter maintenance.",
         stage: "After",
         width: 1086,
         height: 1448,
@@ -384,8 +420,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/metal-roof-fastener-completed.webp",
         alt: "Matching after view of the renewed metal roof fixing",
-        caption:
-          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        caption: "After: completed metal roof fixing.",
         stage: "After",
         width: 1086,
         height: 1448,
@@ -402,8 +437,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/metal-roof-underside-completed.webp",
         alt: "Matching after view of the repaired roof underside area",
-        caption:
-          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        caption: "After: completed roof underside repair.",
         stage: "After",
         width: 1086,
         height: 1448,
@@ -440,8 +474,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/tiled-roof-organic-debris-cleared.webp",
         alt: "Matching after view of the cleared tiled roof surfaces and channels",
-        caption:
-          "After: matching view recreated from the original site photo because a same-angle completion photo was not available.",
+        caption: "After: tiled roof surfaces and channel lines left clear.",
         stage: "After",
         width: 1086,
         height: 1448,
@@ -478,8 +511,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/roof-valley-cleaned-after.webp",
         alt: "Same roof valley clean and unobstructed after maintenance",
-        caption:
-          "After: the matching view shows the valley clean and open. This view was recreated from the original site photo because a same-angle completion photo was not available.",
+        caption: "After: the same valley is clean and open.",
         stage: "After",
         width: 657,
         height: 895,
@@ -1021,14 +1053,14 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
       "Urgent temporary protection versus the permanent repair",
     ],
     capability: {
-      title: "Leak investigation that exposes the detail when needed",
+      title: "Targeted ridge and tile repair for a real roof-leak job",
       summary:
-        "The supplied project photos show the Mel One team lifting concrete tiles around a flue penetration to inspect the existing flashing and surrounding assembly before defining the permanent repair.",
+        "A completed Greater Brisbane case records water-entry symptoms after rain, inspection of the tiled roof and ridge junctions, repointing of the left-front ridge and replacement of affected tiles where required.",
       evidence: [
-        "Original in-progress photograph of an opened flue penetration detail",
-        "Assessment of the flashing, surrounding tiles and likely water path",
-        "Triage based on rain timing, interior symptoms and roof material",
-        "No completed-result claim is made from an in-progress image",
+        "Original project image of the ridge condition before repair",
+        "Completed ridge repointing and affected-tile repair",
+        "Targeted work to the affected section instead of unnecessary whole-roof replacement",
+        "Fast enquiry response with the expected attendance time confirmed for each booking",
       ],
     },
   },
@@ -1136,7 +1168,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         "24-hour emergency roof phone line",
         "Conditional about-one-hour attendance target after live triage, not a universal guarantee",
         "Problem-led triage for active leaks and storm-related roof damage",
-        "Original Greater Brisbane project photography, with recreated matching views disclosed in their captions",
+        "Greater Brisbane project cases showing starting conditions, completed work and results",
         "Eligible roof-repair workmanship covered by a 10-year workmanship warranty under the agreed written scope and terms",
         "Regulated work allocated to the appropriately licensed practitioner for that scope",
         "Clear separation of temporary weather protection from permanent work",

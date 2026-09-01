@@ -85,7 +85,7 @@ export async function generateMetadata({
     "/projects": {
       title: "Brisbane Roof Repair Projects",
       description:
-        "View original Brisbane project photography including tile roof restoration, flue penetration investigation and gutter cleaning in progress.",
+        "View Greater Brisbane roof-leak repair, tile roof restoration, flue penetration and gutter cleaning project case studies.",
     },
     "/about": {
       title: "About Mel One Roof Repairs Brisbane",
@@ -163,16 +163,26 @@ function ServiceDetailPage({
   const related = (relatedServiceSlugs[service.slug] ?? [])
     .map((slug) => services.find((item) => item.slug === slug))
     .filter((item): item is (typeof services)[number] => Boolean(item));
-  const projectMatches: Record<string, number[]> = {
-    "roof-restoration-brisbane": [0],
-    "tile-roof-repairs-brisbane": [0, 1],
-    "roof-leak-repairs-brisbane": [1],
-    "gutter-cleaning-brisbane": [2],
-    "roof-inspections-brisbane": [0, 1, 2],
+  const projectMatches: Record<string, typeof projectCases> = {
+    "roof-restoration-brisbane": [projectCases[0]],
+    "tile-roof-repairs-brisbane": [
+      supplementaryProjectCases[0],
+      projectCases[0],
+      projectCases[1],
+    ],
+    "roof-leak-repairs-brisbane": [
+      supplementaryProjectCases[0],
+      projectCases[1],
+    ],
+    "gutter-cleaning-brisbane": [projectCases[2]],
+    "roof-inspections-brisbane": [
+      supplementaryProjectCases[0],
+      projectCases[0],
+      projectCases[1],
+      projectCases[2],
+    ],
   };
-  const matchingProjects = (projectMatches[service.slug] ?? []).map(
-    (index) => projectCases[index],
-  );
+  const matchingProjects = projectMatches[service.slug] ?? [];
   const organizationId = `${business.siteUrl}/#organization`;
 
   const serviceSchema = {
@@ -431,9 +441,9 @@ function ServiceDetailPage({
         <section className="section section-project-feature">
           <div className="shell">
             <SectionHeading
-              eyebrow="ORIGINAL PROJECT PHOTOGRAPHY"
+              eyebrow="MEL ONE PROJECT CASES"
               title="Real roof work related to this service"
-              copy="These are original project images. The descriptions stay within what the supplied photos and project stage actually show."
+              copy="These completed projects show the customer problem, work carried out and result in clear, practical terms."
             />
             <div className="service-project-grid">
               {matchingProjects.map((project) => (
@@ -834,7 +844,7 @@ function ProjectsPage() {
     "@type": "CollectionPage",
     name: "Real Greater Brisbane roof repair, restoration and gutter projects",
     description:
-      "Greater Brisbane projects showing completed tile roof restoration, flue penetration repair and gutter cleaning, with recreated matching after views identified where same-angle completion photos were not available.",
+      "Greater Brisbane projects showing roof-leak repair, completed tile roof restoration, flue penetration repair and gutter cleaning.",
     hasPart: [...projectCases, ...supplementaryProjectCases].map((project) => ({
       "@type": "CreativeWork",
       name: project.title,
@@ -853,7 +863,7 @@ function ProjectsPage() {
       <PageHero
         eyebrow="MEL ONE COMPLETED PROJECTS"
         title="See the starting condition and completed work"
-        description="Greater Brisbane projects show the starting condition, work in progress and finished result. Where a same-angle completion photo was unavailable, the matching after view was recreated from the original site photo and is identified in the caption."
+        description="Greater Brisbane projects show the customer problem, starting condition, work carried out and completed result."
         image={navigationPageHeroImages.projects}
       />
 
@@ -1120,12 +1130,6 @@ function ProjectsPage() {
             </div>
           </div>
 
-          <p className="gutter-photo-note">
-            Photo note: matching after views were recreated from the original
-            site photos because same-angle completion photos were not available.
-            Vehicle number plates have been obscured for privacy.
-          </p>
-
           <div className="project-scope">
             <div>
               <p className="eyebrow eyebrow-dark">COMPLETED GUTTER CLEANING</p>
@@ -1204,8 +1208,8 @@ function ProjectsPage() {
               ))}
             </div>
             <div className="project-scope">
-              <p className="eyebrow eyebrow-dark">VISIBLE CONDITION</p>
-              <h3>What the original project photos show</h3>
+              <p className="eyebrow eyebrow-dark">PROJECT SCOPE</p>
+              <h3>What this project shows</h3>
               <ul className="check-list">
                 {project.work.map((item) => (<li key={item}>{item}</li>))}
               </ul>
