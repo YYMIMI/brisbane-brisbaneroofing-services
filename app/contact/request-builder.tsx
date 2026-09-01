@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { business } from "../site-data";
+import { getLeadAttribution } from "../google-analytics";
 
 type RequestState = {
   name: string;
@@ -29,7 +30,7 @@ function trackLeadEvent(
   window.gtag?.("event", eventName, {
     form_id: "roofing_enquiry",
     page_path: window.location.pathname,
-    hostname: window.location.hostname,
+    ...getLeadAttribution(),
     transport_type: "beacon",
     ...parameters,
   });
@@ -50,6 +51,7 @@ export default function RequestBuilder() {
   const [status, setStatus] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
   const formStarted = useRef(false);
+  const leadIdRef = useRef("");
 
   function updateField(field: keyof RequestState, value: string) {
     if (!formStarted.current) {
@@ -69,7 +71,10 @@ export default function RequestBuilder() {
 
     const formElement = event.currentTarget;
     const data = new FormData(formElement);
-    trackLeadEvent("lead_submit_attempt");
+    leadIdRef.current ||= crypto.randomUUID();
+    const leadId = leadIdRef.current;
+    const attribution = getLeadAttribution();
+    trackLeadEvent("lead_submit_attempt", { lead_id: leadId });
     setStatus("submitting");
     setMessage("");
     let failureTracked = false;
@@ -85,6 +90,11 @@ export default function RequestBuilder() {
         body: JSON.stringify({
           ...form,
           website: String(data.get("website") ?? ""),
+          leadId,
+          hostname: attribution.hostname,
+          landingPage: attribution.landing_page,
+          source: attribution.source,
+          medium: attribution.medium,
         }),
       });
       const result = (await response.json().catch(() => null)) as
@@ -106,11 +116,12 @@ export default function RequestBuilder() {
       }
 
       if (result.delivered === true) {
-        trackLeadEvent("generate_lead");
+        trackLeadEvent("generate_lead", { lead_id: leadId });
       }
 
       setForm(initialState);
       formElement.reset();
+      leadIdRef.current = "";
       window.location.assign("/thank-you");
       setMessage(
         result.message ||
@@ -268,3 +279,4 @@ export default function RequestBuilder() {
     </div>
   );
 }
+

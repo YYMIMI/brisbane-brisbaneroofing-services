@@ -207,10 +207,10 @@ export default function Home() {
             </Link>
             <span aria-hidden="true">•</span>
             <Link href="/services/roof-restoration-brisbane">
-              Roof restoration
+              Tile roof restoration
             </Link>
             <span aria-hidden="true">•</span>
-            <Link href="/services/tile-roof-repairs-brisbane">Tile roofs</Link>
+            <Link href="/services/tile-roof-repairs-brisbane">Tile roof repairs</Link>
             <span aria-hidden="true">•</span>
             <Link href="/services/metal-roof-repairs-brisbane">
               Metal roofs
@@ -380,6 +380,12 @@ export default function Home() {
             title="A clear next step for each roof problem"
             copy="Review the service that matches the leak, roof material, storm damage, blocked gutter or restoration decision you are dealing with."
           />
+          <p className="service-area-link">
+            A cracked or missing tile, a local ridge-capping defect or a nearby flashing issue
+            belongs with <Link href="/services/tile-roof-repairs-brisbane">Tile Roof Repairs</Link>.
+            Preparation, repairs and a new finish across broader weathered tile-roof areas belongs
+            with <Link href="/services/roof-restoration-brisbane">Tile Roof Restoration</Link>.
+          </p>
           <div className="service-list">
             {services.map((service, index) => (
               <Link className="service-row" href={service.path} key={service.path}>
@@ -529,3 +535,4 @@ export default function Home() {
     </PageShell>
   );
 }
+

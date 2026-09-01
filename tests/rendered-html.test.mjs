@@ -110,6 +110,33 @@ test("renders distinct primary roofing owner pages", async () => {
   }
 });
 
+test("routes local tile repairs and broad tile restoration to separate Owners", async () => {
+  const worker = await loadWorker("repair-restoration-boundary");
+  const [homeResponse, servicesResponse] = await Promise.all([
+    worker.fetch(
+      new Request("http://localhost/", { headers: { accept: "text/html" } }),
+      workerEnv(),
+      executionContext,
+    ),
+    worker.fetch(
+      new Request("http://localhost/services", { headers: { accept: "text/html" } }),
+      workerEnv(),
+      executionContext,
+    ),
+  ]);
+
+  assert.equal(homeResponse.status, 200);
+  assert.equal(servicesResponse.status, 200);
+  const homeHtml = await homeResponse.text();
+  const servicesHtml = await servicesResponse.text();
+  for (const html of [homeHtml, servicesHtml]) {
+    assert.match(html, /href=["']\/services\/tile-roof-repairs-brisbane["']/i);
+    assert.match(html, /href=["']\/services\/roof-restoration-brisbane["']/i);
+    assert.match(html, /individual (?:broken|damaged)|cracked or missing tile/i);
+    assert.match(html, /new finish across broader|broader restoration/i);
+  }
+});
+
 
 test("renders reciprocal English and Chinese roof repair Owners without changing restoration", async () => {
   const worker = await loadWorker("bilingual-repair-owner");
@@ -178,3 +205,4 @@ test("renders reciprocal English and Chinese roof repair Owners without changing
     /<link(?=[^>]*\bhreflang=["']en-AU["'])(?=[^>]*\bhref=["']https:\/\/www\.melonebrisbaneroofing\.com\.au\/services\/roof-restoration-brisbane["'])[^>]*>/i,
   );
 });
+

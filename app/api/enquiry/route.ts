@@ -143,6 +143,14 @@ export async function POST(request: Request) {
   const issue = clean(record.issue, 2500);
   const contact = clean(record.contact, 200);
   const howFound = clean(record.howFound, 80);
+  const proposedLeadId = clean(record.leadId, 120);
+  const leadId = /^[A-Za-z0-9_-]{8,120}$/.test(proposedLeadId)
+    ? proposedLeadId
+    : crypto.randomUUID();
+  const hostname = clean(record.hostname, 253) || "www.melonebrisbaneroofing.com.au";
+  const landingPage = clean(record.landingPage, 300) || "/";
+  const source = clean(record.source, 100) || "direct";
+  const medium = clean(record.medium, 100) || "none";
 
   if (!name || !suburb || !urgency || issue.length < 10 || !contact) {
     return json(
@@ -173,6 +181,10 @@ export async function POST(request: Request) {
   }
 
   const emailText = [
+    `Lead ID: ${leadId}`,
+    `Hostname: ${hostname}`,
+    `Landing page: ${landingPage}`,
+    `Source / medium: ${source} / ${medium}`,
     `Name: ${name}`,
     `Suburb: ${suburb}`,
     `Roof type: ${roofType || "(not sure)"}`,
@@ -190,6 +202,7 @@ export async function POST(request: Request) {
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
+        "Idempotency-Key": `brisbane-roofing/${leadId}`,
       },
       body: JSON.stringify({
         from,
@@ -232,3 +245,4 @@ export async function POST(request: Request) {
     201,
   );
 }
+

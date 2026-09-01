@@ -539,6 +539,13 @@ function ServicesPage() {
             title="Find the service that fits what you can see"
             copy="You do not need to diagnose the repair yourself. Choose the closest problem, then use the inspection pathway when the cause is still unclear."
           />
+          <p className="service-area-link">
+            For individual broken or slipped tiles and local ridge details, start with{" "}
+            <Link href="/services/tile-roof-repairs-brisbane">Tile Roof Repairs Brisbane</Link>.
+            For preparation, repairs and a new finish across broader weathered tile-roof areas,
+            start with{" "}
+            <Link href="/services/roof-restoration-brisbane">Tile Roof Restoration Brisbane</Link>.
+          </p>
           <div className="service-card-grid">
             {services.map((service, index) => (
               <Link href={service.path} className="service-card" key={service.path}>
@@ -572,7 +579,7 @@ function ServicesPage() {
                   <td>Faded or weathered tile roof</td>
                   <td>
                     <Link href="/services/roof-restoration-brisbane">
-                      Roof restoration
+                      Tile roof restoration
                     </Link>
                   </td>
                   <td>Whether local repairs or a broader restoration is appropriate</td>
@@ -1445,4 +1452,5 @@ export default async function CatchAllPage({ params }: PageProps) {
       notFound();
   }
 }
+
 

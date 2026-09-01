@@ -11,10 +11,60 @@ declare global {
 
 const measurementId =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-2FKG0LZ2V1";
+const attributionKey = "mle_one_attribution_v1";
+
+export type LeadAttribution = {
+  hostname: string;
+  landing_page: string;
+  source: string;
+  medium: string;
+};
+
+function safeCampaignValue(value: string | null) {
+  return (value || "").trim().slice(0, 80).replace(/[^A-Za-z0-9._~-]+/g, "_");
+}
+
+export function getLeadAttribution(): LeadAttribution {
+  if (typeof window === "undefined") {
+    return { hostname: "", landing_page: "", source: "direct", medium: "none" };
+  }
+  try {
+    const stored = window.sessionStorage.getItem(attributionKey);
+    if (stored) {
+      const parsed = JSON.parse(stored) as Partial<LeadAttribution>;
+      if (parsed.hostname && parsed.landing_page && parsed.source && parsed.medium) {
+        return parsed as LeadAttribution;
+      }
+    }
+  } catch {
+    // Attribution must never interrupt navigation or form delivery.
+  }
+  const params = new URLSearchParams(window.location.search);
+  let referrerHostname = "";
+  try {
+    referrerHostname = document.referrer ? new URL(document.referrer).hostname : "";
+  } catch {
+    referrerHostname = "";
+  }
+  const externalReferrer = referrerHostname && referrerHostname !== window.location.hostname;
+  const attribution: LeadAttribution = {
+    hostname: window.location.hostname,
+    landing_page: window.location.pathname,
+    source: safeCampaignValue(params.get("utm_source")) || (externalReferrer ? referrerHostname : "direct"),
+    medium: safeCampaignValue(params.get("utm_medium")) || (externalReferrer ? "referral" : "none"),
+  };
+  try {
+    window.sessionStorage.setItem(attributionKey, JSON.stringify(attribution));
+  } catch {
+    // Use current-page attribution if browser storage is unavailable.
+  }
+  return attribution;
+}
 
 export default function GoogleAnalytics() {
   useEffect(() => {
     if (!measurementId) return;
+    getLeadAttribution();
 
     function handleDocumentClick(event: MouseEvent) {
       const target =
@@ -32,6 +82,7 @@ export default function GoogleAnalytics() {
         window.gtag?.("event", "email_click", {
           link_type: "email",
           page_path: window.location.pathname,
+          ...getLeadAttribution(),
           transport_type: "beacon",
         });
         return;
@@ -40,6 +91,7 @@ export default function GoogleAnalytics() {
       window.gtag?.("event", "click_to_call", {
         link_type: "phone",
         page_path: window.location.pathname,
+        ...getLeadAttribution(),
         transport_type: "beacon",
       });
     }
@@ -78,3 +130,4 @@ export default function GoogleAnalytics() {
     </>
   );
 }
+
