@@ -660,7 +660,7 @@ export const services: ServicePage[] = [
     description:
       "A clear urgent-response path for active water entry, loose roofing and storm-related roof damage in Brisbane.",
     intro:
-      "An urgent roof problem is first about making the property safe and limiting further water entry. The emergency roof line is open 24 hours a day, the team responds within minutes and can attend within two hours across the Brisbane service area.",
+      "An urgent roof problem is first about making the property safe and limiting further water entry. Call the 24-hour emergency roof line for triage. For a suitable job within the current Brisbane service run, the team aims to respond quickly and may target attendance in about one hour. The ETA is confirmed after the suburb, technician availability, traffic, weather and safe roof access are checked.",
     symptoms: [
       "Water actively entering living areas",
       "Tiles, flashing or roof sheets displaced by wind",
@@ -688,7 +688,7 @@ export const services: ServicePage[] = [
       {
         question: "How quickly can Mel One respond to an urgent roof problem?",
         answer:
-          "The emergency roof line is open 24 hours a day. The team responds within minutes and can attend within two hours across the Brisbane service area. Safe roof access still depends on current weather and site conditions.",
+          "Call the 24-hour emergency roof line for triage. For a suitable job within the current Brisbane service run, the team may target attendance in about one hour. The actual ETA is confirmed after the suburb, technician availability, traffic, current weather and safe roof access are checked; it is not guaranteed before that review.",
       },
       {
         question: "What should I send with an urgent request?",
@@ -1100,7 +1100,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         stage: "Safety and availability check",
         timing: "At first contact",
         detail:
-          "The 24-hour emergency line responds within minutes. The team confirms the suburb and active hazards, with attendance within two hours across the Brisbane service area.",
+          "The 24-hour emergency line is used for live triage. The team confirms the suburb, active hazards, roof type and availability of the appropriately licensed practitioner for the required scope. For a suitable job within the current Brisbane service run, the team may target attendance in about one hour; the actual ETA follows the location, traffic, weather and safe-access check.",
       },
       {
         stage: "Temporary protection",
@@ -1129,13 +1129,16 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
       "Separate electrical, solar, ceiling or insurer requirements",
     ],
     capability: {
-      title: "24-hour urgent roof response",
+      title: "Conditional urgent roof response",
       summary:
-        "Mel One responds to urgent roof calls within minutes and can attend within two hours across the Brisbane service area. Safe roof access and permanent repair still depend on weather and site conditions.",
+        "Mel One triages urgent roof calls quickly and, for suitable jobs within the current Brisbane service run, may target attendance in about one hour. Location, technician availability, traffic, weather and safe roof access determine the confirmed ETA; permanent work is scoped separately.",
       evidence: [
         "24-hour emergency roof phone line",
-        "Response within minutes and attendance within two hours across the Brisbane service area",
+        "Conditional about-one-hour attendance target after live triage, not a universal guarantee",
         "Problem-led triage for active leaks and storm-related roof damage",
+        "Original Greater Brisbane project photography, with recreated matching views disclosed in their captions",
+        "Eligible roof-repair workmanship covered by a 10-year workmanship warranty under the agreed written scope and terms",
+        "Regulated work allocated to the appropriately licensed practitioner for that scope",
         "Clear separation of temporary weather protection from permanent work",
         "Escalation to Queensland emergency services or licensed electrical specialists when the hazard sits outside roof repair scope",
       ],
