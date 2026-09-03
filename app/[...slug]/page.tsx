@@ -33,6 +33,33 @@ const staticPages = [
   "privacy",
 ];
 
+const supplementaryProjectServiceLinks: Record<string, { href: string; label: string }> = {
+  "roof-leak-ridge-repointing": {
+    href: "/services/roof-leak-repairs-brisbane",
+    label: "View roof leak repairs",
+  },
+  "corrugated-metal-roof-junction-damage": {
+    href: "/services/metal-roof-repairs-brisbane",
+    label: "View metal roof repairs",
+  },
+  "commercial-metal-roof-perimeter-inspection": {
+    href: "/services/metal-roof-repairs-brisbane",
+    label: "View metal roof repairs",
+  },
+  "metal-roof-fastener-and-underside-inspection": {
+    href: "/services/metal-roof-repairs-brisbane",
+    label: "View metal roof repairs",
+  },
+  "tiled-roof-organic-debris-inspection": {
+    href: "/services/tile-roof-repairs-brisbane",
+    label: "View tile roof repairs",
+  },
+  "roof-valley-clearing-and-tile-edge-maintenance": {
+    href: "/services/tile-roof-repairs-brisbane",
+    label: "View tile roof repairs",
+  },
+};
+
 export function generateStaticParams() {
   return [
     ...staticPages.map((slug) => ({ slug: [slug] })),
@@ -1167,6 +1194,24 @@ function ProjectsPage() {
         </div>
       </section>
 
+      <section className="section section-pale project-case-section" aria-labelledby="warner-record-title">
+        <div className="shell">
+          <div className="project-case-heading">
+            <div>
+              <p className="eyebrow eyebrow-dark">RECENT DOCUMENTED WORK</p>
+              <h2 id="warner-record-title">Warner roof maintenance record</h2>
+            </div>
+            <p className="lead-copy">A separate work record is provided here without pairing it to any project photography.</p>
+          </div>
+          <dl className="project-facts project-facts-wide">
+            <div><dt>Recorded</dt><dd>27 March 2026</dd></div>
+            <div><dt>Location</dt><dd>Warner</dd></div>
+            <div><dt>Documented scope</dt><dd>Repoint loose ridge capping and replace one cracked roof tile</dd></div>
+            <div><dt>Project photos</dt><dd>No project photos are paired with this record.</dd></div>
+          </dl>
+        </div>
+      </section>
+
       {supplementaryProjectCases.map((project, index) => (
         <section
           className={`section project-case-section${index % 2 === 0 ? "" : " section-pale"}`}
@@ -1221,6 +1266,13 @@ function ProjectsPage() {
                 {project.work.map((item) => (<li key={item}>{item}</li>))}
               </ul>
             </div>
+            <Link
+              className="text-link"
+              href={supplementaryProjectServiceLinks[project.slug].href}
+            >
+              {supplementaryProjectServiceLinks[project.slug].label}
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </section>
       ))}
