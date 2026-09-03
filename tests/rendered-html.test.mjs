@@ -110,6 +110,43 @@ test("renders distinct primary roofing owner pages", async () => {
   }
 });
 
+test("projects archive renders the unpaired Warner work record and case-specific reverse links", async () => {
+  const worker = await loadWorker("projects-evidence");
+  const response = await worker.fetch(
+    new Request("http://localhost/projects", {
+      headers: { accept: "text/html" },
+    }),
+    workerEnv(),
+    executionContext,
+  );
+
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Recent documented work/i);
+  assert.match(html, /Warner/);
+  assert.match(html, /Recorded<\/dt><dd>27 March 2026<\/dd>/);
+  assert.match(
+    html,
+    /Documented scope<\/dt><dd>Repoint loose ridge capping and replace one cracked roof tile<\/dd>/,
+  );
+  assert.match(html, /No project photos are paired with this record\./);
+
+  for (const [caseId, servicePath] of [
+    ["roof-leak-ridge-repointing", "/services/roof-leak-repairs-brisbane"],
+    ["corrugated-metal-roof-junction-damage", "/services/metal-roof-repairs-brisbane"],
+    ["commercial-metal-roof-perimeter-inspection", "/services/metal-roof-repairs-brisbane"],
+    ["metal-roof-fastener-and-underside-inspection", "/services/metal-roof-repairs-brisbane"],
+    ["tiled-roof-organic-debris-inspection", "/services/tile-roof-repairs-brisbane"],
+    ["roof-valley-clearing-and-tile-edge-maintenance", "/services/tile-roof-repairs-brisbane"],
+  ]) {
+    const section = html.match(
+      new RegExp(`<section[^>]+id="${caseId}"[\\s\\S]*?<\\/section>`),
+    )?.[0];
+    assert.ok(section, `missing ${caseId} case section`);
+    assert.match(section, new RegExp(`href="${servicePath}"`));
+  }
+});
+
 test("routes local tile repairs and broad tile restoration to separate Owners", async () => {
   const worker = await loadWorker("repair-restoration-boundary");
   const [homeResponse, servicesResponse] = await Promise.all([
