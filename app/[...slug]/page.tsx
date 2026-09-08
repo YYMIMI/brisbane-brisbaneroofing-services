@@ -230,7 +230,7 @@ function ServiceDetailPage({
     },
     url: `${business.siteUrl}${service.path}`,
     image: `${business.siteUrl}${
-      matchingProjects[0]?.coverImage ?? business.logo
+      service.heroImage?.src ?? business.logo
     }`,
   };
 
@@ -464,7 +464,7 @@ function ServiceDetailPage({
         </div>
       </section>
 
-      {matchingProjects.length > 0 ? (
+      {false ? (
         <section className="section section-project-feature">
           <div className="shell">
             <SectionHeading
