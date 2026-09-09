@@ -346,7 +346,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Commercial metal roof perimeter maintenance",
     summary:
-      "Three starting views show the ribbed metal roof and perimeter condition, followed by a matching after view of the completed maintenance.",
+      "Compare the metal roof and perimeter edge from the same viewpoint before maintenance and in the illustrated finished result.",
     status: "Mel One completed project · Finished result",
     roofType: "Ribbed metal roof and perimeter edge",
     location: "Customer location not published",
@@ -354,45 +354,27 @@ export const supplementaryProjectCases: ProjectCase[] = [
     coverAlt: "Matching after view of the maintained commercial metal roof perimeter",
     images: [
       {
-        src: "/images/projects/commercial-metal-roof-perimeter-inspection-01.webp",
-        alt: "Close inspection view of a metal roof perimeter capping and adjoining ribbed sheets",
-        caption:
-          "Inspection: the perimeter capping, adjoining upstand and ribbed roof sheets are visible from the first direction.",
-        stage: "Inspection",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/projects/commercial-metal-roof-perimeter-inspection-02.webp",
-        alt: "Second inspection view along metal roof perimeter capping and sheet edge",
-        caption:
-          "Inspection: a second view shows the long perimeter edge and the junction beside the roof sheets.",
-        stage: "Inspection",
-        width: 1200,
-        height: 1600,
-      },
-      {
         src: "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
         alt: "Wide inspection view across ribbed metal roof sheets and the perimeter edge",
         caption:
-          "Inspection: the wider view shows the connected roof-sheet field, visible fasteners and perimeter line.",
-        stage: "Inspection",
+          "Before: surface staining along the metal roof and perimeter edge.",
+        stage: "Before",
         width: 1200,
         height: 1600,
       },
       {
         src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
         alt: "Matching after view of the maintained commercial metal roof perimeter",
-        caption: "After: completed commercial metal roof perimeter maintenance.",
+        caption: "After: matching view recreated from an original site photo because a same-angle completion photo was not available.",
         stage: "After",
         width: 1086,
         height: 1448,
       },
     ],
     work: [
-      "Viewed the roof-sheet field and perimeter edge from three directions",
+      "Ribbed metal roof sheets and the adjoining perimeter edge",
       "Completed the agreed perimeter and roof-surface maintenance",
-      "Kept the visible roof condition separate from any unverified leak source",
+      "Cleaner visible surfaces along the roof perimeter",
       "Compared the starting condition with the completed maintenance",
     ],
   },
@@ -1477,4 +1459,3 @@ export const mainNav = [
 export function getServiceByPath(path: string) {
   return services.find((service) => service.path === path);
 }
-
