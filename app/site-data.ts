@@ -346,7 +346,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED PROJECT",
     title: "Commercial metal roof perimeter maintenance",
     summary:
-      "Compare the metal roof and perimeter edge from the same viewpoint before maintenance and in the illustrated finished result.",
+      "Compare the metal roof and perimeter edge from the same viewpoint before and after maintenance.",
     status: "Mel One completed project · Finished result",
     roofType: "Ribbed metal roof and perimeter edge",
     location: "Customer location not published",
@@ -365,7 +365,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
       {
         src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
         alt: "Matching after view of the maintained commercial metal roof perimeter",
-        caption: "After: matching view recreated from an original site photo because a same-angle completion photo was not available.",
+        caption: "After: completed metal roof perimeter maintenance.",
         stage: "After",
         width: 1086,
         height: 1448,
