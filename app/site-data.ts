@@ -555,7 +555,12 @@ export const services: ServicePage[] = [
       {
         question: "Can a tile roof be restored around existing solar panels?",
         answer:
-          "The supplied Mel One project shows completed restoration work around existing solar arrays. Access and any electrical or solar work must still be separated and assigned to the appropriately licensed trade where required.",
+          "The supplied Mel One project shows completed restoration work around existing solar arrays. When enquiring, identify where the panels sit and which roof areas are difficult to reach because this affects access and the restoration boundary. Removal, reconnection or electrical work is separate unless the written scope assigns it to an appropriately licensed trade.",
+      },
+      {
+        question: "Is roof restoration the same thing as finding and fixing a leak?",
+        answer:
+          "No. Restoration is a broader sequence of preparation, necessary repairs and surface finishing, while leak investigation follows a water path to a specific defect. A coating or new finish should not be treated as proof that an unidentified leak has been repaired.",
       },
       {
         question: "How long does a tile roof restoration take?",
@@ -812,6 +817,11 @@ export const services: ServicePage[] = [
         question: "Is re-pointing the same as replacing tiles?",
         answer:
           "No. Re-pointing addresses ridge-capping mortar and flexible pointing, while tile replacement addresses individual damaged or missing tiles. The required scope depends on what is failing.",
+      },
+      {
+        question: "Does a tile repair quote also cover the ridge capping and nearby flashing?",
+        answer:
+          "Only when those items are stated in the scope. Tile replacement, ridge-capping work and flashing repairs address different roof details, even when they are close together. The inspection and quote should identify which components are being treated and which are separate.",
       },
     ],
   },
