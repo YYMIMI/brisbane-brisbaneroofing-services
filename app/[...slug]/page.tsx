@@ -1349,10 +1349,6 @@ function AboutPage() {
                 <dd>{business.acn}</dd>
               </div>
               <div>
-                <dt>Company registered</dt>
-                <dd>ASIC · 8 March 2023</dd>
-              </div>
-              <div>
                 <dt>Insurer</dt>
                 <dd>Chubb Insurance Australia Limited</dd>
               </div>
