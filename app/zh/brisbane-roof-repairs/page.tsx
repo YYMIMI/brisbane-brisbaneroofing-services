@@ -78,6 +78,11 @@ const repairOptions = [
     copy: "当问题涉及较大范围的瓦面老化、准备、维修和新涂层时，另行评估整体屋顶翻新。",
     href: "/services/roof-restoration-brisbane",
   },
+  {
+    title: "屋顶清洗与喷漆",
+    copy: "屋顶清洗、屋顶喷漆和清洗喷漆合并工程分别确认；报价会列明清洁、维修、表面准备、涂层和天气安排。",
+    href: "/services/roof-restoration-brisbane",
+  },
 ];
 
 const advantages = [
@@ -126,7 +131,7 @@ const faqs = [
   {
     question: "紧急屋顶问题多久可以响应？",
     answer:
-      "紧急屋顶电话 24 小时开放，团队通常数分钟内回复，布里斯班服务区域内两小时内可到场。屋顶是否能够安全进入仍取决于当时天气和现场条件。",
+      "紧急屋顶电话 24 小时开放。团队会先了解 suburb、进水情况、天气、人员安排和安全通道，再确认可行的响应与到场时间。",
   },
   {
     question: "联系 Mel One 后，会怎样判断屋顶问题？",
@@ -417,4 +422,3 @@ export default function ChineseRoofRepairsPage() {
     </PageShell>
   );
 }
-

@@ -29,6 +29,12 @@ const inspectionPoints = [
   "安全通道、屋顶坡度、高度和天气窗口",
 ];
 
+const coatingScopes = [
+  "屋顶清洗：按屋面材料、污垢、青苔、排水和安全通道确认清洁范围。",
+  "屋顶喷漆：先确认屋面维修、表面准备、底层与涂层范围，不把喷漆当成漏水修复。",
+  "清洗喷漆合并工程：书面列明清洗、必要维修、干燥与天气窗口、准备和涂层步骤。",
+];
+
 export default function ChineseRoofRestorationPage() {
   const pageUrl = `${business.siteUrl}${path}`;
   const project = projectCases[0];
@@ -51,6 +57,8 @@ export default function ChineseRoofRestorationPage() {
         ].map(([title, copy]) => <article className="service-card" key={title}><h2>{title}</h2><p>{copy}</p></article>)}</div><div className="inline-actions"><a className="button button-yellow" href={"tel:" + business.phoneHref}>致电 {business.phone}</a><Link className="button button-dark" href="/contact">填写屋顶咨询表</Link></div></div></section>
 
         <section className="section section-pale"><div className="shell two-column-content"><div><SectionHeading eyebrow="检查重点" title="不是只看表面颜色" /><ul className="check-list">{inspectionPoints.map((item) => <li key={item}>{item}</li>)}</ul></div><div className="assessment-card"><p className="eyebrow eyebrow-dark">如何决定范围</p><h2>局部修复和整体翻新解决的问题不同</h2><p>少量破瓦、局部脊线或单一穿透点问题，可能适合针对性维修。若表面、脊瓦、多个细节和防护层普遍老化，则需要评估更完整的清洁、维修、准备和涂层范围。</p><Link className="button button-yellow" href="/contact">发送照片与区域</Link></div></div></section>
+
+        <section className="section section-pale"><div className="shell"><SectionHeading eyebrow="清洗与涂层" title="屋顶清洗、喷漆和合并工程分开报价" copy="三种咨询的准备、材料和范围不同。" /><ul className="check-list">{coatingScopes.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
 
         <section className="section"><div className="shell"><SectionHeading eyebrow="从咨询到施工" title="每一步都以现场事实为准" copy="以下是常见流程，不是未经检查的固定承诺。" /><ol className="number-list">{[
           "发送 suburb、屋顶类型、层数、可见症状和安全照片。",
