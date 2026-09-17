@@ -614,7 +614,7 @@ export const services: ServicePage[] = [
       {
         question: "Can you also repair and repaint the water-damaged ceiling?",
         answer:
-          "Yes. Ceiling patching, replacement of damaged ceiling boards and repainting can be quoted with the roof leak repair. The water entry must be addressed and the affected area allowed to dry before making good. The quote identifies the roof work and internal repairs separately, including any insulation or electrical work that needs another trade.",
+          "Yes. Describe the roof symptom and ceiling damage in one enquiry. Ceiling patching, replacement of damaged ceiling boards and repainting can be quoted with the roof leak repair. The enquiry does not establish the cause or promise one contractor, visit or combined price. The water entry must be addressed and the affected area allowed to dry before making good. The quote identifies the roof work and internal repairs separately, including any insulation or electrical work that needs another trade.",
       },
       {
         question: "Why does my roof leak only during heavy rain?",

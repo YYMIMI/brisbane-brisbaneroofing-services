@@ -144,6 +144,7 @@ function ServiceDetailPage({
 }) {
   const isUrgent = service.slug === "emergency-roof-repairs-brisbane";
   const isGutterCleaning = service.slug === "gutter-cleaning-brisbane";
+  const isRoofLeak = service.slug === "roof-leak-repairs-brisbane";
   const serviceContext = serviceContextBySlug[service.slug];
   const relatedServiceSlugs: Record<string, string[]> = {
     "roof-restoration-brisbane": [
@@ -512,6 +513,15 @@ function ServiceDetailPage({
         </div>
       </section>
 
+      {isRoofLeak ? (
+        <section className="section section-pale">
+          <div className="shell narrow-intro">
+            <h2>Roof leaks and ceiling damage in the same enquiry</h2>
+            <p>Describe both the roof symptom and the indoor damage. Roof repair and ceiling patching, lining replacement or repainting are quoted as separate work.</p>
+            <p className="service-area-inline-link"><a href="https://www.melonerenovations.com.au/services/painting-wall-repairs">View Brisbane painting and wall repairs →</a></p>
+          </div>
+        </section>
+      ) : null}
       <section className="section related-section">
         <div className="shell">
           <SectionHeading
