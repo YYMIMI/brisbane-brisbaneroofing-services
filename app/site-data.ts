@@ -548,6 +548,11 @@ export const services: ServicePage[] = [
     ],
     faqs: [
       {
+        question: "Do you carry out roof cleaning and spray painting?",
+        answer:
+          "Yes. Mel One carries out roof cleaning and spray painting for suitable tile roofs. The agreed restoration can include cleaning, surface preparation, replacement of damaged tiles, ridge repairs and the selected coating. Leaks and loose materials need attention before coating, and the roof condition, finish compatibility, safe access and drying weather determine the final scope.",
+      },
+      {
         question: "Is roof restoration the same as a local roof repair?",
         answer:
           "No. A local repair addresses a defined defect. Restoration is a broader, multi-stage scope that may include preparation, repairs and a new finish across larger roof areas.",
@@ -602,6 +607,16 @@ export const services: ServicePage[] = [
     ],
     faqs: [
       {
+        question: "Can you replace a leaking skylight or its damaged cover?",
+        answer:
+          "Yes. Mel One can replace a skylight or a damaged skylight cover where a compatible replacement is available. We check whether water is entering through the cover, frame, flashing or surrounding roof before agreeing which parts need replacing. Access, dimensions and roof details affect the work, and any electrical work is assigned to an appropriately licensed trade.",
+      },
+      {
+        question: "Can you also repair and repaint the water-damaged ceiling?",
+        answer:
+          "Yes. Ceiling patching, replacement of damaged ceiling boards and repainting can be quoted with the roof leak repair. The water entry must be addressed and the affected area allowed to dry before making good. The quote identifies the roof work and internal repairs separately, including any insulation or electrical work that needs another trade.",
+      },
+      {
         question: "Why does my roof leak only during heavy rain?",
         answer:
           "Wind-driven rain can enter gaps that stay dry in light rain. Valleys, flashing, penetrations and tile laps are common investigation points, but the source must be checked on the actual roof.",
@@ -650,6 +665,11 @@ export const services: ServicePage[] = [
       "Arrange a separate assessment if overflow continues after clearing",
     ],
     faqs: [
+      {
+        question: "Can you repair, replace or install gutters and downpipes as well as clean them?",
+        answer:
+          "Yes. Mel One provides gutter cleaning, repairs to leaking joints and damaged sections, gutter replacement, downpipe repair or replacement, and new gutter and downpipe installation. We can also clear debris at the gutter-to-downpipe connection. The gutter condition, fall, outlets and roof-edge junction are checked before the work is agreed. Cleaning, repairs and installation are separate quote items, with roof-plumbing work handled by an appropriately licensed trade where required.",
+      },
       {
         question: "How often should gutters be cleaned in Brisbane?",
         answer:
@@ -803,6 +823,11 @@ export const services: ServicePage[] = [
       "Arrange safe inspection and a defined repair scope",
     ],
     faqs: [
+      {
+        question: "Can you repair ridge mortar and replace only the damaged tiles?",
+        answer:
+          "Yes. Local work can include ridge-capping rebedding where the supporting mortar has failed, repointing the affected ridge and replacing broken or missing tiles with compatible tiles. We confirm the affected section and nearby roof condition before quoting; these repairs do not automatically require a whole-roof restoration.",
+      },
       {
         question: "Does one broken tile always cause a leak?",
         answer:
