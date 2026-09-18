@@ -1029,7 +1029,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
   },
   "roof-leak-repairs-brisbane": {
     brisbaneContext:
-      "A Brisbane roof leak may appear only during heavy or wind-driven rain. The indoor drip point can be lower than the exterior defect because water travels along battens, rafters or insulation. Valleys, ridge details, flashings and penetrations therefore need to be checked against the direction and timing of the rain.",
+      "Brisbane City Council's emergency-preparation guidance tells residents to check and maintain roofs, gutters and downpipes. Maintenance, roof-leak investigation and any internal ceiling repair are separate scopes: a Brisbane roof leak may appear only during heavy or wind-driven rain, and the indoor drip point can be lower than the exterior defect because water can travel along battens, rafters or insulation. Valleys, ridge details, flashings and penetrations therefore need to be checked against the direction and timing of the rain.",
     localProblems: [
       "Ceiling marks that return during heavy Brisbane rain but stay dry in light showers",
       "Water entry near flues, vents, skylights, solar equipment or wall junctions",
@@ -1041,7 +1041,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         stage: "Leak triage",
         timing: "Before the visit",
         detail:
-          "Photos, the room location, rain direction and whether water is entering now help separate urgent safety issues from planned diagnosis.",
+          "The suburb, requested timing, safe photos, room location, rain direction and whether water is entering now help separate urgent safety issues from planned diagnosis. Coverage, availability and attendance timing are confirmed after those details are reviewed.",
       },
       {
         stage: "Leak-source inspection",

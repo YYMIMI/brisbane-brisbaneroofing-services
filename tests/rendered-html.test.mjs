@@ -110,6 +110,24 @@ test("renders distinct primary roofing owner pages", async () => {
   }
 });
 
+test("roof leak owner separates local maintenance, leak investigation and ceiling scope", async () => {
+  const worker = await loadWorker("roof-leak-local-scope");
+  const response = await worker.fetch(
+    new Request("http://localhost/services/roof-leak-repairs-brisbane", {
+      headers: { accept: "text/html" },
+    }),
+    workerEnv(),
+    executionContext,
+  );
+
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Brisbane City Council[^<]*check and maintain roofs, gutters and downpipes/i);
+  assert.match(html, /Maintenance, roof-leak investigation and any internal ceiling repair are separate scopes/i);
+  assert.match(html, /suburb, requested timing, safe photos/i);
+  assert.match(html, /Coverage, availability and attendance timing are confirmed/i);
+});
+
 test("projects archive renders the unpaired Warner work record and case-specific reverse links", async () => {
   const worker = await loadWorker("projects-evidence");
   const response = await worker.fetch(
