@@ -105,8 +105,28 @@ test("renders distinct primary roofing owner pages", async () => {
       ),
     );
     assert.match(html, /href=["']\/contact["']/i);
-    assert.match(html, /href=["']tel:\+61451819688["']/i);
+    assert.match(html, /href=["']tel:\+61413650514["']/i);
     assert.match(html, /reply within 24 hours/i);
+  }
+});
+
+test("roof contact routes publish Riley and the requested callable number", async () => {
+  const worker = await loadWorker("riley-phone");
+
+  for (const route of ["/", "/contact", "/zh/brisbane-roof-repairs"]) {
+    const response = await worker.fetch(
+      new Request(`http://localhost${route}`, {
+        headers: { accept: "text/html" },
+      }),
+      workerEnv(),
+      executionContext,
+    );
+
+    assert.equal(response.status, 200, route);
+    const html = await response.text();
+    assert.match(htmlText(html), /Call Riley on 0413 650 514/i, `${route} contact`);
+    assert.match(html, /href=["']tel:\+61413650514["']/i, `${route} call link`);
+    assert.doesNotMatch(html, /Shan|0451 819 688|\+61451819688/i, `${route} old contact`);
   }
 });
 
