@@ -818,10 +818,10 @@ function ServiceAreasPage() {
                 key={region.name}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <h2>{region.name} roof repair enquiries</h2>
+                <h2><Link href={`/service-areas/${region.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`}>{region.name} roof repair enquiries →</Link></h2>
                 <ul className="suburb-list">
                   {region.suburbs.map((suburb) => (
-                    <li key={suburb}>{suburb}</li>
+                    <li key={suburb}><Link href={`/service-areas/${region.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}#${suburb.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{suburb}</Link></li>
                   ))}
                 </ul>
                 {region.suburbs.includes(business.serviceAreaFocus) ? (

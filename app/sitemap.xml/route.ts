@@ -1,4 +1,4 @@
-import { business, lastContentUpdate, services } from "../site-data";
+import { business, lastContentUpdate, services, serviceRegions } from "../site-data";
 
 function escapeXml(value: string) {
   return value
@@ -16,6 +16,7 @@ export async function GET() {
     ...services.map((service) => service.path),
     "/roof-types",
     "/service-areas",
+    ...serviceRegions.map(region=>`/service-areas/${region.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`),
     "/projects",
     "/about",
     "/contact",
