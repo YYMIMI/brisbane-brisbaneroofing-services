@@ -1440,8 +1440,7 @@ function PrivacyPage() {
             number, roof type, preferred timing, enquiry details and optional
             self-reported referral source to Mel One Maintenance. This
             information is used to review the request, confirm service
-            availability, discuss inspection needs and prepare a quote or next
-            step.
+            availability, discuss inspection needs and prepare a quote for the proposed roof work.
           </p>
           <h2>Direct contact and service providers</h2>
           <p>
