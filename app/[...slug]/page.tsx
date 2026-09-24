@@ -1449,17 +1449,42 @@ function PrivacyPage() {
             email account using the website&apos;s hosting and email-delivery
             providers. A copy may remain in the recipient mailbox and provider
             processing records as required to deliver and respond to the
-            enquiry. The site does not publish submitted enquiry details.
+            enquiry. If a roof inspection or repair is discussed, relevant job
+            details may be passed to the person assessing that work. The site
+            does not publish submitted enquiry details or sell them.
           </p>
           <h2>Analytics and cookies</h2>
           <p>
             Google Analytics is configured to measure page use and
-            non-identifying conversion events, including phone-link clicks,
+            contact events, including phone-link clicks,
             email-link clicks and successfully delivered enquiries. Phone
             numbers and email addresses are not sent as analytics event
             parameters. Google Analytics may use cookies or similar
-            technologies according to the visitor&apos;s browser and Google
-            settings.
+            technologies and process technical data, such as browser details,
+            pages visited and IP-derived location, according to the visitor&apos;s
+            browser and Google settings. Embedded Google Maps content may also
+            process browser data when loaded.
+          </p>
+          <h2>Records, service providers and overseas processing</h2>
+          <p>
+            Hosting, email delivery, analytics and map providers may process
+            information needed to operate their services. Some providers may
+            process it outside Australia; their locations can change, so
+            contact us for current details about a provider. Enquiry emails and
+            related correspondence are kept for as long as needed to respond,
+            manage the job and meet applicable record obligations. Reasonable
+            security steps are used, although internet and email transmission
+            cannot be guaranteed completely secure.
+          </p>
+          <h2>Access, correction and privacy complaints</h2>
+          <p>
+            You can ask to access or correct personal information held about
+            your enquiry. If you have a privacy concern, email us with the
+            details and a way to reply; we will review it and respond. If the
+            matter remains unresolved, you may contact the{" "}
+            <a href="https://www.oaic.gov.au/privacy/privacy-complaints">
+              Office of the Australian Information Commissioner
+            </a>.
           </p>
           <h2>Business identity and contact</h2>
           <p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { business } from "../site-data";
 import { getLeadAttribution } from "../google-analytics";
 
@@ -52,6 +52,11 @@ export default function RequestBuilder() {
   const [message, setMessage] = useState("");
   const formStarted = useRef(false);
   const leadIdRef = useRef("");
+
+  useEffect(() => {
+    const suburb = new URLSearchParams(window.location.search).get("suburb")?.trim().slice(0, 80);
+    if (suburb) setForm((current) => current.suburb ? current : { ...current, suburb });
+  }, []);
 
   function updateField(field: keyof RequestState, value: string) {
     if (!formStarted.current) {
