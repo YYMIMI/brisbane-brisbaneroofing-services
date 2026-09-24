@@ -39,14 +39,26 @@ const quoteQuestions:Record<string,{scenario:string;checks:string[];scope:string
     scope:"Ask whether targeted roof or gutter work addresses the observed defect before accepting a full-area restoration. Confirm material compatibility and weather-dependent scheduling in the written scope.",
   },
 };
+const regionHeroImages:Record<string,{src:string;alt:string;width:number;height:number}>={
+  "Inner Brisbane":navigationPageHeroImages.serviceAreas,
+  "Brisbane Northside":{src:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"Illustrative tiled roof inspection image",width:1672,height:941},
+  "Brisbane Southside":navigationPageHeroImages.services,
+  "Brisbane West":{src:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"Illustrative metal roof repair image",width:1672,height:941},
+  "Brisbane East & Bayside":{src:"/images/service-banners/roof-restoration-brisbane.webp",alt:"Illustrative roof condition and restoration image",width:1672,height:941},
+};
+const roofGuides=[
+  {href:"/services/roof-leak-repairs-brisbane",title:"Roof leak repairs",image:"/images/brisbane-roof-repair-services-hero.webp",alt:"Illustrative roof leak assessment image"},
+  {href:"/services/tile-roof-repairs-brisbane",title:"Tile roof repairs",image:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"Illustrative tile roof repair image"},
+  {href:"/services/metal-roof-repairs-brisbane",title:"Metal roof repairs",image:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"Illustrative metal roof repair image"},
+];
 export function generateStaticParams(){return serviceRegions.map(region=>({region:slug(region.name)}));}
 export async function generateMetadata({params}:{params:Promise<{region:string}>}):Promise<Metadata>{const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);return area?{title:`Roof Repairs in ${area.name} | Mel One`,description:`Roof repair enquiries in ${area.name}, including ${area.suburbs.slice(0,3).join(", ")}. Explore repair choices and request an inspection.`,alternates:{canonical:`/service-areas/${region}`}}:{};}
 export default async function RegionPage({params}:{params:Promise<{region:string}>}){
   const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);if(!area)notFound();const rfq=quoteQuestions[area.name];
-  return <PageShell><PageHero eyebrow="BRISBANE ROOF SERVICE AREA" title={`Roof repair enquiries in ${area.name}`} description={advice[area.name]} image={navigationPageHeroImages.serviceAreas}/>
+  return <PageShell><PageHero eyebrow="BRISBANE ROOF SERVICE AREA" title={`Roof repair enquiries in ${area.name}`} description={advice[area.name]} image={regionHeroImages[area.name]}/>
     <section className="section"><div className="shell"><p><Link href="/service-areas">← All Brisbane service areas</Link></p><SectionHeading eyebrow="POPULAR SUBURBS" title={`Find your ${area.name} suburb`} copy="Use the property suburb and roof symptom when asking about a repair. An actual inspection confirms the materials and access."/><div className="area-card-grid"><article><ul className="suburb-list">{area.suburbs.map(suburb=><li id={slug(suburb)} key={suburb}><Link href={`/contact?suburb=${encodeURIComponent(suburb)}`}>{suburb} →</Link></li>)}</ul></article></div></div></section>
     <section className="section section-navy"><div className="shell split-section"><div><p className="eyebrow">COMPARE THE RIGHT WORK</p><h2>Repair the fault before choosing a larger roof scope.</h2></div><div className="urgent-copy"><p>{advice[area.name]}</p><p>Describe the roof material, affected interior space, when water appears and any safe photos. Ask the quote to separate roof repair, gutter work, access and any coating or internal finish.</p></div></div></section>
     <section className="section"><div className="shell"><SectionHeading eyebrow="BEFORE REQUESTING A ROOF QUOTE" title={`What to put in a roof enquiry for ${area.name}`} copy={rfq.scenario}/><div className="area-card-grid"><article><h3>Details that change the assessment</h3><ul>{rfq.checks.map(check=><li key={check}>{check}</li>)}</ul></article><article><h3>Compare the written scope</h3><p>{rfq.scope}</p><p>Include the property suburb and a contact who can discuss access. Avoid climbing onto the roof to collect photos.</p></article></div><p><Link href="/contact">Send the roof details →</Link></p></div></section>
-    <section className="section"><div className="shell"><SectionHeading eyebrow="SERVICE GUIDES" title="Find the roof issue" copy="Start with the roof material and the work you actually need."/><div className="area-card-grid"><article><Link href="/services/roof-leak-repairs-brisbane">Roof leak repairs →</Link></article><article><Link href="/services/tile-roof-repairs-brisbane">Tile roof repairs →</Link></article><article><Link href="/services/metal-roof-repairs-brisbane">Metal roof repairs →</Link></article></div><p><a href={`tel:${business.phoneHref}`}>Call {business.phone}</a></p></div></section><CtaBand/>
+    <section className="section"><div className="shell"><SectionHeading eyebrow="SERVICE GUIDES" title="Find the roof issue" copy="Start with the roof material and the work you actually need."/><div className="area-card-grid area-photo-guides">{roofGuides.map(guide=><article key={guide.href}><img src={guide.image} alt={guide.alt} width="640" height="360" loading="lazy"/><Link href={guide.href}>{guide.title} →</Link></article>)}</div><p><a href={`tel:${business.phoneHref}`}>Call {business.phone}</a></p></div></section><CtaBand/>
   </PageShell>;
 }
