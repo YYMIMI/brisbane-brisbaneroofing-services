@@ -102,7 +102,7 @@ export async function generateMetadata({
     "/roof-types": {
       title: "Tile & Metal Roof Repairs Brisbane",
       description:
-        "Understand how Brisbane tile roof and metal roof repair enquiries differ, including common symptoms and assessment points.",
+        "Compare Brisbane tile and metal roof repair enquiries, including visible damage, inspection points and repair materials.",
     },
     "/service-areas": {
       title: "Petrie Terrace & Brisbane Roof Repair Areas",
@@ -334,7 +334,7 @@ function ServiceDetailPage({
           </div>
           <div className="assessment-card">
             <p className="eyebrow eyebrow-dark">WHAT NEEDS ASSESSMENT</p>
-            <h2>Look beyond the first visible symptom</h2>
+            <h2>Check more than the first visible sign</h2>
             <ul>
               {service.assessment.map((item) => (
                 <li key={item}>{item}</li>
@@ -381,7 +381,7 @@ function ServiceDetailPage({
       <section className="section">
         <div className="shell">
           <SectionHeading
-            eyebrow="YOUR NEXT STEPS"
+            eyebrow="PREPARING A ROOF ENQUIRY"
             title={
               isGutterCleaning
                 ? "Prepare a useful gutter cleaning request"
@@ -517,7 +517,7 @@ function ServiceDetailPage({
         <section className="section section-pale">
           <div className="shell narrow-intro">
             <h2>Roof leaks and ceiling damage in the same enquiry</h2>
-            <p>Describe both the roof symptom and the indoor damage. Roof repair and ceiling patching, lining replacement or repainting are quoted as separate work.</p>
+            <p>Describe when the roof leaks and where the indoor damage appears. Roof repair and ceiling patching, lining replacement or repainting are quoted as separate work.</p>
             <p className="service-area-inline-link"><a href="https://www.melonerenovations.com.au/services/painting-wall-repairs">View Brisbane painting and wall repairs →</a></p>
           </div>
         </section>
@@ -566,7 +566,7 @@ function ServicesPage() {
       <PageHero
         eyebrow="BRISBANE ROOF & GUTTER SERVICES"
         title="Roof repair services for leaks, damage and maintenance"
-        description="Start with the symptom, urgency or roof material you can identify. Each service explains the assessment, likely timing and next step for that problem."
+        description="Choose by what you can see, how urgent it is or the roof material. Each service sets out inspection points, work scope and factors that affect timing."
         image={navigationPageHeroImages.services}
       />
       <section className="section">
@@ -599,7 +599,7 @@ function ServicesPage() {
       <section className="section section-pale">
         <div className="shell">
           <SectionHeading
-            eyebrow="CHOOSE YOUR NEXT STEP"
+            eyebrow="COMPARE ROOF SERVICES"
             title="Which service matches your roof problem?"
           />
           <div className="responsive-table">
@@ -700,7 +700,7 @@ function RoofTypesPage() {
       <PageHero
         eyebrow="ROOF TYPES BRISBANE"
         title="Tile and metal roofs need different repair thinking"
-        description="The visible symptom may look similar indoors, but the exterior details, materials and safe repair scope can be very different."
+        description="A ceiling water mark can have different exterior entry points; tile and metal roofs require different materials and safe access."
         image={navigationPageHeroImages.roofTypes}
       />
       <section className="section">
@@ -1301,7 +1301,7 @@ function AboutPage() {
       <PageHero
         eyebrow="ABOUT MEL ONE MAINTENANCE"
         title="About Mel One Maintenance"
-        description="We take roof repair, restoration and gutter enquiries across Greater Brisbane, starting with the problem you can see and the practical next step."
+        description="We take roof repair, restoration and gutter enquiries across Greater Brisbane, checking the visible damage, roof material and access before work is scoped."
         image={navigationPageHeroImages.about}
       />
       <section className="section">
@@ -1313,14 +1313,14 @@ function AboutPage() {
             />
             <p className="lead-copy">
               Share when the problem appears, the roof type if known and safe
-              photos. We use those details to decide whether the next step is
-              advice, an inspection or a clearly defined repair scope. Original
+              photos. We use those details to discuss immediate safety,
+              whether inspection is needed and how a repair is scoped. Original
               project photos show how previous work progressed.
             </p>
             <div className="business-principles">
               <article>
                 <span>01</span>
-                <h3>Start with the symptom</h3>
+                <h3>Describe the roof problem</h3>
                 <p>Tell us when the problem appears, the roof type and what changed.</p>
               </article>
               <article>

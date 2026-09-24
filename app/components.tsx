@@ -110,7 +110,7 @@ export function SiteFooter({
         </div>
 
         <div>
-          <h2>Plan your next step</h2>
+          <h2>Roof repairs and enquiries</h2>
           <ul>
             <li>
               <Link href="/service-areas">Brisbane service areas</Link>

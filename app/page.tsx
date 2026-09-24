@@ -156,7 +156,7 @@ export default function Home() {
             <p className="hero-lead">
               Help for roof leaks, cracked tiles, metal roof damage and
               storm-related problems—with original project photography,
-              practical next steps and a scope based on the roof in front of us.
+              inspection and repair options based on the roof in front of us.
             </p>
             <ul className="hero-proof-list" aria-label="Service proof points">
               <li>Original project photos</li>
@@ -256,7 +256,7 @@ export default function Home() {
       <section className="section section-light" id="services">
         <div className="shell">
           <SectionHeading
-            eyebrow="START WITH THE SYMPTOM"
+            eyebrow="START WITH WHAT YOU CAN SEE"
             title="What is happening with your roof?"
             copy="Choose the closest visible problem, or start with a roof inspection when the cause is not clear."
           />
@@ -322,7 +322,7 @@ export default function Home() {
               <li>
                 <span>01</span>
                 <div>
-                  <h3>Photo and symptom review</h3>
+                  <h3>Review roof photos and leak timing</h3>
                   <strong>Before attendance</strong>
                   <p>
                     The suburb, roof type, leak timing and safe photos help
@@ -377,7 +377,7 @@ export default function Home() {
         <div className="shell">
           <SectionHeading
             eyebrow="BRISBANE ROOF SERVICES"
-            title="A clear next step for each roof problem"
+            title="Find the service that matches your roof problem"
             copy="Review the service that matches the leak, roof material, storm damage, blocked gutter or restoration decision you are dealing with."
           />
           <p className="service-area-link">
@@ -482,7 +482,7 @@ export default function Home() {
         <div className="shell">
           <SectionHeading
             eyebrow="A CLEAR REPAIR PATH"
-            title="From symptom to defined scope"
+            title="From visible damage to a defined scope"
           />
           <ol className="process-grid">
             <li>
@@ -498,15 +498,15 @@ export default function Home() {
               <h3>Add safe photos</h3>
               <p>
                 Ground-level exterior photos and internal stains can help
-                prepare the right next step.
+                plan what needs safe inspection.
               </p>
             </li>
             <li>
               <span>03</span>
               <h3>Assess the cause</h3>
               <p>
-                Separate the visible symptom from the likely roof detail or
-                water path causing it.
+                Check whether the roof detail, gutter or water path matches
+                the damage visible indoors.
               </p>
             </li>
             <li>

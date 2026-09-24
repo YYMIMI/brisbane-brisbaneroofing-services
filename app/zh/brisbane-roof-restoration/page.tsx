@@ -45,7 +45,7 @@ export default function ChineseRoofRestorationPage() {
     <PageShell>
       <article lang="zh-Hans-AU">
         <JsonLd data={serviceSchema} /><JsonLd data={faqSchema} />
-        <PageHero eyebrow="布里斯班瓦屋顶翻新 · 中文咨询" title="先判断局部维修，还是需要整体翻新。" description="屋顶褪色并不自动等于完整翻新。我们根据瓦片、脊线、谷槽、渗漏痕迹、穿透点、排水和安全通道确认实际范围，再说明下一步。" requestLabel="发送屋顶咨询" />
+        <PageHero eyebrow="布里斯班瓦屋顶翻新 · 中文咨询" title="先判断局部维修，还是需要整体翻新。" description="屋顶褪色并不自动等于完整翻新。我们根据瓦片、脊线、谷槽、渗漏痕迹、穿透点、排水和安全通道，区分局部维修与整体翻新的范围。" requestLabel="发送屋顶咨询" />
 
         <section className="section"><div className="shell narrow-intro"><p className="lead-copy">请提供 suburb、物业层数、屋顶材料、问题出现时间，以及从地面安全拍摄的全景和细节照片。不要为了拍照爬上潮湿、陡峭或受损屋顶，也不要靠近太阳能板、电线或不稳定天花。</p></div></section>
 
@@ -53,7 +53,7 @@ export default function ChineseRoofRestorationPage() {
           ["先检查，再决定范围", "团队会结合瓦片、脊线、谷槽、泛水、穿透点和排水等实际情况判断，不只看屋顶表面颜色。"],
           ["能局部修，就不扩大工程", "少量破瓦或单一漏水点可能只需要局部处理；大面积老化、多个问题同时出现时，才进一步评估完整翻新。"],
           ["真实项目可以查看", "网站展示 Mel One 自己拍摄的布里斯班瓦屋顶翻新前后照片，让业主看到实际项目和施工阶段。"],
-          ["联系后，下一步说清楚", `可致电 ${business.phone} 或发送屋顶咨询表单。团队了解屋况后，会说明是否需要检查以及接下来怎样安排。`],
+          ["询价时确认检查与报价范围", `可致电 ${business.phone} 或发送屋顶咨询表单。团队了解屋况后，会说明是否需要现场检查，以及维修、清洁或涂层哪些项目需要分别报价。`],
         ].map(([title, copy]) => <article className="service-card" key={title}><h2>{title}</h2><p>{copy}</p></article>)}</div><div className="inline-actions"><a className="button button-yellow" href={"tel:" + business.phoneHref}>致电 {business.phone}</a><Link className="button button-dark" href="/contact">填写屋顶咨询表</Link></div></div></section>
 
         <section className="section section-pale"><div className="shell two-column-content"><div><SectionHeading eyebrow="检查重点" title="不是只看表面颜色" /><ul className="check-list">{inspectionPoints.map((item) => <li key={item}>{item}</li>)}</ul></div><div className="assessment-card"><p className="eyebrow eyebrow-dark">如何决定范围</p><h2>局部修复和整体翻新解决的问题不同</h2><p>少量破瓦、局部脊线或单一穿透点问题，可能适合针对性维修。若表面、脊瓦、多个细节和防护层普遍老化，则需要评估更完整的清洁、维修、准备和涂层范围。</p><Link className="button button-yellow" href="/contact">发送照片与区域</Link></div></div></section>
@@ -61,7 +61,7 @@ export default function ChineseRoofRestorationPage() {
         <section className="section section-pale"><div className="shell"><SectionHeading eyebrow="清洗与涂层" title="屋顶清洗、喷漆和合并工程分开报价" copy="三种咨询的准备、材料和范围不同。" /><ul className="check-list">{coatingScopes.map((item) => <li key={item}>{item}</li>)}</ul></div></section>
 
         <section className="section"><div className="shell"><SectionHeading eyebrow="从咨询到施工" title="每一步都以现场事实为准" copy="以下是常见流程，不是未经检查的固定承诺。" /><ol className="number-list">{[
-          "发送 suburb、屋顶类型、层数、可见症状和安全照片。",
+          "发送 suburb、屋顶类型、层数、可见水痕或破损，以及从安全位置拍摄的照片。",
           "确认是否适合受理、紧急程度、通道和是否需要现场检查。",
           "检查屋面、脊线、谷槽、穿透点、排水及需要修复的部位。",
           "书面确认维修、清洁、准备、涂层、材料和不包含的项目。",

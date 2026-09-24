@@ -270,7 +270,7 @@ export const supplementaryProjectCases: ProjectCase[] = [
     eyebrow: "MEL ONE COMPLETED ROOF LEAK REPAIR",
     title: "Completed tiled-roof leak repair and ridge repointing",
     summary:
-      "After water-entry symptoms appeared following rain, Mel One inspected the affected tiled-roof area and completed a targeted repair to the left-front ridge and affected tiles.",
+      "After rainwater entered the property, Mel One inspected the affected tiled-roof area and completed a targeted repair to the left-front ridge and affected tiles.",
     status: "Completed roof leak repair",
     roofType: "Concrete tile roof and ridge capping",
     location: "Greater Brisbane — customer suburb not published",
@@ -614,7 +614,7 @@ export const services: ServicePage[] = [
       {
         question: "Can you also repair and repaint the water-damaged ceiling?",
         answer:
-          "Yes. Describe the roof symptom and ceiling damage in one enquiry. Ceiling patching, replacement of damaged ceiling boards and repainting can be quoted with the roof leak repair. The enquiry does not establish the cause or promise one contractor, visit or combined price. The water entry must be addressed and the affected area allowed to dry before making good. The quote identifies the roof work and internal repairs separately, including any insulation or electrical work that needs another trade.",
+          "Yes. Describe when the roof leaks and what ceiling damage you can see in one enquiry. Ceiling patching, replacement of damaged ceiling boards and repainting can be quoted with the roof leak repair. The enquiry does not establish the cause or promise one contractor, visit or combined price. The water entry must be addressed and the affected area allowed to dry before making good. The quote identifies the roof work and internal repairs separately, including any insulation or electrical work that needs another trade.",
       },
       {
         question: "Why does my roof leak only during heavy rain?",
@@ -857,7 +857,7 @@ export const services: ServicePage[] = [
     title: "Metal roof repairs in Brisbane",
     metaTitle: "Metal Roof Repairs Brisbane | Leaks & Rust | Mel One",
     metaDescription:
-      "Metal roof leak, loose fasteners or localised rust in Brisbane? Review the repair scope, quote factors and next steps before requesting an inspection.",
+      "Metal roof leak, loose fasteners or localised rust in Brisbane? See what inspection and repair may involve and which details affect a quote.",
     eyebrow: "METAL ROOF REPAIRS BRISBANE",
     description:
       "Metal roof repair assessment for leaks, loose sheets, failed fasteners, flashing defects and localised corrosion.",
@@ -928,7 +928,7 @@ export const services: ServicePage[] = [
       "The homeowner's description and timing of the issue",
       "Roof material, pitch, access and safety constraints",
       "Relevant flashings, valleys, penetrations and drainage paths",
-      "Clear separation of observations, likely causes and recommended next steps",
+      "A record of observed damage, possible causes and recommended repairs",
     ],
     nextSteps: [
       "Explain the problem and the decision you need to make",
@@ -1072,7 +1072,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Targeted ridge and tile repair for a real roof-leak job",
       summary:
-        "A completed Greater Brisbane case records water-entry symptoms after rain, inspection of the tiled roof and ridge junctions, repointing of the left-front ridge and replacement of affected tiles where required.",
+        "A completed Greater Brisbane case records rainwater entering the property, inspection of the tiled roof and ridge junctions, repointing of the left-front ridge and replacement of affected tiles where required.",
       evidence: [
         "Original project image of the ridge condition before repair",
         "Completed ridge repointing and affected-tile repair",
@@ -1400,7 +1400,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Problem-led inspection with original project documentation",
       summary:
-        "Mel One uses the homeowner's symptom and roof type to focus the inspection. Original project records show before, in-progress and after photography rather than stock images presented as completed work.",
+        "Mel One uses the homeowner's account of leaks or damage and the roof type to focus the inspection. Original project records show before, in-progress and after photography rather than stock images presented as completed work.",
       evidence: [
         "Original before-and-after photography for a concrete tile restoration",
         "In-progress documentation around a flue penetration",

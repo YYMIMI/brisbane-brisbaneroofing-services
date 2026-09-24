@@ -240,7 +240,7 @@ export async function POST(request: Request) {
       ok: true,
       delivered: true,
       message:
-        "Thanks — your roofing enquiry has been sent. The team will review it and contact you about the next step.",
+        "Thanks — your roofing enquiry has been sent. The team will review the roof details and contact you about inspection or a quote.",
     },
     201,
   );
