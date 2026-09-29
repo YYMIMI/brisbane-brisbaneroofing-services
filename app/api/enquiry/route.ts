@@ -88,6 +88,18 @@ function isSameOrigin(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const host = request.headers.get("host")?.trim().toLowerCase();
+  if (
+    process.env.VERCEL_ENV !== "production" ||
+    (host !== "www.melonebrisbaneroofing.com.au" &&
+      host !== "melonebrisbaneroofing.com.au")
+  ) {
+    return json(
+      { ok: false, message: "Online enquiries are available on the published Mel One Roofing site." },
+      403,
+    );
+  }
+
   if (!isSameOrigin(request)) {
     return json(
       { ok: false, message: "This form must be submitted from this website." },

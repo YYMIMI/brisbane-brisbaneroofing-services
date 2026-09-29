@@ -76,6 +76,22 @@ test("renders development preview metadata", async () => {
   assert.match(await response.text(), developmentPreviewMeta);
 });
 
+test("sitemap keeps published roof routes without unverified modification dates", async () => {
+  const worker = await loadWorker("sitemap-dates");
+  const response = await worker.fetch(
+    new Request("http://localhost/sitemap.xml"),
+    workerEnv(),
+    executionContext,
+  );
+
+  assert.equal(response.status, 200);
+  const xml = await response.text();
+  for (const path of ["/", "/services/roof-leak-repairs-brisbane", "/projects", "/privacy", "/thank-you"]) {
+    assert.ok(xml.includes(`<loc>https://www.melonebrisbaneroofing.com.au${path}</loc>`), path);
+  }
+  assert.doesNotMatch(xml, /<lastmod>/);
+});
+
 
 test("renders distinct primary roofing owner pages", async () => {
   const worker = await loadWorker("owner-pages");

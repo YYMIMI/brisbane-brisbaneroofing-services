@@ -1,4 +1,4 @@
-import { business, lastContentUpdate, services, serviceRegions } from "../site-data";
+import { business, services, serviceRegions } from "../site-data";
 
 function escapeXml(value: string) {
   return value
@@ -30,7 +30,6 @@ export async function GET() {
       (path) => `
   <url>
     <loc>${escapeXml(`${business.siteUrl}${path}`)}</loc>
-    <lastmod>${path === "/zh/brisbane-roof-repairs" ? "2026-08-20" : lastContentUpdate}</lastmod>
     <changefreq>${path === "/" ? "weekly" : "monthly"}</changefreq>
     <priority>${path === "/" ? "1.0" : path === "/services" ? "0.9" : "0.8"}</priority>
   </url>`,
