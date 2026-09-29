@@ -882,6 +882,7 @@ function ProjectsPage() {
   const gutterAdditionalPair = gutterCleaning.images.filter(
     (image) => image.group === "additional",
   );
+  const projectIndex = [...projectCases, ...supplementaryProjectCases];
 
   const projectSchema = {
     "@context": "https://schema.org",
@@ -910,6 +911,26 @@ function ProjectsPage() {
         description="Greater Brisbane projects show the customer problem, starting condition, work carried out and completed result."
         image={navigationPageHeroImages.projects}
       />
+
+      <section className="section section-pale project-case-index" aria-labelledby="project-case-index-title">
+        <div className="shell">
+          <p className="eyebrow eyebrow-dark">FIND THE RELEVANT WORK</p>
+          <h2 id="project-case-index-title">Browse roof and gutter projects</h2>
+          <nav aria-label="Jump to a roof or gutter project">
+            <ol className="project-case-index-list">
+              {projectIndex.map((project, index) => (
+                <li key={project.slug}>
+                  <Link href={`#${project.slug}`}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    {project.title}
+                    <span aria-hidden="true">↓</span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
+      </section>
 
       <section
         className="section project-case-section"
