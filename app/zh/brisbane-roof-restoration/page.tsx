@@ -35,6 +35,37 @@ const coatingScopes = [
   "清洗喷漆合并工程：书面列明清洗、必要维修、干燥与天气窗口、准备和涂层步骤。",
 ];
 
+const relatedServiceCopy: Record<string, { title: string; description: string }> = {
+  "roof-leak-repairs-brisbane": {
+    title: "屋顶漏水维修",
+    description: "针对布里斯班瓦片和金属屋顶的渗漏排查与维修规划，包括谷槽、泛水、穿透点和风雨造成的进水。",
+  },
+  "gutter-cleaning-brisbane": {
+    title: "天沟清理",
+    description: "按布里斯班瓦片、金属和混合屋顶的情况，清理天沟中的落叶、有机杂物和青苔堆积。",
+  },
+  "emergency-roof-repairs-brisbane": {
+    title: "紧急屋顶咨询",
+    description: "布里斯班屋顶正在进水、屋面材料松动或发生风暴损坏时的紧急咨询路径。",
+  },
+  "storm-damage-roof-repairs-brisbane": {
+    title: "风暴损坏评估",
+    description: "大雨、冰雹或强风造成损坏后，先确认即时安全与记录，再安排屋顶评估。",
+  },
+  "tile-roof-repairs-brisbane": {
+    title: "瓦片屋顶维修",
+    description: "评估裂瓦或移位瓦片、脊瓦和周边屋面细节的局部瓦屋顶维修。",
+  },
+  "metal-roof-repairs-brisbane": {
+    title: "金属屋顶维修",
+    description: "评估渗漏、松动板材、失效固定件、泛水缺陷和局部腐蚀等金属屋顶维修问题。",
+  },
+  "roof-inspections-brisbane": {
+    title: "屋顶检查",
+    description: "从具体问题出发，对渗漏、可见屋顶损坏、风暴问题和维修规划进行检查。",
+  },
+};
+
 export default function ChineseRoofRestorationPage() {
   const pageUrl = `${business.siteUrl}${path}`;
   const project = projectCases[0];
@@ -71,10 +102,12 @@ export default function ChineseRoofRestorationPage() {
         <section className="section section-pale">
           <div className="shell">
             <SectionHeading eyebrow="按屋顶问题选择服务" title="翻新、漏水和风暴损坏需要不同处理" copy="屋顶整体老化或涂层问题可从 Roof restoration 开始；渗漏、天沟、紧急情况、风暴损坏、瓦屋顶、金属屋顶和检查可直接查看对应服务。" />
+            <p className="roofing-context-link">如果问题集中在漏水、破瓦或局部损坏，可先查看<Link href="/zh/brisbane-roof-repairs">屋顶维修中文服务</Link>，了解检查与局部维修的范围。</p>
             <div className="service-card-grid">
-              {services.filter((service) => service.slug !== "roof-restoration-brisbane").map((service) => (
-                <Link className="service-card" href={service.path} key={service.slug}><span>屋顶服务</span><h2>{service.navLabel}</h2><p>{service.description}</p><strong>查看英文详细服务 →</strong></Link>
-              ))}
+              {services.filter((service) => service.slug !== "roof-restoration-brisbane").map((service) => {
+                const copy = relatedServiceCopy[service.slug];
+                return <Link className="service-card" href={service.path} key={service.slug}><span>屋顶服务</span><h2>{copy.title}</h2><p>{copy.description}</p><strong>查看英文详细服务 →</strong></Link>;
+              })}
             </div>
           </div>
         </section>

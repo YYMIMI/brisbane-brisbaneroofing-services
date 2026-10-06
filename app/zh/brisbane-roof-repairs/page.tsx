@@ -253,6 +253,7 @@ export default function ChineseRoofRepairsPage() {
               title="从您能看到的屋顶问题开始"
               copy="不需要自己诊断原因。选择最接近的情况；如果问题不清楚，可以先安排屋顶检查。"
             />
+            <p className="roofing-context-link">如果屋顶存在较大范围的老化、清洁、准备或涂层需求，可查看<Link href="/zh/brisbane-roof-restoration">屋顶翻新中文服务</Link>，了解如何区分局部维修与整体翻新。</p>
             <div className="service-card-grid">
               {repairOptions.map((item) => (
                 <Link className="service-card" href={item.href} key={item.href}>
