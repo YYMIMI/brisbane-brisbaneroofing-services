@@ -27,13 +27,17 @@ function trackLeadEvent(
   eventName: LeadEventName,
   parameters: Record<string, string | number | boolean> = {},
 ) {
-  window.gtag?.("event", eventName, {
-    form_id: "roofing_enquiry",
-    page_path: window.location.pathname,
-    ...getLeadAttribution(),
-    transport_type: "beacon",
-    ...parameters,
-  });
+  try {
+    window.gtag?.("event", eventName, {
+      form_id: "roofing_enquiry",
+      page_path: window.location.pathname,
+      ...getLeadAttribution(),
+      transport_type: "beacon",
+      ...parameters,
+    });
+  } catch {
+    // Analytics failure must not interrupt a customer enquiry.
+  }
 }
 
 const initialState: RequestState = {
@@ -52,6 +56,7 @@ export default function RequestBuilder() {
   const [message, setMessage] = useState("");
   const formStarted = useRef(false);
   const leadIdRef = useRef("");
+  const submissionStateRef = useRef<SubmissionState>("idle");
 
   useEffect(() => {
     const suburb = new URLSearchParams(window.location.search).get("suburb")?.trim().slice(0, 80);
@@ -72,21 +77,26 @@ export default function RequestBuilder() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "submitting") return;
-
-    const formElement = event.currentTarget;
-    const data = new FormData(formElement);
-    leadIdRef.current ||= crypto.randomUUID();
-    const leadId = leadIdRef.current;
-    const attribution = getLeadAttribution();
-    trackLeadEvent("lead_submit_attempt", { lead_id: leadId });
-    setStatus("submitting");
-    setMessage("");
+    if (submissionStateRef.current !== "idle") return;
+    submissionStateRef.current = "submitting";
     let failureTracked = false;
+    let requestTimer: ReturnType<typeof setTimeout> | undefined;
 
     try {
+      const requestController = new AbortController();
+      requestTimer = setTimeout(() => requestController.abort(), 30_000);
+
+      const formElement = event.currentTarget;
+      const data = new FormData(formElement);
+      leadIdRef.current ||= crypto.randomUUID();
+      const leadId = leadIdRef.current;
+      const attribution = getLeadAttribution();
+      trackLeadEvent("lead_submit_attempt", { lead_id: leadId });
+      setStatus("submitting");
+      setMessage("");
       const response = await fetch("/api/enquiry", {
         method: "POST",
+        signal: requestController.signal,
         credentials: "same-origin",
         headers: {
           Accept: "application/json",
@@ -106,7 +116,7 @@ export default function RequestBuilder() {
         | { delivered?: boolean; ok?: boolean; message?: string }
         | null;
 
-      if (!response.ok || result?.ok !== true) {
+      if (!response.ok || result?.ok !== true || typeof result.delivered !== "boolean") {
         trackLeadEvent(
           response.status === 400 || response.status === 422
             ? "lead_validation_error"
@@ -120,19 +130,23 @@ export default function RequestBuilder() {
         );
       }
 
+      submissionStateRef.current = "success";
+      setStatus("success");
       if (result.delivered === true) {
         trackLeadEvent("generate_lead", { lead_id: leadId });
       }
 
-      setForm(initialState);
-      formElement.reset();
-      leadIdRef.current = "";
-      window.location.assign("/thank-you");
       setMessage(
         result.message ||
           "Thanks — your roofing enquiry has been sent. The team will reply within 24 hours.",
       );
+      setForm(initialState);
+      formElement.reset();
+      leadIdRef.current = "";
+      window.location.assign("/thank-you");
     } catch (error) {
+      if (submissionStateRef.current === "success") return;
+      submissionStateRef.current = "idle";
       if (!failureTracked) {
         trackLeadEvent("lead_api_error", { error_type: "network_or_client" });
       }
@@ -142,6 +156,8 @@ export default function RequestBuilder() {
           ? error.message
           : `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
       );
+    } finally {
+      if (requestTimer !== undefined) clearTimeout(requestTimer);
     }
   }
 
@@ -259,7 +275,7 @@ export default function RequestBuilder() {
         <button
           className="button button-yellow"
           type="submit"
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || status === "success"}
         >
           {status === "submitting" ? "Sending…" : "Send roofing enquiry"}
         </button>
