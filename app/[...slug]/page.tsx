@@ -847,6 +847,7 @@ function ServiceAreasPage() {
           </div>
         </div>
       </section>
+      <section className="section"><div className="shell"><SectionHeading eyebrow="SOUTHSIDE SUBURB GUIDES" title="Prepare the roof observations and access" copy="Choose a property guide before requesting inspection. The actual roof condition and access determine the work."/><div className="area-card-grid"><article><h3><Link href="/service-areas/sunnybank">Sunnybank roof enquiry →</Link></h3><p>Record rain timing and compare targeted repair with broader roof work.</p></article><article><h3><Link href="/service-areas/eight-mile-plains">Eight Mile Plains roof enquiry →</Link></h3><p>Clarify approval contacts, roof boundaries and shared access where they apply.</p></article></div></div></section>
       <section className="section section-navy">
         <div className="shell split-section">
           <div>

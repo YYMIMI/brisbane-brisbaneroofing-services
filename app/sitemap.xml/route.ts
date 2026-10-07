@@ -16,6 +16,8 @@ export async function GET() {
     ...services.map((service) => service.path),
     "/roof-types",
     "/service-areas",
+    "/service-areas/sunnybank",
+    "/service-areas/eight-mile-plains",
     ...serviceRegions.map(region=>`/service-areas/${region.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`),
     "/projects",
     "/about",
