@@ -137,6 +137,13 @@ export async function generateMetadata({
   };
 }
 
+const areaEnquiryLinks: Record<string, { href: string; label: string; detail: string }> = {
+  "roof-leak-repairs-brisbane": { href: "/service-areas/inner-brisbane", label: "Inner Brisbane enquiry details", detail: "Include when the water appears, the affected room and any shared-building roof access or approval requirements." },
+  "tile-roof-repairs-brisbane": { href: "/service-areas/brisbane-northside", label: "Brisbane northside enquiry details", detail: "Identify the tile roof if known and send photos already taken from a safe position. Note whether the enquiry concerns a visible damaged tile, a leak or several maintenance items." },
+  "metal-roof-repairs-brisbane": { href: "/service-areas/brisbane-east-bayside", label: "Brisbane east and bayside enquiry details", detail: "For a metal-roof enquiry, describe the visible sheet, fastener or junction issue and any earlier repair. Include the location and access information without climbing onto the roof." },
+  "gutter-cleaning-brisbane": { href: "/service-areas/brisbane-west", label: "Brisbane west enquiry details", detail: "Describe where the gutter overflows and whether the enquiry is for clearing debris or an apparently damaged gutter or downpipe. Include safe ground-level views and known access restrictions." },
+};
+
 function ServiceDetailPage({
   service,
 }: {
@@ -307,6 +314,9 @@ function ServiceDetailPage({
                 View the confirmed service-area details →
               </Link>
             </p>
+          {areaEnquiryLinks[service.slug] ? (
+            <p className="service-area-inline-link">{areaEnquiryLinks[service.slug].detail}{" "}<Link href={areaEnquiryLinks[service.slug].href}>{areaEnquiryLinks[service.slug].label} →</Link>{" "}The team confirms suitability and visit arrangements for the actual suburb and job.</p>
+          ) : null}
           </div>
           <div className="local-problem-card">
             <p className="eyebrow eyebrow-dark">COMMON LOCAL CALL-OUTS</p>
