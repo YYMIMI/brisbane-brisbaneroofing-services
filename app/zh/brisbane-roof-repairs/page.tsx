@@ -404,6 +404,7 @@ export default function ChineseRoofRepairsPage() {
           </div>
         </section>
 
+        <section className="section section-pale"><div className="shell"><h2>住宅和商业物业的屋顶维修</h2><p id="commercial-properties">布里斯班商铺、办公室及其他商业物业出现屋顶漏水、屋面损坏或天沟问题，也欢迎联系我们。请从地面或室内安全位置拍照，说明受影响区域、营业时间和物业联络人。屋顶通道、对租户的影响及维修范围会在确认安排前讨论。</p><Link className="text-link" href="/contact">发送屋顶维修咨询 →</Link></div></section>
         <section className="section section-faq">
           <div className="shell faq-layout">
             <SectionHeading

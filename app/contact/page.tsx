@@ -37,6 +37,7 @@ export default function ContactPage() {
               title="Tell us what you can see"
               copy="Send the details below directly to the team. Do not climb onto the roof for photos or measurements; ground-level exterior photos and internal signs are enough for the first conversation."
             />
+            <p id="commercial-properties"><strong>Roof repairs for homes and commercial properties.</strong> We also welcome Brisbane shop, office and managed-property enquiries about roof leaks, damaged roof coverings and gutters. Send safe ground-level or indoor photos, the affected area, business hours and the building contact. Roof access, tenant disruption and the repair scope are discussed before arrangements are confirmed.</p>
             <div className="contact-points">
               <article>
                 <span>01</span>
