@@ -149,37 +149,37 @@ export function SiteFooter({
 export const navigationPageHeroImages = {
   services: {
     src: "/images/brisbane-roof-repair-services-hero.webp",
-    alt: "Representative Brisbane roof leak inspection at a tiled roof valley",
+    alt: "Roof inspection illustration showing a tiled roof valley",
     width: 1672,
     height: 941,
   },
   roofTypes: {
     src: "/images/brisbane-tile-metal-roof-types-hero.webp",
-    alt: "Representative Brisbane inspection of tile and metal roof types",
+    alt: "Roof inspection illustration showing tile and metal roof types",
     width: 1672,
     height: 941,
   },
   serviceAreas: {
     src: "/images/brisbane-roof-repair-service-areas-hero.webp",
-    alt: "Representative Brisbane roof inspection across local tile and metal roofing",
+    alt: "Roof inspection illustration showing tile and metal roofing",
     width: 1672,
     height: 941,
   },
   projects: {
     src: "/images/brisbane-roof-repair-projects-hero.webp",
-    alt: "Representative final inspection of completed Brisbane roof repair work",
+    alt: "Illustration of a roof inspection",
     width: 1672,
     height: 941,
   },
   about: {
     src: "/images/brisbane-roof-repair-team-hero.webp",
-    alt: "Representative Brisbane roofing team preparing a roof assessment",
+    alt: "Illustration of roof assessment preparation",
     width: 1672,
     height: 941,
   },
   contact: {
     src: "/images/brisbane-roof-inspection-contact-hero.webp",
-    alt: "Representative Brisbane roof technician preparing an inspection enquiry",
+    alt: "Illustration of a roofing enquiry and inspection preparation",
     width: 1672,
     height: 941,
   },
