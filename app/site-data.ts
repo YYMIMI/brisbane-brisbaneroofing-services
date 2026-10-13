@@ -522,7 +522,7 @@ export const services: ServicePage[] = [
       "Help deciding whether a weathered Brisbane tile roof needs targeted repairs or a broader restoration, supported by original before-and-after project photos.",
     heroImage: {
       src: "/images/service-banners/roof-restoration-brisbane.webp",
-      alt: "Illustrative service banner showing a tile roof restoration team",
+      alt: "a tile roof restoration team",
       width: 1717,
       height: 916,
     },
@@ -798,7 +798,7 @@ export const services: ServicePage[] = [
       "Local tile-roof repair assessment for cracked or slipped tiles, ridge capping and damage around nearby roof details.",
     heroImage: {
       src: "/images/service-banners/tile-roof-repairs-brisbane.webp",
-      alt: "Illustrative service banner showing inspection work on a tiled roof",
+      alt: "inspection work on a tiled roof",
       width: 1672,
       height: 941,
     },
@@ -863,7 +863,7 @@ export const services: ServicePage[] = [
       "Metal roof repair assessment for leaks, loose sheets, failed fasteners, flashing defects and localised corrosion.",
     heroImage: {
       src: "/images/service-banners/metal-roof-repairs-brisbane.webp",
-      alt: "Illustrative service banner showing metal roof repair work",
+      alt: "metal roof repair work",
       width: 1672,
       height: 941,
     },
@@ -1131,7 +1131,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         "Original before photographs of dense leaf and organic buildup",
         "In-progress photographs with ladder, hose and accessible gutter runs",
         "Work shown beside tile-roof edges and an adjoining metal-roof section",
-        "Cleaning work kept separate from downpipe or gutter repairs not shown in the supplied record",
+        "Downpipe and gutter repairs are assessed and quoted separately from cleaning",
       ],
     },
   },
@@ -1249,7 +1249,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
   },
   "tile-roof-repairs-brisbane": {
     brisbaneContext:
-      "Concrete and terracotta tile roofs across Greater Brisbane can present with cracked or displaced tiles, ageing ridge details, valley issues and leaks around penetrations. Supplied Mel One project photos include a concrete tile restoration around solar arrays and an opened flue detail during leak investigation.",
+      "Concrete and terracotta tile roofs across Greater Brisbane can present with cracked or displaced tiles, ageing ridge details, valley issues and leaks around penetrations. Mel One project photos include a concrete tile restoration around solar arrays and an opened flue detail during leak investigation.",
     localProblems: [
       "Faded or weathered concrete tile surfaces requiring a broader restoration decision",
       "Cracked, chipped, slipped or missing individual tiles",
@@ -1292,7 +1292,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Concrete tile restoration and repair examples",
       summary:
-        "Supplied Mel One project photos document the team working across a connected concrete tile roof around solar arrays, vents, ridges and valleys, plus an in-progress inspection around a flue penetration.",
+        "Mel One project photos document the team working across a connected concrete tile roof around solar arrays, vents, ridges and valleys, plus an in-progress inspection around a flue penetration.",
       evidence: [
         "Two original before photographs and four completed roof photographs",
         "Dark-grey finished surface across connected concrete tile roof planes",
@@ -1346,7 +1346,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Scope the metal detail before assigning the work",
       summary:
-        "Mel One assesses metal-roof enquiries by roof profile, failed component, access and specialist requirements. Metal-roof work is scoped from the actual roof condition; unrelated project photos are not presented as proof of completed metal-roof work.",
+        "Mel One assesses metal-roof enquiries by roof profile, failed component, access and specialist requirements. The roof material and profile, affected components, access and specialist requirements guide the proposed repair.",
       evidence: [
         "Fastener, sheet-lap, flashing and corrosion assessment pathway",
         "Repair-versus-sheet-replacement decision based on surrounding condition",
@@ -1400,7 +1400,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Problem-led inspection with original project documentation",
       summary:
-        "Mel One uses the homeowner's account of leaks or damage and the roof type to focus the inspection. Original project records show before, in-progress and after photography rather than stock images presented as completed work.",
+        "Mel One uses the homeowner's account of leaks or damage and the roof type to focus the inspection. The inspection findings and roof-condition photos guide the next steps and any proposed repair scope.",
       evidence: [
         "Original before-and-after photography for a concrete tile restoration",
         "In-progress documentation around a flue penetration",

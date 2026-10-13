@@ -352,7 +352,7 @@ export default function ChineseRoofRepairsPage() {
               <p className="eyebrow eyebrow-dark">真实屋顶维修记录</p>
               <h2>先打开相关位置检查，再确认永久维修范围</h2>
               <p className="lead-copy">
-                这张 Greater Brisbane 客户项目照片记录了维修进行中的检查阶段。它不冒充完工结果，也不代表每个漏水问题都有相同原因。
+                这张 Greater Brisbane 项目照片记录了维修检查阶段：移开相关瓦片后，可查看烟道泛水及周边进水路径。永久维修范围需按现场检查结果确认。
               </p>
               <dl className="project-facts">
                 <div>

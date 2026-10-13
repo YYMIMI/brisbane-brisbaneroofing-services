@@ -41,15 +41,15 @@ const quoteQuestions:Record<string,{scenario:string;checks:string[];scope:string
 };
 const regionHeroImages:Record<string,{src:string;alt:string;width:number;height:number}>={
   "Inner Brisbane":navigationPageHeroImages.serviceAreas,
-  "Brisbane Northside":{src:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"Illustrative tiled roof inspection image",width:1672,height:941},
+  "Brisbane Northside":{src:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"tiled roof inspection view",width:1672,height:941},
   "Brisbane Southside":navigationPageHeroImages.services,
-  "Brisbane West":{src:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"Illustrative metal roof repair image",width:1672,height:941},
-  "Brisbane East & Bayside":{src:"/images/service-banners/roof-restoration-brisbane.webp",alt:"Illustrative roof condition and restoration image",width:1672,height:941},
+  "Brisbane West":{src:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"metal roof repair view",width:1672,height:941},
+  "Brisbane East & Bayside":{src:"/images/service-banners/roof-restoration-brisbane.webp",alt:"roof condition and restoration view",width:1672,height:941},
 };
 const roofGuides=[
-  {href:"/services/roof-leak-repairs-brisbane",title:"Roof leak repairs",image:"/images/brisbane-roof-repair-services-hero.webp",alt:"Illustrative roof leak assessment image"},
-  {href:"/services/tile-roof-repairs-brisbane",title:"Tile roof repairs",image:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"Illustrative tile roof repair image"},
-  {href:"/services/metal-roof-repairs-brisbane",title:"Metal roof repairs",image:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"Illustrative metal roof repair image"},
+  {href:"/services/roof-leak-repairs-brisbane",title:"Roof leak repairs",image:"/images/brisbane-roof-repair-services-hero.webp",alt:"roof leak assessment view"},
+  {href:"/services/tile-roof-repairs-brisbane",title:"Tile roof repairs",image:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"tile roof repair view"},
+  {href:"/services/metal-roof-repairs-brisbane",title:"Metal roof repairs",image:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"metal roof repair view"},
 ];
 export function generateStaticParams(){return serviceRegions.map(region=>({region:slug(region.name)}));}
 export async function generateMetadata({params}:{params:Promise<{region:string}>}):Promise<Metadata>{const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);return area?{title:`Roof Repairs in ${area.name} | Mel One`,description:`Roof repair enquiries in ${area.name}, including ${area.suburbs.slice(0,3).join(", ")}. Explore repair choices and request an inspection.`,alternates:{canonical:`/service-areas/${region}`}}:{};}
