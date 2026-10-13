@@ -560,7 +560,7 @@ export const services: ServicePage[] = [
       {
         question: "Can a tile roof be restored around existing solar panels?",
         answer:
-          "The supplied Mel One project shows completed restoration work around existing solar arrays. When enquiring, identify where the panels sit and which roof areas are difficult to reach because this affects access and the restoration boundary. Removal, reconnection or electrical work is separate unless the written scope assigns it to an appropriately licensed trade.",
+          "The Mel One roof restoration project shows completed work around existing solar arrays. When enquiring, identify where the panels sit and which roof areas are difficult to reach because this affects access and the restoration boundary. Removal, reconnection or electrical work is separate unless the written scope assigns it to an appropriately licensed trade.",
       },
       {
         question: "Is roof restoration the same thing as finding and fixing a leak?",
@@ -1023,7 +1023,6 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         "Two original before photographs and four completed roof photographs",
         "Completed dark-grey finish across connected concrete tile roof planes",
         "Work documented beside existing solar panels, vents, ridges and valleys",
-        "Only the visible project stages and supplied details are described",
       ],
     },
   },
@@ -1126,7 +1125,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Real gutter clearing across mixed roof-edge conditions",
       summary:
-        "The supplied Mel One project record shows blocked perimeter gutters, heavy organic buildup at tile and metal roof junctions, equipment in place during cleaning and water present during flow observation. It is documented as in-progress work rather than a claimed finished outcome.",
+        "The photos show blocked perimeter gutters, organic buildup at tile and metal roof junctions, and cleaning in progress with a ladder and hose in place. Water is visible in the gutter during the work.",
       evidence: [
         "Original before photographs of dense leaf and organic buildup",
         "In-progress photographs with ladder, hose and accessible gutter runs",
