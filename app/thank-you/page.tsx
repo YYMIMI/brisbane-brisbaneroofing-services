@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import { PageShell } from "../components";
 import { business } from "../site-data";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Thank You | Mel One Roof Repairs Brisbane" },
   description: "Your Brisbane roofing enquiry has been sent.",
   alternates: { canonical: `${business.siteUrl}/thank-you` },

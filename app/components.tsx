@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import { brandName, business, mainNav, services } from "./site-data";
 
 export function SiteHeader() {
@@ -104,8 +104,8 @@ export function SiteFooter({
                 <Link href={service.path}>{service.navLabel}</Link>
               </li>
             ))}
-            <li><Link href="/zh/brisbane-roof-repairs" lang="zh-Hans-AU">布里斯班屋顶维修中文服务</Link></li>
-            <li><Link href="/zh/brisbane-roof-restoration" lang="zh-Hans-AU">布里斯班屋顶翻新中文服务</Link></li>
+            <li><Link href="/zh/brisbane-roof-repairs" lang="zh-Hans-AU">中文</Link></li>
+            <li><Link href="/services/roof-restoration-brisbane">Roof restoration</Link></li>
           </ul>
         </div>
 

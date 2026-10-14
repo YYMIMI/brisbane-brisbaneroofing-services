@@ -1,5 +1,7 @@
 "use client";
 
+import {usePathname} from "next/navigation";
+import {isChinese,localHref} from "@/lib/locale";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { business } from "../site-data";
 import { getLeadAttribution } from "../google-analytics";
@@ -51,6 +53,7 @@ const initialState: RequestState = {
 };
 
 export default function RequestBuilder() {
+  const pathname=usePathname()||"/";
   const [form, setForm] = useState<RequestState>(initialState);
   const [status, setStatus] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
@@ -125,7 +128,7 @@ export default function RequestBuilder() {
         );
         failureTracked = true;
         throw new Error(
-          result?.message ||
+          (!isChinese(pathname)?result?.message:undefined) ||
             `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
         );
       }
@@ -137,13 +140,13 @@ export default function RequestBuilder() {
       }
 
       setMessage(
-        result.message ||
+        (!isChinese(pathname)?result.message:undefined) ||
           "Thanks — your roofing enquiry has been sent. The team will reply within 24 hours.",
       );
       setForm(initialState);
       formElement.reset();
       leadIdRef.current = "";
-      window.location.assign("/thank-you");
+      window.location.assign(localHref("/thank-you",pathname) as string);
     } catch (error) {
       if (submissionStateRef.current === "success") return;
       submissionStateRef.current = "idle";
@@ -152,7 +155,7 @@ export default function RequestBuilder() {
       }
       setStatus("error");
       setMessage(
-        error instanceof Error
+        !isChinese(pathname) && error instanceof Error
           ? error.message
           : `We couldn't send the enquiry. Please call ${business.phone} or email ${business.email}.`,
       );

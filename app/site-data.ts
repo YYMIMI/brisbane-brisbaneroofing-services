@@ -83,429 +83,316 @@ export type ProjectCase = {
 
 export const projectCases: ProjectCase[] = [
   {
-    slug: "concrete-tile-roof-restoration",
-    eyebrow: "REAL BEFORE & AFTER PROJECT",
-    title: "Concrete tile roof restoration around existing solar panels",
-    summary:
-      "Original site photos show the faded tile finish before work and the completed dark-grey finish across the connected roof sections, including roof areas beside existing solar arrays and vents.",
-    status: "Completed project",
-    roofType: "Concrete tile roof",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage:
-      "/images/projects/tile-roof-restoration-after-overview.webp",
-    coverAlt:
-      "Completed dark-grey concrete tile roof restoration viewed along the main ridge",
-    images: [
+    "slug": "concrete-tile-roof-restoration",
+    "eyebrow": "REAL BEFORE & AFTER PROJECT",
+    "title": "Concrete tile roof restoration around existing solar panels",
+    "summary": "Original site photos show the faded tile finish before work and the completed dark-grey finish across the connected roof sections, including roof areas beside existing solar arrays and vents.",
+    "status": "Completed project",
+    "roofType": "Concrete tile roof",
+    "location": "Greater Brisbane — customer suburb not published",
+    "coverImage": "/images/projects/tile-roof-restoration-after-overview.webp",
+    "coverAlt": "Completed dark-grey concrete tile roof restoration viewed along the main ridge",
+    "images": [
       {
-        src: "/images/projects/tile-roof-restoration-before.webp",
-        alt: "Faded brown concrete tile roof before restoration",
-        caption:
-          "Before: weathered tile finish across the main roof planes and ridge.",
-        stage: "Before",
+        "src": "/images/projects/tile-roof-restoration-before.webp",
+        "alt": "Faded brown concrete tile roof before restoration",
+        "caption": "Before: weathered tile finish across the main roof planes and ridge.",
+        "stage": "Before"
       },
       {
-        src: "/images/projects/tile-roof-restoration-after-overview.webp",
-        alt: "Dark-grey concrete tile roof after restoration",
-        caption:
-          "After: completed dark-grey finish across the main roof and ridge lines.",
-        stage: "After",
+        "src": "/images/projects/tile-roof-restoration-after-overview.webp",
+        "alt": "Dark-grey concrete tile roof after restoration",
+        "caption": "After: completed dark-grey finish across the main roof and ridge lines.",
+        "stage": "After"
       },
       {
-        src: "/images/projects/tile-roof-restoration-before-wide.webp",
-        alt: "Wide view of the concrete tile roof and solar panels before restoration",
-        caption:
-          "Before: the original finish around multiple roof sections and solar arrays.",
-        stage: "Before",
+        "src": "/images/projects/tile-roof-restoration-before-wide.webp",
+        "alt": "Wide view of the concrete tile roof and solar panels before restoration",
+        "caption": "Before: the original finish around multiple roof sections and solar arrays.",
+        "stage": "Before"
       },
       {
-        src: "/images/projects/tile-roof-restoration-after-solar.webp",
-        alt: "Completed dark-grey tile roof finish around existing solar panels",
-        caption:
-          "After: restored roof finish beside the existing solar panels and roof vents.",
-        stage: "After",
+        "src": "/images/projects/tile-roof-restoration-after-solar.webp",
+        "alt": "Completed dark-grey tile roof finish around existing solar panels",
+        "caption": "After: restored roof finish beside the existing solar panels and roof vents.",
+        "stage": "After"
       },
       {
-        src: "/images/projects/tile-roof-restoration-after-ridge.webp",
-        alt: "Completed roof coating at concrete tile ridge and valley sections",
-        caption:
-          "After detail: consistent finish across intersecting roof planes and ridge capping.",
-        stage: "After",
+        "src": "/images/projects/tile-roof-restoration-after-ridge.webp",
+        "alt": "Completed roof coating at concrete tile ridge and valley sections",
+        "caption": "After detail: consistent finish across intersecting roof planes and ridge capping.",
+        "stage": "After"
       },
       {
-        src: "/images/projects/tile-roof-restoration-after-panels.webp",
-        alt: "Completed dark-grey tile roof restoration beside a solar panel array",
-        caption:
-          "After detail: completed tile surface and ridge beside the solar array.",
-        stage: "After",
-      },
+        "src": "/images/projects/tile-roof-restoration-after-panels.webp",
+        "alt": "Completed dark-grey tile roof restoration beside a solar panel array",
+        "caption": "After detail: completed tile surface and ridge beside the solar array.",
+        "stage": "After"
+      }
     ],
-    work: [
+    "work": [
       "Photographed the original weathered tile finish before work",
       "Restored the visible tile roof surfaces in a dark-grey finish",
       "Worked across connected roof planes around existing solar arrays, vents and penetrations",
-      "Photographed the finished ridge, valley and field-tile areas from multiple angles",
-    ],
+      "Photographed the finished ridge, valley and field-tile areas from multiple angles"
+    ]
   },
   {
-    slug: "flue-penetration-tile-repair",
-    eyebrow: "MEL ONE COMPLETED PROJECT",
-    title: "Completed tile repair around a flue penetration",
-    summary:
-      "The repair area around the flue is shown open during work and then finished in a matching after view.",
-    status: "Mel One completed project · Finished result",
-    roofType: "Concrete tile roof",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage:
-      "/images/projects/flue-penetration-tile-repair-completed.webp",
-    coverAlt:
-      "Matching after view of the completed tile repair around a metal flue penetration",
-    images: [
+    "slug": "flue-penetration-tile-repair",
+    "eyebrow": "ROOF REPAIR IN PROGRESS",
+    "title": "Tile removal and inspection around a flue penetration",
+    "summary": "The site photo shows tiles lifted around the flue, exposing the flashing and surrounding roof detail for inspection before the permanent repair scope is confirmed.",
+    "status": "Repair in progress",
+    "roofType": "Concrete tile roof",
+    "location": "Greater Brisbane — customer suburb not published",
+    "coverImage": "/images/projects/flue-penetration-tile-repair-in-progress.webp",
+    "coverAlt": "Lifted concrete roof tiles and exposed flashing around a flue penetration",
+    "images": [
       {
-        src: "/images/projects/flue-penetration-tile-repair-in-progress.webp",
-        alt: "Lifted concrete roof tiles and exposed flashing around a flue penetration",
-        caption:
-          "In progress: tiles lifted to expose the flue flashing and surrounding roof detail for inspection.",
-        stage: "In progress",
-      },
-      {
-        src: "/images/projects/flue-penetration-tile-repair-completed.webp",
-        alt: "Matching after view of the completed tile repair around a metal flue penetration",
-        caption: "After: completed tile repair around the flue penetration.",
-        stage: "After",
-        width: 1086,
-        height: 1448,
-      },
+        "src": "/images/projects/flue-penetration-tile-repair-in-progress.webp",
+        "alt": "Lifted concrete roof tiles and exposed flashing around a flue penetration",
+        "caption": "In progress: tiles lifted to expose the flue flashing and surrounding roof detail for inspection.",
+        "stage": "In progress"
+      }
     ],
-    work: [
+    "work": [
       "Opened the tile area around the flue penetration",
       "Exposed the existing flashing and surrounding tile detail",
-      "Completed the local tile repair around the penetration",
-      "Compared the opening stage with the finished repair at the same area",
-    ],
+      "Inspect the water-entry path before confirming permanent work"
+    ]
   },
   {
-    slug: "blocked-gutter-cleaning",
-    eyebrow: "GUTTER CLEANING · BEFORE & AFTER",
-    title: "Blocked gutter clearing: before and after",
-    summary:
-      "A blocked gutter is shown before clearing, during cleaning and after the connected roof-edge sections were left open for water flow.",
-    status: "Completed gutter cleaning",
-    roofType: "Perimeter gutter beside tiled and metal roof sections",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage:
-      "/images/projects/gutter-cleaning-after-packed-run.webp",
-    coverAlt:
-      "Cleared perimeter gutter beside the same low roof section after cleaning",
-    images: [
+    "slug": "blocked-gutter-cleaning",
+    "eyebrow": "GUTTER CLEANING IN PROGRESS",
+    "title": "Blocked gutter clearing and flow check",
+    "summary": "Site photos show the blocked gutter, clearing with a hose and ladder, and water used during the flow check at connected tiled and metal roof edges.",
+    "status": "Cleaning in progress",
+    "roofType": "Perimeter gutter beside tiled and metal roof sections",
+    "location": "Greater Brisbane — customer suburb not published",
+    "coverImage": "/images/projects/gutter-cleaning-before-packed-debris.webp",
+    "coverAlt": "Blocked perimeter gutter packed with leaves and organic debris beside a low roof section",
+    "images": [
       {
-        src: "/images/projects/gutter-cleaning-before-packed-debris.webp",
-        alt: "Blocked perimeter gutter packed with leaves and organic debris beside a low roof section",
-        caption:
-          "Before: dense organic material fills the narrow gutter below the fascia.",
-        stage: "Before",
-        group: "primary",
+        "src": "/images/projects/gutter-cleaning-before-packed-debris.webp",
+        "alt": "Blocked perimeter gutter packed with leaves and organic debris beside a low roof section",
+        "caption": "Before: dense organic material fills the narrow gutter below the fascia.",
+        "stage": "Before",
+        "group": "primary"
       },
       {
-        src: "/images/projects/gutter-cleaning-after-packed-run.webp",
-        alt: "Same perimeter gutter clear of leaves and organic debris after cleaning",
-        caption: "After: the same gutter run is clear and open.",
-        stage: "After",
-        group: "primary",
-        width: 1086,
-        height: 1448,
+        "src": "/images/projects/gutter-cleaning-in-progress-hose.webp",
+        "alt": "Gutter cleaning underway with a hose and access ladder beside the low roof section",
+        "caption": "During cleaning: loose material was removed and the gutter channel was flushed.",
+        "stage": "During cleaning",
+        "group": "process",
+        "width": 1086,
+        "height": 1448
       },
       {
-        src: "/images/projects/gutter-cleaning-in-progress-hose.webp",
-        alt: "Gutter cleaning underway with a hose and access ladder beside the low roof section",
-        caption:
-          "During cleaning: loose material was removed and the gutter channel was flushed.",
-        stage: "During cleaning",
-        group: "process",
-        width: 1086,
-        height: 1448,
+        "src": "/images/projects/gutter-cleaning-in-progress-water-check.webp",
+        "alt": "Water moving through a cleared gutter beside a concrete tile roof during the flow check",
+        "caption": "Flow check: water was used to confirm movement through the open gutter channel.",
+        "stage": "Flow check",
+        "group": "process",
+        "width": 1086,
+        "height": 1448
       },
       {
-        src: "/images/projects/gutter-cleaning-in-progress-water-check.webp",
-        alt: "Water moving through a cleared gutter beside a concrete tile roof during the flow check",
-        caption:
-          "Flow check: water was used to confirm movement through the open gutter channel.",
-        stage: "Flow check",
-        group: "process",
-        width: 1086,
-        height: 1448,
+        "src": "/images/projects/gutter-cleaning-before-roof-junction-privacy.webp",
+        "alt": "Debris collected in the gutter between tiled and metal roof sections before cleaning",
+        "caption": "Before: organic build-up had collected along the connected roof-edge gutter.",
+        "stage": "Before",
+        "group": "additional",
+        "width": 1086,
+        "height": 1448
       },
       {
-        src: "/images/projects/gutter-cleaning-before-roof-junction-privacy.webp",
-        alt: "Debris collected in the gutter between tiled and metal roof sections before cleaning",
-        caption:
-          "Before: organic build-up had collected along the connected roof-edge gutter.",
-        stage: "Before",
-        group: "additional",
-        width: 1086,
-        height: 1448,
-      },
-      {
-        src: "/images/projects/gutter-cleaning-after-roof-junction-privacy.webp",
-        alt: "Same gutter between tiled and metal roof sections clear after cleaning",
-        caption:
-          "After: the same connected roof-edge gutter is clear along the visible run.",
-        stage: "After",
-        group: "additional",
-        width: 1086,
-        height: 1448,
-      },
+        "src": "/images/projects/gutter-cleaning-after-roof-junction-privacy.webp",
+        "alt": "Same gutter between tiled and metal roof sections clear after cleaning",
+        "caption": "After: the same connected roof-edge gutter is clear along the visible run.",
+        "stage": "After",
+        "group": "additional",
+        "width": 1086,
+        "height": 1448
+      }
     ],
-    work: [
-      "Removed accumulated leaves, moss and compacted organic material from the accessible gutter runs",
-      "Cleared the narrow channel below the fascia and the connected tiled-to-metal roof junction",
-      "Flushed the cleaned sections and checked water movement through the open channel",
-      "Left the visible gutter runs clear for normal drainage",
-    ],
-  },
+    "work": [
+      "Removed accumulated leaves, soil-like organic matter and moss from accessible sections",
+      "Used water during clearing and flow observation",
+      "Worked along tile-roof edges and adjoining metal-roof junctions"
+    ]
+  }
 ];
 
 export const supplementaryProjectCases: ProjectCase[] = [
   {
-    slug: "roof-leak-ridge-repointing",
-    eyebrow: "MEL ONE COMPLETED ROOF LEAK REPAIR",
-    title: "Completed tiled-roof leak repair and ridge repointing",
-    summary:
-      "After rainwater entered the property, Mel One inspected the affected tiled-roof area and completed a targeted repair to the left-front ridge and affected tiles.",
-    status: "Completed roof leak repair",
-    roofType: "Concrete tile roof and ridge capping",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage:
-      "/images/projects/roof-leak-ridge-repointing-completed.webp",
-    coverAlt:
-      "Completed tiled-roof ridge repointing and affected-tile repair in Greater Brisbane",
-    images: [
+    "slug": "roof-leak-ridge-repointing",
+    "eyebrow": "MEL ONE COMPLETED ROOF LEAK REPAIR",
+    "title": "Completed tiled-roof leak repair and ridge repointing",
+    "summary": "After rainwater entered the property, Mel One inspected the affected tiled-roof area and completed a targeted repair to the left-front ridge and affected tiles.",
+    "status": "Completed roof leak repair",
+    "roofType": "Concrete tile roof and ridge capping",
+    "location": "Greater Brisbane — customer suburb not published",
+    "coverImage": "/images/projects/roof-leak-ridge-repointing-completed.webp",
+    "coverAlt": "Completed tiled-roof ridge repointing and affected-tile repair in Greater Brisbane",
+    "images": [
       {
-        src: "/images/projects/roof-leak-ridge-repointing-before.webp",
-        alt: "Tiled roof ridge condition before roof leak repair in Greater Brisbane",
-        caption:
-          "Before: the ridge junction and surrounding tiles inspected as part of the roof-leak assessment.",
-        stage: "Before",
-        width: 1080,
-        height: 1920,
+        "src": "/images/projects/roof-leak-ridge-repointing-before.webp",
+        "alt": "Tiled roof ridge condition before roof leak repair in Greater Brisbane",
+        "caption": "Before: the ridge junction and surrounding tiles inspected as part of the roof-leak assessment.",
+        "stage": "Before",
+        "width": 1080,
+        "height": 1920
       },
       {
-        src: "/images/projects/roof-leak-ridge-repointing-completed.webp",
-        alt: "Completed tiled-roof ridge repointing and tile repair in Greater Brisbane",
-        caption: "After: completed ridge repointing and affected-tile repair.",
-        stage: "After",
-        width: 941,
-        height: 1672,
-      },
+        "src": "/images/projects/roof-leak-ridge-repointing-completed.webp",
+        "alt": "Completed tiled-roof ridge repointing and tile repair in Greater Brisbane",
+        "caption": "After: completed ridge repointing and affected-tile repair.",
+        "stage": "After",
+        "width": 941,
+        "height": 1672
+      }
     ],
-    work: [
+    "work": [
       "Inspected the visible interior condition, tiled roof, ridge junctions and nearby drainage paths",
       "Repointed the left-front roof ridge within the agreed scope",
       "Replaced affected roof tiles where required",
-      "Completed a targeted repair to the affected section instead of recommending unnecessary whole-roof replacement",
-    ],
+      "Completed a targeted repair to the affected section instead of recommending unnecessary whole-roof replacement"
+    ]
   },
   {
-    slug: "corrugated-metal-roof-junction-damage",
-    eyebrow: "MEL ONE COMPLETED PROJECT",
-    title: "Completed corrugated metal roof junction repair",
-    summary:
-      "The starting photo shows distorted sheet edges and an open junction beside the matching completed repair view.",
-    status: "Mel One completed project · Finished result",
-    roofType: "Corrugated metal roof",
-    location: "Greater Brisbane — customer suburb not published",
-    coverImage: "/images/projects/corrugated-metal-roof-junction-completed.webp",
-    coverAlt: "Matching after view of the repaired corrugated metal roof junction",
-    images: [
+    "slug": "corrugated-metal-roof-junction-damage",
+    "eyebrow": "ROOF JUNCTION CONDITION",
+    "title": "Corrugated metal roof junction assessment",
+    "summary": "The original photo shows distorted sheet edges, an open junction and local surface corrosion. The repair method depends on safe access and the surrounding metal condition.",
+    "status": "Condition recorded",
+    "roofType": "Corrugated metal roof",
+    "location": "Greater Brisbane — customer suburb not published",
+    "coverImage": "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
+    "coverAlt": "Damaged corrugated metal roof sheet edges at a junction before repair",
+    "images": [
       {
-        src: "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
-        alt: "Damaged corrugated metal roof sheet edges at a junction before repair",
-        caption:
-          "Before: distorted sheet edges and an open junction are visible beside locally corroded roof sections.",
-        stage: "Before",
-        width: 1600,
-        height: 1200,
-      },
-      {
-        src: "/images/projects/corrugated-metal-roof-junction-completed.webp",
-        alt: "Matching after view of the repaired corrugated metal roof junction",
-        caption: "After: completed corrugated metal roof junction repair.",
-        stage: "After",
-        width: 1448,
-        height: 1086,
-      },
+        "src": "/images/projects/corrugated-metal-roof-junction-damage-01.webp",
+        "alt": "Damaged corrugated metal roof sheet edges at a junction before repair",
+        "caption": "Before: distorted sheet edges and an open junction are visible beside locally corroded roof sections.",
+        "stage": "Before",
+        "width": 1600,
+        "height": 1200
+      }
     ],
-    work: [
-      "The starting photo showed distorted sheet edges and an open junction",
-      "Noted local surface corrosion around adjoining metal roof sections",
-      "Completed the local roof-junction repair",
-      "Compared the starting condition with the completed repair at the same junction",
-    ],
+    "work": [
+      "Damaged corrugated metal roof sheet edges at a junction before repair",
+      "Confirm the affected components, access and repair scope before work"
+    ]
   },
   {
-    slug: "commercial-metal-roof-perimeter-inspection",
-    eyebrow: "MEL ONE COMPLETED PROJECT",
-    title: "Commercial metal roof perimeter maintenance",
-    summary:
-      "Compare the metal roof and perimeter edge from the same viewpoint before and after maintenance.",
-    status: "Mel One completed project · Finished result",
-    roofType: "Ribbed metal roof and perimeter edge",
-    location: "Customer location not published",
-    coverImage: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
-    coverAlt: "Matching after view of the maintained commercial metal roof perimeter",
-    images: [
+    "slug": "commercial-metal-roof-perimeter-inspection",
+    "eyebrow": "METAL ROOF CONDITION",
+    "title": "Commercial metal roof perimeter maintenance",
+    "summary": "The site photo shows ribbed metal roof sheets, the perimeter edge and surface staining to consider when assessing maintenance.",
+    "status": "Condition recorded",
+    "roofType": "Ribbed metal roof and perimeter edge",
+    "location": "Customer location not published",
+    "coverImage": "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
+    "coverAlt": "Wide inspection view across ribbed metal roof sheets and the perimeter edge",
+    "images": [
       {
-        src: "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
-        alt: "Wide inspection view across ribbed metal roof sheets and the perimeter edge",
-        caption:
-          "Before: surface staining along the metal roof and perimeter edge.",
-        stage: "Before",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/projects/commercial-metal-roof-perimeter-completed.webp",
-        alt: "Matching after view of the maintained commercial metal roof perimeter",
-        caption: "After: completed metal roof perimeter maintenance.",
-        stage: "After",
-        width: 1086,
-        height: 1448,
-      },
+        "src": "/images/projects/commercial-metal-roof-overview-inspection-03.webp",
+        "alt": "Wide inspection view across ribbed metal roof sheets and the perimeter edge",
+        "caption": "Before: surface staining along the metal roof and perimeter edge.",
+        "stage": "Before",
+        "width": 1200,
+        "height": 1600
+      }
     ],
-    work: [
-      "Ribbed metal roof sheets and the adjoining perimeter edge",
-      "Completed the agreed perimeter and roof-surface maintenance",
-      "Cleaner visible surfaces along the roof perimeter",
-      "Compared the starting condition with the completed maintenance",
-    ],
+    "work": [
+      "Wide inspection view across ribbed metal roof sheets and the perimeter edge",
+      "Confirm the affected components, access and repair scope before work"
+    ]
   },
   {
-    slug: "metal-roof-fastener-and-underside-inspection",
-    eyebrow: "MEL ONE COMPLETED PROJECT",
-    title: "Metal roof fixing and underside repair",
-    summary:
-      "Two starting photos show the roof fixing and a separate underside stain, each paired with a matching after view.",
-    status: "Mel One completed project · Finished result",
-    roofType: "Metal roof sheet and underside",
-    location: "Customer location not published",
-    coverImage: "/images/projects/metal-roof-fastener-completed.webp",
-    coverAlt: "Matching after view of the renewed metal roof fixing",
-    images: [
+    "slug": "metal-roof-fastener-and-underside-inspection",
+    "eyebrow": "METAL ROOF INSPECTION",
+    "title": "Metal roof fixing and underside assessment",
+    "summary": "Separate inspection photos show a roof-sheet fixing and a localised underside stain. The stain alone does not establish the water source or repair method.",
+    "status": "Condition recorded",
+    "roofType": "Metal roof sheet and underside",
+    "location": "Customer location not published",
+    "coverImage": "/images/projects/metal-roof-fastener-condition-01.webp",
+    "coverAlt": "Close inspection view of a metal roof sheet fastener, seam and light surface spotting",
+    "images": [
       {
-        src: "/images/projects/metal-roof-fastener-condition-01.webp",
-        alt: "Close inspection view of a metal roof sheet fastener, seam and light surface spotting",
-        caption:
-          "Inspection: the roof-sheet fixing, adjoining seam and light surface spotting are visible in close view.",
-        stage: "Inspection",
-        width: 1200,
-        height: 1600,
+        "src": "/images/projects/metal-roof-fastener-condition-01.webp",
+        "alt": "Close inspection view of a metal roof sheet fastener, seam and light surface spotting",
+        "caption": "Inspection: the roof-sheet fixing, adjoining seam and light surface spotting are visible in close view.",
+        "stage": "Inspection",
+        "width": 1200,
+        "height": 1600
       },
       {
-        src: "/images/projects/metal-roof-fastener-completed.webp",
-        alt: "Matching after view of the renewed metal roof fixing",
-        caption: "After: completed metal roof fixing.",
-        stage: "After",
-        width: 1086,
-        height: 1448,
-      },
-      {
-        src: "/images/projects/metal-roof-underside-condition-02.webp",
-        alt: "Underside inspection view with a localised dark stain below a metal roof structure",
-        caption:
-          "Inspection: a localised dark stain is visible on the underside surface; its cause is not established by the photo alone.",
-        stage: "Inspection",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/projects/metal-roof-underside-completed.webp",
-        alt: "Matching after view of the repaired roof underside area",
-        caption: "After: completed roof underside repair.",
-        stage: "After",
-        width: 1086,
-        height: 1448,
-      },
+        "src": "/images/projects/metal-roof-underside-condition-02.webp",
+        "alt": "Underside inspection view with a localised dark stain below a metal roof structure",
+        "caption": "Inspection: a localised dark stain is visible on the underside surface; its cause is not established by the photo alone.",
+        "stage": "Inspection",
+        "width": 1200,
+        "height": 1600
+      }
     ],
-    work: [
-      "Checked the visible fixing, sheet seam and light surface spotting",
-      "Showed the separate underside stain without guessing at its source",
-      "Completed the agreed local fixing and underside repair work",
-      "Compared both starting views with their matching finished areas",
-    ],
+    "work": [
+      "Close inspection view of a metal roof sheet fastener, seam and light surface spotting",
+      "Confirm the affected components, access and repair scope before work"
+    ]
   },
   {
-    slug: "tiled-roof-organic-debris-inspection",
-    eyebrow: "MEL ONE COMPLETED PROJECT",
-    title: "Completed tiled-roof debris clearing",
-    summary:
-      "The starting photo shows heavy dry organic debris across the roof planes and channels beside a matching after view of the cleared condition.",
-    status: "Mel One completed project · Finished result",
-    roofType: "Tiled roof surfaces and channels",
-    location: "Customer location not published",
-    coverImage: "/images/projects/tiled-roof-organic-debris-cleared.webp",
-    coverAlt: "Matching after view of the cleared tiled roof surfaces and channels",
-    images: [
+    "slug": "tiled-roof-organic-debris-inspection",
+    "eyebrow": "TILED ROOF CONDITION",
+    "title": "Tiled roof debris and drainage assessment",
+    "summary": "The original photo shows dry needles and organic debris across tiled roof surfaces and channel lines. Safe access and concealed drainage details still need assessment.",
+    "status": "Condition recorded",
+    "roofType": "Tiled roof surfaces and channels",
+    "location": "Customer location not published",
+    "coverImage": "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
+    "coverAlt": "Dry needles and organic debris covering tiled roof surfaces and channel lines",
+    "images": [
       {
-        src: "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
-        alt: "Dry needles and organic debris covering tiled roof surfaces and channel lines",
-        caption:
-          "Before: dense dry needles and organic debris are visible across the roof planes and adjoining channel lines.",
-        stage: "Before",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/projects/tiled-roof-organic-debris-cleared.webp",
-        alt: "Matching after view of the cleared tiled roof surfaces and channels",
-        caption: "After: tiled roof surfaces and channel lines left clear.",
-        stage: "After",
-        width: 1086,
-        height: 1448,
-      },
+        "src": "/images/projects/tiled-roof-organic-debris-inspection-01.webp",
+        "alt": "Dry needles and organic debris covering tiled roof surfaces and channel lines",
+        "caption": "Before: dense dry needles and organic debris are visible across the roof planes and adjoining channel lines.",
+        "stage": "Before",
+        "width": 1200,
+        "height": 1600
+      }
     ],
-    work: [
-      "The starting photo showed heavy dry organic buildup across the tiled roof surface",
-      "Cleared the accessible roof surfaces and channel lines",
-      "Left concealed drainage conditions outside the work shown in the photos",
-      "Compared the starting condition with the cleared roof surface",
-    ],
+    "work": [
+      "Dry needles and organic debris covering tiled roof surfaces and channel lines",
+      "Confirm the affected components, access and repair scope before work"
+    ]
   },
   {
-    slug: "roof-valley-clearing-and-tile-edge-maintenance",
-    eyebrow: "ROOF VALLEY MAINTENANCE",
-    title: "Roof valley clearing and tile-edge maintenance: before and after",
-    summary:
-      "Leaves and loose debris had built up along the metal valley beside the tiled roof. The matching after view shows the same valley clean and open.",
-    status: "Completed roof maintenance",
-    roofType: "Concrete tile roof and metal valley",
-    location: "Customer location not published",
-    coverImage: "/images/projects/roof-valley-cleaned-after.webp",
-    coverAlt: "Clean metal roof valley beside the original red concrete tiles after maintenance",
-    images: [
+    "slug": "roof-valley-clearing-and-tile-edge-maintenance",
+    "eyebrow": "ROOF VALLEY CONDITION",
+    "title": "Roof valley debris and tile-edge assessment",
+    "summary": "The site photo records leaves and loose material along the metal valley and tile edge before maintenance planning.",
+    "status": "Condition recorded",
+    "roofType": "Concrete tile roof and metal valley",
+    "location": "Customer location not published",
+    "coverImage": "/images/projects/roof-valley-debris-before.webp",
+    "coverAlt": "Leaves and loose debris blocking a metal roof valley beside red concrete tiles",
+    "images": [
       {
-        src: "/images/projects/roof-valley-debris-before.webp",
-        alt: "Leaves and loose debris blocking a metal roof valley beside red concrete tiles",
-        caption:
-          "Before: leaves and loose material had collected along the valley and tile edge.",
-        stage: "Before",
-        width: 657,
-        height: 895,
-      },
-      {
-        src: "/images/projects/roof-valley-cleaned-after.webp",
-        alt: "Same roof valley clean and unobstructed after maintenance",
-        caption: "After: the same valley is clean and open.",
-        stage: "After",
-        width: 657,
-        height: 895,
-      },
+        "src": "/images/projects/roof-valley-debris-before.webp",
+        "alt": "Leaves and loose debris blocking a metal roof valley beside red concrete tiles",
+        "caption": "Before: leaves and loose material had collected along the valley and tile edge.",
+        "stage": "Before",
+        "width": 657,
+        "height": 895
+      }
     ],
-    work: [
-      "Cleared loose leaves and organic debris from the accessible metal valley",
-      "Opened the visible water path along the tile edge",
-      "Neatened the local tile-edge detail included in the maintenance area",
-      "Used the same roof and camera angle for a clear before-and-after comparison",
-    ],
-  },
+    "work": [
+      "Leaves and loose debris blocking a metal roof valley beside red concrete tiles",
+      "Confirm the affected components, access and repair scope before work"
+    ]
+  }
 ];
 
 export const services: ServicePage[] = [
@@ -699,7 +586,7 @@ export const services: ServicePage[] = [
     description:
       "A clear urgent-response path for active water entry, loose roofing and storm-related roof damage in Brisbane.",
     intro:
-      "An urgent roof problem is first about making the property safe and limiting further water entry. Call the 24-hour emergency roof line for triage. For a suitable job within the current Brisbane service run, the team aims to respond quickly and may target attendance in about one hour. The ETA is confirmed after the suburb, technician availability, traffic, weather and safe roof access are checked.",
+      "The emergency roof phone line is open 24 hours. The team checks the suburb, active water entry, technician availability, traffic, weather and safe access before confirming a feasible response and attendance time.",
     symptoms: [
       "Water actively entering living areas",
       "Tiles, flashing or roof sheets displaced by wind",
@@ -727,7 +614,7 @@ export const services: ServicePage[] = [
       {
         question: "How quickly can Mel One respond to an urgent roof problem?",
         answer:
-          "Call the 24-hour emergency roof line for triage. For a suitable job within the current Brisbane service run, the team may target attendance in about one hour. The actual ETA is confirmed after the suburb, technician availability, traffic, current weather and safe roof access are checked; it is not guaranteed before that review.",
+          "The emergency roof phone line is open 24 hours. The team checks the suburb, active water entry, technician availability, traffic, weather and safe access before confirming a feasible response and attendance time.",
       },
       {
         question: "What should I send with an urgent request?",
@@ -1148,7 +1035,7 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
         stage: "Safety and availability check",
         timing: "At first contact",
         detail:
-          "The 24-hour emergency line is used for live triage. The team confirms the suburb, active hazards, roof type and availability of the appropriately licensed practitioner for the required scope. For a suitable job within the current Brisbane service run, the team may target attendance in about one hour; the actual ETA follows the location, traffic, weather and safe-access check.",
+          "The emergency roof phone line is open 24 hours. The team checks the suburb, active water entry, technician availability, traffic, weather and safe access before confirming a feasible response and attendance time.",
       },
       {
         stage: "Temporary protection",
@@ -1179,10 +1066,10 @@ export const serviceContextBySlug: Record<string, ServiceContext> = {
     capability: {
       title: "Conditional urgent roof response",
       summary:
-        "Mel One triages urgent roof calls quickly and, for suitable jobs within the current Brisbane service run, may target attendance in about one hour. Location, technician availability, traffic, weather and safe roof access determine the confirmed ETA; permanent work is scoped separately.",
+        "The emergency roof phone line is open 24 hours. The team checks the suburb, active water entry, technician availability, traffic, weather and safe access before confirming a feasible response and attendance time.",
       evidence: [
         "24-hour emergency roof phone line",
-        "Conditional about-one-hour attendance target after live triage, not a universal guarantee",
+        "Attendance time confirmed after live triage and safe-access checks",
         "Problem-led triage for active leaks and storm-related roof damage",
         "Greater Brisbane project cases showing starting conditions, completed work and results",
         "Eligible roof-repair workmanship covered by a 10-year workmanship warranty under the agreed written scope and terms",
@@ -1484,7 +1371,7 @@ export const mainNav = [
   { label: "Services", href: "/services" },
   { label: "Roof Types", href: "/roof-types" },
   { label: "Service Areas", href: "/service-areas" },
-  { label: "中文", href: "/zh/brisbane-roof-restoration" },
+  { label: "Roof restoration", href: "/services/roof-restoration-brisbane" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

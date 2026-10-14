@@ -21,7 +21,7 @@ function formIn(tree) {
   return null;
 }
 
-async function harness({ failure = null, navigationFails = false, honeypot = false, analyticsFailure = null, setupFailure = false, firstEnvelope = undefined, hangFirst = false, apiResponder = null, initialValues = {} } = {}) {
+async function harness({ pathname = "/contact", failure = null, navigationFails = false, honeypot = false, analyticsFailure = null, setupFailure = false, firstEnvelope = undefined, hangFirst = false, apiResponder = null, initialValues = {} } = {}) {
   const requests = [], events = [], states = [], navigations = [], pending = [], timers = [];
   let resets = 0, analyticsThrown = false, setupThrown = false;
   const recordEvent = (name, data) => { events.push([name, data]); if (analyticsFailure === name && !analyticsThrown) { analyticsThrown = true; throw new Error("LOCAL ANALYTICS FAILURE"); } };
@@ -30,14 +30,20 @@ async function harness({ failure = null, navigationFails = false, honeypot = fal
     module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX,
     target: ts.ScriptTarget.ES2022, esModuleInterop: true,
   } }).outputText;
+  const localeExports={};
+  const localeSource=await readFile(new URL("../lib/locale.ts",import.meta.url),"utf8");
+  const localeDict=JSON.parse(await readFile(new URL("../lib/locale-translations.json",import.meta.url),"utf8"));
+  const routes=JSON.parse(await readFile(new URL("../lib/locale-routes.json",import.meta.url),"utf8"));
+  vm.runInNewContext(ts.transpileModule(localeSource,{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,{exports:localeExports,URL,require:n=>n.includes("translations")?localeDict:routes});
   const modules = {
+    "next/navigation": {usePathname:()=>pathname}, "@/lib/locale":localeExports,
     react: { useRef: value => ({ current: value }), useEffect() {}, useState: initial => {
       let value = typeof initial === "function" ? initial() : initial;
       if (value && typeof value === "object" && !Array.isArray(value)) value = { ...value, ...initialValues };
       return [value, next => { value = typeof next === "function" ? next(value) : next; states.push(value); }];
     } },
     "react/jsx-runtime": jsx,
-    "next/link": () => null,
+    "next/link": () => null, "@/components/Localized": {LocalizedLink:()=>null},
     "lucide-react": { ArrowRight: () => null },
     "../site-data": { business: identity }, "../google-analytics": { getLeadAttribution: () => attribution },
   };
@@ -217,3 +223,6 @@ test("actual client deadline aborts an unconfirmed request and preserves an unch
   assert.equal(form.latestStatus(), "success");
   assert.equal(form.timers.length, 0);
 });
+
+ test("Chinese success keeps translated confirmation route",async()=>{const h=await harness({pathname:"/zh/contact"});const p=h.submit();await new Promise(r=>setTimeout(r,0));h.release();await p;assert.ok(h.navigations.includes("/zh/thank-you"));});
+ test("Chinese response does not show API English error",async()=>{const h=await harness({pathname:"/zh/contact",failure:"api"});await h.submit();assert.ok(!h.states.includes("LOCAL API FAILURE"));assert.equal(h.latestStatus(),"error");});

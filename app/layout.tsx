@@ -1,3 +1,6 @@
+import {headers} from "next/headers";
+import {pageMetadata} from "@/lib/locale-metadata";
+import {isChinese} from "@/lib/locale";
 import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
 import { business, serviceRegions } from "./site-data";
@@ -16,7 +19,7 @@ const oswald = Oswald({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
   title: {
     default: "Roof Repairs Brisbane | Mel One",
@@ -82,7 +85,7 @@ export const viewport: Viewport = {
   themeColor: "#071a2b",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -149,7 +152,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en-AU">
+    <html lang={isChinese((await headers()).get("x-page-path")||"/")?"zh-Hans-AU":"en-AU"}>
       <head>
         <meta name="codex-preview" content="development" />
       </head>
@@ -164,3 +167,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export async function generateMetadata():Promise<Metadata>{return pageMetadata((await headers()).get("x-page-path")||"/",baseMetadata); }

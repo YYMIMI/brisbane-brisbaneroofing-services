@@ -1,5 +1,6 @@
+import { RoofPlanning } from "./roof-planning";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import {
   CtaBand,
   FaqList,
@@ -15,7 +16,7 @@ import {
   services,
 } from "./site-data";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: {
     absolute: "Roof Repairs Brisbane | Leaks, Tile & Metal Roofs | Mel One",
   },
@@ -45,7 +46,7 @@ const homeFaqs = [
   {
     question: "Can I request urgent roof leak help?",
     answer:
-      "Yes. The emergency roof line is open 24 hours a day. The team responds within minutes and can attend within two hours across the Brisbane service area.",
+      "The emergency roof phone line is open 24 hours. The team checks the suburb, active water entry, technician availability, traffic, weather and safe access before confirming a feasible response and attendance time.",
   },
   {
     question: "What should I include with my roof repair request?",
@@ -286,8 +287,7 @@ export default function Home() {
             <p>
               Stay off wet or damaged roofing. Keep people away from sagging
               ceilings, loose materials and affected electrical equipment.
-              Call the 24-hour emergency line for a response within minutes and
-              attendance within two hours across the Brisbane service area.
+              The emergency roof phone line is open 24 hours. The team checks the suburb, active water entry, technician availability, traffic, weather and safe access before confirming a feasible response and attendance time.
             </p>
             <div className="inline-actions">
               <Link
@@ -531,6 +531,7 @@ export default function Home() {
         </div>
       </section>
 
+      <RoofPlanning />
       <CtaBand />
     </PageShell>
   );

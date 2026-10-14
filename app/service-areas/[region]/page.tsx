@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import { notFound } from "next/navigation";
 import { CtaBand, PageHero, PageShell, SectionHeading, navigationPageHeroImages } from "../../components";
 import { serviceRegions, business } from "../../site-data";
@@ -52,7 +52,7 @@ const roofGuides=[
   {href:"/services/metal-roof-repairs-brisbane",title:"Metal roof repairs",image:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"metal roof repair view"},
 ];
 export function generateStaticParams(){return serviceRegions.map(region=>({region:slug(region.name)}));}
-export async function generateMetadata({params}:{params:Promise<{region:string}>}):Promise<Metadata>{const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);return area?{title:`Roof Repairs in ${area.name} | Mel One`,description:`Roof repair enquiries in ${area.name}, including ${area.suburbs.slice(0,3).join(", ")}. Explore repair choices and request an inspection.`,alternates:{canonical:`/service-areas/${region}`}}:{};}
+async function generateMetadata({params}:{params:Promise<{region:string}>}):Promise<Metadata>{const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);return area?{title:`Roof Repairs in ${area.name} | Mel One`,description:`Roof repair enquiries in ${area.name}, including ${area.suburbs.slice(0,3).join(", ")}. Explore repair choices and request an inspection.`,alternates:{canonical:`/service-areas/${region}`}}:{};}
 export default async function RegionPage({params}:{params:Promise<{region:string}>}){
   const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);if(!area)notFound();const rfq=quoteQuestions[area.name];
   return <PageShell><PageHero eyebrow="BRISBANE ROOF SERVICE AREA" title={`Roof repair enquiries in ${area.name}`} description={advice[area.name]} image={regionHeroImages[area.name]}/>

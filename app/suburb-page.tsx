@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import { CtaBand, FaqList, JsonLd, PageHero, PageShell, SectionHeading } from "./components";
 import type { RoofSuburbGuide } from "./suburb-guides";
 

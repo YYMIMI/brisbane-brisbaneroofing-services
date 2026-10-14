@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import {
   navigationPageHeroImages,
   PageHero,
@@ -9,7 +9,7 @@ import {
 import { business } from "../site-data";
 import RequestBuilder from "./request-builder";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: {
     absolute: "Contact Mel One Roof Repairs Brisbane | Request an Inspection",
   },

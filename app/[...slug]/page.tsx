@@ -1,5 +1,6 @@
+import { RestorationPlanning } from "../roof-planning";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { LocalizedLink as Link } from "@/components/Localized";
 import { notFound, permanentRedirect } from "next/navigation";
 import {
   CtaBand,
@@ -69,7 +70,7 @@ export function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({
+async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -551,6 +552,7 @@ function ServiceDetailPage({
         </div>
       </section>
 
+      {service.slug === "roof-restoration-brisbane" && <RestorationPlanning />}
       <CtaBand
         eyebrow={
           isGutterCleaning ? "REQUEST GUTTER CLEANING" : undefined
@@ -917,9 +919,9 @@ function ProjectsPage() {
     <PageShell projectLinkLabel="Roof projects">
       <JsonLd data={projectSchema} />
       <PageHero
-        eyebrow="MEL ONE COMPLETED PROJECTS"
+        eyebrow="MEL ONE ROOF PROJECTS"
         title="See the starting condition and completed work"
-        description="Greater Brisbane projects show the customer problem, starting condition, work carried out and completed result."
+        description="Greater Brisbane project records include starting conditions, work in progress and completed restoration and repair where documented."
         image={navigationPageHeroImages.projects}
       />
 
@@ -1056,7 +1058,7 @@ function ProjectsPage() {
               </div>
               <div>
                 <dt>Project photos</dt>
-                <dd>One work-in-progress photo and one matching after view</dd>
+                <dd>One work-in-progress photo</dd>
               </div>
             </dl>
             <ul className="check-list project-progress-list">
@@ -1111,19 +1113,18 @@ function ProjectsPage() {
             </div>
             <div>
               <dt>Work shown</dt>
-              <dd>Before, cleaning, flow check and finished condition</dd>
+              <dd>Before, cleaning and flow check</dd>
             </div>
           </dl>
 
           <div className="gutter-story-block gutter-story-main">
             <div className="gutter-story-heading">
               <div>
-                <p className="eyebrow eyebrow-dark">MAIN COMPARISON</p>
-                <h3>Blocked gutter and cleared result</h3>
+                <p className="eyebrow eyebrow-dark">STARTING CONDITION</p>
+                <h3>Blocked gutter condition</h3>
               </div>
               <p>
-                The same gutter below the fascia is shown before and after
-                clearing, so the result is easy to compare.
+                The original photo shows organic material packed into the narrow gutter below the fascia.
               </p>
             </div>
             <div className="project-gallery project-gallery-pair project-gallery-portrait">
@@ -1152,9 +1153,7 @@ function ProjectsPage() {
                 <h3>Cleaning and flow check</h3>
               </div>
               <p>
-                These site photos show the gutter being cleared and flushed
-                before the connected roof-edge sections were left clear and
-                open for water flow.
+                These site photos show gutter clearing and flushing in progress, with water used to observe flow through the accessible channel.
               </p>
             </div>
             <div className="project-gallery project-gallery-pair project-gallery-portrait">
@@ -1183,8 +1182,7 @@ function ProjectsPage() {
                 <h3>Connected tiled and metal roof section</h3>
               </div>
               <p>
-                A second comparison shows the connected gutter beside the
-                tiled and metal roof sections on the same property.
+                A second original photo shows buildup in the connected gutter beside the tiled and metal roof sections on the same property.
               </p>
             </div>
             <div className="project-gallery project-gallery-pair project-gallery-portrait">
@@ -1208,8 +1206,8 @@ function ProjectsPage() {
 
           <div className="project-scope">
             <div>
-              <p className="eyebrow eyebrow-dark">COMPLETED GUTTER CLEANING</p>
-              <h3>What was completed</h3>
+              <p className="eyebrow eyebrow-dark">GUTTER CLEANING PROCESS</p>
+              <h3>What the work shows</h3>
             </div>
             <ul className="check-list">
               {gutterCleaning.work.map((item) => (
