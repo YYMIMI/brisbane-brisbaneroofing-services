@@ -1,3 +1,4 @@
+import { ServiceQaAssets } from "@/components/service-qa-assets";
 import {headers} from "next/headers";
 import {pageMetadata} from "@/lib/locale-metadata";
 import {isChinese} from "@/lib/locale";
@@ -163,7 +164,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         {children}
-      </body>
+      <ServiceQaAssets /></body>
     </html>
   );
 }

@@ -467,6 +467,9 @@ function ServiceDetailPage({
             <p className="eyebrow">TEAM CAPABILITY FOR THIS SERVICE</p>
             <h2>{serviceContext.capability.title}</h2>
             <p>{serviceContext.capability.summary}</p>
+            {service.slug === "roof-leak-repairs-brisbane" && (
+              <p><Link href="/projects#roof-leak-ridge-repointing">View the roof-leak repair record →</Link></p>
+            )}
           </div>
           <ul className="capability-list">
             {serviceContext.capability.evidence.map((item) => (
