@@ -166,7 +166,7 @@ export default function RequestBuilder() {
 
   return (
     <div className="request-builder">
-      <form onSubmit={handleSubmit} aria-busy={status === "submitting"}>
+      <form data-clarity-mask="true" onSubmit={handleSubmit} aria-busy={status === "submitting"}>
         <div className="field-grid">
           <label>
             <span>Name *</span>

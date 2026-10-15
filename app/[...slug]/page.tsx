@@ -1,3 +1,4 @@
+import { ClarityPrivacy } from "../../components/clarity-assets";
 import { RestorationPlanning } from "../roof-planning";
 import type { Metadata } from "next";
 import { LocalizedLink as Link } from "@/components/Localized";
@@ -1529,6 +1530,7 @@ function PrivacyPage() {
             about access or correction of enquiry information held by the
             business.
           </p>
+          <ClarityPrivacy />
           <p className="policy-updated">Updated: 17 August 2026</p>
         </div>
       </section>

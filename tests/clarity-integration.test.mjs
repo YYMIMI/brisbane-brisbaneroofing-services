@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync,existsSync,readdirSync} from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>existsSync(path.join(root,p))?readFileSync(path.join(root,p),'utf8'):'';
+const config=()=>JSON.parse(read('clarity.config.json')||'null');
+test('Clarity is bound to this canonical production host with a genuine provider ID',()=>{const c=config();assert.ok(c,'Clarity config is required');assert.equal(c.hostname,'www.melonebrisbaneroofing.com.au');assert.match(c.projectId,/^[a-z0-9]{5,20}$/);assert.ok(c.cookieDomains.every(d=>d==='www.melonebrisbaneroofing.com.au'||d==='melonebrisbaneroofing.com.au'));});
+test('the server rendered site shell mounts the optional consent assets',()=>{assert.match(read('app/layout.tsx'),/<ClarityAssets[ \/>]/);const c=read('components/clarity-assets.tsx');assert.match(c,/id=["']clarity-config["']/);assert.match(c,/clarity-consent\.js/);assert.ok(read('public/clarity-consent.js').includes('document.body.setAttribute("data-clarity-mask", "true")'));});
+test('Clarity privacy notice is mounted without replacing the existing privacy policy',()=>{assert.match(read('app/[...slug]/page.tsx'),/<ClarityPrivacy[ \/>]/);assert.match(read('components/clarity-assets.tsx'),/Optional Microsoft Clarity analytics/);assert.match(read('components/clarity-assets.tsx'),/Google Analytics/);});

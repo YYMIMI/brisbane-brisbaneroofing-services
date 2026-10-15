@@ -1,3 +1,4 @@
+import { ClarityAssets } from "../components/clarity-assets";
 import { ServiceQaAssets } from "@/components/service-qa-assets";
 import {headers} from "next/headers";
 import {pageMetadata} from "@/lib/locale-metadata";
@@ -164,7 +165,8 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         {children}
-      <ServiceQaAssets /></body>
+      <ClarityAssets />
+        <ServiceQaAssets /></body>
     </html>
   );
 }
