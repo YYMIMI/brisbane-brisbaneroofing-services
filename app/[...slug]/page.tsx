@@ -292,14 +292,25 @@ function ServiceDetailPage({
         description={service.description}
         image={service.heroImage}
         urgent={isUrgent}
+        callLabel={isRoofLeak || isUrgent ? "Call about an active leak" : undefined}
         requestLabel={
-          isGutterCleaning ? "Request gutter cleaning" : "Request inspection"
+          isGutterCleaning
+            ? "Request gutter cleaning"
+            : isRoofLeak
+              ? "Request a roof leak inspection"
+              : "Request inspection"
         }
       />
 
       <section className="section">
         <div className="shell narrow-intro">
           <p className="lead-copy">{service.intro}</p>
+          {isRoofLeak ? (
+            <>
+              <p>Tell us your Brisbane suburb, whether water is still entering, when it happens in relation to rain, and the affected room or ceiling area. If the leak has stopped or keeps returning, request a roof leak inspection.</p>
+              <p>For water entering now, call about the active leak and review our <Link href="/services/emergency-roof-repairs-brisbane">emergency roof help</Link> for the next steps.</p>
+            </>
+          ) : null}
         </div>
       </section>
 

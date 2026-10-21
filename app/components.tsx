@@ -190,6 +190,7 @@ export function PageHero({
   title,
   description,
   urgent = false,
+  callLabel,
   requestLabel = "Request inspection",
   image,
 }: {
@@ -197,6 +198,7 @@ export function PageHero({
   title: string;
   description: string;
   urgent?: boolean;
+  callLabel?: string;
   requestLabel?: string;
   image?: {
     src: string;
@@ -233,7 +235,7 @@ export function PageHero({
               className={`button ${urgent ? "button-yellow" : "button-light"}`}
               href={`tel:${business.phoneHref}`}
             >
-              Call {business.phone}
+              {callLabel ?? ["Call ", business.phone]}
             </a>
             <Link className="button button-outline-light" href="/contact">
               {requestLabel}
