@@ -36,6 +36,10 @@ const staticPages = [
 ];
 
 const supplementaryProjectServiceLinks: Record<string, { href: string; label: string }> = {
+  "roof-vent-flashing-and-skylight-sealing": {
+    href: "/services/roof-leak-repairs-brisbane",
+    label: "View roof leak repairs",
+  },
   "roof-leak-ridge-repointing": {
     href: "/services/roof-leak-repairs-brisbane",
     label: "View roof leak repairs",
@@ -1291,6 +1295,7 @@ function ProjectsPage() {
             <div
               className={[
                 "project-gallery",
+                project.slug === "roof-vent-flashing-and-skylight-sealing" ? "project-gallery-pair" : "",
                 project.images.length === 1 ? "project-gallery-single" : "",
                 project.images.every(
                   (image) => (image.width ?? 0) < (image.height ?? 0),

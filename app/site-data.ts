@@ -392,6 +392,57 @@ export const supplementaryProjectCases: ProjectCase[] = [
       "Leaves and loose debris blocking a metal roof valley beside red concrete tiles",
       "Confirm the affected components, access and repair scope before work"
     ]
+  },
+  {
+    "slug": "roof-vent-flashing-and-skylight-sealing",
+    "eyebrow": "ROOF VENT & SKYLIGHT · BEFORE & AFTER",
+    "title": "Roof vent flashing replacement and skylight sealing",
+    "summary": "This Brisbane roofing job involved the roof vent penetration and an existing skylight. A replacement flexible pipe boot and fastened mounting flange were fitted around the vent, with a vent cowl at the top. Foil-faced sealing tape was applied around the edges of the existing skylight flashing.",
+    "status": "Vent flashing replaced and skylight edges sealed",
+    "roofType": "Corrugated roof with vent pipe and skylight",
+    "location": "Brisbane",
+    "coverImage": "/images/projects/roof-vent-flashing-after.webp",
+    "coverAlt": "Roof vent pipe with replacement black pipe boot, fastened flange and vent cowl",
+    "images": [
+      {
+        "src": "/images/projects/roof-vent-flashing-before.webp",
+        "alt": "Existing roof vent pipe flashing with old sealant around its base",
+        "caption": "Before: existing vent pipe flashing and old sealant.",
+        "stage": "Before",
+        "width": 1280,
+        "height": 1708
+      },
+      {
+        "src": "/images/projects/roof-vent-flashing-after.webp",
+        "alt": "Roof vent pipe with replacement black pipe boot, fastened flange and vent cowl",
+        "caption": "After: replacement pipe boot and mounting flange, with vent cowl fitted.",
+        "stage": "After",
+        "width": 1280,
+        "height": 1708
+      },
+      {
+        "src": "/images/projects/skylight-flashing-edges-before.webp",
+        "alt": "Existing skylight dome and flashing beside a solar panel mounting rail",
+        "caption": "Before: existing skylight and surrounding flashing.",
+        "stage": "Before",
+        "width": 1280,
+        "height": 1708
+      },
+      {
+        "src": "/images/projects/skylight-flashing-edges-after.webp",
+        "alt": "Skylight with foil-faced sealing tape around the edges of its existing flashing",
+        "caption": "After: sealing tape applied around the existing skylight flashing edges.",
+        "stage": "After",
+        "width": 1280,
+        "height": 1708
+      }
+    ],
+    "work": [
+      "Replaced the existing vent flashing arrangement with a flexible pipe boot and metal mounting flange",
+      "Fastened the flange to the roof and sealed around its edges",
+      "Fitted a vent cowl to the pipe",
+      "Applied foil-faced sealing tape around the existing skylight flashing edges"
+    ]
   }
 ];
 
