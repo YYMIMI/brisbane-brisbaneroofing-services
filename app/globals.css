@@ -3057,3 +3057,125 @@ h3 {
 }
 
 .service-project-grid:has(> :only-child) { grid-template-columns: minmax(0, 760px); }
+
+/* Project visitors see results and actual work before the full case archive. */
+html:has(.project-priority) {
+  scroll-behavior: auto;
+}
+
+.projects-intro .page-hero {
+  padding-block: 32px;
+}
+
+.projects-intro .page-hero h1 {
+  max-width: 900px;
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.projects-intro .page-hero-copy {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.project-priority {
+  padding-block: 30px 36px;
+  background: var(--white);
+}
+
+.project-priority h2 {
+  margin: 0 0 22px;
+  font-size: clamp(1.55rem, 2.5vw, 2rem);
+}
+
+.project-priority-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-priority-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--off-white);
+}
+
+.project-priority-card:hover,
+.project-priority-card:focus-visible {
+  border-color: var(--navy);
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.project-priority-photos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3px;
+}
+
+.project-priority-photos figure {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+}
+
+.project-priority-photos img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.project-priority-photos figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 6px 8px;
+  background: rgba(7, 26, 43, 0.9);
+  color: var(--white);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.project-priority-card-copy {
+  padding: 18px;
+}
+
+.project-priority-card-copy h3 {
+  margin: 0 0 12px;
+  font-size: 1.22rem;
+  line-height: 1.25;
+}
+
+.project-priority-card-copy > span {
+  color: var(--navy-3);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.project-case-index {
+  padding-block: 28px;
+}
+
+.project-case-index h2 {
+  margin-block: 8px 14px;
+  font-size: 1.6rem;
+}
+
+.project-directory summary {
+  padding-block: 8px 16px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.project-directory summary:focus-visible {
+  outline: 3px solid var(--yellow-dark);
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .project-priority-grid { grid-template-columns: 1fr; }
+  .project-priority-photos img { height: 190px; }
+  .project-priority-card-copy { padding: 16px; }
+  .projects-intro .page-hero { padding-block: 24px; }
+  .projects-intro .hero-actions { gap: 10px; }
+}

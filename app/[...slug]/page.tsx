@@ -905,6 +905,76 @@ function ServiceAreasPage() {
   );
 }
 
+function SupplementaryProjectSection({ project, index = 0 }: { project: (typeof supplementaryProjectCases)[number]; index?: number }) {
+  return (
+    <section
+          className={`section project-case-section${index % 2 === 0 ? "" : " section-pale"}`}
+          id={project.slug}
+          key={project.slug}
+        >
+          <div className="shell">
+            <div className="project-case-heading">
+              <div>
+                <p className="eyebrow eyebrow-dark">{project.eyebrow}</p>
+                <h2>{project.title}</h2>
+              </div>
+              <p className="lead-copy">{project.summary}</p>
+            </div>
+            <dl className="project-facts project-facts-wide">
+              <div><dt>Status</dt><dd>{project.status}</dd></div>
+              <div><dt>Roof type</dt><dd>{project.roofType}</dd></div>
+              <div><dt>Location</dt><dd>{project.location}</dd></div>
+              <div><dt>Project photos</dt><dd>{project.images.length}</dd></div>
+            </dl>
+            {project.video ? <DocumentedRoofGallery project={project} /> : (
+            <div
+              className={[
+                "project-gallery",
+                project.slug === "roof-vent-flashing-and-skylight-sealing" ? "project-gallery-pair" : "",
+                project.images.length === 1 ? "project-gallery-single" : "",
+                project.images.every(
+                  (image) => (image.width ?? 0) < (image.height ?? 0),
+                )
+                  ? "project-gallery-portrait"
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
+              {project.images.map((image) => (
+                <figure className="project-photo" key={image.src}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width ?? 1200}
+                    height={image.height ?? 900}
+                    loading="lazy"
+                  />
+                  <span className="project-stage">{image.stage}</span>
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+            )}
+            <div className="project-scope">
+              <p className="eyebrow eyebrow-dark">PROJECT SCOPE</p>
+              <h3>What this project shows</h3>
+              <ul className="check-list">
+                {project.work.map((item) => (<li key={item}>{item}</li>))}
+              </ul>
+            </div>
+            <Link
+              className="text-link"
+              href={supplementaryProjectServiceLinks[project.slug].href}
+            >
+              {supplementaryProjectServiceLinks[project.slug].label}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
+  );
+}
+
 function ProjectsPage() {
   const restoration = projectCases[0];
   const flueRepair = projectCases[1];
@@ -918,7 +988,15 @@ function ProjectsPage() {
   const gutterAdditionalPair = gutterCleaning.images.filter(
     (image) => image.group === "additional",
   );
-  const projectIndex = [...projectCases, ...supplementaryProjectCases];
+  const terracottaWork = supplementaryProjectCases.find(project => project.slug === "terracotta-roof-cleaning-and-flashing-work")!;
+  const ventWork = supplementaryProjectCases.find(project => project.slug === "roof-vent-flashing-and-skylight-sealing")!;
+  const remainingProjects = supplementaryProjectCases.filter(project => ![terracottaWork.slug, ventWork.slug].includes(project.slug));
+  const projectIndex = [restoration, terracottaWork, ventWork, gutterCleaning, flueRepair, ...remainingProjects];
+  const priorityPhotos = [
+    { project: restoration, result: restoration.images[1], detail: restoration.images[0] },
+    { project: terracottaWork, result: terracottaWork.images.find(image => image.stage === "After cleaning")!, detail: terracottaWork.images.find(image => image.src.includes("ridge-pointing"))! },
+    { project: ventWork, result: ventWork.images[1], detail: ventWork.images[3] },
+  ];
 
   const projectSchema = {
     "@context": "https://schema.org",
@@ -926,7 +1004,7 @@ function ProjectsPage() {
     name: "Real Greater Brisbane roof repair, restoration and gutter projects",
     description:
       "Greater Brisbane projects showing roof-leak repair, completed tile roof restoration, flue penetration repair and gutter cleaning.",
-    hasPart: [...projectCases, ...supplementaryProjectCases].map((project) => ({
+    hasPart: projectIndex.map((project) => ({
       "@type": "CreativeWork",
       name: project.title,
       description: project.summary,
@@ -941,30 +1019,50 @@ function ProjectsPage() {
   return (
     <PageShell projectLinkLabel="Roof projects">
       <JsonLd data={projectSchema} />
+      <div className="projects-intro">
       <PageHero
         eyebrow="MEL ONE ROOF PROJECTS"
         title="See the starting condition and completed work"
         description="Greater Brisbane project records include starting conditions, work in progress and completed restoration and repair where documented."
         image={navigationPageHeroImages.projects}
       />
+      </div>
+      <section className="project-priority" aria-labelledby="priority-projects-title">
+        <div className="shell">
+          <h2 id="priority-projects-title">Roof results and work on site</h2>
+          <div className="project-priority-grid">
+            {priorityPhotos.map(({ project, result, detail }) => (
+              <a className="project-priority-card" href={`/projects#${project.slug}`} key={project.slug}>
+                <div className="project-priority-photos">
+                  <figure><img src={result.src} alt={result.alt} width={result.width ?? 1080} height={result.height ?? 811} loading="eager" /><figcaption>{result.stage}</figcaption></figure>
+                  <figure><img src={detail.src} alt={detail.alt} width={detail.width ?? 1080} height={detail.height ?? 811} loading="eager" /><figcaption>{detail.stage}</figcaption></figure>
+                </div>
+                <div className="project-priority-card-copy"><h3>{project.title}</h3><span>View photos and work details →</span></div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section section-pale project-case-index" aria-labelledby="project-case-index-title">
         <div className="shell">
           <p className="eyebrow eyebrow-dark">FIND THE RELEVANT WORK</p>
           <h2 id="project-case-index-title">Browse roof and gutter projects</h2>
+          <details className="project-directory"><summary>Browse all roof and gutter projects</summary>
           <nav aria-label="Jump to a roof or gutter project">
             <ol className="project-case-index-list">
               {projectIndex.map((project, index) => (
                 <li key={project.slug}>
-                  <Link href={`#${project.slug}`}>
+                  <a href={`/projects#${project.slug}`}>
                     <span>{String(index + 1).padStart(2, "0")}</span>
                     {project.title}
                     <span aria-hidden="true">↓</span>
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ol>
           </nav>
+          </details>
         </div>
       </section>
 
@@ -1001,7 +1099,7 @@ function ProjectsPage() {
           </dl>
 
           <div className="project-gallery">
-            {restoration.images.map((image) => (
+            {[...restoration.images].sort((a, b) => Number(b.stage === "After") - Number(a.stage === "After")).map((image) => (
               <figure key={image.src}>
                 <div className="project-image-wrap">
                   <img
@@ -1040,73 +1138,8 @@ function ProjectsPage() {
         </div>
       </section>
 
-      <section
-        className="section section-pale project-case-section"
-        id={flueRepair.slug}
-      >
-        <div className="shell project-progress-layout">
-          <div>
-            {flueRepair.images.map((image) => (
-              <figure className="project-progress-image" key={image.src}>
-                <div className="project-image-wrap">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width ?? 1080}
-                    height={image.height ?? 1440}
-                    loading="lazy"
-                  />
-                  <span>{image.stage}</span>
-                </div>
-                <figcaption>{image.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
-          <div>
-            <p className="eyebrow eyebrow-dark">{flueRepair.eyebrow}</p>
-            <h2>{flueRepair.title}</h2>
-            <p className="lead-copy">{flueRepair.summary}</p>
-            <dl className="project-facts">
-              <div>
-                <dt>Status</dt>
-                <dd>{flueRepair.status}</dd>
-              </div>
-              <div>
-                <dt>Roof type</dt>
-                <dd>{flueRepair.roofType}</dd>
-              </div>
-              <div>
-                <dt>Location</dt>
-                <dd>{flueRepair.location}</dd>
-              </div>
-              <div>
-                <dt>Project photos</dt>
-                <dd>One work-in-progress photo</dd>
-              </div>
-            </dl>
-            <ul className="check-list project-progress-list">
-              {flueRepair.work.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <div className="inline-actions">
-              <Link
-                className="button button-dark"
-                href="/services/roof-leak-repairs-brisbane"
-              >
-                View roof leak repairs
-              </Link>
-              <Link
-                className="text-link"
-                href="/services/tile-roof-repairs-brisbane"
-              >
-                Tile roof repairs
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SupplementaryProjectSection project={terracottaWork} index={1} />
+      <SupplementaryProjectSection project={ventWork} />
 
       <section
         className="section project-case-section"
@@ -1257,6 +1290,78 @@ function ProjectsPage() {
         </div>
       </section>
 
+      <section
+        className="section section-pale project-case-section"
+        id={flueRepair.slug}
+      >
+        <div className="shell project-progress-layout">
+          <div>
+            {flueRepair.images.map((image) => (
+              <figure className="project-progress-image" key={image.src}>
+                <div className="project-image-wrap">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width ?? 1080}
+                    height={image.height ?? 1440}
+                    loading="lazy"
+                  />
+                  <span>{image.stage}</span>
+                </div>
+                <figcaption>{image.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <div>
+            <p className="eyebrow eyebrow-dark">{flueRepair.eyebrow}</p>
+            <h2>{flueRepair.title}</h2>
+            <p className="lead-copy">{flueRepair.summary}</p>
+            <dl className="project-facts">
+              <div>
+                <dt>Status</dt>
+                <dd>{flueRepair.status}</dd>
+              </div>
+              <div>
+                <dt>Roof type</dt>
+                <dd>{flueRepair.roofType}</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>{flueRepair.location}</dd>
+              </div>
+              <div>
+                <dt>Project photos</dt>
+                <dd>One work-in-progress photo</dd>
+              </div>
+            </dl>
+            <ul className="check-list project-progress-list">
+              {flueRepair.work.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="inline-actions">
+              <Link
+                className="button button-dark"
+                href="/services/roof-leak-repairs-brisbane"
+              >
+                View roof leak repairs
+              </Link>
+              <Link
+                className="text-link"
+                href="/services/tile-roof-repairs-brisbane"
+              >
+                Tile roof repairs
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {remainingProjects.map((project, index) => <SupplementaryProjectSection project={project} index={index} key={project.slug} />)}
+
       <section className="section section-pale project-case-section" aria-labelledby="warner-record-title">
         <div className="shell">
           <div className="project-case-heading">
@@ -1274,74 +1379,6 @@ function ProjectsPage() {
           </dl>
         </div>
       </section>
-
-      {supplementaryProjectCases.map((project, index) => (
-        <section
-          className={`section project-case-section${index % 2 === 0 ? "" : " section-pale"}`}
-          id={project.slug}
-          key={project.slug}
-        >
-          <div className="shell">
-            <div className="project-case-heading">
-              <div>
-                <p className="eyebrow eyebrow-dark">{project.eyebrow}</p>
-                <h2>{project.title}</h2>
-              </div>
-              <p className="lead-copy">{project.summary}</p>
-            </div>
-            <dl className="project-facts project-facts-wide">
-              <div><dt>Status</dt><dd>{project.status}</dd></div>
-              <div><dt>Roof type</dt><dd>{project.roofType}</dd></div>
-              <div><dt>Location</dt><dd>{project.location}</dd></div>
-              <div><dt>Project photos</dt><dd>{project.images.length}</dd></div>
-            </dl>
-            {project.video ? <DocumentedRoofGallery project={project} /> : (
-            <div
-              className={[
-                "project-gallery",
-                project.slug === "roof-vent-flashing-and-skylight-sealing" ? "project-gallery-pair" : "",
-                project.images.length === 1 ? "project-gallery-single" : "",
-                project.images.every(
-                  (image) => (image.width ?? 0) < (image.height ?? 0),
-                )
-                  ? "project-gallery-portrait"
-                  : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            >
-              {project.images.map((image) => (
-                <figure className="project-photo" key={image.src}>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width ?? 1200}
-                    height={image.height ?? 900}
-                    loading="lazy"
-                  />
-                  <span className="project-stage">{image.stage}</span>
-                  <figcaption>{image.caption}</figcaption>
-                </figure>
-              ))}
-            </div>
-            )}
-            <div className="project-scope">
-              <p className="eyebrow eyebrow-dark">PROJECT SCOPE</p>
-              <h3>What this project shows</h3>
-              <ul className="check-list">
-                {project.work.map((item) => (<li key={item}>{item}</li>))}
-              </ul>
-            </div>
-            <Link
-              className="text-link"
-              href={supplementaryProjectServiceLinks[project.slug].href}
-            >
-              {supplementaryProjectServiceLinks[project.slug].label}
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </section>
-      ))}
 
       <CtaBand
         title="Need help with a similar roof or gutter problem?"

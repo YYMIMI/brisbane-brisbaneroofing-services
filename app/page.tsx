@@ -445,7 +445,7 @@ export default function Home() {
                 <dd>{featuredProject.location}</dd>
               </div>
             </dl>
-            <Link className="button button-dark" href="/projects">
+            <Link className="button button-dark" href={`/projects#${featuredProject.slug}`}>
               View the complete project
             </Link>
           </div>
