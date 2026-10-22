@@ -65,10 +65,10 @@ const baseMetadata: Metadata = {
       "Roof and gutter project case studies for Greater Brisbane homes.",
     images: [
       {
-        url: "/images/brisbane-roof-repair-hero.webp",
-        width: 1536,
-        height: 960,
-        alt: "Completed Brisbane tile roof restoration project",
+        url: "/images/projects/terracotta-roof-overview-after-cleaning.webp",
+        width: 1600,
+        height: 1200,
+        alt: "Terracotta roof surface after cleaning",
       },
     ],
   },
@@ -77,7 +77,7 @@ const baseMetadata: Metadata = {
     title: "Mel One Roof Repairs Brisbane",
     description:
       "Roof and gutter project case studies for Greater Brisbane homes.",
-    images: ["/images/brisbane-roof-repair-hero.webp"],
+    images: ["/images/projects/terracotta-roof-overview-after-cleaning.webp"],
   },
 };
 

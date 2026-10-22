@@ -41,15 +41,15 @@ const quoteQuestions:Record<string,{scenario:string;checks:string[];scope:string
 };
 const regionHeroImages:Record<string,{src:string;alt:string;width:number;height:number}>={
   "Inner Brisbane":navigationPageHeroImages.serviceAreas,
-  "Brisbane Northside":{src:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"tiled roof inspection view",width:1672,height:941},
+  "Brisbane Northside":{src: "/images/projects/terracotta-roof-edge-ridge-after-cleaning.webp", alt: "Cleaned terracotta roof edge and ridge caps beside scaffolding", width: 1200, height: 1600},
   "Brisbane Southside":navigationPageHeroImages.services,
-  "Brisbane West":{src:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"metal roof repair view",width:1672,height:941},
-  "Brisbane East & Bayside":{src:"/images/service-banners/roof-restoration-brisbane.webp",alt:"roof condition and restoration view",width:1672,height:941},
+  "Brisbane West":{src: "/images/projects/commercial-metal-roof-overview-inspection-03.webp", alt: "Ribbed metal roof sheets and perimeter edge during inspection", width: 1200, height: 1600},
+  "Brisbane East & Bayside":{src: "/images/projects/tile-roof-restoration-after-overview.webp", alt: "Completed dark-grey concrete tile roof around existing solar panels", width: 1080, height: 811},
 };
 const roofGuides=[
-  {href:"/services/roof-leak-repairs-brisbane",title:"Roof leak repairs",image:"/images/brisbane-roof-repair-services-hero.webp",alt:"roof leak assessment view"},
-  {href:"/services/tile-roof-repairs-brisbane",title:"Tile roof repairs",image:"/images/service-banners/tile-roof-repairs-brisbane.webp",alt:"tile roof repair view"},
-  {href:"/services/metal-roof-repairs-brisbane",title:"Metal roof repairs",image:"/images/service-banners/metal-roof-repairs-brisbane.webp",alt:"metal roof repair view"},
+  {href:"/services/roof-leak-repairs-brisbane",title:"Roof leak repairs",image: "/images/projects/terracotta-roof-overview-after-cleaning.webp", alt: "Wide view of cleaned terracotta roof tiles and ridge caps"},
+  {href:"/services/tile-roof-repairs-brisbane",title:"Tile roof repairs",image: "/images/projects/terracotta-roof-edge-ridge-after-cleaning.webp", alt: "Cleaned terracotta roof edge and ridge caps beside scaffolding"},
+  {href:"/services/metal-roof-repairs-brisbane",title:"Metal roof repairs",image: "/images/projects/commercial-metal-roof-overview-inspection-03.webp", alt: "Ribbed metal roof sheets and perimeter edge during inspection"},
 ];
 export function generateStaticParams(){return serviceRegions.map(region=>({region:slug(region.name)}));}
 async function generateMetadata({params}:{params:Promise<{region:string}>}):Promise<Metadata>{const {region}=await params;const area=serviceRegions.find(item=>slug(item.name)===region);return area?{title:`Roof Repairs in ${area.name} | Mel One`,description:`Roof repair enquiries in ${area.name}, including ${area.suburbs.slice(0,3).join(", ")}. Explore repair choices and request an inspection.`,alternates:{canonical:`/service-areas/${region}`}}:{};}

@@ -152,40 +152,22 @@ export function SiteFooter({
 
 export const navigationPageHeroImages = {
   services: {
-    src: "/images/brisbane-roof-repair-services-hero.webp",
-    alt: "Roof inspection showing a tiled roof valley",
-    width: 1672,
-    height: 941,
+    src: "/images/projects/terracotta-roof-overview-after-cleaning.webp", alt: "Wide view of cleaned terracotta roof tiles and ridge caps", width: 1600, height: 1200,
   },
   roofTypes: {
-    src: "/images/brisbane-tile-metal-roof-types-hero.webp",
-    alt: "Roof inspection showing tile and metal roof types",
-    width: 1672,
-    height: 941,
+    src: "/images/projects/cleaned-terracotta-roof-work-detail.webp", alt: "Cleaned terracotta roof and metal junction with work materials nearby", width: 1200, height: 1600,
   },
   serviceAreas: {
-    src: "/images/brisbane-roof-repair-service-areas-hero.webp",
-    alt: "Roof inspection showing tile and metal roofing",
-    width: 1672,
-    height: 941,
+    src: "/images/projects/terracotta-roof-planes-after-cleaning.webp", alt: "Cleaned terracotta roof planes and ridge lines", width: 1200, height: 1600,
   },
   projects: {
-    src: "/images/brisbane-roof-repair-projects-hero.webp",
-    alt: "a roof inspection",
-    width: 1672,
-    height: 941,
+    src: "/images/projects/terracotta-roof-overview-after-cleaning.webp", alt: "Wide view of cleaned terracotta roof tiles and ridge caps", width: 1600, height: 1200,
   },
   about: {
-    src: "/images/brisbane-roof-repair-team-hero.webp",
-    alt: "roof assessment preparation",
-    width: 1672,
-    height: 941,
+    src: "/images/projects/terracotta-tile-flashing-junction-work.webp", alt: "Lifted terracotta tiles beside metal roof flashing during work", width: 900, height: 1600,
   },
   contact: {
-    src: "/images/brisbane-roof-inspection-contact-hero.webp",
-    alt: "a roofing enquiry and inspection preparation",
-    width: 1672,
-    height: 941,
+    src: "/images/projects/terracotta-roof-junction-opened.webp", alt: "Open terracotta roof edge beside a dark metal roof junction", width: 1200, height: 1600,
   },
 } as const;
 

@@ -453,6 +453,13 @@ export default function Home() {
       </section>
 
       <section className="section section-pale">
+        <div className="shell split-section documentary-feature">
+          <img src="/images/projects/terracotta-roof-overview-after-cleaning.webp" alt="Wide view of cleaned terracotta roof tiles and ridge caps" width="1600" height="1200" loading="lazy" />
+          <div><p className="eyebrow eyebrow-dark">TERRACOTTA ROOF · CLEANING &amp; JUNCTION WORK</p><h2>Roof-junction work and cleaned terracotta tiles</h2><p>Original photographs and an on-site video show the roof before cleaning, during junction work and after cleaning.</p><Link className="button button-dark" href="/projects#terracotta-roof-cleaning-and-flashing-work">View cleaning and flashing photos</Link></div>
+        </div>
+      </section>
+
+      <section className="section section-pale">
         <div className="shell area-layout">
           <SectionHeading
             eyebrow="BRISBANE SERVICE AREAS"

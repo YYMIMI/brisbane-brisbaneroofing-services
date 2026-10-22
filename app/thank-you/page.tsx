@@ -14,7 +14,7 @@ export default function ThankYouPage() {
   return (
     <PageShell>
       <section style={{ position: "relative", minHeight: 360, display: "grid", placeItems: "center", overflow: "hidden" }}>
-        <img src="/images/brisbane-roof-repair-hero.webp" alt="" aria-hidden style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <img src="/images/projects/terracotta-roof-overview-after-cleaning.webp" alt="" aria-hidden style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(7, 26, 43, 0.82)" }} />
         <div style={{ position: "relative", padding: 24, textAlign: "center", color: "white" }}>
           <p className="eyebrow">ENQUIRY SENT</p>

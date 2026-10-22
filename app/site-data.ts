@@ -69,6 +69,7 @@ export type ProjectCase = {
     stage:
       | "Before"
       | "After"
+      | "After cleaning"
       | "In progress"
       | "During cleaning"
       | "Flow check"
@@ -79,6 +80,7 @@ export type ProjectCase = {
     height?: number;
   }[];
   work: string[];
+  video?: { src: string; poster: string; caption: string; width: number; height: number };
 };
 
 export const projectCases: ProjectCase[] = [
@@ -206,15 +208,6 @@ export const projectCases: ProjectCase[] = [
         "width": 1086,
         "height": 1448
       },
-      {
-        "src": "/images/projects/gutter-cleaning-after-roof-junction-privacy.webp",
-        "alt": "Same gutter between tiled and metal roof sections clear after cleaning",
-        "caption": "After: the same connected roof-edge gutter is clear along the visible run.",
-        "stage": "After",
-        "group": "additional",
-        "width": 1086,
-        "height": 1448
-      }
     ],
     "work": [
       "Removed accumulated leaves, soil-like organic matter and moss from accessible sections",
@@ -233,8 +226,8 @@ export const supplementaryProjectCases: ProjectCase[] = [
     "status": "Completed roof leak repair",
     "roofType": "Concrete tile roof and ridge capping",
     "location": "Greater Brisbane — customer suburb not published",
-    "coverImage": "/images/projects/roof-leak-ridge-repointing-completed.webp",
-    "coverAlt": "Completed tiled-roof ridge repointing and affected-tile repair in Greater Brisbane",
+    "coverImage": "/images/projects/roof-leak-ridge-repointing-before.webp",
+    "coverAlt": "Ridge condition before the recorded repair",
     "images": [
       {
         "src": "/images/projects/roof-leak-ridge-repointing-before.webp",
@@ -244,14 +237,6 @@ export const supplementaryProjectCases: ProjectCase[] = [
         "width": 1080,
         "height": 1920
       },
-      {
-        "src": "/images/projects/roof-leak-ridge-repointing-completed.webp",
-        "alt": "Completed tiled-roof ridge repointing and tile repair in Greater Brisbane",
-        "caption": "After: completed ridge repointing and affected-tile repair.",
-        "stage": "After",
-        "width": 941,
-        "height": 1672
-      }
     ],
     "work": [
       "Inspected the visible interior condition, tiled roof, ridge junctions and nearby drainage paths",
@@ -443,7 +428,177 @@ export const supplementaryProjectCases: ProjectCase[] = [
       "Fitted a vent cowl to the pipe",
       "Applied foil-faced sealing tape around the existing skylight flashing edges"
     ]
+  },
+{
+  "slug": "terracotta-roof-cleaning-and-flashing-work",
+  "eyebrow": "TERRACOTTA ROOF · CLEANING & JUNCTION WORK",
+  "title": "Terracotta roof cleaning and flashing junction work",
+  "summary": "Site photos follow the same terracotta roof from lichen-covered tiles through opened roof edges and flashing work to the cleaned roof surface. Close-up views show the tile-to-metal junction and ridge pointing; the video records work in progress.",
+  "status": "Cleaning and roof-junction work photographed",
+  "roofType": "Terracotta tiles adjoining metal roof sections",
+  "location": "Customer location not published",
+  "coverImage": "/images/projects/terracotta-roof-overview-after-cleaning.webp",
+  "coverAlt": "Wide view of cleaned terracotta roof tiles and ridge caps",
+  "images": [
+    {
+      "src": "/images/projects/terracotta-roof-overview-before-cleaning.webp",
+      "alt": "Terracotta roof overview showing lichen before cleaning",
+      "caption": "Roof overview before cleaning, with lichen across the tiles.",
+      "stage": "Before",
+      "group": "primary",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/images/projects/terracotta-roof-overview-after-cleaning.webp",
+      "alt": "Wide view of cleaned terracotta roof tiles and ridge caps",
+      "caption": "Wide view of the cleaned terracotta roof.",
+      "stage": "After cleaning",
+      "group": "primary",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "src": "/images/projects/terracotta-tile-flashing-junction-work.webp",
+      "alt": "Lifted terracotta tiles beside metal roof flashing during work",
+      "caption": "Tiles lifted to expose the roof junction and metal flashing.",
+      "stage": "In progress",
+      "group": "process",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-edge-flashing-work.webp",
+      "alt": "Terracotta roof edge opened beside metal flashing and scaffolding",
+      "caption": "Roof edge opened beside the metal roof junction.",
+      "stage": "In progress",
+      "group": "process",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-lichen-before-cleaning.webp",
+      "alt": "Terracotta roof tiles and ridge caps with lichen before cleaning",
+      "caption": "Lichen covers the tiles and ridge caps before cleaning.",
+      "stage": "Before",
+      "group": "additional",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-slope-before-cleaning.webp",
+      "alt": "Lichen-covered terracotta roof slope before cleaning",
+      "caption": "The roof slope before cleaning.",
+      "stage": "Before",
+      "group": "additional",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-ridges-before-cleaning.webp",
+      "alt": "Wide view of terracotta roof ridges with lichen before cleaning",
+      "caption": "Wide view of the tiles and roof ridges before cleaning.",
+      "stage": "Before",
+      "group": "additional",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "/images/projects/terracotta-tile-access-flashing-detail.webp",
+      "alt": "Tiles lifted to expose battens beside metal roof flashing",
+      "caption": "Lifted tiles reveal the battens at the roof junction.",
+      "stage": "In progress",
+      "group": "process",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-junction-opened.webp",
+      "alt": "Open terracotta roof edge beside a dark metal roof junction",
+      "caption": "The tiled roof edge opened beside the metal junction.",
+      "stage": "In progress",
+      "group": "process",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-slope-after-cleaning.webp",
+      "alt": "Terracotta roof slope after cleaning with orange and brown tiles visible",
+      "caption": "Cleaned terracotta tiles retain their natural orange and brown variation.",
+      "stage": "After cleaning",
+      "group": "additional",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-planes-after-cleaning.webp",
+      "alt": "Cleaned terracotta roof planes and ridge lines",
+      "caption": "A wider view of the cleaned roof planes and ridge lines.",
+      "stage": "After cleaning",
+      "group": "additional",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-valley-after-cleaning.webp",
+      "alt": "Terracotta roof and ridge tiles after cleaning beside a chimney",
+      "caption": "Cleaned tiles around the roof valley and chimney.",
+      "stage": "After cleaning",
+      "group": "additional",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/cleaned-terracotta-tiles-metal-junction.webp",
+      "alt": "Cleaned terracotta tiles beside a metal roof junction during work",
+      "caption": "Cleaned tiles beside the metal roof junction, with work materials still on site.",
+      "stage": "In progress",
+      "group": "additional",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/cleaned-terracotta-roof-work-detail.webp",
+      "alt": "Cleaned terracotta roof and metal junction with work materials nearby",
+      "caption": "Cleaned tiles and ridge caps beside the metal roof junction during later work.",
+      "stage": "In progress",
+      "group": "additional",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-roof-edge-ridge-after-cleaning.webp",
+      "alt": "Cleaned terracotta roof edge and ridge caps beside scaffolding",
+      "caption": "Cleaned roof edge and ridge caps beside the scaffold.",
+      "stage": "After cleaning",
+      "group": "additional",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "src": "/images/projects/terracotta-ridge-pointing-flashing-detail.webp",
+      "alt": "Ridge cap pointing and tiled roof junction beside metal roofing",
+      "caption": "Close detail of the ridge cap pointing and tiled-to-metal roof junction.",
+      "stage": "In progress",
+      "group": "process",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "work": [
+    "Recorded lichen on field tiles and ridge caps before cleaning",
+    "Lifted tiles at roof edges to expose the battens and adjoining metal flashing",
+    "Photographed cleaned tile surfaces across the connected roof planes",
+    "Recorded the ridge pointing and tile-to-metal junction details during work"
+  ],
+  "video": {
+    "src": "/videos/terracotta-roof-flashing-work.mp4",
+    "poster": "/images/projects/terracotta-roof-flashing-work-poster.webp",
+    "caption": "On-site video: opened terracotta roof edge and metal flashing during work. No audio.",
+    "width": 720,
+    "height": 1280
   }
+}
 ];
 
 export const services: ServicePage[] = [
@@ -459,10 +614,7 @@ export const services: ServicePage[] = [
     description:
       "Help deciding whether a weathered Brisbane tile roof needs targeted repairs or a broader restoration, supported by original before-and-after project photos.",
     heroImage: {
-      src: "/images/service-banners/roof-restoration-brisbane.webp",
-      alt: "a tile roof restoration team",
-      width: 1717,
-      height: 916,
+      src: "/images/projects/tile-roof-restoration-after-overview.webp", alt: "Completed dark-grey concrete tile roof around existing solar panels", width: 1080, height: 811,
     },
     intro:
       "Not every ageing tile roof needs a full restoration. One broken tile, an isolated leak or a local ridge-capping defect may be better handled as a targeted repair. A broader restoration makes more sense when wear extends across larger roof areas and the scope includes preparation, repairs and a new finish. The roof condition, access, solar equipment and Brisbane weather still shape the final plan.",
@@ -514,6 +666,7 @@ export const services: ServicePage[] = [
   },
   {
     slug: "roof-leak-repairs-brisbane",
+    heroImage: {"src":"/images/projects/terracotta-roof-junction-opened.webp","alt":"Open terracotta roof edge beside a dark metal roof junction","width":1200,"height":1600},
     path: "/services/roof-leak-repairs-brisbane",
     navLabel: "Roof leak repairs",
     title: "Roof leak repairs in Brisbane",
@@ -573,6 +726,7 @@ export const services: ServicePage[] = [
   },
   {
     slug: "gutter-cleaning-brisbane",
+    heroImage: {"src":"/images/projects/gutter-cleaning-in-progress-water-check.webp","alt":"Water flow check during gutter cleaning beside a tiled roof","width":1080,"height":1440},
     path: "/services/gutter-cleaning-brisbane",
     navLabel: "Gutter cleaning",
     title: "Gutter cleaning for blocked Brisbane roof drainage",
@@ -627,6 +781,7 @@ export const services: ServicePage[] = [
   },
   {
     slug: "emergency-roof-repairs-brisbane",
+    heroImage: {"src":"/images/projects/corrugated-metal-roof-junction-damage-01.webp","alt":"Distorted corrugated metal roof sheet edges at an open junction","width":1600,"height":1200},
     path: "/services/emergency-roof-repairs-brisbane",
     navLabel: "Emergency roof help",
     title: "Urgent help for active roof leaks",
@@ -676,6 +831,7 @@ export const services: ServicePage[] = [
   },
   {
     slug: "storm-damage-roof-repairs-brisbane",
+    heroImage: {"src":"/images/projects/corrugated-metal-roof-junction-damage-01.webp","alt":"Distorted corrugated metal roof sheet edges at an open junction","width":1600,"height":1200},
     path: "/services/storm-damage-roof-repairs-brisbane",
     navLabel: "Storm damage",
     title: "Storm-damaged roof assessment and repair",
@@ -735,10 +891,7 @@ export const services: ServicePage[] = [
     description:
       "Local tile-roof repair assessment for cracked or slipped tiles, ridge capping and damage around nearby roof details.",
     heroImage: {
-      src: "/images/service-banners/tile-roof-repairs-brisbane.webp",
-      alt: "inspection work on a tiled roof",
-      width: 1672,
-      height: 941,
+      src: "/images/projects/terracotta-roof-edge-ridge-after-cleaning.webp", alt: "Cleaned terracotta roof edge and ridge caps beside scaffolding", width: 1200, height: 1600,
     },
     intro:
       "Choose tile roof repairs for individual damaged or missing tiles, local ridge-capping defects and nearby roof details. A leak may still involve valleys, flashing or penetrations, so the surrounding area and water path must be checked. If the work concerns preparation and a new finish across broad roof areas, start with the roof-restoration service instead.",
@@ -800,10 +953,7 @@ export const services: ServicePage[] = [
     description:
       "Metal roof repair assessment for leaks, loose sheets, failed fasteners, flashing defects and localised corrosion.",
     heroImage: {
-      src: "/images/service-banners/metal-roof-repairs-brisbane.webp",
-      alt: "metal roof repair work",
-      width: 1672,
-      height: 941,
+      src: "/images/projects/commercial-metal-roof-overview-inspection-03.webp", alt: "Ribbed metal roof sheets and perimeter edge during inspection", width: 1200, height: 1600,
     },
     intro:
       "Choose metal roof repairs when the roof material is metal and the concern involves sheets, fasteners, laps, flashing, penetrations or localised corrosion. Water can travel beneath a sheet, so the indoor drip point may not identify the exterior source. Broader replacement or specialist trade work is separated from a local repair scope after inspection.",
@@ -845,6 +995,7 @@ export const services: ServicePage[] = [
   },
   {
     slug: "roof-inspections-brisbane",
+    heroImage: {"src":"/images/projects/terracotta-roof-overview-before-cleaning.webp","alt":"Terracotta roof overview showing lichen before cleaning","width":1600,"height":900},
     path: "/services/roof-inspections-brisbane",
     navLabel: "Roof inspections",
     title: "Roof inspections that start with the problem",

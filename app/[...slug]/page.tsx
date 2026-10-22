@@ -1,3 +1,4 @@
+import { DocumentedRoofGallery } from "../documented-roof-gallery";
 import { ClarityPrivacy } from "../../components/clarity-assets";
 import { RestorationPlanning } from "../roof-planning";
 import type { Metadata } from "next";
@@ -36,6 +37,7 @@ const staticPages = [
 ];
 
 const supplementaryProjectServiceLinks: Record<string, { href: string; label: string }> = {
+  "terracotta-roof-cleaning-and-flashing-work": { href: "/services/tile-roof-repairs-brisbane", label: "View tile roof repairs" },
   "roof-vent-flashing-and-skylight-sealing": {
     href: "/services/roof-leak-repairs-brisbane",
     label: "View roof leak repairs",
@@ -223,7 +225,8 @@ function ServiceDetailPage({
       projectCases[2],
     ],
   };
-  const matchingProjects = projectMatches[service.slug] ?? [];
+  const documentedRoofWork = supplementaryProjectCases.find(project => project.slug === "terracotta-roof-cleaning-and-flashing-work")!;
+  const matchingProjects = [...(projectMatches[service.slug] ?? []), ...(["roof-restoration-brisbane", "tile-roof-repairs-brisbane", "roof-leak-repairs-brisbane", "roof-inspections-brisbane"].includes(service.slug) ? [documentedRoofWork] : [])];
   const organizationId = `${business.siteUrl}/#organization`;
 
   const serviceSchema = {
@@ -495,16 +498,16 @@ function ServiceDetailPage({
         </div>
       </section>
 
-      {false ? (
+      {matchingProjects.some(project => project.video) ? (
         <section className="section section-project-feature">
           <div className="shell">
             <SectionHeading
               eyebrow="MEL ONE PROJECT CASES"
               title="Real roof work related to this service"
-              copy="These completed projects show the customer problem, work carried out and result in clear, practical terms."
+              copy="Original photographs show the starting condition, roof-junction work and cleaned tile surfaces."
             />
             <div className="service-project-grid">
-              {matchingProjects.map((project) => (
+              {matchingProjects.filter(project => project.video).map((project) => (
                 <Link
                   href={`/projects#${project.slug}`}
                   className="service-project-card"
@@ -514,8 +517,8 @@ function ServiceDetailPage({
                     <img
                       src={project.coverImage}
                       alt={project.coverAlt}
-                      width="1080"
-                      height="811"
+                      width={project.images.find(image => image.src === project.coverImage)?.width ?? 1080}
+                      height={project.images.find(image => image.src === project.coverImage)?.height ?? 811}
                       loading="lazy"
                     />
                     <span>{project.status}</span>
@@ -1292,6 +1295,7 @@ function ProjectsPage() {
               <div><dt>Location</dt><dd>{project.location}</dd></div>
               <div><dt>Project photos</dt><dd>{project.images.length}</dd></div>
             </dl>
+            {project.video ? <DocumentedRoofGallery project={project} /> : (
             <div
               className={[
                 "project-gallery",
@@ -1320,6 +1324,7 @@ function ProjectsPage() {
                 </figure>
               ))}
             </div>
+            )}
             <div className="project-scope">
               <p className="eyebrow eyebrow-dark">PROJECT SCOPE</p>
               <h3>What this project shows</h3>
