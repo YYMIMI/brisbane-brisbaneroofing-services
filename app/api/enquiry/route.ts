@@ -155,6 +155,7 @@ export async function POST(request: Request) {
   const issue = clean(record.issue, 2500);
   const contact = clean(record.contact, 200);
   const howFound = clean(record.howFound, 80);
+  const goldCoast = record.enquiryArea === "gold-coast";
   const proposedLeadId = clean(record.leadId, 120);
   const leadId = /^[A-Za-z0-9_-]{8,120}$/.test(proposedLeadId)
     ? proposedLeadId
@@ -193,6 +194,7 @@ export async function POST(request: Request) {
   }
 
   const emailText = [
+    ...(goldCoast ? ["Service: Gold Coast roof leak enquiry"] : []),
     `Lead ID: ${leadId}`,
     `Hostname: ${hostname}`,
     `Landing page: ${landingPage}`,
@@ -220,7 +222,7 @@ export async function POST(request: Request) {
         from,
         to: recipients,
         ...(emailAddress(contact) ? { reply_to: emailAddress(contact) } : {}),
-        subject: `New Brisbane roofing enquiry — ${suburb}`,
+        subject: goldCoast ? `New Gold Coast roofing enquiry — ${suburb}` : `New Brisbane roofing enquiry — ${suburb}`,
         text: emailText,
       }),
       signal: AbortSignal.timeout(10_000),

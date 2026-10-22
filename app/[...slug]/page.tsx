@@ -892,6 +892,7 @@ function ServiceAreasPage() {
           </div>
         </div>
       </section>
+      <section className="section"><div className="shell"><p><Link href="/services/roof-leak-repairs-gold-coast">Gold Coast roof leak enquiries →</Link></p><p>For a Gold Coast property, share the suburb and roof leak details. Scope and availability are confirmed before booking.</p></div></section>
       <CtaBand />
     </PageShell>
   );

@@ -21,7 +21,7 @@ function formIn(tree) {
   return null;
 }
 
-async function harness({ pathname = "/contact", failure = null, navigationFails = false, honeypot = false, analyticsFailure = null, setupFailure = false, firstEnvelope = undefined, hangFirst = false, apiResponder = null, initialValues = {} } = {}) {
+async function harness({ pathname = "/contact", componentProps = {}, failure = null, navigationFails = false, honeypot = false, analyticsFailure = null, setupFailure = false, firstEnvelope = undefined, hangFirst = false, apiResponder = null, initialValues = {} } = {}) {
   const requests = [], events = [], states = [], navigations = [], pending = [], timers = [];
   let resets = 0, analyticsThrown = false, setupThrown = false;
   const recordEvent = (name, data) => { events.push([name, data]); if (analyticsFailure === name && !analyticsThrown) { analyticsThrown = true; throw new Error("LOCAL ANALYTICS FAILURE"); } };
@@ -85,7 +85,7 @@ async function harness({ pathname = "/contact", failure = null, navigationFails 
     DOMException,
   });
   const component = exports.default;
-  const tree = component({});
+  const tree = component(componentProps);
   const form = formIn(tree);
   assert.ok(form, "the actual component must render a form");
   const event = { preventDefault() {}, currentTarget: { reset() { resets++; } } };
@@ -226,3 +226,18 @@ test("actual client deadline aborts an unconfirmed request and preserves an unch
 
  test("Chinese success keeps translated confirmation route",async()=>{const h=await harness({pathname:"/zh/contact"});const p=h.submit();await new Promise(r=>setTimeout(r,0));h.release();await p;assert.ok(h.navigations.includes("/zh/thank-you"));});
  test("Chinese response does not show API English error",async()=>{const h=await harness({pathname:"/zh/contact",failure:"api"});await h.submit();assert.ok(!h.states.includes("LOCAL API FAILURE"));assert.equal(h.latestStatus(),"error");});
+
+for (const pathname of ["/services/roof-leak-repairs-gold-coast", "/zh/services/roof-leak-repairs-gold-coast"]) {
+  test(`Gold Coast enquiry carries its area and confirms receipt without a Brisbane redirect: ${pathname}`, async () => {
+    const h = await harness({ pathname, componentProps: { enquiryArea: "gold-coast" }, initialValues: { suburb: "LOCAL GC SUBURB", issue: "LOCAL roof leak after rain" } });
+    const first = h.submit(), duplicate = h.submit(); h.release(); await Promise.all([first, duplicate]);
+    assert.equal(h.requests.length, 1);
+    assert.equal(h.requests[0].payload.enquiryArea, "gold-coast");
+    assert.equal(h.requests[0].payload.suburb, "LOCAL GC SUBURB");
+    assert.equal(h.requests[0].payload.issue, "LOCAL roof leak after rain");
+    assert.equal(h.navigations.length, 0);
+    assert.ok(h.states.some(value => typeof value === "string" && value.includes("Gold Coast")));
+    assert.equal(h.events.filter(([name]) => name === "generate_lead").length, 1);
+    assert.doesNotMatch(JSON.stringify(h.events), /LOCAL GC SUBURB|LOCAL roof leak after rain/);
+  });
+}

@@ -1,7 +1,8 @@
 import { LocalizedLink as Link } from "@/components/Localized";
 import { brandName, business, mainNav, services } from "./site-data";
 
-export function SiteHeader() {
+export function SiteHeader({ goldCoast = false }: { goldCoast?: boolean } = {}) {
+  const enquiryHref = goldCoast ? "#request-assessment" : "/contact";
   return (
     <header className="site-header">
       <a className="skip-link" href="#main-content">
@@ -19,7 +20,7 @@ export function SiteHeader() {
           </span>
           <span className="wordmark-copy">
             <strong>{business.brandName}</strong>
-            <small>Roof Repairs Brisbane</small>
+            <small>{goldCoast ? "Roofing enquiries" : "Roof Repairs Brisbane"}</small>
           </span>
         </Link>
 
@@ -31,7 +32,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link className="button button-yellow header-cta" href="/contact">
+        <Link className="button button-yellow header-cta" href={enquiryHref}>
           Request inspection
         </Link>
 
@@ -47,7 +48,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link className="button button-yellow" href="/contact">
+            <Link className="button button-yellow" href={enquiryHref}>
               Request inspection
             </Link>
           </nav>
@@ -59,8 +60,10 @@ export function SiteHeader() {
 
 export function SiteFooter({
   projectLinkLabel = "Roof project records",
+  goldCoast = false,
 }: {
   projectLinkLabel?: string;
+  goldCoast?: boolean;
 } = {}) {
   return (
     <footer className="site-footer">
@@ -77,16 +80,17 @@ export function SiteFooter({
             </span>
             <span className="wordmark-copy">
               <strong>{business.brandName}</strong>
-              <small>Roof Repairs Brisbane</small>
+              <small>{goldCoast ? "Roofing enquiries" : "Roof Repairs Brisbane"}</small>
             </span>
           </Link>
-          <p>
+          {goldCoast ? <p>Gold Coast roof leak enquiries: tell us the suburb and roof problem. Service scope, safe access and availability are confirmed before booking.</p> : <p>
             Roof repair, restoration and gutter cleaning enquiries across
             Greater Brisbane, supported by real project case studies.
-          </p>
+          </p>}
           <address className="footer-business">
             <strong>{business.legalName}</strong>
             <span>ABN {business.abn} · ACN {business.acn}</span>
+            {goldCoast ? <span>Brisbane office</span> : null}
             <span>
               {business.address.street}, {business.address.locality}{" "}
               {business.address.region} {business.address.postcode}
@@ -97,14 +101,14 @@ export function SiteFooter({
         </div>
 
         <div>
-          <h2>Repair services</h2>
+          <h2>{goldCoast ? "Brisbane repair services" : "Repair services"}</h2>
           <ul>
             {services.map((service) => (
               <li key={service.path}>
                 <Link href={service.path}>{service.navLabel}</Link>
               </li>
             ))}
-            <li><Link href="/zh/brisbane-roof-repairs" lang="zh-Hans-AU">中文</Link></li>
+            <li><Link href={goldCoast ? "/zh/services/roof-leak-repairs-gold-coast" : "/zh/brisbane-roof-repairs"} lang="zh-Hans-AU">中文</Link></li>
             <li><Link href="/services/roof-restoration-brisbane">Roof restoration</Link></li>
           </ul>
         </div>
@@ -121,26 +125,26 @@ export function SiteFooter({
               </Link>
             </li>
             <li>
-              <Link href="/projects">{projectLinkLabel}</Link>
+              <Link href="/projects">{goldCoast ? "Brisbane roof project records" : projectLinkLabel}</Link>
             </li>
             <li>
               <Link href="/about">Service approach</Link>
             </li>
             <li>
-              <Link href="/contact">Prepare a repair request</Link>
+              <Link href={goldCoast ? "#request-assessment" : "/contact"}>Prepare a repair request</Link>
             </li>
             <li>
               <Link href="/privacy">Privacy</Link>
             </li>
             <li>
-              <Link href="/thank-you">What happens after an enquiry</Link>
+              <Link href={goldCoast ? "#how-it-works" : "/thank-you"}>What happens after an enquiry</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="shell footer-bottom">
         <span>© 2026 {business.legalName}</span>
-        <span>On-site roof repairs across {business.serviceArea} · Call {business.contactName} on {business.phone}</span>
+        {goldCoast ? <span>Gold Coast roofing enquiries · {business.contactName} · {business.phone}</span> : <span>On-site roof repairs across {business.serviceArea} · Call {business.contactName} on {business.phone}</span>}
       </div>
     </footer>
   );
@@ -192,6 +196,7 @@ export function PageHero({
   urgent = false,
   callLabel,
   requestLabel = "Request inspection",
+  requestHref = "/contact",
   image,
 }: {
   eyebrow: string;
@@ -200,6 +205,7 @@ export function PageHero({
   urgent?: boolean;
   callLabel?: string;
   requestLabel?: string;
+  requestHref?: string;
   image?: {
     src: string;
     alt: string;
@@ -237,7 +243,7 @@ export function PageHero({
             >
               {callLabel ?? ["Call ", business.phone]}
             </a>
-            <Link className="button button-outline-light" href="/contact">
+            <Link className="button button-outline-light" href={requestHref}>
               {requestLabel}
             </Link>
           </div>
@@ -322,21 +328,23 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
 export function PageShell({
   children,
   projectLinkLabel,
+  goldCoast = false,
 }: {
   children: React.ReactNode;
   projectLinkLabel?: string;
+  goldCoast?: boolean;
 }) {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader goldCoast={goldCoast} />
       <main id="main-content">{children}</main>
-      <SiteFooter projectLinkLabel={projectLinkLabel} />
+      <SiteFooter projectLinkLabel={projectLinkLabel} goldCoast={goldCoast} />
       <nav className="mobile-conversion-bar" aria-label="Quick contact">
         <a href={`tel:${business.phoneHref}`}>
           <span>Call now</span>
           <strong>{business.phone}</strong>
         </a>
-        <Link href="/contact">Request inspection</Link>
+        <Link href={goldCoast ? "#request-assessment" : "/contact"}>Request inspection</Link>
       </nav>
     </>
   );

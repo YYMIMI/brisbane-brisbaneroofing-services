@@ -1,4 +1,5 @@
 import {notFound} from 'next/navigation';
+import GoldCoastRoofLeakPage from "@/app/services/roof-leak-repairs-gold-coast/gold-coast-content";
 import Page0 from "@/app/page";
 import Page1 from "@/app/[...slug]/page";
 import Page2 from "@/app/contact/page";
@@ -37,6 +38,7 @@ case "/zh/service-areas/brisbane-west":return <Page10 params={Promise.resolve({r
 case "/zh/service-areas/eight-mile-plains":return <Page11 />;
 case "/zh/service-areas/inner-brisbane":return <Page12 params={Promise.resolve({region:"inner-brisbane"})} />;
 case "/zh/service-areas/sunnybank":return <Page13 />;
+case "/zh/services/roof-leak-repairs-gold-coast":return <GoldCoastRoofLeakPage locale="zh" />;
 case "/zh/services":return <Page14 params={Promise.resolve({slug:["services"]})} />;
 case "/zh/services/emergency-roof-repairs-brisbane":return <Page15 params={Promise.resolve({slug:["services","emergency-roof-repairs-brisbane"]})} />;
 case "/zh/services/gutter-cleaning-brisbane":return <Page16 params={Promise.resolve({slug:["services","gutter-cleaning-brisbane"]})} />;

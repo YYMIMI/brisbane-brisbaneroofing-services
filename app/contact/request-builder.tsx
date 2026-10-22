@@ -52,7 +52,8 @@ const initialState: RequestState = {
   howFound: "",
 };
 
-export default function RequestBuilder() {
+export default function RequestBuilder({ enquiryArea }: { enquiryArea?: "gold-coast" } = {}) {
+  const goldCoast = enquiryArea === "gold-coast";
   const pathname=usePathname()||"/";
   const [form, setForm] = useState<RequestState>(initialState);
   const [status, setStatus] = useState<SubmissionState>("idle");
@@ -107,6 +108,7 @@ export default function RequestBuilder() {
         },
         body: JSON.stringify({
           ...form,
+          ...(goldCoast ? { enquiryArea: "gold-coast" } : {}),
           website: String(data.get("website") ?? ""),
           leadId,
           hostname: attribution.hostname,
@@ -140,13 +142,15 @@ export default function RequestBuilder() {
       }
 
       setMessage(
-        (!isChinese(pathname)?result.message:undefined) ||
+        goldCoast
+          ? "Thanks — your Gold Coast roofing enquiry has been sent. Riley's team will contact you about the details and availability. Your booking needs confirmation."
+          : (!isChinese(pathname)?result.message:undefined) ||
           "Thanks — your roofing enquiry has been sent. The team will reply within 24 hours.",
       );
       setForm(initialState);
       formElement.reset();
       leadIdRef.current = "";
-      window.location.assign(localHref("/thank-you",pathname) as string);
+      if (!goldCoast) window.location.assign(localHref("/thank-you",pathname) as string);
     } catch (error) {
       if (submissionStateRef.current === "success") return;
       submissionStateRef.current = "idle";
@@ -180,14 +184,14 @@ export default function RequestBuilder() {
             />
           </label>
           <label>
-            <span>Brisbane suburb *</span>
+            <span>{goldCoast ? "Gold Coast suburb *" : "Brisbane suburb *"}</span>
             <input
               required
               autoComplete="address-level2"
               maxLength={100}
               value={form.suburb}
               onChange={(event) => updateField("suburb", event.target.value)}
-              placeholder="e.g. Carindale"
+              placeholder={goldCoast ? "Your property's Gold Coast suburb" : "e.g. Carindale"}
             />
           </label>
         </div>
@@ -234,7 +238,7 @@ export default function RequestBuilder() {
             maxLength={2500}
             value={form.issue}
             onChange={(event) => updateField("issue", event.target.value)}
-            placeholder="Where can you see the problem? When did it start? Does wind or heavy rain change it?"
+            placeholder={goldCoast ? "Which room or ceiling area is affected? Is water entering now? During or after rain? Tell us about access and any earlier roof work." : "Where can you see the problem? When did it start? Does wind or heavy rain change it?"}
           />
         </label>
 
@@ -272,7 +276,7 @@ export default function RequestBuilder() {
         </label>
 
         <div className="form-note">
-          Your enquiry is sent securely to the Mel One team. We reply within 24 hours. Do not include sensitive information.
+          {goldCoast ? "Your Gold Coast roof leak enquiry goes to the Mel One roofing team. We will confirm the suburb, scope and availability before booking. Do not include sensitive information." : "Your enquiry is sent securely to the Mel One team. We reply within 24 hours. Do not include sensitive information."}
         </div>
 
         <button

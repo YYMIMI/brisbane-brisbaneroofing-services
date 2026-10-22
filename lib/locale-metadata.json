@@ -1,4 +1,26 @@
 {
+  "/services/roof-leak-repairs-gold-coast": {
+    "title": "Roof Leak Repairs Gold Coast | Mel One",
+    "description": "Gold Coast roof leak enquiries with Riley. Share your suburb, rain pattern and active water entry; confirm assessment, repair scope and availability before booking.",
+    "og": {
+      "title": "Roof Leak Repairs Gold Coast | Mel One",
+      "description": "Gold Coast roof leak enquiries with Riley. Share your suburb, rain pattern and active water entry; confirm assessment, repair scope and availability before booking.",
+      "url": "https://www.melonebrisbaneroofing.com.au/services/roof-leak-repairs-gold-coast",
+      "site_name": "Mel One Maintenance",
+      "locale": "en_AU",
+      "image": "https://www.melonebrisbaneroofing.com.au/brand/mel-one-roof-logo-512.png",
+      "image:width": "512",
+      "image:height": "512",
+      "image:alt": "Mel One Maintenance roof repair logo",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Roof Leak Repairs Gold Coast | Mel One",
+      "description": "Gold Coast roof leak enquiries with Riley. Share your suburb, rain pattern and active water entry; confirm assessment, repair scope and availability before booking.",
+      "image": "https://www.melonebrisbaneroofing.com.au/brand/mel-one-roof-logo-512.png"
+    }
+  },
   "/": {
     "title": "Roof Repairs Brisbane | Leaks, Tile & Metal Roofs | Mel One",
     "description": "Roof repairs and gutter cleaning across Greater Brisbane for leaks, blocked gutters, damaged tiles, metal roofing and storm damage. View real project photos.",
