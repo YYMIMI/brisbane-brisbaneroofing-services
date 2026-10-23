@@ -1,0 +1,122 @@
+/* Scope all geometry to an explicitly opted-in case section. Existing site tokens win. */
+[data-case-carousel-shell] {
+  --case-carousel-gap: 1rem;
+  --case-carousel-controls-space: 4rem;
+  --case-carousel-ink: var(--ink, var(--foreground, #222));
+  --case-carousel-paper: var(--paper, var(--background, #fff));
+  --case-carousel-line: var(--line, #c9c9c9);
+  --case-carousel-accent: var(--accent, var(--primary, #ffdd00));
+  --case-carousel-focus: var(--focus, #005fcc);
+  --case-carousel-radius: var(--radius, 4px);
+  --case-carousel-scroll-thumb: #737373;
+  --case-carousel-scroll-track: #ededed;
+  --case-carousel-scroll-hover: #555;
+  --case-carousel-scroll-active: #333;
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  padding-block-start: var(--case-carousel-controls-space);
+}
+[data-case-carousel-shell] > [data-case-carousel] {
+  display: flex;
+  grid-template-columns: none;
+  gap: var(--case-carousel-gap);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: .25rem;
+  padding: .25rem .25rem 1.25rem;
+  box-sizing: border-box;
+  scrollbar-width: auto;
+  scrollbar-color: var(--case-carousel-scroll-thumb) var(--case-carousel-scroll-track);
+}
+[data-case-carousel-shell] > [data-case-carousel] > * {
+  flex: 0 0 clamp(17rem, 29vw, 23rem);
+  margin: 0 !important;
+  min-width: 0;
+  max-width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+[data-case-carousel-shell] > [data-case-carousel] > [hidden] { display: none !important; }
+[data-case-carousel-shell] > [data-case-carousel]::-webkit-scrollbar { height: 12px; }
+[data-case-carousel-shell] > [data-case-carousel]::-webkit-scrollbar-track { background: var(--case-carousel-scroll-track); }
+[data-case-carousel-shell] > [data-case-carousel]::-webkit-scrollbar-thumb { background: var(--case-carousel-scroll-thumb); border: 2px solid var(--case-carousel-scroll-track); border-radius: 6px; }
+[data-case-carousel-shell] > [data-case-carousel]::-webkit-scrollbar-thumb:hover { background: var(--case-carousel-scroll-hover); }
+[data-case-carousel-shell] > [data-case-carousel]::-webkit-scrollbar-thumb:active { background: var(--case-carousel-scroll-active); }
+[data-case-carousel-shell] > [data-case-carousel-controls] {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  min-height: 3rem;
+}
+[data-case-carousel-shell] > [data-case-carousel-controls][hidden] { display: none !important; }
+[data-case-carousel-shell] > [data-case-carousel-controls] button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+  min-width: 3rem;
+  padding: 0;
+  border: 1px solid var(--case-carousel-line);
+  border-radius: var(--case-carousel-radius);
+  background: var(--case-carousel-paper);
+  color: var(--case-carousel-ink);
+  font: inherit;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .15s, color .15s;
+}
+[data-case-carousel-shell] > [data-case-carousel-controls] button:hover:not(:disabled) { background: var(--case-carousel-accent); color: var(--case-carousel-ink); }
+[data-case-carousel-shell] > [data-case-carousel-controls] button:active:not(:disabled) { box-shadow: inset 0 0 0 1px currentColor; }
+[data-case-carousel-shell] > [data-case-carousel-controls] button:disabled { opacity: .35; cursor: default; }
+[data-case-carousel-shell] > [data-case-carousel]:focus-visible,
+[data-case-carousel-shell] > [data-case-carousel-controls] button:focus-visible,
+[data-case-carousel-shell] > [data-case-carousel] a:focus-visible { outline: 3px solid var(--case-carousel-focus); outline-offset: 2px; }
+/* Opt in only where direct cards contain a photo and a caption div/figcaption. */
+[data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * {
+  position: relative;
+  height: clamp(23rem, 35vw, 28rem);
+  overflow: hidden;
+  border-radius: var(--case-carousel-radius);
+}
+[data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * > img,
+[data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * > picture,
+[data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * > picture > img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * > :is(div, figcaption) {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 3.5rem 1.2rem 1.2rem;
+  color: #fff;
+  background: linear-gradient(transparent, #222222f5);
+}
+[data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * > :is(div, figcaption) :is(h2, h3, h4, p) { color: inherit; }
+@media (max-width: 700px) {
+  [data-case-carousel-shell] > [data-case-carousel] > * { flex-basis: min(82vw, 22rem); }
+  [data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * { height: 25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-case-carousel-shell] > [data-case-carousel] { scroll-behavior: auto; }
+  [data-case-carousel-shell] > [data-case-carousel-controls] button { transition: none; }
+}
+@media (forced-colors: active) {
+  [data-case-carousel-shell] > [data-case-carousel] { scrollbar-color: auto; }
+  [data-case-carousel-shell] > [data-case-carousel-controls] button { border-color: ButtonText; }
+  [data-case-carousel-shell] > [data-case-carousel][data-case-carousel-style='overlay'] > * > :is(div, figcaption) { background: Canvas; color: CanvasText; }
+}

@@ -1,3 +1,4 @@
+import { CaseCarouselAssets } from "../components/case-carousel-assets";
 import { ClarityAssets } from "../components/clarity-assets";
 import { ServiceQaAssets } from "@/components/service-qa-assets";
 import {headers} from "next/headers";
@@ -7,6 +8,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
 import { business, serviceRegions } from "./site-data";
 import "./globals.css";
+import "./case-carousel.css";
 import GoogleAnalytics from "./google-analytics";
 
 const inter = Inter({
@@ -159,6 +161,7 @@ export default async function RootLayout({
         <meta name="codex-preview" content="development" />
       </head>
       <body className={`${inter.variable} ${oswald.variable}`}>
+        <CaseCarouselAssets />
         <GoogleAnalytics />
         <script
           type="application/ld+json"

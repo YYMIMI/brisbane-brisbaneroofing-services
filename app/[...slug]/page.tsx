@@ -506,7 +506,7 @@ function ServiceDetailPage({
               title="Real roof work related to this service"
               copy="Original photographs show the starting condition, roof-junction work and cleaned tile surfaces."
             />
-            <div className="service-project-grid">
+            <div data-case-carousel-shell><div className="service-project-grid" data-case-carousel>
               {matchingProjects.filter(project => project.video).map((project) => (
                 <Link
                   href={`/projects#${project.slug}`}
@@ -531,7 +531,7 @@ function ServiceDetailPage({
                   </div>
                 </Link>
               ))}
-            </div>
+            </div></div>
           </div>
         </section>
       ) : null}
@@ -927,7 +927,7 @@ function SupplementaryProjectSection({ project, index = 0 }: { project: (typeof 
               <div><dt>Project photos</dt><dd>{project.images.length}</dd></div>
             </dl>
             {project.video ? <DocumentedRoofGallery project={project} /> : (
-            <div
+            <div data-case-carousel-shell><div
               className={[
                 "project-gallery",
                 project.slug === "roof-vent-flashing-and-skylight-sealing" ? "project-gallery-pair" : "",
@@ -940,7 +940,7 @@ function SupplementaryProjectSection({ project, index = 0 }: { project: (typeof 
               ]
                 .filter(Boolean)
                 .join(" ")}
-            >
+             data-case-carousel>
               {project.images.map((image) => (
                 <figure className="project-photo" key={image.src}>
                   <img
@@ -954,7 +954,7 @@ function SupplementaryProjectSection({ project, index = 0 }: { project: (typeof 
                   <figcaption>{image.caption}</figcaption>
                 </figure>
               ))}
-            </div>
+            </div></div>
             )}
             <div className="project-scope">
               <p className="eyebrow eyebrow-dark">PROJECT SCOPE</p>
@@ -1098,7 +1098,7 @@ function ProjectsPage() {
             </div>
           </dl>
 
-          <div className="project-gallery">
+          <div data-case-carousel-shell><div className="project-gallery" data-case-carousel>
             {[...restoration.images].sort((a, b) => Number(b.stage === "After") - Number(a.stage === "After")).map((image) => (
               <figure key={image.src}>
                 <div className="project-image-wrap">
@@ -1114,7 +1114,7 @@ function ProjectsPage() {
                 <figcaption>{image.caption}</figcaption>
               </figure>
             ))}
-          </div>
+          </div></div>
 
           <div className="project-scope">
             <div>
@@ -1183,7 +1183,7 @@ function ProjectsPage() {
                 The original photo shows organic material packed into the narrow gutter below the fascia.
               </p>
             </div>
-            <div className="project-gallery project-gallery-pair project-gallery-portrait">
+            <div data-case-carousel-shell><div className="project-gallery project-gallery-pair project-gallery-portrait" data-case-carousel>
               {gutterPrimaryPair.map((image) => (
                 <figure key={image.src}>
                   <div className="project-image-wrap">
@@ -1199,7 +1199,7 @@ function ProjectsPage() {
                   <figcaption>{image.caption}</figcaption>
                 </figure>
               ))}
-            </div>
+            </div></div>
           </div>
 
           <div className="gutter-story-block gutter-story-process">
@@ -1212,7 +1212,7 @@ function ProjectsPage() {
                 These site photos show gutter clearing and flushing in progress, with water used to observe flow through the accessible channel.
               </p>
             </div>
-            <div className="project-gallery project-gallery-pair project-gallery-portrait">
+            <div data-case-carousel-shell><div className="project-gallery project-gallery-pair project-gallery-portrait" data-case-carousel>
               {gutterProcessPhotos.map((image) => (
                 <figure key={image.src}>
                   <div className="project-image-wrap">
@@ -1228,7 +1228,7 @@ function ProjectsPage() {
                   <figcaption>{image.caption}</figcaption>
                 </figure>
               ))}
-            </div>
+            </div></div>
           </div>
 
           <div className="gutter-story-block">
@@ -1241,7 +1241,7 @@ function ProjectsPage() {
                 A second original photo shows buildup in the connected gutter beside the tiled and metal roof sections on the same property.
               </p>
             </div>
-            <div className="project-gallery project-gallery-pair project-gallery-portrait">
+            <div data-case-carousel-shell><div className="project-gallery project-gallery-pair project-gallery-portrait" data-case-carousel>
               {gutterAdditionalPair.map((image) => (
                 <figure key={image.src}>
                   <div className="project-image-wrap">
@@ -1257,7 +1257,7 @@ function ProjectsPage() {
                   <figcaption>{image.caption}</figcaption>
                 </figure>
               ))}
-            </div>
+            </div></div>
           </div>
 
           <div className="project-scope">

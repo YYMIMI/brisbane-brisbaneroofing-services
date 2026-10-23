@@ -410,7 +410,7 @@ export default function Home() {
         id="real-project"
       >
         <div className="shell featured-project">
-          <div className="project-compare" aria-label="Real roof project before and after">
+          <div data-case-carousel-shell><div className="project-compare" aria-label="Real roof project before and after" data-case-carousel>
             {featuredProject.images.slice(0, 2).map((image) => (
               <figure key={image.src}>
                 <div className="project-image-wrap">
@@ -426,7 +426,7 @@ export default function Home() {
                 <figcaption>{image.caption}</figcaption>
               </figure>
             ))}
-          </div>
+          </div></div>
           <div className="featured-project-copy">
             <p className="eyebrow eyebrow-dark">{featuredProject.eyebrow}</p>
             <h2>{featuredProject.title}</h2>

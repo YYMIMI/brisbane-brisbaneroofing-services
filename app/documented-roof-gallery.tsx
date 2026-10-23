@@ -14,20 +14,20 @@ export function DocumentedRoofGallery({ project }: { project: ProjectCase }) {
   return (
     <div className="documented-roof-gallery">
       <h3>Roof cleaning before and after</h3>
-      <div className="project-gallery project-gallery-pair documentary-photos">
+      <div data-case-carousel-shell><div className="project-gallery project-gallery-pair documentary-photos" data-case-carousel>
         {project.images.filter(image => image.group === "primary").sort((a, b) => Number(b.stage === "After cleaning") - Number(a.stage === "After cleaning")).map(image => <Photo image={image} key={image.src} />)}
-      </div>
+      </div></div>
       <details className="documentary-photo-group" open>
         <summary>View the work-in-progress photos</summary>
-        <div className="project-gallery documentary-photos">
+        <div data-case-carousel-shell><div className="project-gallery documentary-photos" data-case-carousel>
           {project.images.filter(image => image.group === "process").sort((a, b) => Number(b.src.includes("ridge-pointing")) - Number(a.src.includes("ridge-pointing"))).map(image => <Photo image={image} key={image.src} />)}
-        </div>
+        </div></div>
       </details>
       <details className="documentary-photo-group">
         <summary>View more roof condition and cleaning photos</summary>
-        <div className="project-gallery documentary-photos">
+        <div data-case-carousel-shell><div className="project-gallery documentary-photos" data-case-carousel>
           {project.images.filter(image => image.group === "additional").map(image => <Photo image={image} key={image.src} />)}
-        </div>
+        </div></div>
       </details>
       {project.video ? (
         <figure className="documentary-video">
